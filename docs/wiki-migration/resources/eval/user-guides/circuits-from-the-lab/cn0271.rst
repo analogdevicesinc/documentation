@@ -1,0 +1,243 @@
+CN-0271 Software User Guide
+===========================
+
+Overview
+--------
+
+:adi:`CN-0271 <CN0271>` is a complete thermocouple signal conditioning circuit with cold junction compensation followed by a 16-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The :adi:`AD8495` thermocouple amplifier provides a simple, low cost solution for measuring K type thermocouple temperatures, including cold junction compensation.
+
+A fixed gain instrumentation amplifier in the :adi:`AD8495` amplifies the small thermocouple voltage to provide a 5 mV/°C output. The high common-mode rejection of the amplifier blocks commonmode noise that the long thermocouple leads can pick up. For additional protection, the high impedance inputs of the amplifier make it easy to add extra filtering.
+
+The :adi:`AD8476` differential amplifier provides the correct signal levels and common-mode voltage to drive the :adi:`AD7790` 16-bit, Σ-Δ ADC.
+
+The circuit provides a compact low cost solution for thermocouple signal conditioning and high resolution analog-to-digital conversion.
+
+This user guide will discuss how to use the evaluation software to collect data from the :adi:`EVAL-CN0271-SDPZ` Evaluation Board **(CN-0271 Board)**
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-schematic.png
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0271-SDPZ` Evaluation Board (**CN-0271 Board**)
+-  :adi:`EVAL-CFTL-6V-PWRZ` +6V Power Supply or equivalent DC Power Supply
+-  `CN-0271 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0271>`_
+-  PC with the following *Minimum Requirements*
+
+   -  Windows XP Service Pack 2 (32-bit)
+   -  USB Type-A Port
+   -  Processor rated at 1GHz or faster
+   -  512 MB RAM and 500 MB available hard disk space
+
+-  USB Type-A to USB Mini-B cable
+-  K-Type Thermocouple millivolt source
+-  K-Type thermocouple male-to-male cable
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CN0271-SDPZ` **(CN-0271 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector at **J3**.
+-  The :adi:`EVAL-CFTL-6V-PWRZ` +6V power supply powers the :adi:`EVAL-CN0271-SDPZ` **(CN-0271 Board)** via the DC Barrel Jack at **J5** or the screw terminal at **J4**.
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The thermocouple connects to the :adi:`EVAL-CN0271-SDPZ` **(CN-0271 Board)** via the thermocouple connector at **J1**.
+
+|image1|
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0271 SDP Eval Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN-0271 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0271>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0271\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image2|
+
+-  Click **Next** to view the installation review page
+
+|image3|
+
+-  Click **Next** to start the installation
+
+|image4|
+
+   \* Upon completion of the installation of the **CN-0271 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image5|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image6|
+
+-  Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.\
+
+|image7|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-software.png
+   :width: 900px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-software2.png
+   :width: 900px
+
+::
+
+   -**Connect/Reconnect Button**
+   * When this button is pressed, the SDP-B Board makes a USB connection to the CN-0288 Board.  A connection to the SDP-B Board must be made to use the software.   
+   -**Samples Numerical Control**
+   * This numerical control determines how many samples to acquire after the **Acquire Samples Button** has been pressed.
+
+.. note::
+
+   \\ **NOTE:** If the **Enable Real-Time Checkbox** is **checked,** this value is ignored
+
+
+-**Acquire Samples Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+   -**Stop Acquiring Button**
+   * When this button is pressed, the software stop collecting data from the CN-0288 Board
+   -**Save Data Button**
+   * When this button is pressed, the software will save the data collected to a tab delimited ASCII spreadsheet file. 
+   -**Control Tabs**
+   * __Acquire Data__ - Clicking this tab brings the data collection chart to the front.
+   * __Configure System__ - Clicking this tab brings the system configuration settings to the front.
+   * __SDP Board Information__ - Clicking this tab brings the SDP Board revision information to the front.
+   -**Enable Real-Time Checkbox**
+   * When this checkbox is **checked,**  the SDP-B will acquire samples until the **Stop Acquiring Button** is pressed.
+   -**Current Temperature Numerical Indicator**
+   * This indicator displays the current temperature measurement.
+   -**Chart Controls**
+   * These controls allow the user to zoom-in, zoom-out, and pan through the data collected.
+   -**System Status String Indicator**
+   * This indicator displays a message to the user detailing the current state of the software.
+   -**System Status LED Indicator**
+   * This indicator displays the current state of the software in the form of an LED.  There are three status LED colors.\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-inactive.png?nolink&|}}Inactive\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-busy.png?nolink&|}}Busy\\ {{:resources:eval:user-guides:circuits-from-the-lab:cn0272:cn0272-software-error.png?nolink&|}}Error\\ 
+   -**Update Rate Radio Buttons**
+   * This control is used to change the output word rate of the [[:adi:`AD7790|AD7790]]`.  The default value is __120 Hz__ and is highlighted in **bold** on the **Configure System Tab**.
+   -**Burnout Current Radio Buttons**
+   * When this control is enabled the 100nA current sources in the signal path are enabled.\\ \\
+
+.. important::
+
+   The burnout currents can be enabled only when the buffer is active.
+
+
+-**Buffer Select Radio Buttons**
+   * This control is used to set the mode of the [[:adi:`AD7790|AD7790]]`.  The default value is __Unbuffered Mode__ and is highlighted in **bold** on the **Configure System Tab**.
+     * __Buffered Mode__ - Selecting this mode turns the on-chip analog input channel buffer of the [[:adi:`AD7790|AD7790]]` **ON**.
+     * __Unbuffered Mode__ - Selecting this radio button turns the on-chip analog input channel buffer of the [[:adi:`AD7790|AD7790]]` **OFF**.
+   -**Channel Selection Radio Buttons**
+   * This control is used to select the analog input channel of the [[:adi:`AD7790|AD7790]]` for conversion.  The default value is __AIN(+)-AIN(-)__ and is highlighted in **bold** on the **Configure System Tab**.
+     * __AIN(+)-AIN(-)__ - Selecting this radio button allows for normal operation of the [[:adi:`AD7790|AD7790]]`.  
+     * __AIN(-)-AIN(-)__ - Selecting this radio button shorts the analog input channels of the [[:adi:`AD7790|AD7790]]`.
+     * __Vdd Monitor__ - Selecting this radio button monitors the voltage applied to the Vdd pin of the [[:adi:`AD7790|AD7790]]`.  The voltage is attenuated by 5 and the resultant voltage is applied to the ∑-Δ modulator using an internal 1.17 V reference for analog to digital conversion.
+   -**Mode Register Numerical Indicator**
+   * This indicator displays the current contents of the Mode Register of the [[:adi:`AD7790|AD7790]]` ∑-Δ 16-bit ADC.
+   -**Filter Register Numerical Indicator**
+   * This indicator displays the current contents of the Filter Register of the [[:adi:`AD7790|AD7790]]` ∑-Δ 16-bit ADC.
+   -**Low Calibration Temperature Numerical Control**
+   * This control is used to modify the low calibration temperature setpoint.
+   * The default value is 20°C.
+   -**High Calibration Temperature Numerical Control**
+   * This control is used to modify the high calibration temperature setpoint.
+   * The default value is 900°C.
+   -**Calibrate Button**
+   * Pressing this button calibrates the system using the values populated in the calibration temperature numerical controls.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0271.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0271\\CN0271.exe**\
+
+
+-  Click the **Connect/Reconnect Button**. A window with a progress bar will load.
+
+
+
+|image8|
+
+-  Upon success, the **System Status String Indicator** will display *SDP Board Ready to Acquire Data*
+
+--------------
+
+Acquiring a Fixed Sample Size of Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Adjust the **Samples Numerical Control** to the number of samples to be acquired.
+-  Ensure that the **Enable Real-Time Checkbox** is **cleared**.
+-  Click the **Acquire Samples Button**
+-  Wait until the acquisition is complete.
+
+Acquiring Data in Real-Time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  Ensure that the **Enable Real-Time Checkbox** is **checked**.
+-  Click the **Acquire Samples Button**
+-  Click the **Stop Acquiring Button** to stop the acquisition.
+
+Saving Data to a Spreadsheet File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Capture Data**.
+-  Click the **Save Data Button**.
+-  Browse to the directory location where the spreadsheet file is to be saved.
+-  Name the file.
+-  Click the **OK Button**.
+
+|
+
+.. note::
+
+   | The software saves the spreadsheet file as ASCII text with columns separated by tabs.
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0271-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-test_setup.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install1.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install2.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install3.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install4.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install5.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-install6.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0271/cn0271-software-wait.png

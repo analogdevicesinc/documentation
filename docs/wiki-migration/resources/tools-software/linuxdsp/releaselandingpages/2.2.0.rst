@@ -1,0 +1,43 @@
+Linux for ADSP-SC5xx Processors 2.2.0 (develop)
+===============================================
+
+Welcome to version 2.2.0 of Linux for ADSP-SC5xx (Currently under development). This collection of pages contains all you need to know in order to download, build, develop and install Linux, running on the ARM core of the ADSP-SC5xx family of processors.
+
+Release Status
+--------------
+
+The following boards are supported on this release.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| Development Board                                                                                                                                    | Board Revision     | Getting Started Guide                                                                                             |
++======================================================================================================================================================+====================+===================================================================================================================+
+| :adi:`ADSP-SC598 SOM and Carrier <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EV-SC598-EZKIT.html>`                     | 1.0 or later       | :doc:`ADSP-SC598 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc598_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| :adi:`ADSP-SC594 SOM and Carrier <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EV-SC594-SOM.html>`                       | 1.0 Rev B or later | :doc:`ADSP-SC594 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc594_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| :adi:`ADSP-SC589-MINI <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sharc-audio-module.html>`                            | 1.5 or later       | :doc:`ADSP-SC589 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| :adi:`ADSP-SC589 EZ-KIT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC589.html>`                             | 2.0 or later       | :doc:`ADSP-SC589 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc589_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| :adi:`ADSP-SC584 EZ-KIT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADSP-SC584.html>`                             | 2.0 or later       | :doc:`ADSP-SC584 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc584_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+| :adi:`ADSP-SC573 EZ-KIT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SC573EZKIT.html>`                                  | 2.0 or later       | :doc:`ADSP-SC573 </wiki-migration/resources/tools-software/linuxdsp/docs/quickstartguide/quickstart_sc573_2_2_0>` |
++------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
+
+Building of the Linux software requires a host PC running a recent flavour Linux. Analog Devices uses `64-bit Ubuntu 20.04 LTS <https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes>`_ for its building and testing of Linux for ADSP-SC5xx. If you are new to Linux development we strongly recommend using a host PC with this installation of Linux. If you are confident in resolving variant specific problems feel free to use your `favourite distro <https://www.techradar.com/uk/best/best-linux-distros>`_.
+
+Documentation, Help and Frequently Asked Questions
+--------------------------------------------------
+
+Help for this product can be found on the :ez:`Linux for ADSP Processors <dsp/software-and-development-tools/linux-for-adsp-sc5xx-processors/f/q-a>` Engineer Zone forum.
+
+For a summary of the most common questions and answers related to Linux for ADSP-SC5xx see the :doc:`frequently asked questions </wiki-migration/resources/tools-software/linuxdsp/docs/qa/start>`.
+
+For all documentation see the :doc:`documentation </wiki-migration/resources/tools-software/linuxdsp/docs>` for this product.
+
+Release Notes and Licensing
+---------------------------
+
+Release Notes for the 2.2.0 release will be available in due course, as it's currently under development. Release notes for previous releases can be found on the :doc:`release notes </wiki-migration/resources/tools-software/linuxdsp/releasenotes>` page.
+
+Licensing Information for the Yocto Linux for ADSP-SC5xx Processors product can be found on the :doc:`licensing page </wiki-migration/resources/tools-software/linuxdsp/licensing>`.

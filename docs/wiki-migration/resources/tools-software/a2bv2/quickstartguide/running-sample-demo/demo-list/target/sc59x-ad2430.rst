@@ -1,0 +1,9 @@
+:doc:`Click here to return to Running sample Demo: Target as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/target>`
+
+Running Sample demo: ADSP-SC59X with AD2430 platform
+====================================================
+
+-  Refer :doc:`EVAL-AD2430WD1BZ jumper setting </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2430>` for jumper setting.
+-  `AD2430 Setup <https://wiki.analog.com/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/ad2430>`_ can be referred for Eval board setup.
+-  This example can use the default busconfig.c file or can export busconfig file from "C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\SC59x\\adi_a2b_AD2430WD1BZ_SC59x.ssprj" and save it in "C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Target\\examples\\demo\\a2b-adsp-sc59x\\app"
+-  Refer `Running sample demo: AD2430 <https://wiki.analog.com/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/ad2430>`_ for the steps to run this project.

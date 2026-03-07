@@ -1,0 +1,121 @@
+AD5761R - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5761R`
+-  :adi:`AD5721R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5761R`
+
+Overview
+--------
+
+The :adi:`AD5761R`/AD5721R are single channel, 16-/12-bit serial input, voltage output, digital-to-analog converters (DACs). They operate from single supply voltages from 4.75 V to 30 V or dual supply voltages from −16.5 V to 0 V VSS and 4.75 V to 16.5 V VDD. The integrated output amplifier, reference buffer, and reference provide a very easy to use, universal solution.
+
+The devices offer guaranteed monotonicity, integral nonlinearity (INL) of ±2 LSB maximum, 35 nV/√Hz noise, and 7.5 μs settling time on selected ranges.
+
+The :adi:`AD5761R`/AD5721R use a serial interface that operates at clock rates of up to 50 MHz and are compatible with DSP and microcontroller interface standards. Double buffering allows the asynchronous updating of the DAC output. The input coding is user-selectable twos complement or straight binary. The asynchronous reset function resets all registers to their default state. The output range is user selectable, via the RA[2:0] bits in the control register.
+
+The devices available in the 16-lead TSSOP package offer guaranteed specifications over the −40°C to +125°C industrial temperature range.
+
+Driver Description
+------------------
+
+The following functions are implemented in this version of AD5761R driver:
+
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Function                                                                                     | Description                                                              |
++==============================================================================================+==========================================================================+
+| ``int32_t ad5761r_init(ad5761r_dev **device, ad5761r_init_param init_param)``                | Initialize the device.                                                   |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_write(ad5761r_dev *dev, uint8_t reg_addr_cmd, uint16_t reg_data)``         | SPI write to device.                                                     |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_read(ad5761r_dev *dev, uint8_t reg_addr_cmd, uint16_t *reg_data)``         | SPI read from device.                                                    |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_register_readback(ad5761r_dev *dev, ad5761r_reg reg, uint16_t *reg_data)`` | Readback the register data.                                              |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_config(ad5761r_dev *dev)``                                                 | Configure the part based on the settings stored in the device structure. |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_daisy_chain_en_dis(ad5761r_dev *dev, bool en_dis)``                    | Enable/disable daisy-chain mode.                                         |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_daisy_chain_en_dis(ad5761r_dev *dev, bool *en_dis)``                   | Get the status of the daisy-chain mode.                                  |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_output_range(ad5761r_dev *dev, ad5761r_range out_range)``              | Set the output_range.                                                    |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_output_range(ad5761r_dev *dev, ad5761r_range *out_range)``             | Get the output_range.                                                    |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_power_up_voltage(ad5761r_dev *dev, ad5761r_scale pv)``                 | Set the power up voltage.                                                |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_power_up_voltage(ad5761r_dev *dev, ad5761r_scale *pv)``                | Get the power up voltage.                                                |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_clear_voltage(ad5761r_dev *dev, ad5761r_scale cv)``                    | Set the clear voltage.                                                   |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_clear_voltage(ad5761r_dev *dev, ad5761r_scale *cv)``                   | Get the clear voltage.                                                   |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_internal_reference_en_dis(ad5761r_dev *dev, bool en_dis)``             | Enable/disable internal reference.                                       |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_internal_reference_en_dis(ad5761r_dev *dev, bool *en_dis)``            | Get the status of the internal reference.                                |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_exceed_temp_shutdown_en_dis(ad5761r_dev *dev, bool en_dis)``           | Enable/disable ETS (exceed temperature shutdown) function.               |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_exceed_temp_shutdown_en_dis(ad5761r_dev *dev, bool *en_dis)``          | Get the status of the ETS (exceed temperature shutdown) function.        |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_2c_bipolar_range_en_dis(ad5761r_dev *dev, bool en_dis)``               | Enable/disable the twos complement bipolar output range.                 |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_2c_bipolar_range_en_dis(ad5761r_dev *dev, bool *en_dis)``              | Get the status of the twos complement bipolar output range.              |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_overrange_en_dis(ad5761r_dev *dev, bool en_dis)``                      | Enable/disable the 5% overrange.                                         |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_overrange_en_dis(ad5761r_dev *dev, bool *en_dis)``                     | Get the status of the 5% overrange.                                      |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_short_circuit_condition(ad5761r_dev *dev, bool *sc)``                  | Get the short-circuit condition.                                         |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_brownout_condition(ad5761r_dev *dev, bool *bo)``                       | Get the brownout condition.                                              |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_reset_pin(ad5761r_dev *dev, uint8_t value)``                           | Set the reset pin value.                                                 |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_reset_pin(ad5761r_dev *dev, uint8_t *value)``                          | Get the reset pin value.                                                 |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_clr_pin(ad5761r_dev *dev, uint8_t value)``                             | Set the clr pin value.                                                   |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_clr_pin(ad5761r_dev *dev, uint8_t *value)``                            | Get the clr pin value.                                                   |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_set_ldac_pin(ad5761r_dev *dev, uint8_t value)``                            | Set the ldac pin value.                                                  |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_get_ldac_pin(ad5761r_dev *dev, uint8_t *value)``                           | Get the ldac pin value.                                                  |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_write_input_register(ad5761r_dev *dev, uint16_t reg_data)``                | Write to input register.                                                 |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_update_dac_register(ad5761r_dev *dev)``                                    | Update DAC register.                                                     |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_write_update_dac_register(ad5761r_dev *dev, uint16_t reg_data)``           | Write to input register and update DAC register.                         |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_software_data_reset(ad5761r_dev *dev)``                                    | Software data reset.                                                     |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| ``int32_t ad5761r_software_full_reset(ad5761r_dev *dev)``                                    | Software full reset.                                                     |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD5761R Driver.|
+
+   -
+
+   |Header file of AD5761R Driver.|
+
+.. |Implementation of AD5761R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5761r/ad5761r`.c
+.. |Header file of AD5761R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5761r/ad5761r`.h

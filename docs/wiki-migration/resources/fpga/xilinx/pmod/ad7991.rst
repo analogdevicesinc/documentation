@@ -1,0 +1,176 @@
+AD7991 Pmod Xilinx FPGA Reference Design
+========================================
+
+Introduction
+------------
+
+The :adi:`AD7991` is a 12-bit, low power, successive approximation ADC with an IIC-compatible interface. It operates from a single 2.7V to 5.5V power supply and features a 1 us conversion time. The track-and-hold amplifier allows each part to handle input frequencies of up to 14 MHz, and a multiplexer allows taking samples from four channels.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+-  `PmodAD2 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2>`_
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7991\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD2 to J5 connector of LX9 board, pins 3 to 6 (see image below). You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad2.jpg
+   :alt: PmodAD2 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (AD7991\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAD2 to JA connector of Nexys™3 board, pins JA3 to JA6 (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad2_nexys3.jpg
+   :alt: PmodAD2 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodAD2 to JC1 connector of ZedBoard (see image below). You must use an extension cable. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad2_zed.jpg
+   :alt: PmodACL and ZedBoard
+   :width: 400px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad7991/sw/AD7991.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodAD2Impact.jpg
+   :alt: Programming FPGA in IMPACT
+   :width: 200px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in the figure below. After programming the AD7991 device, the program will automatically perform 20 conversions and print the values of the analog voltage inputs via UART.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodad2hyper.jpg
+   :alt: UART messeges
+   :width: 200px
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a simple IIC interface for the AD7991. The software programs the device and prints the values of the analog input voltages. The information is displayed on UART.
+
+The hardware IIC access allows reading the data sent by the AD7991 and also configuring the device, using the SCL and SDA pins.
+
+.. important::
+
+   
+   -  Connecting the PmodAD2 to the desired Board using an extension cable provides ease of use.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  The reference voltage for the AD7991 is 2V (set using jumper J1 on the PmodAD2). If you want to use another reference voltage, you will need to modify the VREF definition at the beggining of "main.c".
+   -  If you desire to read fewer Channels, select internal reference, enable or disable IIC filtering, you will need to modify the parameters sent by the "AD7911_Config" function.
+   
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      0
+      // I2C used in the design
+      #define USE_I2C      1
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    0
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7991_lx9.zip>`_\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ad7991_nexys3.zip>`_\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodAD2 Driver Files <Pmods/PmodAD2>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodAD2/bin>`
+   |
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

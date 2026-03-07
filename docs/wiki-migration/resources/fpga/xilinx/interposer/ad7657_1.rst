@@ -1,0 +1,125 @@
+AD7657-1 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+==============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7657-1`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7657-1SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7657-1SDZ <AD7657-1>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD7657-1SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7656-1.jpg
+   :alt: ad7656-1.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+The :adi:`AD7657-1` is a reduced decoupling pin- and software-compatible versions of AD7656/AD7657/AD7658. The AD7656-1/AD7657-1/AD7658-1 devices contain six 16-/ 14-/12-bit, fast, low power successive approximation ADCs in a package designed on the iCMOS® process (industrial CMOS). iCMOS is a process combining high voltage silicon with submicron CMOS and complementary bipolar technologies. It enables the development of a wide range of high performance analog ICs capable of 33 V operation in a footprint that no previous generation of high voltage parts could achieve. Unlike analog ICs using conven-tional CMOS processes, iCMOS components can accept bipolar input signals while providing increased performance, which dramatically reduces power consumption and package size. The AD7656-1/AD7657-1/AD7658-1 feature throughput rates of up to 250 kSPS.
+
+The EVAL-AD7657-1SDZ evaluation board is a member of a growing number of boards available for the SDP. It was designed to help customers evaluate performance or quickly prototype new AD7657-1 circuits and reduce design time. When using this evaluation board with the SDP board or Xilinx KC705 board, apply +7.5V as +Vs, a voltage between -2V and -5V as -Vs and +2.5V as VDD.
+
+More information
+----------------
+
+-  :adi:`AD7657-1 Product Info <AD7657-1>` - pricing, samples, datasheet
+-  `EVAL-AD7657-1SDZ evaluation board user guide <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/user_guide_eval_10lead_pulsar.pdf>`_
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD7657-1SDZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 13.4
+-  A UART terminal (ex. TeraTerm / Hyperterminal).
+
+Downloads
+---------
+
+-  `Reference Design Files <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7657_1_evalboard.zip>`_
+
+The following table presents a short description the reference design archive contents.
+
++-------------+-------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                       |
++=============+=======================================================================================================+
+| Bit         | Contains the KC705 configuration file that can be used to program the system for quick evaluation.    |
++-------------+-------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script used to read data from the ADC and save it into a file on the PC.                 |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the HDL driver for the AD7657-1 ADC.                                                         |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Microblaze  | Contains the EDK 13.2 project for the Microblaze softcore that will be implemented in the KC705 FPGA. |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the software project that will be run by the Microblaze processor.       |
++-------------+-------------------------------------------------------------------------------------------------------+
+
+Run the Demonstration Project
+=============================
+
+Hardware Setup
+--------------
+
+.. important::
+
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+-  Start IMPACT, and double click “\ *Boundary Scan*\ ”. Right click and select *Initialize Chain*. The program should recognize the Kintex 7 device (see screenshot below).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/impact_config.png
+   :alt: impact_config.png
+   :align: center
+   :width: 300px
+
+-  Program the KC705 FPGA using the "*Bit/download.bit*" file provided in the reference design archive.
+-  Power the ADI evaluation board.
+-  Start a UART terminal and set the baud rate to 115200 bps.
+
+At this point everything is set up and it is possible to start the evaluation of the ADI hardware. To capture data from the ADC run the *data_capture.bat* script located in the *DataCapture* folder from the reference design .zip file. Every time the script is run a new batch of 8192 samples are read from the ADC at the ADC's maximum sampling rate and saved into the *Acquisition.csv* file located in the same folder as the data capture script. On the UART terminal messages will be displayed to show the status of the program running on the FPGA as shown in the picture below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
+   :alt: teraterm_adc.png
+   :align: center
+   :width: 400px
+
+.. tip::
+
+   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+

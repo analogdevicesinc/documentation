@@ -1,0 +1,419 @@
+EVAL-CN0556-EBZ User Guide
+==========================
+
+|
+
+.. important::
+
+   **Notice:** This page has been fully migrated to GitHub.io and is no longer maintained on the Wiki. Please refer to the GitHub link below for the most current and accurate information.
+
+   | https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0556-ebz/index.html
+   | If you would like to contribute updates to this document, please submit your suggestions via a Pull Request on the GitHub page.
+   | Thank you for your understanding, and we apologize for any inconvenience this transition may cause.
+   
+
+
+Overview
+--------
+
+| The :adi:`EVAL-CN0556-EBZ <CN0556>` is a programmable buck or boost power supply featuring an adjustable buck output of 2 V to 14 V, 35 A, and adjustable boost output of 14 V to 56 V, 10 A. The design allows the mode of operation to externally controlled or automatically selected. Six independent control loops regulate input and output voltage in both directions, as well as provide input and output current limit programming and monitoring.
+| The system input and output voltages and currents are monitored and controlled through analog I/O. Using an analog I/O module, a single board computer such as a Raspberry Pi platform can receive telemetry information to control the board remotely.
+| |image1|
+
+Features
+~~~~~~~~
+
+-  High Efficiency Buck or Boost DC-DC Converter
+-  14 V to 56 V Buck Input Voltage and 8 V to 14 V Boost Input Voltage
+-  Fully Programmable Bidirectional Control and Monitoring ​
+-  Seamless Buck-to-Boost Transition and Vice Versa​
+-  Buck Mode: 35 A Maximum Output Current​
+-  Boost Mode: 10 A Maximum Output Current​
+-  Reverse Current Protection
+
+| 
+| ==== Simplified Block Diagram ====
+| |image2|
+
+
+--------------
+
+System Setup
+------------
+
+Requirements
+~~~~~~~~~~~~
+
+-  **Hardware**
+
+   -  :adi:`EVAL-CN0556-EBZ <CN0556>`
+   -  Analog I/O module :adi:`EVAL-CN0554-RPIZ <CN0554>`
+   -  Raspberry Pi 4 model B
+   -  Raspberry Pi 4 USB-C power supply
+   -  Benchtop power supply, up to 56 V and 35 A
+   -  Digital multimeter
+   -  Electronic load
+   -  MicroHDMI to HDMI cable
+   -  Monitor with HDMI display
+   -  USB keyboard and mouse
+   -  16 GB microSD card
+
+-  **Software**
+
+   -  :doc:`ADI Kuiper Linux image </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+   -  Python 3.7 or newer
+
+-  **Documentation**
+
+   -  :adi:`CN0556 Circuit Note <CN0556>`
+
+| 
+| ----
+
+Software Setup
+==============
+
+The input and output voltages and current limits of the :adi:`CN0556` can be controlled through software. Interfacing :adi:`CN0556` with the :adi:`CN0554` analog I/O module enables full control capability. For the device to run, the SD card should be loaded with Analog Devices Kuiper Linux, a distribution based on Raspbian from the Raspberry Pi Foundation. It incorporates Linux device drivers for ADI products as well as tools and other software products designed and created with ease of use in mind. The reasoning behind creating this distribution is to minimize the barriers to integrating ADI hardware devices into a Linux-based embedded system.
+
+| Access to the embedded system can be through ​a remote PC connected ​either via LAN cable or Wi-Fi. ​
+| ====Downloading and Flashing ADI Kuiper Linux Image on SD Card==== In order to control the EVAL-CN0556-EBZ from the Raspberry Pi, you need to install ADI Kuiper Linux on an SD card. Complete instructions, including where to download the SD card image, how to write it to the SD card, and how to configure the system are provided at :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`.
+
+.. image:: https://wiki.analog.com/_media/university/labs/software/iio_intro_toolbox/command_prompt.png
+   :align: center
+   :width: 400px
+
+| There is an available Wiki Page which explains in detail on how to download and flash the SD card using Windows or Linux OS: **'Configuring the SD Card for Raspberry Pi Projects'** in the :doc:`Formatting and Flashing SD Cards using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`.
+| ====Configuring the SD Card for CN0556==== For the Linux kernel to identify the device connected to the expansion header, update the device tree overlay. A Device Tree Overlay contains information about additional connected hardware, the EVAL-CN0556-EBZ for this case. The overlay file is already included in the SD card and just needs to be matched to the EVAL-CN0556-EBZ.
+
+| Follow the procedure under **'Configuring the SD Card for Raspberry Pi Projects'** in the :doc:`Analog Devices Kuiper Linux page </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`, substituting the following lines in **config.txt**
+| This brings up the file in the terminal. Scroll down until the line that begins with **"dtoverlay"** is found; then, whatever it currently is, change it to:
+
+.. note::
+
+   **Need to add overlay here since it isn't in Kuiper**
+
+   
+   ::
+   
+      dtoverlay=rpi-cn0556
+   
+   |
+
+
+Running the Example Scripts using PyADI-IIO
+-------------------------------------------
+
+| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+| Follow the step-by-step procedure on how to install, configure, and set up PyADI-IIO and all necessary packages and modules found in :doc:`pyadi-iio: Device Specific Python Interfaces for IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+
+--------------
+
+Hardware Configuration
+======================
+
+Jumper Settings
+---------------
+
+| **Using 3.3 V from the on-board LDO**
+| At P1, check if the shunt placed is in correct position. The shunt should be placed correctly to short Pins 3 and 4. If it is not in proper placement, move the shunt to the correct position before performing the rest of the tests.
+| |p1_1.jpg|
+| **Disabling Current Sharing Capability**
+| The CN0556 enables a masterless fault-tolerant mechanism for sharing output current, following below configuration:
+
++------------------+--------------------------------------------------------+-----------------+
+| Share Capability | ISHARE pin                                             | IGND pin        |
++==================+========================================================+=================+
+| **ENABLED**      | ISHARE shorted to IGND with RSHARE resistor in between |                 |
++------------------+--------------------------------------------------------+-----------------+
+| **DISABLED**     | Shorted to INTVCC                                      | Shorted to AGND |
++------------------+--------------------------------------------------------+-----------------+
+
+By default, this capability is **disabled** in CN0556.
+
+-  Shunt must be placed on P5 to short ISHARE to INTVCC
+
+
+|p5_2.jpg|
+
+| 
+| \* Solder jumper P6 is **OPEN** by default to disconnect ISHARE to IGND:
+| |jumper_p6.png|
+| \* Solder jumper P7 is **SHORTED** by default to short IGND to AGND:
+| |jumper_p7.png|
+
+--------------
+
+Hardware Setup
+==============
+
+CN0556 Initial Hardware Setup (BUCK or BOOST Mode)
+--------------------------------------------------
+
+| 
+| The :adi:`EVAL-CN0556-EBZ <CN0556>` can be programmed to function in buck or boost mode. Follow below steps to check the buck and boost converter functionality of the :adi:`EVAL-CN0556-EBZ <CN0556>` when connected to the :adi:`EVAL-CN0554-RPIZ <CN0554>`, and its capability to control and monitor the input and output voltage and current.
+
+======================== =========================
+Buck Mode Setup          Boost Mode Setup
+======================== =========================
+|CN0556 Buck Mode Setup| |CN0556 Boost Mode Setup|
+======================== =========================
+
+-  Connect the EVAL-CN0554-RPIZ to the Raspberry Pi 4 using the P20 connector as shown below.
+
+
+|rpi_554.png|
+
+-  Insert the MicroSD card into the Raspberry Pi's SD card slot. **See** `#software_setup <https://wiki.analog.com/>`_ **section for instructions on how to configure the SD Card for CN0556.**
+-  Connect the EVAL-CN0556-EBZ on top of the EVAL-CN0554-RPIZ & Raspberry Pi 4 combination based on the connections indicated below.
+
+|cn0554_cn0556_rev_c.png|
+
+-  Ensure that the jumper configuration at P1 and P5 is correct before powering on the device. See `#jumper_settings <https://wiki.analog.com/>`_ to verify the configuration.
+-  Ensure that the **P3** is not shorted by any wire.
+-  Set up the connections to the Raspberry Pi 4.\
+
+|cn0556_figures.png|
+
+-   Connect the MicroHDMI cable to the Raspberry Pi 4 and the other end to the display monitor.
+-   Connect the USB keyboard and a USB mouse to any of the USB ports in the Raspberry Pi 4.
+-   Plug the USB type C power adapter into the Raspberry Pi and wait for it to boot up.
+
+| 
+| ==== Mode 1: CN0556 in Buck Mode ====
+
+Hardware Setup (continuation):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   Warning: The following steps involve high DC voltages. Follow instructions carefully to prevent hot plugging, which may damage the device by an overvoltage transient.
+
+
+-  Prepare a bench top power supply, electronic load, and two digital multimeters.
+-  Ensure that the power supply is completely turned off during the setup.
+
+|cn0556_buck_boost_setup.png|
+
+-  Connect the power supply to V1 terminals (BSTOUT and BSTGND).
+-  Connect the first DMM to the V1 input terminals (BSTOUT and BSTGND).
+-  Connect the electronic load to V2 terminals (BCKOUT and BCKGND).
+-  Connect the second DMM to the V2 output terminals (BCKOUT and BCKGND).
+-  Switch on the multimeter to measure DC voltage and probe the following points after the test program has finished running.
+-  Proceed to `#running_the_buck_mode_example_script <https://wiki.analog.com/>`_ section for step-by-step instructions on how to get measurements.
+
+| 
+| ==== Running the Buck Mode Example Script ====
+
+.. tip::
+
+   **By default, the example script sets the board into Buck Mode and sets its parameters to its maximum values.
+
+   You may try to adjust the values after this test. Refer to the table of ranges appropriate for each control function.**
+
+
+-  Ensure that the power supply is at the V1 left side and the electronic load is at the V2 right side.
+-  Once the Raspberry Pi 4 has finished booting, open the command prompt or terminal and navigate through the examples folder inside the downloaded or cloned pyadi-iio directory.
+-  Turn on the power supply and the electronic load.
+-  Set the power supply at V1 left side to **56 V** and set the current limit to **2 A**. *Do not enable the power supply yet*.
+-  Set the electronic load at the right side to **0.1 A**.
+-  Enable the electronic load.
+-  Navigate into the cn0556_examples folder inside the *pyadi-iio > examples* directory.
+-  Run the example script using the command:``~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_buck.py``
+-  The details of the current and voltage set at the output will be displayed.
+
+|pyadi-iio_buck_1.png|
+
+-  Enable the output of the power supply into the V1 terminals.
+-  Check the DMM at the output V2 side. It should read approximately 14 V.
+-  If the reading is not 14 V (or almost 0 V), try to slowly increase the input DC voltage at V1 to up to 58 V. Once the output is 14 V, decrease the input voltage at V1 to 56 V again.
+-  Once the power supply is enabled, and the DMM reads approx. 14 V, press the **ENTER** key.\
+
+|pyadi-iio_buck_2.png|
+
+-  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
+-  The board will continuously regulate the output voltage to 14 V unless CN0556 is turned off.
+-  Press **ENTER** to disable and turn off the board.
+-  Turn off the power supply and the electronic load. Make sure that the settings of the power supply are at 0 V and 0 A limit, as well as the electronic load to 0 A.
+
+| 
+| ==== Summary of Buck Mode Functions ==== The CN0556 buck mode pyadi-iio example script enables the user to control the input and output parameters of the board, as well as to measure the current and voltage at the input and output terminals. The summary of the CN0556 functions for **Buck Mode** can be found below:
+
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | Parameter               | pyadi-iio Function                             | Description                                 | Minimum Value          | Maximum Value |
++=================+=========================+================================================+=============================================+========================+===============+
+| Write Functions | V1 Input Voltage        | my_cn0556.set_buck_input_volt(*value*)         | sets the buck input voltage value           | 14 V                   | 56 V          |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | V1 Undervoltage         | my_cn0556.set_buck_input_undervolt(*value*)    | set the buck input undervoltage value       | 12 V                   | 54 V          |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | V2 Output Voltage       | my_cn0556.set_buck_output_volt(*value*)        | sets the buck output voltage value          | 2 V                    | 14 V          |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | V1 Input Current Limit  | my_cn0556.set_buck_input_current_lim(*value*)  | sets the buck input current limit value     | 0.07 A                 | 10 A          |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | V2 Output Current Limit | my_cn0556.set_buck_output_current_lim(*value*) | sets the buck output current limit value    | 0 A                    | 35 A          |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+| Read Functions  | Input Voltage at V1     | my_cn0556.measure_buck_input_volt()            | measures the buck input voltage at V1 side  | approx. 14 V to 56 V   |               |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | Output Voltage at V2    | my_cn0556.measure_buck_output_volt()           | measures the buck output voltage at V2 side | approx. 2 V to 14 V    |               |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | Input Current at V1     | my_cn0556.measure_buck_input_current()         | measures the buck input current at V1 side  | approx. 0.07 A to 10 A |               |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+|                 | Output Current at V2    | my_cn0556.measure_buck_output_current()        | measures the buck output current at V2 side | approx. 0 A to 35 A    |               |
++-----------------+-------------------------+------------------------------------------------+---------------------------------------------+------------------------+---------------+
+
+| 
+
+--------------
+
+Mode 2: CN0556 in Boost Mode
+----------------------------
+
+.. _hardware-setup-continuation-1:
+
+Hardware Setup (continuation):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   Warning: The following steps involve high DC voltages. Follow instructions carefully to prevent hot plugging, which may damage the device by an overvoltage transient.
+
+
+-  Prepare a bench top power supply, electronic load, and two digital multimeters.
+-  Ensure that the power supply is completely turned off during the setup.
+
+|boost_setup_rpi_556_554.png|
+
+-  Connect the power supply to V2 terminals (BCKOUT and BCKGND).
+-  Connect the second DMM to the V2 input terminals (BCKOUT and BCKGND).
+-  Connect the electronic load to V1 terminals (BSTOUT and BSTGND).
+-  Connect the first DMM to the V1 output terminals (BSTOUT and BSTGND).
+-  Switch on the multimeter to measure DC voltage.
+-  Proceed to `#running_the_boost_mode_example_script <https://wiki.analog.com/>`_ section for step-by-step instructions on how to get measurements.
+
+| 
+| ==== Running the Boost Mode Example Script ====
+
+.. tip::
+
+   **By default, the example script sets the board into Boost Mode and sets its parameters to its maximum values.
+
+   You may try to adjust the values after this test. Refer to the table of ranges appropriate for each control function.**
+
+
+-  Ensure that the power supply is at the V2 right side, and the electronic load is at the V1 left side.
+-  Once the Raspberry Pi 4 has finished booting, open the command prompt or terminal and navigate through the examples folder inside the downloaded or cloned pyadi-iio directory.
+-  Turn on the power supply and the electronic load.
+-  Set the power supply at V2 left side to **14 V** and set the current limit to **10 A**. *Do not enable the power supply yet*.
+-  Set the electronic load at the right side to **0.1 A**.
+-  Enable the electronic load.
+-  Navigate into the cn0556_examples folder inside the *pyadi-iio > examples* directory.
+-  Run the example script using the command:``~/pyadi-iio/examples/cn0556_examples $ python cn0556_example_boost.py``
+-  The details of the current and voltage set at the output will be displayed.
+
+|pyadi-iio_boost_1.png|
+
+-  Enable the output of the power supply into the V2 terminals.
+-  Check the DMM at the output V1 side. It should read approximately 56 V.
+-  Once the power supply is enabled, and the DMM at the left side reads approx. 56 V, press the **ENTER** key.
+
+|pyadi-iio_boost_2.png|
+
+-  The input and output voltage and current at the V1 and V2 side will be printed in the command window.
+-  The board will continuously regulate the output voltage to 56 V unless CN0556 is turned off.
+-  Press **ENTER** to disable and turn off the board.
+-  Turn off the power supply and the electronic load. Make sure that the settings of the power supply are at 0 V and 0 A limit, as well as the electronic load to 0 A.
+
+| 
+| ==== Summary of Boost Mode Functions ==== The CN0556 boost mode pyadi-iio example script enables the user to control the input and output parameters of the board, as well as to measure the current and voltage at the input and output terminals. The summary of the CN0556 functions for **Boost Mode** can be found below:
+
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | Parameter               | pyadi-iio Function                              | Description                                  | Minimum Value          | Maximum Value |
++=================+=========================+=================================================+==============================================+========================+===============+
+| Write Functions | V2 Input Voltage        | my_cn0556.set_boost_input_volt(*value*)         | sets the boost input voltage value           | 10 V                   | 14 V          |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | V2 Undervoltage         | my_cn0556.set_boost_input_undervolt(*value*)    | sets the boost input undervoltage value      | 8 V                    | 12 V          |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | V1 Output Voltage       | my_cn0556.set_boost_output_volt(*value*)        | sets the boost output voltage value          | 14 V                   | 56 V          |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | V2 Input Current Limit  | my_cn0556.set_boost_input_current_lim(*value*)  | sets the boost input current limit value     | 0 A                    | 35 A          |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | V1 Output Current Limit | my_cn0556.set_boost_output_current_lim(*value*) | set the boost output current limit value     | 0.07 A                 | 10 A          |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+| Read Functions  | Input Voltage at V2     | my_cn0556.measure_boost_input_volt()            | measures the boost input voltage at V2 side  | approx. 10 V to 14 V   |               |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | Output Voltage at V1    | my_cn0556.measure_boost_output_volt()           | measures the boost output voltage at V1 side | approx. 14 V to 56 V   |               |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | Input Current at V2     | my_cn0556.measure_boost_input_current()         | measures the boost input current at V2 side  | approx. 0 A to 35 A    |               |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+|                 | Output Current at V1    | my_cn0556.measure_boost_output_current()        | measures the boost output current at V1 side | approx. 0.07 A to 10 A |               |
++-----------------+-------------------------+-------------------------------------------------+----------------------------------------------+------------------------+---------------+
+
+| 
+| ----
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0556-EBZ Design & Integration Files <CN0556-DesignSupport>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+--------------
+
+Additional Information and Useful links
+---------------------------------------
+
+-  :doc:`Formatting and Flashing SD Cards using Windows </wiki-migration/resources/tools-software/linux-software/zynq_images/windows_hosts>`
+-  :doc:`Formatting and Flashing SD Cards using Linux </wiki-migration/resources/tools-software/linux-software/zynq_images/linux_hosts>`
+-  :doc:`Kuiper Images </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  :adi:`CN0556 Circuit Note Page <CN0556>`
+-  :adi:`CN0554 Product Page <CN0554>`
+-  :adi:`LT8228 Product Page <LT8228>`
+-  :adi:`LT1930 Product Page <LT1930>`
+-  :adi:`LT3010 Product Page <LT3010>`
+-  :adi:`ADA4505-1 Product Page <ADA4505-1>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0556-EBZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+| 
+| *End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/eval-cn0556-ebz_angle.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_simplified_block_diagram.png
+   :width: 600px
+.. |p1_1.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p1_1.jpg
+   :width: 400px
+.. |p5_2.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/p5_2.jpg
+   :width: 400px
+.. |jumper_p6.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/jumper_p6.png
+   :width: 400px
+.. |jumper_p7.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/jumper_p7.png
+   :width: 400px
+.. |CN0556 Buck Mode Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/556_554_buck_range.png
+   :width: 9000px
+.. |CN0556 Boost Mode Setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/556_554_boost_range.png
+   :width: 9000px
+.. |rpi_554.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/rpi_554.png
+.. |cn0554_cn0556_rev_c.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0554_cn0556_rev_c.png
+.. |cn0556_figures.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_figures.png
+.. |cn0556_buck_boost_setup.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/cn0556_buck_boost_setup.png
+.. |pyadi-iio_buck_1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_1.png
+.. |pyadi-iio_buck_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_buck_2.png
+.. |boost_setup_rpi_556_554.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/boost_setup_rpi_556_554.png
+.. |pyadi-iio_boost_1.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_1.png
+.. |pyadi-iio_boost_2.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0556/pyadi-iio_boost_2.png

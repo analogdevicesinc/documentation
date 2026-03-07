@@ -1,0 +1,173 @@
+AD5770R - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5770R`
+
+Overview
+--------
+
+The :adi:`AD5770R` is a 6-channel, 14-bit resolution, low noise, programmable current output digital-to-analog converter (DAC) for photonics control applications. This chip incorporates a 1.25 V on-chip voltage reference, a 2.5 kΩ precision resistor for reference current generation, die temperature, output monitoring functions, fault alarm, and reset functions.
+
+The :adi:`AD5770R` contains five 14-bit resolution current sourcing DAC channels and one 14-bit resolution current sourcing/ sinking DAC channel.
+
+Channel 0 can be configured to sink up to 60 mA and source up to 300 mA. Channel 1 to Channel 5 have multiple, programmable output current sourcing ranges, set by register access. Each DAC can operate with a wide power supply rail from 0.8 V to AVDD − 0.4 V for optimizing power efficiency and thermal power dissipation.
+
+The :adi:`AD5770R` operates from 2.9 V to 5.5 V AVDD supply and specified over a temperature range of −40°C to +105°C.
+
+Applications:
+
+-  Photonics control
+-  LED Driver programmable current source
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| Function                                                                                                                                          | Description                             |
++===================================================================================================================================================+=========================================+
+| ``int32_t ad5770r_spi_reg_read(struct ad5770r_dev *dev, uint8_t reg_addr, uint8_t *reg_data);``                                                   | Read from device.                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_spi_reg_read_multiple(struct ad5770r_dev *dev, uint8_t reg_addr, uint8_t *reg_data, uint16_t count);``                          | Multibyte read from device.             |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_spi_reg_write(struct ad5770r_dev *dev, uint8_t reg_addr, uint8_t reg_data);``                                                   | Write to device.                        |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_spi_reg_write_multiple(struct ad5770r_dev *dev, uint8_t reg_addr, uint8_t *reg_data, uint16_t count);``                         | Multibyte write from device.            |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_spi_write_mask(struct ad5770r_dev *dev, uint8_t reg_addr, uint32_t mask, uint8_t data);``                                       | SPI write to device using a mask.       |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_device_spi(struct ad5770r_dev *dev, const struct ad5770r_device_spi_settings *spi_settings);``                              | Set device spi settings.                |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_channel_config(struct ad5770r_dev *dev, const struct ad5770r_channel_switches *channel_config);``                               | Set the channel configuration.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_output_mode(struct ad5770r_dev *dev, const struct ad5770r_output_range *output_mode, enum ad5770r_channels channel);``      | Set the channel configuration.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_reference(struct ad5770r_dev *dev, bool external_reference, enum ad5770r_reference_voltage reference_selector);``           | Set reference configuration.            |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_alarm(struct ad5770r_dev *dev, const struct ad5770r_alarm_cfg *const alarm_config);``                                       | Set reference configuration.            |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_output_filter(struct ad5770r_dev *dev, enum ad5770r_output_filter_resistor output_filter, enum ad5770r_channels channel);`` | Set the channel output filter resistor. |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_hw_ladc(struct ad5770r_dev *dev, const struct ad5770r_channel_switches *mask_hw_ldac);``                                    | Set the hardware ldac configuration.    |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_dac_value(struct ad5770r_dev *dev, uint16_t dac_value, enum ad5770r_channels channel);``                                    | Set dac value.                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_dac_input(struct ad5770r_dev *dev, uint16_t dac_input, enum ad5770r_channels channel);``                                    | Set dac value.                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_page_mask(struct ad5770r_dev *dev, const struct ad5770r_dac_page_mask *page_mask);``                                        | Set page mask for dac value and input.  |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_mask_channel(struct ad5770r_dev *dev, const struct ad5770r_channel_switches *mask_channel_sel);``                           | Set channel select.                     |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_sw_ldac(struct ad5770r_dev *dev, const struct ad5770r_channel_switches *sw_ldac);``                                         | Set software LDAC.                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_channel_en(struct ad5770r_dev *dev, const struct ad5770r_channel_switches *channel_enable);``                               | Set the enabled channels.               |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_get_status(struct ad5770r_dev *dev, uint8_t *status);``                                                                         | Get status value.                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_set_monitor_setup(struct ad5770r_dev *dev, const struct ad5770r_monitor_setup *mon_setup);``                                    | Set the channel monitor configuration.  |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+| ``int32_t ad5770r_init(struct ad5770r_dev **device, const struct ad5770r_init_param *init_param);``                                               | Initialize the device.                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+
+
+
+| ``enum ad5770r_output_filter_resistor {                             |
+
+|     AD5770R_OUTPUT_FILTER_RESISTOR_60_OHM = 0x0,                    |
+|     AD5770R_OUTPUT_FILTER_RESISTOR_5_6_KOHM = 0x5,                  |
+|     AD5770R_OUTPUT_FILTER_RESISTOR_11_2_KOHM,                       |
+|     AD5770R_OUTPUT_FILTER_RESISTOR_22_2_KOHM,                       |
+|     AD5770R_OUTPUT_FILTER_RESISTOR_44_4_KOHM,                       |
+|     AD5770R_OUTPUT_FILTER_RESISTOR_104_KOHM,                        |
+| };                                                                  |
+|                                                                     |
+| enum ad5770r_monitor_function {                                     |
+|     AD5770R_DISABLE = 0,                                            |
+|     AD5770R_VOLTAGE_MONITORING,                                     |
+|     AD5770R_CURRENT_MONITORING,                                     |
+|     AD5770R_TEMPERATURE_MONITORING                                  |
+| };                                                                  |
+|                                                                     |
+| enum ad5770r_channels {                                             |
+|     AD5770R_CH0 = 0,                                                |
+|     AD5770R_CH1,                                                    |
+|     AD5770R_CH2,                                                    |
+|     AD5770R_CH3,                                                    |
+|     AD5770R_CH4,                                                    |
+|     AD5770R_CH5                                                     |
+| };                                                                  |
+|                                                                     |
+| enum ad5770r_reference_voltage {                                    |
+|     AD5770R_EXT_REF_2_5_V = 0,                                      |
+|     AD5770R_INT_REF_1_25_V_OUT_ON,                                  |
+|     AD5770R_EXT_REF_1_25_V,                                         |
+|     AD5770R_INT_REF_1_25_V_OUT_OFF                                  |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_monitor_setup {                                      |
+|     enum ad5770r_monitor_function       monitor_function;           |
+|     bool                    mux_buffer;                             |
+|     bool                    ib_ext_en;                              |
+|     enum ad5770r_channels           monitor_channel;                |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_dac_page_mask {                                      |
+|     uint16_t        dac_data_page_mask;                             |
+|     uint16_t        input_page_mask;                                |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_output_range {                                       |
+|     uint8_t     output_scale;                                       |
+|     uint8_t     output_range_mode;                                  |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_device_spi_settings {                                |
+|     bool            addr_ascension;                                 |
+|     bool            single_instruction; // for multibyte read/write |
+|     uint8_t     stream_mode_length;                                 |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_channel_switches {                                   |
+|     bool en0, en1, en2, en3, en4, en5, sink0;                       |
+| };                                                                  |
+|                                                                     |
+| struct ad5770r_alarm_cfg {                                          |
+|     bool open_drain_en;                                             |
+|     bool thermal_shutdown_en;                                       |
+|     bool background_crc_en;                                         |
+|     bool temp_warning_msk;                                          |
+|     bool over_temp_msk;                                             |
+|     bool neg_ch0_msk;                                               |
+|     bool iref_fault_msk;                                            |
+|     bool background_crc_msk;                                        |
+| };``                                                                |
++---------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD5770R Driver.|
+
+   -
+
+   |Header file of AD5770R Driver.|
+
+.. |Implementation of AD5770R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5770r/ad5770r`.c
+.. |Header file of AD5770R Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5770r/ad5770r`.h

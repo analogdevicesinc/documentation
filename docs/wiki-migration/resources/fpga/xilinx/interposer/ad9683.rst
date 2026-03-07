@@ -1,0 +1,222 @@
+AD9683 Evaluation Board, ADC-FMC Interposer & Xilinx ZC706 Reference Design
+===========================================================================
+
+Introduction
+------------
+
+The :adi:`AD9683` is a 14-bit ADC with sampling speeds of up to 250 MSPS. It is designed to support communications applications where low cost, small size, wide bandwidth and versatility are desired. The ADC cores feature a multistage, differential pipelined architecture with integrated output error correction logic. This reference design includes the device data capture via the JESD204B serial interface and the SPI interface. The samples are written to the external DDR-DRAM on ZC706. It allows programming the device and monitoring it's internal registers via SPI.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9683 Evaluation Board <en/analog-to-digital-converters/ad-converters/ad9683/products/product.html#product-evaluationkits>`
+-  :adi:`High speed ADC FMC interposer <en/evaluation/eval-adc-fmc-int/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ZC706 <https://www.xilinx.com/ZC706>`_
+
+Quick Start Guide
+-----------------
+
+The reference design zip file contains a bit file and a SDK elf file for a quick demonstration of the programming and data capture. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ZC706 board
+-  AD9683-EBZ board & Power supply
+-  ADC FMC interposer board
+-  Signal/Clock generator (reference clock input, 250MHz)
+-  Signal generator (analog input, for data capture)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9683_ebz.bit** file.
+
+Board Modifications
+~~~~~~~~~~~~~~~~~~~
+
+Please do the following modifications on the AD9683 evaluation board.
+
+-  Remove R609
+-  Remove R610
+-  Remove R604
+-  Remove R601
+-  Remove U603
+
+-  Populate R607
+-  Populate R613
+-  Populate R615
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9683-EBZ board to the FMC Interposer board
+-  Connect the interposer board to the **FMC-HPC** connector of ZC706 board
+-  Connect power to ZC706 and the AD9683-EBZ boards
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ZC706
+-  Connect an external clock source 250MHz (5dBm) to AD9683-EBZ board's CLK+ SMA connector
+-  Connect signal generators to the AIN SMA connector
+
+The quick start bit file configures the AD9683 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the ZC706 and the AD9683-EBZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start a UART terminal (set to 115200 baud rate), and program the device and run the elf file. The easiest thing to do would be to run the tcl script in the sw directory from a Xilinx command prompt (see below).
+
+.. container:: box bggreen
+
+   \ ``[/cygdrive/c/corefpga/xilinx/cf_ad9683_ebz_zc706]> xmd -tcl sw/cf_ad9683_ebz_zc706.tcl
+
+   Xilinx Microprocessor Debugger (XMD) Engine
+   Xilinx EDK 14.4 Build EDK_P.49d
+   Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+   Executing user script : sw/cf_ad9683_ebz_zc706.tcl
+   Programming Bitstream -- sw/cf_ad9683_ebz_zc706.bit
+   Fpga Programming Progress 
+   
+   ............10.........20.........30.........40.........50.........60.........70.........80.........90.....Done
+   Successfully downloaded bit file.
+   
+   JTAG chain configuration
+   --------------------------------------------------
+   Device   ID Code        IR Length    Part Name
+    1       4ba00477           4        Cortex-A9
+    2       03731093           6        XC7Z045
+   
+   
+   JTAG chain configuration
+   --------------------------------------------------
+   Device   ID Code        IR Length    Part Name
+    1       4ba00477           4        Cortex-A9
+    2       03731093           6        XC7Z045
+   
+   --------------------------------------------------
+   Enabling extended memory access checks for Zynq.
+   Writes to reserved memory are not permitted and reads return 0.
+   To disable this feature, run "debugconfig -memory_access_check disable".
+   
+   --------------------------------------------------
+   
+   CortexA9 Processor Configuration
+   -------------------------------------
+   Version.............................0x00000003
+   User ID.............................0x00000000
+   No of PC Breakpoints................6
+   No of Addr/Data Watchpoints.........1
+   
+   Connected to "arm" target. id = 64
+   Starting GDB server for "arm" target (id = 64) at TCP port no 1234
+   Info:  Enabling level shifters and clearing fabric port resets
+   Downloading Program -- sw/cf_ad9683_ebz_zc706.elf
+           section, .text: 0x00100000-0x00105f37
+           section, .init: 0x00105f38-0x00105f4f
+           section, .fini: 0x00105f50-0x00105f67
+           section, .rodata: 0x00105f68-0x001062cf
+           section, .data: 0x001062d0-0x0010670b
+           section, .eh_frame: 0x0010670c-0x0010670f
+           section, .bss: 0x00106710-0x00106763
+           section, .mmu_tbl: 0x00106764-0x0010bfff
+           section, .init_array: 0x0010c000-0x0010c007
+           section, .fini_array: 0x0010c008-0x0010c00b
+           section, .heap: 0x0010c00c-0x0010c40f
+           section, .stack: 0x0010c410-0x0010d80f
+   Download Progress.10.20.30.40.50..60.70.80.90.Done
+   Setting PC with Program Start Address 0x00100000
+   
+   RUNNING> Disconnected from Target 64
+   
+   Disconnected from Target 352
+   
+   Processor started. Type "stop" to stop processor``\
+
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9683, the program checks data capture on various test modes.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+After patterns and prbs sequences are verified, if no errors are present, you may use the chipscope busplot to see the captured signal (see below). The ADC data is available on pins [15:0] of UNIT:1 of chipscope.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_busplot.jpg
+   :alt: Chipscope Busplot
+   :width: 200px
+
+Using the reference design
+--------------------------
+
+The reference design is built on a microblaze based system parameterized for linux. The reference design consists of two pcores. The JESD204B core consists of the GTX units and the Xilinx JESD204B IP core. The AD9683 core consists of three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface. The ADC interface captures and buffers data from the JESD204B core. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software. The JESD204B core and AD9683 core has an AXI lite interface that allows control and monitoring of the capture process.
+
+Registers
+~~~~~~~~~
+
+Please refer to the regmap.txt file in the pcores directory.
+
+Good To Know
+~~~~~~~~~~~~
+
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**ZC706 (Source files) \*\* `cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_edk_14_4_2013_05_08.tar.gz>`_
+   -  \**ZC706 (Software files) \*\* `cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9683_ebz_zc706_sw_14_4_2013_05_08.tar.gz>`_
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`_ for details.
+
++--------------------+------------------------------------------------------------------------------------------------------+
+| license.txt        | ADI license & copyright information.                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs         | MHS file.                                                                                            |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp         | XMP file (use this file to build the reference design).                                              |
++--------------------+------------------------------------------------------------------------------------------------------+
+| data/              | UCF file and/or DDR MIG project files.                                                               |
++--------------------+------------------------------------------------------------------------------------------------------+
+| docs/              | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++--------------------+------------------------------------------------------------------------------------------------------+
+| sw/                | Software (Xilinx SDK) & bit file(s).                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/ | Reference design core file(s) (Xilinx EDK).                                                          |
++--------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`_
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`

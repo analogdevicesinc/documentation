@@ -1,0 +1,141 @@
+AD7291 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7291`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7291SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7291SDZ <AD7291>` evaluation board together with the Xilinx KC705 FPGA board, the Xilinx Embedded Development Kit (EDK) and the `Micrium µC-Probe <https://www.micrium.com/ucprobe/about/>`_ run-time monitoring tool. Below is presented a picture of the EVAL-AD7291SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7291.jpg
+   :alt: ad7291.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7291SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7291_sdp1z.jpg
+   :alt: ad7291_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-AD7291SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7291** circuits and reduce design time. When using this evaluation board with the SDP board or BeMicro SDK board, apply +5 V, −5 V, and GND to Connector J2. VDRIVE is supplied by the SDP board or BeMicro SDK board, and VDD is supplied by an on-board regulator
+
+The :adi:`AD7291` is a 12-bit, low power, 8-channel, successive approximation analog-to-digital converter (ADC) with an internal temperature sensor.
+
+The part operates from a single 3.3 V power supply and features an I2C-compatible interface. The part contains a 9-channel multiplexer and a track-and-hold amplifier than can handle frequencies up to 30 MHz. The device has an on-chip 2.5 V reference that can be disabled to allow the use of an external reference.
+
+The AD7291 provides a 2-wire serial interface compatible with I2C interfaces. The I2C interface supports standard and fast I2C interface modes. The AD7291 normally remains in a partial power-down state while not converting and powers up for conversions. The conversion process can be controlled by a command mode where conversions occur across I2C write operations or an autocycle mode selected through software control. The AD7291 includes a high accuracy band gap temperature sensor, which is monitored and digitized by the 12-bit ADC to give a resolution of 0.25°C.
+
+The AD7291 offers a programmable sequencer, which enables the selection of a preprogrammable sequence of channels for conversion.
+
+More information
+----------------
+
+-  :adi:`AD7291 Product Info <AD7291>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7291SDZ evaluation board user guide </static/imported-files/user_guides/UG-094.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  `Micrium uC-Probe <https://www.micrium.com/ucprobe/about/>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD7291** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 13.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  `uC-Probe <https://www.micrium.com/ucprobe/about/>`_ run-time monitoring tool
+
+Downloads
+---------
+
+-  `Reference Design Files <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7291_evalboard.zip>`_
+
+The following table presents a short description the reference design archive contents.
+
++------------------+----------------------------------------------------------------------------------------------------------------------+
+| **Folder**       | **Description**                                                                                                      |
++==================+======================================================================================================================+
+| Bit              | Contains the KC705 configuration file that can be used to program the system for quick evaluation.                   |
++------------------+----------------------------------------------------------------------------------------------------------------------+
+| Microblaze       | Contains the EDK 13.4 project for the Microblaze softcore that will be implemented in the KC705 FPGA.                |
++------------------+----------------------------------------------------------------------------------------------------------------------+
+| Software         | Contains the source files of the software project that will be run by the Microblaze processor.                      |
++------------------+----------------------------------------------------------------------------------------------------------------------+
+| uCProbeInterface | Contains the uCProbe interface and the .elf symbols file used by uC-Probe to access data from the Microbalze memory. |
++------------------+----------------------------------------------------------------------------------------------------------------------+
+
+Run the Demonstration Project
+=============================
+
+
+.. note::
+
+   See `ucprobe_common <https://wiki.analog.com/ucprobe_common>`_
+
+
+Demonstration Project User Interface
+------------------------------------
+
+The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-AD7291SDZ** evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7291_interface.png
+   :alt: ad7291_interface.png
+   :align: center
+   :width: 700px
+
+**Section A** is used to activate the board and monitor activity. The communication with the board is activated / deactivated by toggling the **ON/OFF** switch. The **Activity** LED turns green when the communication is active. If the **ON/OFF** switch is set to **ON** and the **Activity** LED is **BLACK** it means that there is a communication problem with the board. See the **Troubleshooting** section for indications on how to fix the communication problems.
+
+**Section B** is used to modify the content of Command Register. After any change of the buttons position is necessary to press the Write Command button.
+
+**Section C** is used to read data from the VOLTAGE and T_SENSE registers. The T_SENSE value is converted and displayed as a value in degrees Celsius.
+
+**Section D** is used to read data from the VOLTAGE_ALERT_STATUS and T_ALERT_STATUS registers.
+
+**Section E** is used to modify the Alert Limits' values. After any change of the sliders position is necessary to press the Write Alert Limits button.
+
+Troubleshooting
+---------------
+
+In case there is a communication problem with the board the follwing actions can be perfomed in order to try to fix the issues:
+
+-  Check that the evaluation board is powered as instructed in the board's user guide.
+-  In uC-Probe refresh the symbols file by right-clicking on the **System Browser** window and selecting **Refresh Symbols**.
+-  If the communication problem persists even after performing the previous steps, restart the uC-Probe application and try to run the interface again.
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD7291 IIO ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7291>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+

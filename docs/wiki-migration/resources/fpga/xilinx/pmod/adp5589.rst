@@ -1,0 +1,185 @@
+ADP5589 Pmod Xilinx FPGA Reference Design
+=========================================
+
+Introduction
+------------
+
+The :adi:`ADP5589` is a 19 I/O port expander with built-in keypad matrix decoder, programmable logic, reset generator and PWM generator. This reference design allows full programming of the device, and also includes Keypad Decoder Test Mode and Key Lock/Unlock Feature.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+   \* `PmodIOXP ADP5589 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&Prod=PMOD-IOXP>`_
+-  `PmodKYPD (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,940&Prod=PMODKYPD>`_
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (ADP5589\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodKYPD to J1 connector of PmodIOXP. After that, connect the PmodIOXP board to J4 connector of LX9 board, pins 3 to 6 (see image below). You must use the extension cable provided, otherwise the I2C Interface will not work. . Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+|Connect PmodKYPD to PmodIOXP| |Connect PmodIOXP to LX-9|
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (ADP5589\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodKYPD to J1 connector of PmodIOXP. After that, connect the PmodIOXP board to JA connector of Nexys™3 board, pins JA3 to JA6 (see image below). You must use the extension cable provided, otherwise the I2C Interface will not work. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+|Connect PmodKYPD to PmodIOXP| |Connect PmodIOXP to Nexys™3|
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodIOXP to JC1 connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_zed.jpg
+   :alt: PmodIOXP and ZedBoard
+   :width: 400px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set appropiate baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the “sw” folder (../adp5589/sw/ADP5589.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adp5589_impact.jpg
+   :width: 300px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in figures below. After programming the ADP5589 device, the program will display initialization messages, and afterwards it will enter Key Decoder Test Mode. In this mode, you can press any key on the PmodKYPD, and it will be displayed on the UART along with the corresponding event (press/release). Pressing the [F] key will exit Key Decoder Test Mode. Next the program will Lock the keypad. Unlocking it requires the combination [1] [A].
+
+|Initialization| |Key Decode Test| |Key Lock/Unlock|
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is a simple I2C interface for the ADP5589. The software programs the device, monitors and reports events, locks or unlocks the keypad. It can also be programmed to generate a PWM signal or implement simple digital logic. The information is displayed on a UART terminal.
+
+The hardware I2C access allows reading or writing of any ADP5589 registers via the address, write and read data registers.
+
+|
+
+.. important::
+
+   PmodIOXP must be connected to J4 using the extension cable provided.
+
+   | When decoding the PmodKYPD pay attention to the fact that:
+   | \* ROW1 to ROW4 are seen by the ADP5589 as C3 to C0.
+   | \* COL4 to COL1 are seen by the ADP5589 as R3 to R0.
+   | UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   |
+
+
+.. important::
+
+   When using the ZedBoard reference design in order to develop your own software, please make sure that the following options are set in "system_config.h":
+
+   
+   .. code:: c
+   
+      // Select between PS7 or AXI Interface
+      #define USE_PS7      1
+      // SPI used in the design
+      #define USE_SPI      0
+      // I2C used in the design
+      #define USE_I2C      1
+      // Timer (+interrupts) used in the design
+      #define USE_TIMER    0
+      // External interrupts used in the design
+      #define USE_EXTERNAL     0
+      // GPIO used in the design
+      #define USE_GPIO         0
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adp5589_lx9.zip>`_\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/adp5589_nexys3.zip>`_\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-fpgahdl_xilinx:`XPS Project <cf_adv7511_zed>`
+   | \* :git-no-OS:`PmodIOXP Driver Files <Pmods/PmodIOXP>`
+   | \* :git-no-OS:`ZYNQ SoC Peripherals Driver Files <Pmods/Common/sw>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodIOXP/bin>`
+   |
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Connect PmodKYPD to PmodIOXP| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodkypd_pmodioxp.jpg
+   :width: 200px
+.. |Connect PmodIOXP to LX-9| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_lx9.jpg
+   :width: 200px
+.. |Connect PmodIOXP to Nexys™3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodioxp_nexys3.jpg
+   :width: 200px
+.. |Initialization| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu1.jpg
+   :width: 400px
+.. |Key Decode Test| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu2.jpg
+   :width: 400px
+.. |Key Lock/Unlock| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/PmodIOXP_menu3.jpg
+   :width: 400px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

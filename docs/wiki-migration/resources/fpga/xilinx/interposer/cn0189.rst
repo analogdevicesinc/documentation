@@ -1,0 +1,159 @@
+CN-0189 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADXL203`
+-  :adi:`AD7887`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0189`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0189-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0189-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0189.jpg
+   :alt: cn0189.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0189-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0189_sdp1z.jpg
+   :alt: cn0189_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **CN-0189** circuit incorporates a dual axis :adi:`ADXL203` accelerometer and the :adi:`AD7887` 12-bit successive approximation (SAR) ADC to create a dual axis tilt measurement system. The :adi:`ADXL203` is a polysilicon surface micromachined sensor and signal conditioning circuit. Acceleration in the X or Y axis will produce a corresponding output voltage on the XOUT or YOUT output pins of the device. The X axis and Y axis are perpendicular to one another. The :adi:`AD8608` quad op amp buffers, attenuates, and level shifts the [adi>ADXL203]] outputs so they are at the proper levels to drive the inputs of the :adi:`AD7887`. The rail-to-rail input/output :adi:`AD8608` is chosen for its low offset voltage (65 μV maximum), low bias current (1 pA maximum), low noise (8 nV/√Hz), and small footprint (14-lead SOIC or TSSOP). The :adi:`AD7887` is configurable for either dual or single channel operation via the on-chip control register. In this application it is configured for dual channel mode, allowing the user to monitor both outputs of the :adi:`ADXL203`, thereby providing a more accurate and complete solution.
+
+More information
+----------------
+
+-  :adi:`CN0189 Product Info <CN0189>` - pricing, samples, datasheet
+-  :adi:`ADXL203 Product Info <ADXL203>` - pricing, samples, datasheet
+-  :adi:`AD7887 Product Info <AD7887>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0189-SDPZ evaluation board user guide <CN0189>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0189-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0189 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7887 Driver:** :git-no-OS:`device_drivers/AD7887`
+   
+   -  **CN0189 Commands:** :git-no-OS:`device_commands/CN0189`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0189 reference project for Xilinx KC705 FPGA board.
+
++--------------------------+-----------------------------------------------------+
+| Command                  | Description                                         |
++==========================+=====================================================+
+| **help?**                | Displays all available commands.                    |
++--------------------------+-----------------------------------------------------+
+| **calibX+1G!**           | Acquire data for calibration, when Xacc=+1[g].      |
++--------------------------+-----------------------------------------------------+
+| **calibX-1G!**           | Acquire data for calibration, when Xacc=-1[g].      |
++--------------------------+-----------------------------------------------------+
+| **calibY+1G!**           | Acquire data for calibration, when Yacc=+1[g].      |
++--------------------------+-----------------------------------------------------+
+| **calibY-1G!**           | Acquire data for calibration, when Yacc=-1[g].      |
++--------------------------+-----------------------------------------------------+
+| **calibCalculateParam!** | Calculates the parameters for calibration.          |
++--------------------------+-----------------------------------------------------+
+| **rawData?**             | Displays the raw data an both axes.(40 samples)     |
++--------------------------+-----------------------------------------------------+
+| **acceleration?**        | Displays the acceleration on both axes.(40 samples) |
++--------------------------+-----------------------------------------------------+
+| **tilt?**                | Displays the tilt on both axes.(40 samples)         |
++--------------------------+-----------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD7887 IIO ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7887>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

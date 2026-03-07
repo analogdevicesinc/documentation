@@ -1,0 +1,159 @@
+AD5110 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5110`
+-  :adi:`AD5112`
+-  :adi:`AD5114`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5110SDZ`
+
+Overview
+--------
+
+The :adi:`AD5110`/:adi:`AD5112`/:adi:`AD5114` provide a nonvolatile solution for 128/64/32-position adjustment applications, offering guaranteed low resistor tolerance errors of ±8% and up to ±6 mA current density in the A, B, and W pins. The low resistor tolerance, low nominal temperature coefficient and high bandwidth simplify open-loop applications, as well as tolerance matching applications.
+
+The new low wiper resistance feature minimizes the wiper resistance in the extremes of the resistor array to only 45 Ω, typical.
+
+The wiper settings are controllable through an I2C-compatible digital interface that is also used to readback the wiper register and EEPROM content. Resistor tolerance is stored within EEPROM, providing an end-to-end tolerance accuracy of 0.1%.
+
+The :adi:`AD5110`/:adi:`AD5112`/:adi:`AD5114` are available in a 2 mm × 2 mm LFCSP package. The parts are guaranteed to operate over the extended industrial temperature range of −40°C to +125°C.
+
+Applications
+~~~~~~~~~~~~
+
+-   Mechanical potentiometer replacement
+-  Portable electronics level adjustment
+-  Audio volume control
+-  Low resolution DAC
+-  LCD panel brightness and contrast control
+-  Programmable voltage to current conversion
+-  Programmable filters, delays, time constants
+-  Feedback resistor programmable power supply
+-  Sensor calibration
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5110_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5110 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5110 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5110 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD5110 driver:
+
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Function                                                           | Description                                                                                  |
++====================================================================+==============================================================================================+
+| unsigned char AD511X_Init(char deviceModel, long endToEndRes)      | Initializes the communication with the device.                                               |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| void AD511X_SendCommand(unsigned char command, unsigned char data) | Sends a command to the device.                                                               |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| void AD511X_Power(char pwr)                                        | Powers on/off the device.                                                                    |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| unsigned char AD511X_ReadData(char readLocation, char content)     | Reads data from the device.                                                                  |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| void AD511X_WaitForDevice(void)                                    | Performs an Acknowledge Polling.                                                             |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| float AD511X_GetTolerance(void)                                    | Reads the resistance tolerance that is stored in the internal memory during factory testing. |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| float AD511X_SetResistance(float outRes)                           | Sets the output resistance of the device.                                                    |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD511X Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad511x_generic.zip>`_
+   -  `AD5110 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5110_rl78g13.zip>`_
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5110 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD5110SDZ(ADI) <AD5110>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD5110SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5110SDZ LK5(Right pin) SCL  → YRDKRL78G13 J9 connector Pin 1
+     EVAL-AD5110SDZ LK3(Right pin) SDA  → YRDKRL78G13 J9 connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5110_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project initializes the I2C communication peripheral, configures the AD5110 output resistance to 1500 Ohm, stores and reads back data from EEPROM and displays the resistor tolerance.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5110_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png

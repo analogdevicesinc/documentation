@@ -1,0 +1,121 @@
+AD5791 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5791`
+
+Overview
+--------
+
+The :adi:`AD5791` is a single 20-bit, unbuffered voltage-output digital-to-analog converter (DAC) that operates from a bipolar supply of up to 33 V. It accepts a positive reference input in the range 5 V to VDD − 2.5 V and a negative reference input in the range VSS + 2.5 V to 0 V.
+
+The :adi:`AD5791` offers a relative accuracy specification of ±1 LSB max, and operation is guaranteed monotonic with a ±1 LSB differential nonlinearity (DNL) maximum specification.
+
+The device uses a versatile 3-wire serial interface that operates at clock rates up to 35 MHz and that is compatible with standard serial peripheral interface (SPI), QSPI™, MICROWIRE™, and DSP interface standards. The device incorporates a power-on reset circuit that ensures the DAC output powers up to 0 V and in a known output impedance state and remains in this state until a valid write to the device takes place.
+
+Applications:
+
+-  Medical instrumentation
+-  Test and measurement
+-  Industrial control
+-  High end scientific and aerospace instrumentation
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Function                                                               | Description                                                                                  |
++========================================================================+==============================================================================================+
+| ``int32_t ad5791_init(struct ad5791_dev **device,                      | Initializes the communication with the device.                                               |
+|                              struct ad5791_init_param init_param);``   |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_remove(struct ad5791_dev *dev);``                     | Free the resources allocated by ad5791_init().                                               |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_set_register_value(struct ad5791_dev *dev,            | Writes data into a register.                                                                 |
+|                                            uint8_t register_address,   |                                                                                              |
+|                                            uint32_t register_value);`` |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_get_register_value(struct ad5791_dev *dev,            | Get register value standard function.                                                        |
+|                                            uint8_t addr,               |                                                                                              |
+|                                            uint32_t *value);``         |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_dac_ouput_state(struct ad5791_dev *dev,               | Sets the DAC output in one of the three states.                                              |
+|                                         uint8_t state);``              |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_set_dac_value(struct ad5791_dev *dev,                 | Writes to the DAC register.                                                                  |
+|                                       uint32_t value);``               |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_soft_instruction(struct ad5791_dev *dev,              | Asserts RESET, CLR or LDAC in a software manner.                                             |
+|                                          uint8_t instruction_bit);``   |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| ``int32_t ad5791_setup(struct ad5791_dev *dev,                         | Configures the output amplifier, DAC coding, SDO state and the linearity error compensation. |
+|                               uint32_t setup_word);``                  |                                                                                              |
++------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------+
+
+
+| ``/* Supported devices */                   |
+
+| enum ad5791_type {                          |
+|     ID_AD5760,                              |
+|     ID_AD5780,                              |
+|     ID_AD5781,                              |
+|     ID_AD5790,                              |
+|     ID_AD5791                               |
+| };                                          |
+|                                             |
+| struct ad5791_chip_info {                   |
+|     uint32_t resolution;                    |
+| };                                          |
+|                                             |
+| struct ad5791_dev {                         |
+|     /* SPI */                               |
+|     spi_desc        *spi_desc;              |
+|     /* GPIO */                              |
+|     struct gpio_desc    *gpio_reset;        |
+|     struct gpio_desc    *gpio_clr;          |
+|     struct gpio_desc    *gpio_ldac;         |
+|     /* Device Settings */                   |
+|     enum ad5791_type act_device;            |
+| };                                          |
+|                                             |
+| struct ad5791_init_param {                  |
+|     /* SPI */                               |
+|     spi_init_param  spi_init;               |
+|     /* GPIO */                              |
+|     struct gpio_init_param      gpio_reset; |
+|     struct gpio_init_param      gpio_clr;   |
+|     struct gpio_init_param      gpio_ldac;  |
+|     /* Device Settings */                   |
+|     enum ad5791_type act_device;            |
+| };``                                        |
++---------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD5791 Driver.|
+
+   -
+
+   |Header file of AD5791 Driver.|
+
+.. |Implementation of AD5791 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5791/ad5791`.c
+.. |Header file of AD5791 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5791/ad5791`.h

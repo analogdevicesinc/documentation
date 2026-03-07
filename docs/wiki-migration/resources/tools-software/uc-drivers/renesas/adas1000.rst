@@ -1,0 +1,154 @@
+ADAS1000 - Microcontroller No-OS Driver
+=======================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADAS1000`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADAS1000SDZ`
+
+Overview
+--------
+
+The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices capable of demonstrating ECG capture up to 12 leads. Included in the kit is a medical grade +5V wall adaptor with interchangeable worldwide wall plugs and a CD with user software for data capture and display. The software allows control of all ADAS1000 registers, ability to capture and display ECG data, respiration data, pace pulse detection and store data for offline processing. This evaluation board is provided for silicon evaluation purposes and is not designed to be connected directly to animal or human. This board operates in conjunction with the System Development Platform (SDP) or alternatively may be interfaced to directly via a dedicated serial interface connector (J4). The SDP controller board connects to the PC via USB 2.0. The evaluation board connects to the SDP controller board. The ADAS1000 evaluation board cannot be connected directly to the PC. The evaluation software running on the PC will communicate with the evaluation board through the SDP Controller board. The SDP Controller board is a separate list item in the ordering guide below (EVAL-SDP-CB1Z). If you have not previously purchased an SDP Controller board, please do so to ensure a full evaluation setup.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adas1000ebz.png
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the ADAS1000 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADAS1000 driver can be used exactly as it is provided.
+
+There are three functions which are called by the ADAS1000 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of ADAS1000 driver:
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Function                                                                                                                                                                            | Description                                                                      |
++=====================================================================================================================================================================================+==================================================================================+
+| unsigned char ADAS1000_Init(unsigned long rate)                                                                                                                                     | Initializes the communication with ADAS1000 and checks if the device is present. |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_GetRegisterValue(unsigned char regAddress, unsigned long\* regVal)                                                                                                    | Reads the value of a ADAS1000 register.                                          |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_SetRegisterValue(unsigned char regAddress, unsigned long regVal)                                                                                                      | Writes a value into a ADAS1000 register.                                         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_SoftwareReset(void)                                                                                                                                                   | Performs a software reset of the ADAS1000                                        |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_SetInactiveFrameWords(unsigned long wordsMask)                                                                                                                        | Selects which words are not included in a data frame.                            |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_SetFrameRate(unsigned long rate)                                                                                                                                      | Sets the frame rate                                                              |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| void ADAS1000_ReadData(unsigned char\* pDataBuffer, unsigned long frameCnt, unsigned char startRead, unsigned char stopRead, unsigned char waitForReady, unsigned char readyRepeat) | Reads the specified number of frames                                             |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| unsigned long ADAS1000_ComputeFrameCrc(unsigned char \*pBuf)                                                                                                                        | Computes the CRC for a frame                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `ADAS1000 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_generic.zip>`_
+-  `ADAS1000 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_rx62n.zip>`_
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the ADAS1000 demonstration project on a Renesas RX62N platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-ADAS1000SDZ (ADI) <ADAS1000>`
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+
+Hardware Setup
+--------------
+
+An EVAL-ADAS1000SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-ADAS1000SDZ J5 connector Pin DGND       →  YRDKRX62N J8 connector Pin 4 (GND)
+     EVAL-ADAS1000SDZ J4 connector Pin 10 (SCLK)  →  YRDKRX62N LCD1 connector Pin 12 (SCLK)
+     EVAL-ADAS1000SDZ J4 connector Pin 8 (CSB_0)  →  YRDKRX62N LCD1 connector Pin 11 (CS)
+     EVAL-ADAS1000SDZ J4 connector Pin 7 (SDO_0)  →  YRDKRX62N LCD1 connector Pin 14 (MISO)
+     EVAL-ADAS1000SDZ J4 connector Pin 4 (SDI_0)  →  YRDKRX62N LCD1 connector Pin 13 (MOSI)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adas1000ebz_rx62n.png
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The following examples are implemented in the reference project:
+
+-  Example on how to read and write a register;
+-  Example how to start the ADCs Converting and begin streaming ECG data from ADAS1000 at 2kHz rate;
+-  Example on how to Enable Respiration;
+-  Example on how to enable DC Leads Off;
+-  Example on how to enable Shield Amplifier;
+-  Example on how to change the number of words in a frame;
+-  Example on how to configure device and start streaming ECG data at 2kHz rate with Leads off enabled, respiration enabled;
+-  Example on how to configure device and start streaming ECG data at 16kHz rate;
+-  Example on how to configure device and start streaming ECG data at 128kHz rate.
+
+The reference project also configures the 150Hz test tone Sinewave on each ECG channel, stores 1000 frames and sends data through the SCI port. The frames do not contain the Pace, Respiration Magnitude, Respiration Phase, Leads Off Status, GPIO and CRC words.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adas1000_data_format.png
+   :align: center
+
+.. container:: centeralign
+
+   The format of the data transferred through the SCI port.
+
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

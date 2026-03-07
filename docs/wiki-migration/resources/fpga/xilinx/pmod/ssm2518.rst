@@ -1,0 +1,168 @@
+SSM2518 Pmod Xilinx FPGA Reference Design
+=========================================
+
+Introduction
+------------
+
+The :adi:`SSM2518` is a digital input, Class-D power amplifier that com-bines a digital-to-analog converter (DAC) and a sigma-delta (Σ-Δ) Class-D modulator. This unique architecture enables extremely low real-world power consumption from digital audio sources with excellent audio performance. The SSM2518 is ideal for power sensitive applications, such as mobile phones and portable media players, where system noise can corrupt small analog signals such as those sent to an analog input audio amplifier.
+
+**HW Platform(s):**
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+
+Quick Start Guide
+-----------------
+
+The bit file provided in the project \*.zip file combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  `Spartan-6 LX9 Microboard (Avnet) <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_
+-  `Nexys™3 Spartan-6 FPGA Board (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3>`_
+-  `Avnet ZedBoard <http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx>`_
+-  `PmodAMP3 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AMP3>`_
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 for the Avnet LX-9 Microboard and ZedBoard or 9600 for the Digilent Nexys™3 Board.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with LX9 and/or Xilix tools, please visit
+
+   | `AES-S6MB-LX9.htm <https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm>`_ for details.
+   | If you are not familiar with Nexys™3 and/or Xilix tools, please visit
+   | http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,897&Prod=NEXYS3 for details.
+   | If you are not familiar with ZedBoard and/or Xilix tools, please visit
+   | http://www.em.avnet.com/en-us/design/drc/Pages/Zedboard.aspx for details.
+
+
+Avnet LX9 MicroBoard Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (SSM2518\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAMP3 to J4 connector of LX9 board. You can use an extension cable for ease of use. Connect the USB cable from the PC to the USB-UART female connector of the board for the UART terminal. The board will be programmed through its USB male connector.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodamp3_lx9.jpg
+   :alt: PmodAMP3 and LX-9
+   :width: 200px
+
+Digilent Nexys™3 Spartan-6 FPGA Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Extract the project from the archive file (SSM2518\_<board_name>.zip) to the location you desire.
+
+To begin, connect the PmodAMP3 to JB connector of Nexys™3 board. You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodamp3_nexys3.jpg
+   :alt: PmodAMP3 and Nexys™3
+   :width: 200px
+
+Avnet ZedBoard
+~~~~~~~~~~~~~~
+
+To begin, connect the PmodAMP3 to JD connector of ZedBoard (see image below). You can use an extension cable for ease of use. Connect the USB cables from the PC to the board, one for programming (Digilent USB device) and one for the UART terminal (FT232R USB UART).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodamp3_zed.jpg
+   :alt: PmodAMP3 and ZedBoard
+   :width: 200px
+
+FPGA Configuration for Nexys3 and LX-9 MicroBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Program the device using download.bat located in "../sw/bin" folder. The downloading progress will be shown in the command prompt screen that opens.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodamp3impact.jpg
+   :alt: Programming FPGA using download.bat
+   :width: 600px
+
+If programming was successful, you should be seeing messages appear on the terminal window as shown in the figure below. After programming the SSM2518 device, the program will automatically start playing a pre-recorded sound. Press any key to pause/resume playback.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/pmodamp3_menu.jpg
+   :alt: UART messeges
+   :width: 600px
+
+FPGA Configuration for ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run the **download.bat** script from the "../bin" folder downloaded from the github (see the links in the download section of the wiki page). The script will automatically configure the ZYNQ SoC and download the \*.elf file afterwards.
+
+.. tip::
+
+   If the download script fails to run, modify the Xilinx Tools path in **download.bat** to match your Xilinx Installation path.
+
+
+If programming was successful, you should be seeing messages appear on the terminal window. After programming the SSM2518 device, the program will automatically start playing a pre-recorded sound.
+
+Using the reference design
+--------------------------
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+Avnet LX-9 MicroBoard and Digilent Nexys3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The reference design is a simple IIC interface used to program the SSM2518. A custom I2S Core is also implemented, in order to transmit audio data to the SSM2518. The software programs the device and starts audio playback. Pausing the audio playback is done from an UART Terminal.
+
+.. _avnet-zedboard-1:
+
+Avnet ZedBoard
+^^^^^^^^^^^^^^
+
+The reference design is a simple IIC interface used to program the SSM2518. A custom I2S Core is also implemented, in order to transmit audio data to the SSM2518. The software programs the device and starts audio playback. DMA transfers data from the DDR memory to the I2S Core, resulting in playback of audio data.
+
+.. important::
+
+   
+   -  Connecting the PmodAMP3 to the desired Board using an extension cable provides ease of use.
+   -  UART must be set to 115200 Baud Rate for the Avnet LX-9 Microboard and ZedBoard or 9600 Baud Rate for the Digilent Nexys™3 Board.
+   -  JP5 must be connected (I2C Active).
+   -  JP6 must be removed (ADDR = 1).
+   -  JP3 and JP4 must be removed.
+   -  JP2 must be connected to MCLK position.
+   -  External connection must be made between J3 Pin 1 (SCL) to J1 Pin 7 and J3 Pin 2 (SDA) to J1 Pin 8.
+   
+
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \**Avnet LX-9 MicroBoard: **
+     \*** `Reference design source code for Avnet LX9 MicroBoard. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_lx9.zip>`_\ **
+     **\ Digilent Nexys™3:**
+     \*** `Reference design source code for Digilent Nexys™3 Spartan-6 FPGA Board. <https://wiki.analog.com/_media/resources/fpga/xilinx/pmod/ssm2518_nexys3.zip>`_\ **
+     **\ Avnet ZedBoard:\*\*
+   | \* :git-no-OS:`XPS Project <Pmods/PmodAMP3/cf_ssm2518_zed>`
+   | \* :git-no-OS:`SSM2518 IPCore <Pmods/PmodAMP3/cf_lib/edk/pcores/axi_ssm2518_v1_00_a>`
+   | \* :git-fpgahdl_xilinx:`Required Project Libraries <cf_lib>`
+   | \* :git-no-OS:`PmodAMP3 Driver Files <Pmods/PmodAMP3>`
+   | \* :git-no-OS:`Programming Script <Pmods/PmodAMP3/bin>`
+   |
+
+
+More information
+----------------
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

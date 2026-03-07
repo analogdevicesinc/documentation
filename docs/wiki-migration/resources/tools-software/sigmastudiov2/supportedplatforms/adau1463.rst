@@ -1,0 +1,8 @@
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
+
+ADAU1463
+========
+
+| 
+| The ADAU1463/ADAU1467 are automotive qualified audio processors that far exceed the digital signal processing capabilities of earlier SigmaDSP® devices. They are pin and register compatible with each other, as well as with the ADAU1450/ADAU1451/ADAU1452 SigmaDSP® processors.
+| More details - :adi:`ADAU1463 <en/products/adau1463.html>`

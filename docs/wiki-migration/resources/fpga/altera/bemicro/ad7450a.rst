@@ -1,0 +1,295 @@
+BeMicro FPGA Project for AD7450A with Nios driver
+=================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7450A`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7450ASDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD7450ASDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ USB stick and the Nios II Embedded Development Suite (EDS). Below is presented a picture of the EVAL-AD7450ASDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7450a_bemicro.jpg
+   :alt: ad7450a_bemicro.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to use the part evaluation setup. This consists of:
+
+::
+
+   *1.  A controller board like the SDP-B ( EVAL-SDP-CS1Z) 
+   *2.  The component SDP compatible product evaluation board 
+   *3.  Corresponding PC software ( shipped with the product evaluation board)
+
+The SDP-B controller board is part of Analog Devices System Demonstration Platform (SDP). It provides a high speed USB 2.0 connection from the PC to the component evaluation board. The PC runs the evaluation software. Each evaluation board, which is an SDP compatible daughter board, includes the necessary installation file required for performance testing.
+
+**Note:** it is expected that the analog performance on the two platforms may differ.
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7450ASDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7450a_sdp1z.jpg
+   :alt: ad7450a_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The :adi:`EVAL-AD7450ASDZ` evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7450A** circuits and reduce design time.
+
+The :adi:`AD7450A` is 12-bit, high speed, low power, successive-approximation (SAR) analog-to-digital converter that feature a fully differential analog input. This part operates from a single 3 V or 5 V power supply and features throughput rates up to 1 MSPS. The part contains a low-noise, wide bandwidth, differential track and hold amplifier (T/H), which can handle input frequencies in excess of 1 MHz with the –3 dB point being 20 MHz typically. The reference voltage is applied externally to the VREF pin and can be varied from 100 mV to 3.5 V depending on the power supply and what suits the application. The value of the reference voltage determines the common mode voltage range of the part. With this truly differential input structure and variable reference input, the user can select a variety of input ranges and bias points.
+
+More information
+----------------
+
+-  :adi:`AD7450A Product Info <AD7450A>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7450ASDZ` evaluation board user guide
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  :adi:`EVAL-AD7450ASDZ` evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`_ design software v12.0sp2
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`_ v12.0sp2
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/{{/resources/fpga/altera/bemicro/ad7450a_evalboardlab.zip>`_
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ad7450a_evalboardlab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Hdl** **Software**, **DataCapture**, **NiosCpu**.
+
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                                                                                                                                                                                                          |
++=============+==========================================================================================================================================================================================================================================================================================+
+| FPGA        | Contains all the files necessary to program the BeMicro FPGA board in order to run the evaluation project. By executing the script *program_fpga.bat* the FPGA will be programmed with the evaluation project. New NIOS II applications can be created using the files from this folder. |
+|             | The *ip* subfolder contains the AD7450A NIOS II peripheral's source code.                                                                                                                                                                                                                |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the source files for the AD7450A HDL driver:                                                                                                                                                                                                                                    |
+|             | - The *doc* subfolder contains a brief documentation for the driver.                                                                                                                                                                                                                     |
+|             | - The *src* subfolder contains the HDL source files.                                                                                                                                                                                                                                     |
+|             | - The *tb* folder contains the sources of the driver's testbench.                                                                                                                                                                                                                        |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NiosCpu     | Contains the Quartus evaluation project source files . The *ip* subfolder contains the AD7450A Nios2 peripheral source code.                                                                                                                                                             |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the Nios2 SBT evaluation project.                                                                                                                                                                                                                           |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script files used for data acquisition                                                                                                                                                                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`_
+
+
+AD7450A Evaluation Project Overview
+===================================
+
+The evaluation project contains all the source files needed to build a system that can be used to configure the AD7450A and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the BeMicro board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the onchip RAM of the BeMicro board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+
+The following components are implemented in the FPGA design:
+
+============================= ========== ===
+Name                          Address    IRQ
+============================= ========== ===
+CPU                           0x00000800 -
+JTAG UART                     0x00000090 0
+uC-Probe UART                 0x000000A0 1
+EPCS FLASH CONTROLLER         0x00001800 2
+OnChip RAM                    0x00010000 -
+LED GPIO                      0x00000100 -
+GPIO                          0x00002080 -
+CTRL GPIO                     0x000020A0 -
+SYS ID                        0x00000040 -
+TIMER                         0x00000060 3
+AVALON MASTER                 -          -
+Main PLL                      0x00000080 -
+AD7450A 0                     0x00000120 -
+**Table 1 System components**            
+============================= ========== ===
+
+The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the onchip RAM, a module which implements an Avalon master interface which is used to write data directly in the onchip RAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7450a_block_diagram.png
+   :alt: HDL driver block diagram
+   :align: center
+   :width: 400px
+
+Table 2 describes the ports of the AD7450A HDL driver.
+
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| Port                                         | Direction | Width | Description                                                                                                            |
++==============================================+===========+=======+========================================================================================================================+
+| **Clock and reset ports**                    |           |       |                                                                                                                        |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| FPGA_CLK_I                                   | IN        | 1     | Main clock input. 100MHz                                                                                               |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_I                                    | IN        | 1     | ADC clock input. 18MHz                                                                                                 |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| RESET_N_I                                    | IN        | 1     | Active low reset signal.                                                                                               |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **IP control and data ports**                |           |       |                                                                                                                        |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| DATA_O                                       | OUT       | 32    | Outputs the data read from the ADC.                                                                                    |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| DATA_RD_READY_O                              | OUT       | 1     | Signals that at port DATA_O there is new data available.                                                               |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **AD7450A ports**                            |           |       |                                                                                                                        |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDATA_I                                  | IN        | 1     | The conversion result from the AD7450A is provided on this pin as a serial data stream.                                |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                   | OUT       | 1     | This signal provides the dual function of initiating a conversion on the AD7450A and framing the serial data transfer. |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **Table 2 AD7450A driver ports description** |           |       |                                                                                                                        |
++----------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+
+| The following figures present the timing diagram for the read operation for the AD7450A driver:
+| |Read operations time diagram|
+
+| 
+| Table 3 describes the ports of the Avalon peripheral:
+
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| Port                                            | Direction | Width | Description                                                                                                            |
++=================================================+===========+=======+========================================================================================================================+
+| **Clock and reset ports**                       |           |       |                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| CLK_I                                           | IN        | 1     | Main clock input                                                                                                       |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                                         | IN        | 1     | System reset                                                                                                           |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Slave Interface**                      |           |       |                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITEDATA_I                              | IN        | 32    | Slave write data bus                                                                                                   |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITE_I                                  | IN        | 1     | Slave write data request                                                                                               |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READ_I                                   | IN        | 1     | Slave read data request                                                                                                |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_ADDRESS_I                                | IN        | 2     | Slave address bus                                                                                                      |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READDATA_O                               | OUT       | 32    | Slave read data bus                                                                                                    |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Master Interface**                     |           |       |                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WAITREQUEST                       | IN        | 1     | Master wait request signal                                                                                             |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_ADDRESS_O                         | OUT       | 32    | Master address bus                                                                                                     |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITE_O                           | OUT       | 1     | Master write signal                                                                                                    |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_BYTEENABLE_O                      | OUT       | 4     | Master byte enable signals                                                                                             |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITEDATA_O                       | OUT       | 32    | Master write data bus                                                                                                  |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **External connectors**                         |           |       |                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| ADC_SDATA_I                                     | IN        | 1     | The conversion result from the AD7450A is provided on this pin as a serial data stream.                                |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                      | OUT       | 1     | This signal provides the dual function of initiating a conversion on the AD7450A and framing the serial data transfer. |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+| **Table 3 Avalon peripheral ports description** |           |       |                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------+
+
+Table 4 describes the registers of the Avalon peripheral:
+
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| Name                                                | Offset | Width | Access | Description                                                                                                 |
++=====================================================+========+=======+========+=============================================================================================================+
+| CONTROL_REGISTER                                    | 0      | 32    | RW     | Bit 0 is used to start data acquisition                                                                     |
+|                                                     |        |       |        | Bit 1 is used to initiate software reset of the core                                                        |
+|                                                     |        |       |        | Bit 2 is used to configure the Avalon write master core to write data to the same location                  |
+|                                                     |        |       |        | Bit 3 is used to write data to the AD7450A driver                                                           |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| ACQ_COUNT_REGISTER                                  | 1      | 32    | RW     | Register used to configure the number of samples to be acquired when acquisition is started                 |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| BASE_REGISTER                                       | 2      | 32    | RW     | Register used to configure the base address of the memory location where the acquired data is to be written |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| STATUS_REGISTER                                     | 3      | 32    | R      | Bit 0 is used to signal that the acquisition is complete                                                    |
+|                                                     |        |       |        | Bit 1 is used to signal that the internal memory buffer has been overflown                                  |
+|                                                     |        |       |        | Bit 2 is used to signal that the user has performed a read of an unavailable register                       |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| **Table 4 Avalon peripheral registers description** |        |       |        |                                                                                                             |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_evaluation <https://wiki.analog.com/common_quick_evaluation>`_
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common_software_design <https://wiki.analog.com/common_software_design>`_
+
+
+Demonstration Project User Interface
+====================================
+
+After the FPGA is correctly programmed the data acquisition process can start by executing the data_capture.bat script. A number of 8192 samples are acquired at a frequency of 1MSPS.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cmd_interface.png
+   :alt: Demonstration Project Command Interface
+   :align: center
+   :width: 500px
+
+**Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
+
+Troubleshooting
+===============
+
+
+.. note::
+
+   See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |Read operations time diagram| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/read_timing_ad7450a.png
+   :width: 500px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

@@ -1,0 +1,311 @@
+AD7298 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7298`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7298SDZ`
+
+Overview
+--------
+
+AD7298
+~~~~~~
+
+The :adi:`AD7298` is a 12-bit, high speed, low power, 8-channel, successive approximation ADC with an internal temperature sensor. The part operates from a single 3.3 V power supply and features throughput rates up to 1 MSPS. The device contains a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 30 MHz.
+
+The :adi:`AD7298` offers a programmable sequencer, which enables the selection of a pre-programmable sequence of channels for conversion. The device has an on-chip 2.5 V reference that can be disabled to allow the use of an external reference.
+
+The :adi:`AD7298` offers a programmable sequencer, which enables the selection of a preprogrammable sequence of channels for conversion. The device has an on-chip, 2.5 V reference that can be disabled to allow the use of an external reference.
+
+The :adi:`AD7298` includes a high accuracy band gap temperature sensor, which is monitored and digitized by the 12-bit ADC to give a resolution of 0.25°C. The device offers a 4-wire serial interface compatible with SPI and DSP interface standards.
+
+The :adi:`AD7298` uses advanced design techniques to achieve very low power dissipation at high throughput rates. The part also offers flexible power/throughput rate management options. The part is offered in a 20-lead LFCSP package.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7298sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7298 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7298 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7298 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7298 driver:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Function                                                                                                                                         | Description                                                       |
++==================================================================================================================================================+===================================================================+
+| unsigned char AD7298_Init(void)                                                                                                                  | Initializes the SPI communication peripheral.                     |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD7298_SetPower(unsigned char powerOption)                                                                                                  | Powers up or powers down the device.                              |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD7298_SetControlRegister(unsigned short value)                                                                                             | Sets the Control Register.                                        |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD7298_ConfigConversion(unsigned char repeat, unsigned short channels, unsigned char extRef, unsigned char tSense, unsigned char tSenseAvg) | Configures the conversion settings.                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| void AD7298_GetConversionResult(unsigned short \*convData, unsigned char \*ch)                                                                   | Returns the conversion value and its corresponding channel index. |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| float AD7298_CalcTemp(unsigned short value, float vRef)                                                                                          | Calculates the temperature in degrees Celsius.                    |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| float AD7298_CalcVoltage(unsigned short value, float vRef)                                                                                       | Calculates the measured voltage. Vref is considered to be 2.5V.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7298 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7298_generic.zip>`_
+-  `AD7298 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7298_rl78g13.zip>`_
+-  `AD7298 PIC32 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7298_pic32.zip>`_
+-  `AD7298 Arduino Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7298_arduino.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7298 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7298SDZ (Analog Devices) <EVAL-AD7298SDZ>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7298SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7298SDZ Pin T_CS         →  YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7298SDZ Pin T_DIN        →  YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7298SDZ Pin T_DOUT       →  YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7298SDZ Pin T_SCLK       →  YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7298SDZ Pin PD           →  YRDKRL78G13 J11 connector Pin 9
+     EVAL-AD7298SDZ Pin T_SENSE_B    →  YRDKRL78G13 J11 connector Pin 10
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7298sdz_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project samples the input voltage on channel 2 and 3 and displays the values on the LCD. The chip temperature is also displayed simultaneously.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7298_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Digilent Cerebot MX3cK Quick Start Guide
+========================================
+
+This section contains a description of the steps required to run the AD7298 demonstration project on a Digilent Cerebot MX3cK platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  :adi:`EVAL-AD7298SDZ (Analog Devices) <EVAL-AD7298SDZ>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
+-  `MPLAB XC32 compiler <http://www.microchip.com/mplabxc>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An EVAL-AD7298SDZ has to be connected to the JE connector of Cerebot MX3cK development board.
+
+::
+
+     EVAL-AD7298SDZ Pin T_CS         →  Cerebot MX3cK JE connector Pin 1
+     EVAL-AD7298SDZ Pin T_DIN        →  Cerebot MX3cK JE connector Pin 2
+     EVAL-AD7298SDZ Pin T_DOUT       →  Cerebot MX3cK JE connector Pin 3
+     EVAL-AD7298SDZ Pin T_SCLK       →  Cerebot MX3cK JE connector Pin 4
+     EVAL-AD7298SDZ Pin PD           →  Cerebot MX3cK JE connector Pin 9
+     EVAL-AD7298SDZ Pin T_SENSE_B    →  Cerebot MX3cK JE connector Pin 10
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7298_pic32.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+Following commands were implemented in this version of AD7298 reference project for Cerebot MX3cK board.
+
++----------+---------------------------------------------------------------------------------------------------+
+| Command  | Description                                                                                       |
++==========+===================================================================================================+
+| help?    | Displays all available commands.                                                                  |
++----------+---------------------------------------------------------------------------------------------------+
+| power=   | Power on or off the device. Accepted values: 0, 1.                                                |
++----------+---------------------------------------------------------------------------------------------------+
+| channel= | Selects the current channel. Accepted values: 0 - 7.                                              |
++----------+---------------------------------------------------------------------------------------------------+
+| rawdata? | Reads one sample from the selected channel.                                                       |
++----------+---------------------------------------------------------------------------------------------------+
+| voltage? | Reads one sample form the selected channel and converts it to voltage.                            |
++----------+---------------------------------------------------------------------------------------------------+
+| temp?    | Reads and displays the temperature in degrees Celsius.                                            |
++----------+---------------------------------------------------------------------------------------------------+
+| samples= | Reads a number of samples of the current channel indicated by the user. Accepted values: 1 - 1024 |
++----------+---------------------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+
+The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
+
+
+|image2|
+
+Software Project Setup
+----------------------
+
+.. include:: ../microchip/pic32_software_design.rst
+
+Digilent Cerebot MX3cK Quick Start Guide - Arduino
+==================================================
+
+This section contains a description of the steps required to run the AD7298 Arduino demonstration project on a Digilent Cerebot MX3cK platform.
+
+.. _required-hardware-2:
+
+Required Hardware
+-----------------
+
+-  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  :adi:`EVAL-AD7298SDZ (Analog Devices) <EVAL-AD7298SDZ>`
+
+.. _required-software-2:
+
+Required Software
+-----------------
+
+-  `MPIDE <https://github.com/chipKIT32/chipKIT32-MAX/downloads>`_
+
+.. _hardware-setup-2:
+
+Hardware Setup
+--------------
+
+An EVAL-AD7298SDZ has to be connected to the JE connector of Cerebot MX3cK development board.
+
+::
+
+     EVAL-AD7298SDZ Pin T_CS         →  Cerebot MX3cK JE connector Pin 1
+     EVAL-AD7298SDZ Pin T_DIN        →  Cerebot MX3cK JE connector Pin 2
+     EVAL-AD7298SDZ Pin T_DOUT       →  Cerebot MX3cK JE connector Pin 3
+     EVAL-AD7298SDZ Pin T_SCLK       →  Cerebot MX3cK JE connector Pin 4
+     EVAL-AD7298SDZ Pin PD           →  Cerebot MX3cK JE connector Pin 9
+     EVAL-AD7298SDZ Pin T_SENSE_B    →  Cerebot MX3cK JE connector Pin 10
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7298_pic32_arduino.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+--------------------------
+
+Following commands were implemented in this version of AD7298 reference project for Cerebot MX3cK board.
+
++----------+---------------------------------------------------------------------------------------------------+
+| Command  | Description                                                                                       |
++==========+===================================================================================================+
+| help?    | Displays all available commands.                                                                  |
++----------+---------------------------------------------------------------------------------------------------+
+| power=   | Power on or off the device. Accepted values: 0, 1.                                                |
++----------+---------------------------------------------------------------------------------------------------+
+| channel= | Selects the current channel. Accepted values: 0 - 7.                                              |
++----------+---------------------------------------------------------------------------------------------------+
+| rawdata? | Reads one sample from the selected channel.                                                       |
++----------+---------------------------------------------------------------------------------------------------+
+| voltage? | Reads one sample form the selected channel and converts it to voltage.                            |
++----------+---------------------------------------------------------------------------------------------------+
+| temp?    | Reads and displays the temperature in degrees Celsius.                                            |
++----------+---------------------------------------------------------------------------------------------------+
+| samples= | Reads a number of samples of the current channel indicated by the user. Accepted values: 1 - 1024 |
++----------+---------------------------------------------------------------------------------------------------+
+
+Commands can be executed using the serial monitor.
+
+**Carriage return** has to be selected as a line ending character. The required baud rate is **9600 baud**.
+
+The following image shows a list of commands in the serial monitor.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_arduino.png
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+.. include:: ../microchip/arduino_software_design.rst
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png

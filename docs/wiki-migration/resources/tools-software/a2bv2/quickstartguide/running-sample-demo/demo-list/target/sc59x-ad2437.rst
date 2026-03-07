@@ -1,0 +1,8 @@
+:doc:`Click here to return to Running sample Demo: Target as Host </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/target>`
+
+Running sample demo: SC59X-AD2437(RJ45)
+=======================================
+
+-  Refer :doc:`RJ45 Platform Jumper setting </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` for jumper setting.
+-  The default adi_a2b_busconfig.c file provided in the project could be used or it can be exported from "C:\\Analog Devices\\ADI_A2B-SSPlus_Software-Relx.y.z\\Schematics\\SC59x\\adi_a2b_AD2437WA1MZ_SC59x.ssprj"
+-  Refer `Connection and running sample demo <https://wiki.analog.com/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list/ad2437>`_ for connections and steps to run RJ45 example.

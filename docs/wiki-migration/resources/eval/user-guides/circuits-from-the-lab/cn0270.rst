@@ -1,0 +1,242 @@
+CN0270 Software User Guide
+==========================
+
+Overview
+--------
+
+:adi:`CN-0270 <CN0270>` is a complete 4-20mA Transmitter with HART system. It uses the :adi:`AD5420`, a 16-bit 4-20mA current source DAC, and :adi:`AD5700`/:adi:`AD5700-1`, a low power HART modem. The circuit can be configured with various process control current loop standards such as 4-20mA, 0-20mA and 0-24mA. This circuit adheres to the HART physical layer specifications as defined by the HART Communication Foundation, for example, the analog rate of change and noise during silence specifications.
+
+The EVAL-CN0270-EB1Z evaluation board comes with an onboard ADI microcontroller that handles communication between the system and the evaluation software. It also complies with the double PMOD form factor for use with external processors.
+
+This user guide will discuss how to use the evaluation software to configure and control the :adi:`EVAL-CN0270-EB1Z` Evaluation Board **(CN-0270 Board)**
+
+--------------
+
+Required Equipment
+------------------
+
+-  EVAL-CN0270-EB1Z Evaluation Board
+-  USB-SWD/UART-EMUZ Board (included with kit)
+-  `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_ (supplied with provided CD in kit)
+-  DC power supply, 24V recommended (12V to 36V compatible)
+-  Multi Meter
+-  USB Type-A plug to USB Mini-B plug cable
+
+--------------
+
+General Setup
+-------------
+
+-  The board is supplied via terminal block P1, +24VDC is recommended.
+-  The current loop output is derived from terminal block P3.
+-  The **USB-SWD/UART-EMUZ** connects to the **J-Link header** for control using the evaluation software
+-  **Link P2**
+
+   -  OPEN : disconnects the 499-ohm load resistor across current output and GND
+   -  SHORT : connects a 499-ohm load resistor across current output and GND
+
+-  **Link PMOD**
+
+   -  OPEN : control is via onboard processer and J-Link header.Choose this option if you want to connect the board using the J-Link USB and use the `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_
+   -  SHORT : control is via PMOD headers. Choose option if you want to use the circuit for prototyping or with external processors
+
+-  **Link XTAL**
+
+   -  Towards position 1 : AD5700-1 is clocked using the on-chip oscillator
+   -  Towards position 0 : AD5700-1 is clocked using the 3.6864 MHz crystal
+
+| |image1|
+| |image2|
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0270 Eval Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0270 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0270>`_ to the default directory path **C:\\Program Files\\Analog Devices\\CN0270\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+\
+
+
+
+|image3|
+
+-  Click **Next** to view the installation review page
+
+|image4|
+
+-  Click **Next** to start the installation
+-  Upon completion of the installation of the CN0270 Evaluation Software, the installer for the ADuCM360 and Segger J-Link Drivers will execute.
+
+.. tip::
+
+   
+   | NOTE: It is recommended that you close all other applications before clicking “Next”. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+-  Click **I Agree** to accept the software license agreement and initiate the installation
+-  Select only **ADuCM360** and **Segger J-Link Software** on the options shown
+
+.. important::
+
+   NOTE:Only these two options are required and included with the installer. To download the full ADuCM360 software bundle, please see the Additional Info section of this wiki.
+
+
+\
+
+
+
+|image5|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Controls and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Main Window
+^^^^^^^^^^^
+
+| This Window contains the block diagram of the system and gives access to the different controls and indicators.
+| |image6|
+
+-  **Output Current**
+
+   -  This control accepts a numerical value and sets the output current accordingly. Entering a value will also update the DAC Code field to the corresponding value.
+
+-  **DAC Code**
+
+   -  This control accepts data in HEX format and sets the output current according to the code. Entering a value will also update the Output Current field to the corresponding value.
+
+-  **Test Current**
+
+   -  This enables/disables the test current on the output. Test current slews the output between zero scale and full scale.
+
+-  Open AD5420 Configuration window
+-  Open HART Modem window
+-  **Hart Activity Indicator**
+
+   -  This indicates when there is data that was received in the HART interface. The data may be viewed in the HART Modem window.
+
+-  **Reset**
+
+   -  Resets both the system and evaluation software back to default working settings
+
+-  **Status Bar**
+
+   -  This indicator displays a message to the user detailing the current state of the software.
+
+--------------
+
+AD5420 Configuration Window
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| This window allows for configuration of current output section of the circuit. This window must be closed to resume operation of the software.
+| |image7|
+
+-  **Output Enabled**
+
+   -  Unordered List ItemThis triggers the output enabled operation when clicked.
+
+-  **Output Range**
+
+   -  This drop menu configure the output range of the AD5420 by selecting the desired output shown in the menu.
+
+-  **Digital Slew Rate Control**
+
+   -  Enable Button - Enables/Disables the Digital Slew Rate Control
+   -  Step Size – defines by how much the output value changes at each update.
+   -  Update Rate – defines the rate at which the digital slew is updated.
+
+-  **Configure**
+
+   -  Applies new configurations and closes the configuration window
+
+-  **Cancel**
+
+   -  Close the configuration window without changes
+
+--------------
+
+HART Modem Window
+^^^^^^^^^^^^^^^^^
+
+| This window holds the controls and displays for transmitting and reading data from the HART interface. This window can run in parallel to the main window.
+| |image8|
+
+-  Receive Buffer – Displays the received HART Data
+
+   -  HART Page – This shows the HART data divided into the corresponding packets
+   -  Raw – This shows the all HART data bytes received during the last transmission
+
+-  Transmit Buffer – Transmit data that is defined by the user.
+
+   -  HART Page – this page allows the user to configure the HART packet to be transmitted. The software will automatically format the HART packet from the values entered.
+
+      -  Copy Data from Rx Buffer – Copies data from the receive buffer to the transmit buffer
+      -  Transmit Data – Transmits HART data based the values entered
+
+   -  Raw – This page allows the user to define the data to be sent without formatting
+
+--------------
+
+Additional Info
+---------------
+
+-  :adi:`CN0270 Product Page <CN0270>`
+-  :adi:`AD5420 Product Page <AD5420>`
+-  :adi:`AD5700`/:adi:`AD5700-1`
+
+Microcontroller References
+
+-  `Development Tools Download <https://wiki.analog.com/ftp/ftp.analog.com/pub/microconverter/aducmxxxv1.3>`_
+-  :adi:`Development Systems Getting Started Tutorial <static/imported-files/user_guides/UG-457.pdf>`
+-  :adi:`ADuCM360 Product Page <aducm360>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0270-EB1Z Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0270-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0270-EB1Z?&v=RevB>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_board.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_jlink_connect.png
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install1.jpg
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/install2.jpg
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/driver_install2.jpg
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_main_window.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5420_window.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0270/cn0270_ad5700_window.png
+   :width: 400px

@@ -1,0 +1,179 @@
+AD4110 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD4110`
+
+Overview
+--------
+
+The :adi:`AD4110` is a complete, single-channel, universal input analog-to-digital front end for industrial process control systems where sensor type flexibility is required.
+
+The high voltage input is fully software configurable for current or voltage ranges and allow direct interface to all standard industrial analog signal sources such as, ±20 mA, ±4 mA to ±20 mA, ±10 V, and all thermocouple types. Field power can be supplied for loop powered current output sensors. A range of excitation current sources for RTD sensors and other resistive sensors are included. The integrated programmable gain amplifier, PGA, offers sixteen gain settings from 0.2 to 24.
+
+The high voltage input can be programmed to power up in either voltage or current mode. When programmed to current mode, the unique input circuit architecture provides a path for the loop current even in the absence of the system module power supply.
+
+The :adi:`AD4110` provides internal front-end diagnostic functions to indicate overvoltage, undervoltage, open wire, overcurrent and overtemperature conditions. The high voltage input is overcurrent limited and overvoltage protected up to ±35 V.
+
+The :adi:`AD4110` incorporates a 24-bit sigma delta analog to digital converter offering conversion rates from 5 SPS to 125 kSPS with simultaneous 50 Hz and 60 Hz noise rejection.
+
+Applications:
+
+-  Industrial process control (PLC, DCS)
+-  Data acquisition
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| Function                                                                                                                    | Description                                |
++=============================================================================================================================+============================================+
+| ``uint8_t ad4110_compute_crc8(uint8_t *data, uint8_t data_size);``                                                          | Compute CRC8 checksum.                     |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``uint8_t ad4110_compute_xor(uint8_t *data, uint8_t data_size);``                                                           | Compute XOR checksum.                      |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_spi_int_reg_write_msk(ad4110_dev *dev, uint8_t reg_map, uint8_t reg_addr, uint32_t data, uint16_t mask);`` | SPI write to device using a mask.          |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_set_adc_mode(ad4110_dev *dev, ad4110_adc_mode mode);``                                                     | Set the mode of the ADC.                   |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_set_gain(ad4110_dev *dev, ad4110_gain gain);``                                                             | Set the gain.                              |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_set_op_mode(ad4110_dev *dev, ad4110_op_mode mode);``                                                       | Set the operation mode.                    |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_spi_do_soft_reset(ad4110_dev *dev);``                                                                      | Do a SPI software reset.                   |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``uint8_t ad4110_get_data_size(ad4110_dev *dev, uint8_t reg_map, uint8_t reg_addr);``                                       | Get the data size of a specified register. |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_spi_int_reg_write(ad4110_dev *dev, uint8_t reg_map, uint8_t reg_addr, uint32_t reg_data);``                | SPI internal register write to device.     |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_spi_int_reg_read(ad4110_dev *dev, uint8_t reg_map, uint8_t reg_addr, uint32_t *reg_data);``                | SPI internal register read from device.    |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+| ``int32_t ad4110_setup(ad4110_dev **device, ad4110_init_param init_param);``                                                | Initialize the device.                     |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------+
+
+
+| ``typedef enum {                                                             |
+
+|     AD4110_DISABLE,                                                          |
+|     AD4110_ENABLE                                                            |
+| } ad4110_state;                                                              |
+|                                                                              |
+| typedef enum {                                                               |
+|     AD4110_DATA_WL24,                                                        |
+|     AD4110_DATA_WL16,                                                        |
+| } ad4110_data_word_length;                                                   |
+|                                                                              |
+| typedef enum {                                                               |
+|     AD4110_CONTINOUS_CONV_MODE,                                              |
+|     AD4110_SINGLE_CONV_MODE,                                                 |
+|     AD4110_STANDBY_MODE,                                                     |
+|     AD4110_PW_DOWN_MODE,                                                     |
+|     AD4110_SYS_OFFSET_CAL = 6,                                               |
+|     AD4110_SYS_GAIN_CAL                                                      |
+| } ad4110_adc_mode;                                                           |
+|                                                                              |
+| typedef enum {                                                               |
+|     AD4110_VOLTAGE_MODE,                                                     |
+|     AD4110_CURRENT_MODE,                                                     |
+|     AD4110_CURRENT_MODE_EXT_R_SEL,                                           |
+|     AD4110_THERMOCOUPLE,                                                     |
+|     AD4110_FLD_POWER_MODE,                                                   |
+|     AD4110_RTD_2W_MODE,                                                      |
+|     AD4110_RTD_3W_MODE,                                                      |
+|     AD4110_RTD_4W_MODE                                                       |
+| } ad4110_op_mode;                                                            |
+|                                                                              |
+| typedef enum {                                                               |
+|     AD4110_ADC_CRC_DISABLE,                                                  |
+|     AD4110_ADC_XOR_CRC, // 8-bit XOR checksum on reads, 8-bit CRC on writes  |
+|     AD4110_ADC_CRC_CRC // 8-bit CRC on reads and writes.                     |
+| }ad4110_adc_crc_mode;                                                        |
+|                                                                              |
+| typedef enum {                                                               |
+|     AD4110_AFE_CRC_DISABLE,                                                  |
+|     AD4110_AFE_CRC  // 8-bit CRC on reads and writes.                        |
+| }ad4110_afe_crc_mode;                                                        |
+|                                                                              |
+| typedef enum{                                                                |
+|     AD4110_GAIN_0_2,                                                         |
+|     AD4110_GAIN_0_25,                                                        |
+|     AD4110_GAIN_0_3,                                                         |
+|     AD4110_GAIN_0_375,                                                       |
+|     AD4110_GAIN_0_5,                                                         |
+|     AD4110_GAIN_0_75,                                                        |
+|     AD4110_GAIN_1,                                                           |
+|     AD4110_GAIN_1_5,                                                         |
+|     AD4110_GAIN_2,                                                           |
+|     AD4110_GAIN_3,                                                           |
+|     AD4110_GAIN_4,                                                           |
+|     AD4110_GAIN_6,                                                           |
+|     AD4110_GAIN_8,                                                           |
+|     AD4110_GAIN_12,                                                          |
+|     AD4110_GAIN_16,                                                          |
+|     AD4110_GAIN_24                                                           |
+| }ad4110_gain;                                                                |
+|                                                                              |
+| typedef struct {                                                             |
+|     /* SPI */                                                                |
+|     spi_device                  spi_dev;                                     |
+|     /* GPIO */                                                               |
+|     gpio_device                 gpio_dev;                                    |
+|     int8_t                      gpio_reset;                                  |
+|     /* Device Settings */                                                    |
+|     ad4110_state                data_stat;                                   |
+|     ad4110_data_word_length     data_length;                                 |
+|     ad4110_adc_crc_mode         adc_crc_en;                                  |
+|     ad4110_afe_crc_mode         afe_crc_en;                                  |
+|     ad4110_op_mode              op_mode;                                     |
+|     ad4110_gain                 gain;                                        |
+| } ad4110_dev;                                                                |
+|                                                                              |
+| typedef struct {                                                             |
+|     /* SPI */                                                                |
+|     uint8_t                     spi_chip_select;                             |
+|     spi_mode                    spi_mode;                                    |
+|     spi_type                    spi_type;                                    |
+|     uint32_t                    spi_device_id;                               |
+|     /* GPIO */                                                               |
+|     gpio_type                   gpio_type;                                   |
+|     uint32_t                    gpio_device_id;                              |
+|     int8_t                      gpio_reset;                                  |
+|     /* Device Settings */                                                    |
+|     ad4110_state                data_stat;                                   |
+|     ad4110_data_word_length     data_length;                                 |
+|     ad4110_afe_crc_mode         afe_crc_en;                                  |
+|     ad4110_adc_crc_mode         adc_crc_en;                                  |
+|     ad4110_op_mode              op_mode;                                     |
+|     ad4110_gain                 gain;                                        |
+| } ad4110_init_param;``                                                       |
++------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD4110 Driver.|
+
+   -
+
+   |Header file of AD4110 Driver.|
+
+.. |Implementation of AD4110 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/afe/ad4110/ad4110`.c
+.. |Header file of AD4110 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/afe/ad4110/ad4110`.h

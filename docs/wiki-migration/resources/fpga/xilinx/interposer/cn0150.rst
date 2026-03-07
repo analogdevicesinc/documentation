@@ -1,0 +1,162 @@
+CN0150 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD8318`
+-  :adi:`AD7887`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0150`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0150A-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0150A-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0150.jpg
+   :alt: cn0150.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to Analog Devices :doc:`System Demonstration Platform </wiki-migration/resources/eval/sdp>` (**SDP**). The **SDP** consists of a:
+
+-  a controller board, like the :doc:`EVAL-SDP-CB1Z </wiki-migration/resources/eval/sdp/sdp-b>` **(SDP-B)**
+-  a compatible Analog Devices SDP :adi:`product evaluation board <sdp#exallist>`
+-  corresponding PC software
+
+The EVAL-SDP-CB1Z controller board is part of Analog Devices SDP providing USB 2.0 high-speed connectivity to a PC computer running specific component evaluation software. Each SDP evaluation daughter board includes the necessary installation files needed for this performance testing. It's expected that the analog performance on the two platforms may differ.
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0150A-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0150_sdp1z.png
+   :alt: cn0150_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`CN0150` circuit measures RF power at any frequency from 1 MHz to 8 GHz over a range of approximately 60 dB. The measurement result is provided as a digital code at the output of a 12-bit ADC with serial interface and integrated reference. The output of the RF detector has a glueless interface to the ADC and uses most of the ADC’s input range without further adjustment. A simple two-point system calibration is performed in the digital domain.
+
+The :adi:`AD8318` maintains accurate log conformance for signals of 1 MHz to 6 GHz and provides useful operation to 8 GHz. The device provides a typical output voltage temperature stability of ±0.5 dB.
+
+The :adi:`AD7887` ADC can be configured for either dual or single channel operation via the on-chip control register. There is a default single-channel mode that allows the AD7887 to be operated as a read-only ADC, thereby simplifying the control logic.
+
+The **EVAL-CN0150A-SDPZ** board contains the circuit to be evaluated, as described in this note. To power the EVAL-CN0150A-SDPZ evaluation board supply +6V between the +6 V and GND inputs.
+
+More information
+----------------
+
+-  :adi:`CN0150 Info <CN0150>` - circuit note information
+-  :adi:`AD8318 Product Info <AD8318>` - pricing, samples, datasheet
+-  :adi:`AD7887 Product Info <AD7887>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0150A-SDP evaluation board user guide <CN0150>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0150-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0150 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7887 Driver:** :git-no-OS:`device_drivers/AD7887`
+   
+   -  **CN0150 Commands:** :git-no-OS:`device_commands/CN0150`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0150 reference project for Xilinx KC705 FPGA board.
+
++------------------+---------------------------------------------------------------------------------------+
+| Command          | Description                                                                           |
++==================+=======================================================================================+
+| **help?**        | Displays all available commands.                                                      |
++------------------+---------------------------------------------------------------------------------------+
+| **calibration=** | Makes a two points calibration. Accepted values:                                      |
+|                  | power input1:                                                                         |
+|                  | -50 .. -5 - first point input power in [dBm].                                         |
+|                  | power input2:                                                                         |
+|                  | -50 .. -5 - second point input power in [dBm].                                        |
++------------------+---------------------------------------------------------------------------------------+
+| **pinCalc?**     | Displays the calculated input power in [dBm].                                         |
++------------------+---------------------------------------------------------------------------------------+
+| **error?**       | Displays the error associated with the last input power calculation. Accepted values: |
+|                  | -50 .. -5 - true input power in [dBm].                                                |
++------------------+---------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD7887 IIO ADC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7887>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

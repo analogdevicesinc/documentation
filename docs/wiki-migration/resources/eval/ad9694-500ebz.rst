@@ -1,0 +1,325 @@
+EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC
+===============================================
+
+Preface
+-------
+
+This user guide describes the :adi:`AD9694` evaluation board :adi:`AD9694-500EBZ <AD9694>` which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described. The user guide wiki applies to the follow evaluation boards:
+
++--------------------------------+--------------------------------------------------+----------------------------+
+| Evaluation Board Part Number   | Description                                      | Board Revision             |
++================================+==================================================+============================+
+| <fc #9400d3>AD9694-500EBZ</fc> | <fc #9400d3>Evaluation board for AD9694-500</fc> | <fc #9400d3>9694CE04A</fc> |
++--------------------------------+--------------------------------------------------+----------------------------+
+
+| 
+| The :adi:`AD9694` data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+
+AD9694 Evaluation Board
+-----------------------
+
+The images below show the location and position of the jumpers on the old (first image) and new (second image) versions of the :adi:`AD9694-500EBZ <AD9694>`. |image1|\
+
+.. container:: centeralign
+
+   :adi:`AD9694` *Evaluation Board (old version)*\
+
+
+|image2|\
+
+.. container:: centeralign
+
+   :adi:`AD9694` *Evaluation Board (new version)*\
+
+
+Typical Measurement Setup
+-------------------------
+
+The :adi:`AD9694-500EBZ <AD9694>` can be evaluated using the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ FPGA data capture board. The figures below show the :adi:`AD9694-500EBZ <AD9694>` connected to the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_. If using the old version of the board, refer to the first image for connections, otherwise if using the new version of the board, refer to the second image. |image3|\
+
+.. container:: centeralign
+
+   *(Old) Evaluation Board Connection—*\ :adi:`AD9694-500EBZ <AD9694>`
+
+
+|image4|\
+
+.. container:: centeralign
+
+   *(New) Evaluation Board Connection—*\ :adi:`AD9694-500EBZ <AD9694>`
+
+
+Features
+--------
+
+-  Full featured evaluation board for the :adi:`AD9694`
+-  SPI interface for setup and control
+-  Wide band Balun driven input
+-  External supply powered but may also use 12V-1A and 3.3V-3A supplies from FMC
+-  VisualAnalog® and SPI controller software interfaces
+
+Helpful Documents
+-----------------
+
+-  :adi:`AD9694` Data Sheet
+-  ADS7-V2EBZ evaluation kit (`ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_)
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  `ADI SPI Application Note </>resources/technical-guides/adispi>>`__ // ADI Serial Control Interface Standard//
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+
+Software Needed
+---------------
+
+-  VisualAnalog `visualanalog_setup.exe <https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/visualanalog/visualanalog_setup.exe>`_
+-  ACE :doc:`ace </wiki-migration/resources/tools-software/ace>`
+
+Design and Integration Files
+----------------------------
+
+-  `AD9694CE04A schematic, BOM, layout files <https://wiki.analog.com/_media/eval/9694_board_files_ce04.zip>`_
+
+Equipment Needed
+----------------
+
+-  Analog signal source and antialiasing filter
+-  Sample clock source
+-  12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01 supplied with `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_/`ADS7-V1EBZ <https://wiki.analog.com/ads7-v1>`_)
+-  PC running Windows®
+-  USB 2.0 port
+-  :adi:`AD9694-500EBZ <AD9694>` board
+-  `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ FPGA-based data capture kit
+
+Getting Started
+---------------
+
+| This section provides quick start procedures for using the evaluation board for AD9694.
+
+Configuring the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+Before using the software for testing, configure the evaluation board as follows:
+
+-  Connect the evaluation board to the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ data capture board, as shown in the figure for the **Evaluation Board Connection**.
+-  Make sure the jumpers are placed on the evaluation board as highlighted in green in the figure **AD9694 Evaluation Board**.
+-  Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01 supplied) to P4 on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ board. Connect the Standard-B USB port of the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ board to the PC with the supplied USB cable.
+-  Turn on the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_.
+-  The `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ will appear in the Device Manager.\ |image5|\
+
+.. container:: centeralign
+
+   \ *Device Manager showing* `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\
+
+
+-  If the Device Manager does not show the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ listed, unplug all USB devices from the PC, uninstall and re-install SPIController and VisualAnalog and restart the hardware setup from step 1.
+-  On the ADC evaluation board, provide a clean, low jitter 1GHz clock source to connector J203 and set the amplitude to 14dBm. This is the ADC Sample Clock.
+-  On the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_ data capture board, provide a clean, low jitter clock source to connector J3 and set the amplitude to 10dBm. This is the Reference Clock for the gigabit transceivers in the FPGA. The REFCLK frequency can be calculated using the following empirical formulae:
+
+.. container:: centeralign
+
+   :math:`\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L` bps/lane, where
+
+
+.. container:: centeralign
+
+   :math:`f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio, Nprime=8 or 16` *(Default Nprime = 16)*\
+
+
+.. container:: centeralign
+
+   :math:`REFCLK = LaneLineRate/20`
+
+
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel A to J101. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.) If providing an input clock with a divide-by-1 setting in the AD9694 make sure the clock source has a 50% duty cycle. For optimum SNR performance use the clock divider with a divide ratio of 2 or higher to minimize the impact of the phase noise from the input clock source.
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel B to J102. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel C to J104. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel D to J107. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+
+Visual Analog Setup
+~~~~~~~~~~~~~~~~~~~
+
+-  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
+-  On the VisualAnalog “New Canvas” window, and select the desired canvas. **Note: The current canvases for VisualAnalog only support operating both pairs of channels in the AD9694 in the same chip operating mode with the same decimation rate. If Pair AB is in full bandwidth mode then Pair CD must also be in full bandwidth mode. If Pair AB is in real DDC0/DDC1 mode with a decimation rate of 2 then pair CD must also be in real DDC0/DDC1 mode with a decimation rate of 2.**\ |image6|\
+
+.. container:: centeralign
+
+   //Selecting the :adi:`AD9694` canvas *
+
+
+\* Next, program the FPGA in VisualAnalog by clicking into the* **ADC Data Capture Settings** *block and selecting the* **Capture Board** *tab. Use the* **Browse** *button to navigate to the* **ad9694_ads7v2.bin** *file and then click* **Program**\ *. The* **FPGA_DONE** *LED should illuminate on the ADS7-V1 board indicating that the FPGA has been correctly programmed. \
+
+.. container:: centeralign
+
+   *\ Programming the `ADS7-V2EBZ <https://wiki.analog.com/ads7-v2>`_\ *
+
+
+\* Click the* **General** *button in the* **ADC Data Capture Settings** *block. On the* **General** *tab make sure the clock frequency is set to match the sample clock. For example, if the sample clock of the AD9694 is 368.64 MHz then set the* **Clock Frequency (MHz)** *to 368.64 MHz. The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA software supports up to 2M FFT capture (1M per channel).\ \
+
+.. container:: centeralign
+
+   *\ Changing the ADC Capture Settings\ *
+
+
+\* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 5)\ \
+
+.. container:: centeralign
+
+   *\ Expanding Display in VA\ *
+
+
+\* On the* **Device** *tab. Make sure that* **Enable Alternate REFCLK** *option is checked. \* Click* **OK**\ *==== ACE Setup ==== \* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` ACE :math:`right` ACE \* Once ACE opens the AD9694 evaluation board should appear in the* **Attached Hardware** *section. \
+
+.. container:: centeralign
+
+   *\ ACE Attached Hardware: AD9694 *
+
+
+\* Double click on the* **AD9694 Eval Board** *icon which will open up the Initial Configuration wizard. The default conditions for the AD9694 are Full BW mode with a sample clock of 500 MHz. From here both pairs of ADC channels (Pair AB and Pair CD) can be configured simultaneously.* **NOTE:It is important to remember that the AD9694 functions as two dual ADCs.** *\
+
+.. container:: centeralign
+
+   *\ ACE - AD9694 Initial Configuration Wizard\ *
+
+
+\* Prior to configuring any modes in the AD9694 double click on the* **AD9694** *icon to bring up the device view. From the device view click on the* **Read All** *icon to read the SPI settings from the device. Do this for each pair by selecting one pair at a time and then clicking the* **Read All** *icon.\ \
+
+.. container:: centeralign
+
+   *\ ACE - AD9694 Initial Configuration Wizard\ *
+
+
+\* From the the* **Initial Configuration Wizard** *the clock frequency, chip application mode (per pair), DDC inputs and outputs, and the JESD204B settings can be quickly configured. The default conditions are: \* Clock Input =* **1 GHz**\ *\* Clock Divider =* **Divide by 2**\ *\* Chip Operating Mode =* **Full Bandwidth Mode**\ *\* JESD204B Parameters:* **L.M.F = 2.2.2** *;* **N' = 16**\ *\* All these parameters can be seen below: \
+
+.. container:: centeralign
+
+   *\ ACE - AD9694 Initial Configuration Wizard Showing JESD204B Parameters\ *
+
+
+==== Device Setup - Full BW Mode ==== \* The default Chip Application Mode for the AD9694-500 is Full BW mode. In this example the clock frequency will be set to* **500 MHz**\ *, the clock divider set to* **Divide by 1**\ *, and the chip operating mode set to* **Full BW Mode**\ *. Once the settings have been entered, click* **Apply**\ *. This will configure the device with the selected settings and provide an* **Initial Configuration Summary** *which will summarize the settings that have been loaded into the AD9694 and also provide the frequency for the required FPGA reference clock. \
+
+.. container:: centeralign
+
+   *\ Default Application Mode - Full BW Mode\ *
+
+
+\* In order to change the settings for each channel, double-click on the AD9694 icon from the* **AD9694 Eval Board** *view (highlighted in the figure below). \
+
+.. container:: centeralign
+
+   *\ Double-click the AD9694 Icon in the Eval Board View\ *
+
+
+\* This will bring up the AD9694 device view showing more specific settings for each pair and channel. The device view shows one pair of the AD9694 at a time. The* **ADC Pair Selection** *drop down box is used to select the current pair. To select the desired pair (Pair AB or Pair CD) select the desired pair form the drop down box. This sets the current changes to affect the select pair only. The settings can now be configured for each channel. Once the settings are configured click* **Apply Changes** *in the upper left of the device view. This will load the setting changes to the selected ADC pair and channel(s). If the settings are desired for all four channels then click the* **Apply** *button in the* **AD9694 Configuration** *window on the left of the screen. This loads the current settings to all channels in the device.\ \
+
+.. container:: centeralign
+
+   *\ Figure 15. Pair AB - Channel A and Channel B NSR Settings\ *
+
+
+\* The device view in ACE also has controls for the analog input controls. The input buffer current, input full-scale voltage, and analog input differential termination can be adjusted. The analog inputs can also be disabled from this menu. \
+
+.. container:: centeralign
+
+   *\ Analog Input Control Settings\ *
+
+
+\* The* **Memory Map View** *can be accessed from the AD9694* **Device View**\ *. The* **Memory Map View** *can be used to individually write registers in the AD9694.* **Note: When writing individual registers it is imperative to first write the Pair Index register (0x0009) before any other write so that the correct ADC channel pair (Pair AB or Pair CD) is being addressed. If writing a local register, subsequently write the ADC channel index register (0x0008) so that the desired channel within the desired pair is written (Channel A/C or Channel B/D).** *\
+
+.. container:: centeralign
+
+   *\ Memory Map View\ *
+
+
+==== Obtaining an FFT - Full BW Mode ==== \* The first item to configure in Visual Analog is the input clock frequency. This needs to be set to twice the frequency of the input clock. Click in the ADC Data Capture block to open the settings. In this example, 500 MHz is the input clock frequency so 1000 is entered into VisualAnalog.\ \
+
+.. container:: centeralign
+
+   *\ AD9694 FFT Data Capture Settings\ *
+
+
+\* In this example, with an input clock of 500MHz, the output sample rate is 500MSPS. The default JESD204B lane configuration for the JESD204B link of each ADC Channel Pair is 2.2.2 (L.M.F). The required REFCLK frequency is 500 MHz (refer to step 7 in the section "Configuring the Board"). \* Click the Run button in Visual Analog and you should see the capture data similar to the plot below. \
+
+.. container:: centeralign
+
+   *\ AD9694 FFT with NSR Enabled (Tuning Word = 58\ *
+
+
+\* Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the* **Fund Power** *reading in the left panel of the VisualAnalog FFT window.) NSR imposes a ~3dB loss in the signal, but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT in Visual Analog. \* To save the FFT plot do the following \* Click on the Float Form button in the FFT window\ \
+
+.. container:: centeralign
+
+   *\ Floating the FFT window\ *
+
+
+\* Click on File :math:`right` Save Form As button and save it to a location of choice\ \
+
+.. container:: centeralign
+
+   *\ Saving the FFT\ *
+
+
+==== Device Setup - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode ==== \* The default Chip Application Mode for the AD9694 is full bandwidth mode. The AD9694 settings must be changed to configure the AD9694 into DDC mode. To set up the AD9694 for DDC mode change the Chip Application Mode to* **DDC0** *in the* **Initial Configuration** *window in the* **AD9694 Eval Board** *view in ACE and click* **Apply**\ *. (*\ **Note: Due to the software limitation in VisualAnalog, both ADC pairs (AB and CD) must be set to the same operating mode and same decimation rate.**\ *) \
+
+.. container:: centeralign
+
+   *\ Set Application Mode to DDC0\ *
+
+
+\* The DDC settings can be configured from the* **Device View** *in ACE. In this example a complex input signal is being input to the AD9694, I data is on Channel A/C and Q data is on Channel B/D. See the AD9694 data sheet for more details on the available DDC modes and decimation rates. To access the device view, double-click the* **AD9694** *icon from the* **AD9694 Eval Board** *view which will bring up the view below. In this example DDC0 is set to complex mode with the NCO in Variable IF mode and the tuning frequency set to 230MHz (the input frequency to the AD9694 is 270.1 MHz). Once the settings have been entered click* **Apply Changes** *in the upper left of the* **Device View**\ *. This will apply changes to the ADC Pair (Pair AB or Pair CD) selected in the* **Device View**\ *. \
+
+.. container:: centeralign
+
+   *\ Pair AB: Channel A and Channel B DDC0 Settings\ *
+
+
+\* Once again, make sure that Pair CD has the same DDC mode as Pair AB (due to VisualAnalog software limitation). The NCO tuning and NCO mode can be different between Pair AB and Pair CD, but the pairs must both be set to complex mode or to real mode and the decimation rates must be the same. To do so, set the* **ADC Pair Selection** *to the desired pair, configure the block diagram as desired and click* **Apply Changes** *in the upper left of the window. This should be done for each pair (Pair AB and Pair CD). \
+
+.. container:: centeralign
+
+   *\ Pair CD: Channel C and Channel D DDC0 Settings\ *
+
+
+\* When making changes to the DDC settings the* **DDC Soft Reset** *must be written afterwards. To do so, select* **DDC Held in Reset** *from the drop down menu in the block diagram. Then click* **Apply Changes** *in the upper left of the AD9694 Device view in ACE. Next, select* **Normal Operation** *from the drop down menu in the block diagram and then click* **Apply Changes** *once again. This process resets the DDC and then places the DDC back into normal operating mode. This must be done for each pair (Pair AB and/or Pair CD) for which DDC changes have been applied. \
+
+.. container:: centeralign
+
+   *\ Pair AB: Channel A and Channel B DDC0 Settings with DDC Soft Reset\ *
+
+
+==== Obtaining an FFT - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode ==== \* The first item to configure in Visual Analog is the input clock frequency. This needs to be set to twice the frequency of the input clock. Click in the ADC Data Capture block to open the settings. In this example, 368.64 MHz is the sample clock frequency so 368.64 is entered into VisualAnalog. Also, make sure that the output data is set to \*Ch. DDC0 Data\*.\ \
+
+.. container:: centeralign
+
+   *\ AD9694 FFT Data Capture Settings\ *
+
+
+\* In this example, with a sample clock of 368.64MHz, the output sample rate is 184.32MSPS. The JESD204B lane configuration for the JESD204B link of each ADC Channel Pair is 2.4.4 (L.M.F). The required REFCLK frequency is 368.64 MHz (refer to step 7 in the section "Configuring the Board"). \* Click the Run button in Visual Analog and you should see the capture data similar to the plot below. \
+
+.. container:: centeralign
+
+   *\ AD9694 FFT with DDC0 Enabled\ *
+
+
+\* Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the* **Fund Power** *reading in the left panel of the VisualAnalog FFT window.) Adjust the input signal to -1.4 dBFS or less in the FFT in Visual Analog (this accounts for the approximately -0.4 dB loss in the DDC. Recall that the mixing process incurs a 6dB additional loss; the signal amplitude is -7.4 dBFS in this plot. \* To save the FFT plot do the following \* Click on the Float Form button in the FFT window\ \
+
+.. container:: centeralign
+
+   *\ Floating the FFT window\ *
+
+
+\* Click on File :math:`right` Save Form As button and save it to a location of choice\ \
+
+.. container:: centeralign
+
+   *\ Saving the FFT//
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9694_jumpers.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9694_jumpers_new_board.jpg
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9694_connection.png
+   :width: 800px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9694_connection_new_board.jpg
+   :width: 800px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/9694_ads7v2_devmgr.png
+   :width: 300px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/newcanvas9694.jpg

@@ -1,0 +1,199 @@
+CN0202 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5662`
+-  :adi:`AD5750`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0202`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0202-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0202-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0202.jpg
+   :alt: cn0202.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0202-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0202_sdp1z.jpg
+   :alt: cn0202_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-CN0202-SDPZ** board provides a full function, high voltage (up to 44 V), flexible, programmable analog output solution that meets most requirements for programmable logic controller (PLC) and distributed control system (DCS) applications. When using this evaluation board with the SDP board or BeMicro SDK board, apply +6 V and GND to Connector CN2, 12-50 V and GND to Connector CN3.
+
+The :adi:`AD5662` low power (0.75 mW typical @ 5 V), rail-to-rail output, 16-bit nanoDAC® device and the :adi:`AD5751` industrial current/voltage output driver are well matched with respect to input and output voltage ranges, as well as reference voltage requirements.
+
+The :adi:`AD5662`, a member of the nanoDAC family, is a low power, single, 16-bit buffered voltage-out DAC that operates from a single 2.7 V to 5.5 V supply and is guaranteed monotonic by design.
+
+The AD5662 requires an external reference voltage to set the output range of the DAC. The part incorporates a power-on reset circuit that ensures the DAC output powers up to 0 V (AD5662x-1) or to midscale (AD5662x-2), and remains there until a valid write takes place. The part contains a power-down feature that reduces the current consumption of the device to 480 nA at 5 V and provides software-selectable output loads while in power-down mode.
+
+The low power consumption of this part in normal operation makes it ideally suited to portable battery-operated equipment. The power consumption is 0.75 mW at 5 V, going down to 2.4 µW in power-down mode. The AD5662’s on-chip precision output amplifier allows rail-to-rail output swing to be achieved. For remote sensing applications, the output amplifier’s inverting input is available to the user.
+
+The :adi:`AD5750`/:adi:`AD5750-1` are single-channel, low cost, precision voltage/current output drivers with hardware- or software- programmable output ranges. The software ranges are configured via an SPI-/MICROWIRE™-compatible serial interface. The AD5750/AD5750-1 target applications in PLC and industrial process control. The analog input to the AD5750/AD5750-1 is provided from a low voltage, single-supply digital-to-analog converter (DAC) and is internally conditioned to provide the desired output current/voltage range. Analog input ranges available are 0 V to 2.5 V (AD5750-1) or 0 V to 4.096 V (AD5750). The output current range is programmable across five current ranges: 4 mA to 20 mA, 0 mA to 20 mA or 0 mA to 24 mA, ±20 mA, and ±24 mA. An overrange of 2% is available on the unipolar current ranges. Voltage output is provided from a separate pin that can be configured to provide 0 V to 5 V, 0 V to 10 V, ±5 V, or ±10 V output ranges. An overrange of 20% is available on the voltage ranges. Analog outputs are short-circuit and open-circuit protected and can drive capacitive loads of 1 µF and inductive loads of 0.1 H. The device is specified to operate with a power supply range from ±12 V to ±24 V. Output loop compliance is 0 V to AVDD - 2.75 V. The flexible serial interface is SPI and MICROWIRE compatible and can be operated in 3-wire mode to minimize the digital isolation required in isolated applications. The interface also features an optional PEC error checking feature using CRC-8 error checking, useful in industrial environments where data communication corruption can occur. The device also includes a power-on reset function, ensuring that the device powers up in a known state (0 V or tristate), and an asynchronous CLEAR pin that sets the outputs to zero scale/midscale voltage output or the low end of the selected current range. An HW SELECT pin is used to configure the part for hardware or software mode on power-up.
+
+More information
+----------------
+
+-  :adi:`CN0202 Product Info <CN0202>` - pricing, samples, datasheet
+-  :adi:`AD5662 Product Info <AD5662>` - pricing, samples, datasheet
+-  :adi:`AD5750 Product Info <AD5750>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0202-SDPZ evaluation board user guide <CN0202>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0202-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0202 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5662 Driver:** :git-no-OS:`device_drivers/AD5662`
+   
+   -  **AD5750 Driver:** :git-no-OS:`device_drivers/AD5750`
+   -  **CN0202 Commands:** :git-no-OS:`device_commands/CN0202`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0202 reference project for Xilinx KC705 FPGA board.
+
++-------------------+---------------------------------------------------------+
+| Command           | Description                                             |
++===================+=========================================================+
+| **help?**         | Displays all available commands.                        |
++-------------------+---------------------------------------------------------+
+| **register=**     | Write a value to the DAC register. Accepted values:     |
+|                   | 0 .. 65535 - value to be written in register.           |
++-------------------+---------------------------------------------------------+
+| **register?**     | Displays the last value written to the DAC register.    |
++-------------------+---------------------------------------------------------+
+| **ad5750clrPin=** | Sets the output value of CLR pin. Accepted values:      |
+|                   | 0 - sets the CLR pin low.(default)                      |
+|                   | 1 - sets the CLR pin high.                              |
++-------------------+---------------------------------------------------------+
+| **ad5750clrPin?** | Displays the output value of CLR pin.                   |
++-------------------+---------------------------------------------------------+
+| **addressA0=**    | Sets the value of A0 address bit(JP1). Accepted values: |
+|                   | 0 - address is 0b000.(default)                          |
+|                   | 1 - address is 0b001.                                   |
++-------------------+---------------------------------------------------------+
+| **addressA0?**    | Displays the value of A0 address bit(JP1).              |
++-------------------+---------------------------------------------------------+
+| **range=**        | Sets the output range for AD5750. Accepted values:      |
+|                   | 0 -> 0V to 5V.                                          |
+|                   | 1 -> 0V to 6V.                                          |
+|                   | 2 -> 0V to 10V.                                         |
+|                   | 3 -> 0V to 12V.                                         |
+|                   | 4 -> -2.5V to +2.5V.                                    |
+|                   | 5 -> -5V to +5V.                                        |
+|                   | 6 -> -6V to +6V.                                        |
+|                   | 7 -> -10V to +10V.                                      |
+|                   | 8 -> -12V to +12V.                                      |
+|                   | 9 -> 4mA to 20mA(internal).                             |
+|                   | 10 -> 4mA to 20mA(external).                            |
+|                   | 11 -> 0mA to 20mA(internal).                            |
+|                   | 12 -> 0mA to 20mA(external).                            |
+|                   | 13 -> 0mA to 24mA(internal).                            |
+|                   | 14 -> 0mA to 24mA(external).                            |
+|                   | 15 -> -20mA to +20mA(internal).                         |
+|                   | 16 -> -20mA to +20mA(external).                         |
+|                   | 17 -> -24mA to +24mA(internal).                         |
+|                   | 18 -> -24mA to +24mA(external).                         |
+|                   | 19 -> 3.92mA to 20.4mA(internal).                       |
+|                   | 20 -> 0mA to 20.4mA(internal).                          |
+|                   | 21 -> 0mA to 24.5mA(internal).                          |
++-------------------+---------------------------------------------------------+
+| **range?**        | Displays the current output range.                      |
++-------------------+---------------------------------------------------------+
+| **fault?**        | Displays the list of possible faults.                   |
++-------------------+---------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5662 IIO DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5446>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

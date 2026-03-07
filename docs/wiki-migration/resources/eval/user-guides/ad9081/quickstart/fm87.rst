@@ -1,0 +1,114 @@
+Agilex 7 SoC (DK-SI-AGI027FA) Development Kit Linux Quick Start Guide
+=====================================================================
+
+Get aarch64-none-linux-gnu and set CROSS_COMPILE and ARCH variables
+-------------------------------------------------------------------
+
+::
+
+   analog@debian:~$ **mkdir tools**
+   analog@debian:~$ **cd tools**
+   analog@debian:~/tools$ **wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz**
+   analog@debian:~/tools$ **tar xvf gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz**
+   analog@debian:~/tools$ **export CROSS_COMPILE=`pwd`/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-**
+   analog@debian:~/tools$ **export ARCH=arm64**
+   analog@debian:~/tools$ **cd ~**
+
+Build Linux kernel
+------------------
+
+::
+
+   analog@debian:~$ **git clone -b agilex https://github.com/analogdevicesinc/linux**
+   analog@debian:~$ **cd ./linux**
+   analog@debian:~/linux$ **make adi_zynqmp_defconfig**
+   analog@debian:~/linux$ **make Image**
+   analog@debian:~/linux$ **make intel/socfpga_agilex_socdk_ad9081.dtb**
+   analog@debian:~/linux$ **cp arch/arm64/boot/Image /media/analog/BOOT/**
+   analog@debian:~/linux$ **cp arch/arm64/boot/dts/intel/socfpga_agilex_socdk_ad9081.dtb /media/analog/BOOT/socfpga_agilex_socdk.dtb**
+   analog@debian:~/linux$ **cd ~**
+
+Build ARM Trusted Firmware
+--------------------------
+
+::
+
+   analog@debian:~$ **git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/arm-trusted-firmware**
+   analog@debian:~$ **cd ./arm-trusted-firmware**
+   analog@debian:~/arm-trusted-firmware$ **make bl31 PLAT=agilex DEPRECATED=1**
+   analog@debian:~/arm-trusted-firmware$ **cd ~**
+
+Build U-Boot and copy u-boot.itb to SD card
+-------------------------------------------
+
+::
+
+   analog@debian:~$ **git clone -b QPDS24.1_REL_GSRD_PR https://github.com/altera-opensource/u-boot-socfpga**
+   analog@debian:~$ **cd ./u-boot-socfpga**
+   analog@debian:~/u-boot-socfpga$ ln -sf ../arm-trusted-firmware/build/agilex/release/bl31.bin .
+   analog@debian:~/u-boot-socfpga$ sed -i 's/earlycon panic=-1/earlycon panic=-1 console=ttyS0,115200 root=\/dev\/mmcblk0p2 rw rootwait/g' configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ sed -i '/^CONFIG_NAND_BOOT=y/d' configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ sed -i '/^CONFIG_SPL_NAND_SUPPORT=y/d' configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ sed -i '/^CONFIG_CMD_UBI=y/d' configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ echo 'CONFIG_USE_BOOTCOMMAND=y' >> configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ echo 'CONFIG_BOOTCOMMAND="load mmc 0:1 \${loadaddr} agilex.core.rbf; bridge disable; fpga load 0 \${loadaddr} \${filesize}; bridge enable; load mmc 0:1 ${kernel_addr_r} Image; load mmc 0:1 ${fdt_addr_r} socfpga_agilex_socdk.dtb; booti ${kernel_addr_r} - ${fdt_addr_r}"' >> configs/socfpga_agilex_defconfig
+   analog@debian:~/u-boot-socfpga$ **make socfpga_agilex_defconfig**
+   analog@debian:~/u-boot-socfpga$ **make**
+   analog@debian:~/u-boot-socfpga$ **cp u-boot.itb /media/analog/BOOT/**
+   analog@debian:~/u-boot-socfpga$ **cd ~**
+
+Generate .jic (JTAG Indirect Configuration) and .rbf (Raw Binary File) files
+----------------------------------------------------------------------------
+
+<fc #ff0000>\ **Warning: This project was only tested using Quartus Pro 24.1.**\ </fc>
+
+::
+
+   analog@debian:~$ **git clone https://github.com/analogdevicesinc/hdl**
+   analog@debian:~$ **cd hdl/projects/ad9081_fmca_ebz/fm87**
+   analog@debian:~/hdl/projects/ad9081_fmca_ebz/fm87$ **make**
+   Building ad9081_fmca_ebz_fm87 [/home/analog/hdl/projects/ad9081_fmca_ebz/fm87/ad9081_fmca_ebz_fm87_quartus.log] ... OK
+   analog@debian:~/hdl/projects/ad9081_fmca_ebz/fm87$ **quartus_pfg -c ad9081_fmca_ebz_fm87.sof ad9081_fmca_ebz_fm87.jic \
+     -o hps_path=../../../../u-boot-socfpga/spl/u-boot-spl-dtb.hex \
+     -o device=MT25QU02G \
+     -o flash_loader=AGIB027R31B1E1V \
+     -o mode=ASX4 \
+     -o hps=1**
+   analog@debian:~/hdl/projects/ad9081_fmca_ebz/fm87$ **cp ad9081_fmca_ebz_fm87.core.rbf /media/analog/BOOT/agilex.core.rbf**
+
+Programming steps
+-----------------
+
+-  Set **S9** to **JTAG**
+-  Open the Quartus Programmer and flash the **ad9081_fmca_ebz_fm87.jic** file
+-  Power off the FPGA
+-  Set **S9** to **QSPI**
+-  Insert the SD-card and power up the board
+
+Set FPGA configuration mode
+---------------------------
+
+**S9** 4-bit DIP Switch
+
+========== ====== ======= ======= ========
+Switch Bit **1**  **2**   **3**   **4**
+Name       MSEL0  MSEL1   MSEL2   Not Used
+JTAG Mode  **ON** **ON**  **ON**  **OFF**
+QSPI Mode  **ON** **OFF** **OFF** **OFF**
+========== ====== ======= ======= ========
+
+Default Switch Positions for AD9081 project
+-------------------------------------------
+
+================ ======= ======= ======= =======
+4-bit DIP Switch **1**   **2**   **3**   **4**
+S4               **ON**  **ON**  **ON**  **ON**
+S15              **ON**  **ON**  **ON**  **OFF**
+S10              **ON**  **ON**  **ON**  **ON**
+S23              **ON**  **ON**  **ON**  **ON**
+S6               **OFF** **OFF** **OFF** **OFF**
+S1               **OFF** **OFF** **OFF** **OFF**
+S22              **OFF** **ON**  **ON**  **ON**
+S19              **OFF** **OFF** **ON**  **ON**
+S20              **ON**  **ON**  **ON**  **ON**
+================ ======= ======= ======= =======

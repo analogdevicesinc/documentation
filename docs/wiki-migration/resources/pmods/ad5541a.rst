@@ -1,0 +1,21 @@
+The :adi:`AD5541A`, :adi:`AD5600` are single, 16-bit, serial input, unbuffered voltage output digital-to-analog converter (DAC) that operate from a single 2.7 V to 5.5 V supply.
+
+The DAC output range extends from 0 V to VREF and is guaranteed monotonic, providing ±1 LSB INL accuracy at 16 bits without adjustment over the full specified temperature range of −40°C to +125°C. The :adi:`AD5541A` is available in a 3 mm × 3 mm, 10-lead LFCSP and 10-lead MSOP. The AD5541A-1 is available in a 3 mm × 3 mm, 8-lead LFCSP.
+
+Offering unbuffered outputs, the :adi:`AD5541A`, :adi:`AD5600` achieve a 1 μs settling time with low power consumption and low offset errors. Providing low noise performance of 11.8 nV/√Hz and low glitch, the :adi:`AD5541A`, :adi:`AD5600` are suitable for deployment across multiple end systems.
+
+The :adi:`AD5541A`, :adi:`AD5600` use a versatile 3-wire interface that is compatible with a 50 MHz SPI, QSPI™, MICROWIRE™, and DSP interface standards.
+
+Applications
+============
+
+-  Automatic test equipment
+-  Precision Source-measure Instruments
+-  Data Acquisition Systems
+-  Medical Instrumentation
+-  Aerospace Instrumentation
+-  Communications Infrastructure equipment
+-  Industrial Control
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5541a_pmod_da3.jpg
+   :align: center

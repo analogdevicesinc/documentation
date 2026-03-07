@@ -1,0 +1,138 @@
+EVAL-CN0537-ARDZ Evaluation Board User Guide
+============================================
+
+Since the 1970s, smoke detectors have become a staple in commercial and residential buildings. Two basic types of detectors exist – the ionization type, which uses radioactive matter to ionize the air and checks for an electrical imbalance; and the photoelectric type, which uses a light source aimed at angle away from a photodetector and checks for an increase in the photodetector current. Although a combo solution of both types is recommended, the photoelectric smoke detector is more popular due to its improved reliability in detecting common house fires, faster response time to smoldering fires and reduced vulnerability to false alarms. Certain areas in the United States of America, such as California and Massachusetts, have laws that mandate the use of photoelectric smoke detectors.
+
+Unfortunately, smoke detectors have also remained virtually the same since the 1970s despite the technological advances in electronics throughout the decades. New revisions in standards such as the ANSI/UL-217 and the ANSI/UL-268, published by Underwriters Laboratory (UL), or the NFPA® 72 National Fire Alarm Code, published by the National Fire Protection Agency (NFPA), aim to address this technological gap by placing more complex requirements on modern smoke detector designs. For example, in addition to the traditional fire and smoke sensitivity tests, the latest edition of the UL-217 standard now calls for checking the cooking immunity of a smoke detector during certification, an ability to accurately recognize and ignore smoke particles produced by cooking food.
+
+Ultimately, the goal of these new standards is the adoption of new smart sensing technologies which will allow smoke detectors to distinguish real threats from the nuisance sources, such as cooking and bathroom steam. Traditionally, this would require a complicated solution with multiple sensor technologies and a level of artificial intelligence; however, the use of the ADPD188BI makes this significantly simpler to implement.
+
+The :adi:`EVAL-CN0537-ARDZ <CN0537>` is the evaluation board for the :adi:`CN0537`, a smoke detector reference design based on the :adi:`ADPD188BI` Integrated Optical Module. Intended to ease development of smoke detection algorithms and systems, the hardware can be interfaced directly with the :adi:`EVAL-ADICUP3029` (and other standard Arudino form-factor development boards) without the need for additional sensors or signal conditioning.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_revb_primary_side.png
+   :align: center
+   :width: 400px
+
+Included with the evaluation board is application software for the :adi:`EVAL-ADICUP3029` which can be used to stream blue and IR data from the :adi:`ADPD188BI` and save them into a micro-SD card.
+
+Connectors and Jumper Configurations
+------------------------------------
+
+Selecting the Communications Interface (JP1 to JP6)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`ADPD188BI` is capable of communicating using either I2C or SPI. Short jumpers JP1 to JP2 to connect the I2C lines to the device. Likewise, short jumpers JP3 to JP6 to connect the SPI lines to the device. Open jumpers corresponding to the unused lines.
+
+| |image1|
+| |image2|
+
+.. note::
+
+   By default, the :adi:`EVAL-CN0537-ARDZ <CN0537>` is configured to use the SPI communication interface.
+
+
+Selecting the I2C Address of the Temperature/Humidity Sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default on-board temperature/humidity sensor installed on the :adi:`EVAL-CN0537-ARDZ <CN0537>` uses I2C communication. Select the I2C address using JP7.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_sht30_i2c_address_.png
+   :align: center
+   :width: 200px
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp7_table.png
+   :align: center
+   :width: 250px
+
+.. note::
+
+   By default, the I2C address of the temp/humidity sensor is set to 0x44 (Pins 2 and 3 of JP7 are shorted).
+
+
+Alarm LED, Buzzer and Test Button (DS1, U6 and S1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These components can be used to signal an alarm when smoke is detected by the :adi:`ADPD188BI`. The LED can be turned on by writing a 0 on pin 3 on connector P4. Similarly, the buzzer can be sounded by writing a 1 on pin 1.
+
+| |image3|
+| Please note that the pins assignments can be changed depending on the settings of JP14 & JP15 (for the LED) and JP16 & JP17 (for the buzzer).
+| The push button S1 can be used to test the alarm if needed. Pressing this button sets pin 3 (or pin 4, depending on the settings of jumpers JP16 and JP17) on connector P4 to 0, turning the LED on. With the demo software running, pressing and holding S1 for at least 5 seconds will also trigger the buzzer.
+| ==== GPIO Pin Assignments (JP12 to JP19) ==== Some GPIO pin assignments on the :adi:`EVAL-CN0537-ARDZ <CN0537>` can be changed using jumpers JP14 to JP19; giving the user the option of using the unused pins for other purposes.
+| |image4|
+| |image5|
+| ==== Host Processor Connectors ==== The tables below show the pinouts of the Arduino form factor connectors (P1, P2, P3, P4). When evaluating the :adi:`EVAL-CN0537-ARDZ <CN0537>` , make sure that the chip select and GPIO pins used by the board are not shared with other hardware.
+| |image6|
+| |image7|
+| |image8|
+| |image9|
+| |image10|
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0537-ARDZ Design & Integration Files <cn0537-designsupport>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+   `EVAL-CN0537-ARDZ 3D Files <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_3d_files.zip>`_
+   
+   -  IDF Files (\*.emn & \*.emp format)
+   
+
+
+Reference Demo & Software
+-------------------------
+
+For more information on the demo software click the link below.
+
+.. note::
+
+   :doc:`Smoke Detector Demo Software User Guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/reference_designs/demo_cn0537>`
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  :adi:`CN0537 Circuit Note Page <CN0537>`
+-  :adi:`CN0537 Design Support Package <CN0537-DesignSupport>`
+-  :adi:`ADPD188BI Product Page <ADPD188BI>`
+-  :adi:`ADP151 Product Page <ADP151>`
+-  :adi:`LT8410 Product Page <LT8410>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software upgrade notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0537-ARDZ?&v=RevB>`_ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_comms_interface_select_.png
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp1-jp6_table.jpg
+   :width: 250px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_alarm.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_gpio_.png
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_jp12-jp19_table.png
+   :width: 630px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1-p4.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p1_table.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p2_table.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p3_table.png
+   :width: 560px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0537/cn0537_p4_table.png
+   :width: 530px

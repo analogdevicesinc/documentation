@@ -1,0 +1,98 @@
+====== EVAL-ADM2587EARDZ Arduino Shield & EVAL-ADM2587ERPIZ Raspberry Pi Shield ======
+
+Use the :adi:`EVAL-ADM2587EARDZ` Arduino Shield with the widely available Arduino UNO to easily evaluate the :adi:`ADM2587E` RS-485 transceiver, the :adi:`ADM3260` I2C isolator, and the :adi:`ADuM3151` SPI isolator. The ADM2587E, ADM3260, and ADuM3151 integrate Analog Devices, Inc., iCoupler® technology. The ADM2587E and ADM3260 also integrate Analog Devices isoPower dc-to-dc converter into a single package.
+
+The EVAL-ADM2587EARDZ Arduino Shield & :adi:`EVAL-ADM2587ERPIZ` Raspberry Pi Shield use an identical basic design, J1 Raspberry Pi connector populated for EVAL-ADM2587ERPIZ, and the J5 Arduino connector block is populated for the EVAL-ADM2587EARDZ.
+
+This Wiki guide provides hardware references and Arduino software for full integration of the EVAL-ADM2587EARDZ in a demonstration platform. This wiki guide also provides hardware references and Raspberry pi sample code for the EVAL-ADM2587ERPIZ.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adm2587erpizangle.jpg
+   :width: 600px
+
+--------------
+
+Connectors and Jumper Configurations
+====================================
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adm2587erpiztop.jpg
+   :align: center
+   :width: 600px
+
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port | Function                                                                                                                                                                                                                                                   |
++======+============================================================================================================================================================================================================================================================+
+| J1   | This is a GPIO female connection to be used with the raspberry pi version of the board EVAL ADM2587ERPIZ.                                                                                                                                                  |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| J2   | This is used to connect the ADM3260 isolated I2C or ADuM3151 isolted SPI to external devices.                                                                                                                                                              |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| J3   | This is used to supply power to the logic side of the board.                                                                                                                                                                                               |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| J4   | This 6-way connector is used for an RS-485 bus cable. A and B are the ADM2587E receiver inputs while Y and Z are are the driver outputs. Ground terminals are provided for cables with ground wires.                                                       |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| J5   | This is a GPIO male connection to be used with the Arduino version of the board EVAL ADM2587EARDZ                                                                                                                                                          |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| LK5  | When LK5 is closed the receiver input B pin is connected to the driver output Z pin. When both LK5 and LK7 are closed the board is configured for half duplex operation. When both LK5 and LK7 are open the board is configured for full duplex operation. |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| LK7  | When LK7 is closed the receiver input A pin is connected to the driver output Y pin. When both LK5 and LK7 are closed the board is configured for half duplex operation. When both LK5 and LK7 are open the board is configured for full duplex operation. |
++------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+| -----
+
+EVAL-ADM2587EARDZ Arduino Shield & EVAL-ADM2587ERPIZ Raspberry Pi Shield Example Code
+=====================================================================================
+
+| 
+| Arduino UNO code is provided so that that user can perform a loopback test mode for the ADM2587E RS-485 transceiver. Load the 'eval_adm2587eardz_arduino_shield_example_code.zip' sketch to an Arduino UNO. Connect jumpers LK5 and LK7. Use an oscilloscope to measure the waveforms on the DI, /RE, A, B, Y, Z, and RxD test points. The Arduino sketch outputs a constant bit stream on the ADM2587E DI pin. The loopback test echos the DI voltage waveform to the RxD pin. The bus voltages on the A, B, Y, and Z pins can also be measured.
+
+Raspberry pi code is also provided so that the user can perform a loopback test mode for the ADM2587E RS-485 transceiver. Load the 'eval_adm2587erpiz_raspberry_pi_shield_example_code.zip' sketch to the Raspberry pi. Voltage waveforms can be measured on the RS-485 logic and bus interface pins, similar to the Arduino example given above.
+
+--------------
+
+Schematic, Bill of Materials, Gerber Files and Layout Files
+===========================================================
+
+.. admonition:: Download
+   :class: download
+
+   
+   ::
+   
+        *[[https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a.pdf|PCB Layout and Mounting Diagram]]
+        *[[https://wiki.analog.com/_media/resources/eval/user-guides/adm2587e_rasp-pi_adapter_a_sch.pdf|Schematic]]
+        *[[https://wiki.analog.com/_media/resources/eval/eval-adm2587erpiz_a.xls|Bill of Materials for raspberry pi board]]
+        *[[https://wiki.analog.com/_media/resources/eval/eval-adm2587eardz_a.xls|Bill of Materials for arduino board]]
+   
+
+
+--------------
+
+Change Log
+==========
+
+::
+
+     *Initial Revision 
+
+--------------
+
+Resources
+=========
+
+-  Data Sheet: http://www.analog.com/media/en/technical-documentation/data-sheets/ADM2582E_2587E.pdf
+-  Data Sheet: http://www.analog.com/media/en/technical-documentation/data-sheets/ADM3260.pdf
+-  Data Sheet: http://www.analog.com/media/en/technical-documentation/data-sheets/ADuM3151_3152_3153.pdf
+-  Data Sheet: http://www.analog.com/media/en/technical-documentation/data-sheets/ADuM5000.pdf
+
+--------------
+
+Software
+========
+
+`eval_adm2587eardz_arduino_shield_example_code.zip <https://wiki.analog.com/_media/resources/eval/user-guides/eval_adm2587eardz_arduino_shield_example_code.zip>`_
+
+`eval_adm2587erpiz_raspberry_pi_shield_example_code.zip <https://wiki.analog.com/_media/resources/eval/user-guides/eval_adm2587erpiz_raspberry_pi_shield_example_code.zip>`_
+
+--------------
+
+// End of Document //

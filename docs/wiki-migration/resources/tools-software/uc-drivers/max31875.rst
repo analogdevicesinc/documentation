@@ -1,0 +1,134 @@
+MAX31875 Driver
+===============
+
+Supported devices
+-----------------
+
+`MAX31875 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31875.html>`_
+
+Overview
+--------
+
+The `MAX31875 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31875.html>`_ is a ±1°C-accurate local temperature sensor with I2C/SMBus interface. The I2C/SMBus-compatible serial interface accepts standard write byte, read byte, send byte, and receive byte commands to read the temperature data and configure the behavior of the sensor.
+
+Applications
+~~~~~~~~~~~~
+
+-  Battery-Powered Equipment
+-  Handheld Electronics
+-  Data Communications Equipment
+-  Servers
+-  Industrial Equipment
+
+ADI No-OS
+---------
+
+The goal of ADI Microcontroller No-OS is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers** which can be used as a base for any microcontroller platform and also **example projects** which are using these drivers on various microcontroller platforms.
+
+For more information about ADI No-OS and supported microcontroller platforms see: :doc:`no-OS </wiki-migration/resources/no-os>`
+
+MAX31875 ADI No-OS Driver
+-------------------------
+
+The source code for the MAX31875 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX31875 Driver|
+
+   -
+
+   |Implementation of MAX31875 Driver|
+
+In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. As the I2C interface is used, there are three functions which are called by the MAX31875 driver and have to be implemented:
+
+-  no_os_i2c_init() – initializes the communication peripheral.
+-  no_os_i2c_write() – writes data to the device.
+-  no_os_i2c_read() – reads data from the device.
+-  no_os_i2c_remove() – free the communication peripheral descriptor.
+
+And there are two data types that have to be defined:
+
+-  no_os_i2c_desc - structure holding the I2C descriptor
+-  no_os_i2c_init_param - structure holding the parameters for I2C initialization
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for I2C Communication APIs|
+
+MAX31875 Code Driver Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+
+-  `MAX31875 Header file <http://analogdevicesinc.github.io/no-OS/max31875_8h.html>`_
+-  `MAX31875 Source file <http://analogdevicesinc.github.io/no-OS/max31875_8c.html>`_
+
+MAX31875 Device Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Driver initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+The first step before using the driver is to call the **max31875_init()** function, which, in this case, will only initialize the I2C interface. After that (if the init function returns 0), the driver is fully configured, and you will be able to read samples from the device.
+
+MAX31875 Driver Usage Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As the driver only supports reading/writing registers (without PEC), thus the user will have to implement higher level functions for converting the temperature values and device configuration.
+
+By default, the MAX31875 performs continuous conversions, with a frequency of 4 Hz, and has a 10 bit resolution. In order to convert the temperature values to degrees C, such a function should be implemented:
+
+::
+
+   static int32_t max31875_get_single_temp(struct max31875_dev *dev,
+                       uint8_t extended, float *temp)
+   {
+       int32_t ret;
+       uint32_t temp_reg_val = 0;
+       uint8_t sign;
+       float temp_index = 0.0625;
+
+       ret = max31875_reg_read(dev, MAX31875_TEMPERATURE_REG, &temp_reg_val);
+       if (ret)
+           return ret;
+
+       temp_reg_val &= NO_OS_GENMASK(15, 0);
+       sign = temp_reg_val & NO_OS_BIT(15);
+       if (extended)
+           temp_reg_val = (temp_reg_val & MAX31875_TEMP_MASK_EXTENDED) >> 3;
+       else
+           temp_reg_val = (temp_reg_val & MAX31875_TEMP_MASK_NORMAL) >> 4;
+
+       *temp = 0;
+       while (temp_reg_val) {
+           *temp += temp_index * (NO_OS_BIT(0) & temp_reg_val);
+           temp_reg_val >>= 1;
+           temp_index *= 2;
+       }
+
+       if (sign)
+           *temp = -*temp;
+
+       return 0;
+   }
+
+For the meaning of the **extended** parameter, please refer to the datasheet (bit 7 of the configuration register).
+
+.. |Header file of MAX31875 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31875/max31875`.h
+.. |Implementation of MAX31875 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31875/max31875`.c
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

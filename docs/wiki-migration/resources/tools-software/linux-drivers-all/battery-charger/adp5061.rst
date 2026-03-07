@@ -1,0 +1,382 @@
+ADP5061 I2C Linear Battery Charger Linux Driver
+===============================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADP5061`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADP5061`
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------------+------------+
+| Source                                                                                         | Mainlined? |
++================================================================================================+============+
+| :git-linux:`git <drivers/power/supply/adp5061.c>`                                              | [No]       |
++------------------------------------------------------------------------------------------------+------------+
+
+Files
+-----
+
++----------+--------------------------------------------------------------------------------------+
+| Function | File                                                                                 |
++==========+======================================================================================+
+| driver   | :git-linux:`drivers/power/supply/adp5061`.c                                          |
++----------+--------------------------------------------------------------------------------------+
+
+Devicetree
+----------
+
+Required devicetree properties:
+
+-  compatible: should be "adi,adp5061"
+-  reg: i2c address of the device
+
+::
+
+       adp5061@14 {
+               compatible = "adi,adp5061";
+               reg = <0x14>;
+       };
+
+Driver testing
+==============
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/class/power_supply**
+      root:/sys/class/power_supply> ls
+      adp5061
+   
+      root:/sys/class/power_supply>**cd adp5061**
+      root:/sys/class/power_supply/adp5061> **ls -l**
+      -r--r--r-- 1 root root 4096 Apr  2 14:25 capacity_level
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 charge_term_current
+      -r--r--r-- 1 root root 4096 Apr  2 14:25 charge_type
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 charging_enabled
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 charging_vlim_enabled
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 constant_charge_current
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 constant_charge_voltage_max
+      lrwxrwxrwx 1 root root    0 Apr  2 14:25 device -> ../../../0-0014
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 input_current_limit
+      drwxr-xr-x 2 root root    0 Apr  2 14:25 power
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 precharge_current
+      -r--r--r-- 1 root root 4096 Apr  2 14:25 present
+      -r--r--r-- 1 root root 4096 Apr  2 14:25 status
+      lrwxrwxrwx 1 root root    0 Apr  2 14:25 subsystem -> ../../../../../../../../class/power_supply
+      -r--r--r-- 1 root root 4096 Apr  2 14:25 type
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 uevent
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 voltage_avg
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 voltage_max
+      -rw-r--r-- 1 root root 4096 Apr  2 14:25 voltage_min
+   
+
+
+Show Charger status
+-------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat status**
+      Charging
+   
+
+
+Show charge type
+----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat charge_type**
+      Fast
+   
+
+
+Show the battery status
+-----------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat capacity_level**
+      Normal
+   
+
+
+Enable Charging
+---------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat charging_enabled**
+      0
+      root:/sys/class/power_supply/adp5061> **echo 1 > charging_enabled**
+      root:/sys/class/power_supply/adp5061> **cat charging_enabled**
+      1
+   
+
+
+Enable Charging Voltage Limit
+-----------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat charging_vlim_enabled**
+      0
+      root:/sys/class/power_supply/adp5061> **echo 1 > charging_vlim_enabled**
+      root:/sys/class/power_supply/adp5061> **cat charging_vlim_enabled**
+      1
+   
+
+
+Show Termination Voltage (VTRM)
+-------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat voltage_max**
+      4200000
+   
+
+
+Set Termination Voltage (VTRM)
+------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **echo 3800000 > voltage_max** 
+      root:/sys/class/power_supply/adp5061> **cat voltage_max**
+      3800000
+   
+
+
+Set the Input Current Limit into VINx (ILIM)
+--------------------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat input_current_limit**
+      100000
+      root:/sys/class/power_supply/adp5061> **echo 200000 > input_current_limit**
+      root:/sys/class/power_supply/adp5061> **cat input_current_limit**
+      200000
+   
+
+
+Set the Trickle to Fast Charge Threshold (VTRK_DEAD)
+----------------------------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat voltage_min**
+      2500000
+      root:/sys/class/power_supply/adp5061> **echo 200000 > voltage_min**
+      root:/sys/class/power_supply/adp5061> **cat voltage_min**
+      200000
+   
+
+
+Set the Charging Voltage Limit (CHG_VLIM)
+-----------------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat constant_charge_voltage_max**
+      3200000
+      root:/sys/class/power_supply/adp5061> **echo 3800000 > constant_charge_voltage_max**
+      root:/sys/class/power_supply/adp5061> **cat constant_charge_voltage_max**
+      3800000
+   
+
+
+Set the Constant Charge Current (ICHG)
+--------------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat constant_charge_current**
+      750000
+      root:/sys/class/power_supply/adp5061> **echo 500000 > constant_charge_current**
+      root:/sys/class/power_supply/adp5061> **cat constant_charge_current**
+      500000
+   
+
+
+Set the Trickle and Weak Charge Currents (ITRK_DEAD)
+----------------------------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat precharge_current**
+      20000
+      root:/sys/class/power_supply/adp5061> **echo 10000 > precharge_current**
+      root:/sys/class/power_supply/adp5061> **cat precharge_current**
+      10000
+   
+
+
+Set the VWEAK Threshold
+-----------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat voltage_avg**
+      3000000
+      root:/sys/class/power_supply/adp5061> **echo 3400000 > voltage_avg**
+      root:/sys/class/power_supply/adp5061> **cat voltage_avg**
+      3400000
+   
+
+
+Set Termination Current (IEND)
+------------------------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/class/power_supply/adp5061> **cat charge_term_current**
+      52500
+      root:/sys/class/power_supply/adp5061> **echo 72500 > charge_term_current**
+      root:/sys/class/power_supply/adp5061> **cat charge_term_current**
+      72500 
+   
+
+
+More Information
+================
+
+-  :adi:`ADP5061 Datasheet <media/en/technical-documentation/data-sheets/ADP5061.pdf>`
+-  `Linux Kernel Documentation <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing>`_
+-  :git-linux:`Linux Kernel Documentation sysfs_class_power <Documentation/ABI/testing/sysfs-class-power>`
+-  `Power Supply Documentation <https://www.kernel.org/doc/Documentation/power/power_supply_class.txt>`_
+
+Need help?
+----------
+
+-  :ez:`Analog Devices Linux Device Drivers Help Forum <community/linux-device-drivers/linux-software-drivers>`

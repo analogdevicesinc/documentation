@@ -1,0 +1,181 @@
+AD9747 Evaluation Board, DAC-FMC Interposer & Xilinx KC-705 Reference Design
+============================================================================
+
+Introduction
+------------
+
+The :adi:`AD9747` is a dual 16-bit, digital-to-analog converter (DAC) with gain and offset compensation. This reference design includes two DDS generators that drives both channels of the device. The programming is done via the USB-SPI interface. The reference design works with all the AD974x pin-compatible devices - AD9741(8bit), AD9743(10bit), AD9745(12bit), AD9746(14bit) and AD9747(16bit) - only the upper bits of the data lines are used for the various bit widths.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9747 Evaluation Board <en/digital-to-analog-converters/da-converters/ad9747/products/EVAL-AD9747/eb.html>`
+-  :adi:`DAC FMC Interposer Board <en/evaluation/ad-dac-fmc/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `KC705 <https://www.xilinx.com/KC705>`_
+
+Quick Start Guide
+-----------------
+
+The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  KC705 board.
+-  AD9747-EBZ board & Power supply
+-  DAC FMC interposer board
+-  Signal/Clock generator (250MHz)
+-  Spectrum Analyzer
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 14.4 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+-  ADI DPG DAC Software Suite :adi:`available here <en/digital-to-analog-converters/da-converters/products/evaluation-boardstools/CU_eb_DPG_high_speed_DAC_eval_platform/resources/fca.html>`.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9747_ebz.bit** file.
+
+I/O Standard Notes
+~~~~~~~~~~~~~~~~~~
+
+At the interposer connector, the AD9747 data lines are CMOS, and the clock is LVDS. The DAC CMOS lines are 3.3v. The KC705 FMC-LPC defaults to 2.5v VADJ. You must change the VADJ to 3.3v (refer to Xilinx documents on how to change the VADJ) before running the demo program. Please note that the FMC-LPC pins are connected to Bank 12 and Bank 13 of XC7K325T and the VCCIO of these banks are connected to the VADJ.
+
+However, in the reference design UCF, all the IOSTANDARD parameters are set to 2.5v (LVDS_25 and LVCMOS25). Since LVDS has no option of 3.3v in Xilinx terms, you can not change the CMOS lines to 3.3v. The software checks for a common I/O voltage across all the pins on the same bank regardless of LVDS or CMOS. This does not really matter on the actual hardware. That is, regardless of what the UCF specifies, the voltage levels are dependent on the levels connected to the VCCIO pins of the FPGA.
+
+Also, since all the data lines are inputs to the DAC and are outputs from the FPGA, you could keep the FMC LPC VADJ at 2.5v (see the AD9747 datasheet). The voltage levels are such that both 2.5v and 3.3v should work fine. The reference design has been tested for both 2.5v and 3.3v I/O levels. This is for evaluation only, for stable systems, you must carefully consider the I/O voltage of the DAC interface.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_iospec.jpg
+   :alt: DAC digital input voltage levels
+   :width: 200px
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9747-EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-LPC** connector of KC705 board.
+-  Connect power to KC705 and the AD9747-EBZ boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on KC705.
+-  Connect a USB cable to the AD9747-EBZ board.
+-  Connect an external clock source to AD9747-EBZ board's J1 (CLOCK IN) SMA connector. Please refer to the schematic and the evaluation board quick start guide and make sure this is your clock source on board. The clock source may be J4 (DAC CLK) depending on JP2/JP3. Setup the clock source to be 250MHz(2dBm)
+-  Connect two spectrum analyzers to AD9747-EBZ board's J5 and J9 SMA connectors. Please refer to the schematic and the evaluation board quick start guide and make sure these are connected to the DAC outputs.
+
+After the hardware setup, turn the power on to the KC705 and the AD9747-EBZ boards. If desired, change the VADJ on KC705 to 3.3v.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start ADI- AD9747 SPI program (see screenshot below)-
+
++-------------------------------------------------------------------------------------------+-------------+
+| 1. Select AD9516-DAC Clock Tab, enable "Bypass" for both the dividers.                    | |SPI setup| |
++-------------------------------------------------------------------------------------------+-------------+
+| 2. Select AD9516-General Tab, write 0x01 at address 0x1e1. Click on "Commit Write".       | |image3|    |
++-------------------------------------------------------------------------------------------+-------------+
+| 2. Select Data Control Tab, change "DATTYPE" to "Unsigned Binary", deselect "Invert DCO". | |image4|    |
++-------------------------------------------------------------------------------------------+-------------+
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program the device. If programming was successful, you should be seeing messages appear on the terminal as shown in figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+After DDS is enabled, you should see the spectrum analyzer displaying the two tones (45MHz and 29MHz).
+
+|Terminal| |image5|
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two independent DDS modules and the dac interface.
+
+The DDS module consists of a Xilinx IP core and a DDR-DDS. The DDR-DDS allows any pattern to be generated in the memory to be driven to the DAC.
+
+Registers
+~~~~~~~~~
+
+Please see the regmap.txt file in the pcore directory.
+
+Good To Know
+~~~~~~~~~~~~
+
+The silk screen text for the interposer connectors (P1/P2) on the top of the evaluation board are wrong. The text on the bottom is correct. The connector to J18 on the interposer board is P2, and to J17 is P1.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  **KC705 (Source files)** `cf_ad9747_ebz_edk_14_4_2013_03_15.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_edk_14_4_2013_03_15.tar.gz>`_
+   -  **KC705 (Quick start bit files)** `cf_ad9747_ebz_sw_14_4_2013_03_15.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_sw_14_4_2013_03_15.tar.gz>`_
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`_ for details.
+
++--------------------+------------------------------------------------------------------------------------------------------+
+| license.txt        | ADI license & copyright information.                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs         | MHS file.                                                                                            |
++--------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp         | XMP file (use this file to build the reference design).                                              |
++--------------------+------------------------------------------------------------------------------------------------------+
+| data/              | UCF file and/or DDR MIG project files.                                                               |
++--------------------+------------------------------------------------------------------------------------------------------+
+| docs/              | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++--------------------+------------------------------------------------------------------------------------------------------+
+| sw/                | Software (Xilinx SDK) & bit file(s).                                                                 |
++--------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/ | Reference design core file(s) (Xilinx EDK).                                                          |
++--------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`_
+-  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+
+.. |SPI setup| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spi_1.jpg
+   :width: 200px
+.. |image1| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spi_2.jpg
+   :width: 200px
+.. |image2| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spi_3.jpg
+   :width: 200px
+.. |image3| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spi_2.jpg
+   :width: 200px
+.. |image4| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spi_3.jpg
+   :width: 200px
+.. |Terminal| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spectrum_1.jpg
+   :width: 200px
+.. |image5| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9747_ebz_spectrum_2.jpg
+   :width: 200px

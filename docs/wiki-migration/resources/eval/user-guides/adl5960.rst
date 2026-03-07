@@ -1,0 +1,47 @@
+ADL5960
+=======
+
+|image1| Evaluation Board ADL5960-EVALZ allows evaluation of the ADL5960 network analyzer front-end IC. The ADL5960 with integrated bridge simultaneously measures forward and reverse (aka incident and reflected) signal, coupled thru the bridge. The integrated mixers down convert the incident and reflected RF signals to IF, measured at the IF output ports. SPI bus over a 14-conductor ribbon cable allows for programmable configuration, IF gain, and IF low-pass bandwidth.
+
+Hardware Hookup
+---------------
+
+The ADL5960 Evaluation Board ships as a kit with a ribbon cable and a pre-programmed DC2026C 'Linduino' board, which acts as a bridge between the PC's USB port and the ADL5960 Evaluation Board. *Do not* connect the USB cable until AFTER the software has been downloaded and installed (see below).
+
+-  Use the supplied 14-conductor ribbon cable to connect `the DC2026C "Linduino" board <http://analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/dc2026c.html>`_ with the ADL5960 evaluation board.
+   The Linduino board receives power from the PC USB port, so no external power is needed to the Linduino. *Do not connect the USB cable to the PC until AFTER the software has been downloaded and installed*.
+-  The ADL5960 evaluation board requires external power as noted in the ADL5960-EVALZ USER GUIDE. See link below.
+
+Software Installation and Usage
+-------------------------------
+
+-  Download the GUI software from the product page at :adi:`adl5960.html <en/products/adl5960.html>`. Double-click to run the installer, then follow the simple on-screen instructions. It is recommended to use the default installation directory. The installer will also automatically install the necessary USB drivers for the Linduino board.
+-  After software installation, it's now OK to connect the USB cable from PC to Linduino. This causes the PC OS to automatically load the required USB driver for the Linduino.
+-  Software installation places shortcuts on both the PC desktop and in the Start menu. Double-clicking either will bring up the Graphical User Interface program.
+-  The GUI software should automatically locate and show the ADL5960 connection as a COM port number. Click the Connect button. All ADL5960 user-configurable registers now appear and become editable.
+
+Common Issues
+-------------
+
+-  When opening the ADL5960 Evaluation Software, if the controller is not recognized and nothing shows in the "Port Name" drop down menu, it is likely the device drivers were not installed. For the Linduino One, download the VCP drivers from here https://ftdichip.com/drivers/. This can be confirmed under Device Manager by verifying the computer recognizes a COM port connection when the Linduino is connected.
+-  If the device is not responding to changes in the "Main Controls" the Linduino firmware may be incorrect. This is available in the software package and should be stored somewhere like this "C:\\Analog Devices\\linduino-adl5960-app-v1.0.0-win32-x64\\linduino-hex-file\\adl5960-main.ino.hex". Using the software Xloader available here:https://github.com/binaryupdates/xLoader. Select the hex file from the software package, then the COM port the Linduino is connected to for Device and hit upload
+
+Documents
+=========
+
+User Guide
+----------
+
+::
+
+   -[[https://wiki.analog.com/_media/resources/eval/user-guides/ug-adl5960_20220415_draft.pdf|ug-adl5960_20220415_draft.pdf]]
+
+PCB Gerber Files
+----------------
+
+::
+
+   -[[https://wiki.analog.com/_media/resources/eval/065841-01D_fab.zip|065841-01D_fab.zip]]
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adl5960-evalz_top_1_.jpg
+   :width: 400px

@@ -1,0 +1,194 @@
+BeMicro FPGA Project for AD7176-2 with Nios driver
+==================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7176-2`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7176-2SDZ`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-AD7176-2SDZ` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ USB stick and the Nios II Embedded Development Suite (EDS). Below is presented a picture of the EVAL-AD7176-2SDZ Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7176_2_bemicro.jpg
+   :alt: ad7176_2_bemicro.jpg
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to use the part evaluation setup. This consists of:
+
+::
+
+   *1.  A controller board like the SDP-B ( EVAL-SDP-CS1Z) 
+   *2.  The component SDP compatible product evaluation board 
+   *3.  Corresponding PC software ( shipped with the product evaluation board)
+
+The SDP-B controller board is part of Analog Devices System Demonstration Platform (SDP). It provides a high speed USB 2.0 connection from the PC to the component evaluation board. The PC runs the evaluation software. Each evaluation board, which is an SDP compatible daughter board, includes the necessary installation file required for performance testing.
+
+The **EVAL-AD7176-2SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD7176-2** circuits and reduce design time.
+
+The :adi:`AD7176-2` is a fast settling, highly accurate, high resolution, multiplexed Σ-Δ analog-to-digital converter (ADC) for low band-width input signals. Its inputs can be configured as two fully differential or four pseudo differential inputs via the integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift (2 ppm/°C), band gap internal reference (with an output reference buffer) adds functionality and reduces the external component count.
+
+More information
+----------------
+
+-  :adi:`AD7176-2 Product Info <AD7176-2>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7176-2SDZ evaluation board user guide <static/imported-files/user_guides/UG-478.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-AD7176-2SDZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`_ design software v12.0sp2
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`_ v12.0sp2
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/{{/resources/fpga/altera/bemicro/ad7176_2_evalboardlab.zip>`_
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ad7176-2_evalboardlab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Hdl** **Software**, **DataCapture**, **NiosCpu**.
+
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                                                                                                                                                                                                          |
++=============+==========================================================================================================================================================================================================================================================================================+
+| FPGA        | Contains all the files necessary to program the BeMicro FPGA board in order to run the evaluation project. By executing the script *program_fpga.bat* the FPGA will be programmed with the evaluation project. New NIOS II applications can be created using the files from this folder. |
+|             | The *ip* subfolder contains the AD7176-2 NIOS II peripheral's source code.                                                                                                                                                                                                               |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the source files for the AD7176-2 HDL driver:                                                                                                                                                                                                                                   |
+|             | - The *doc* subfolder contains a brief documentation for the driver.                                                                                                                                                                                                                     |
+|             | - The *src* subfolder contains the HDL source files.                                                                                                                                                                                                                                     |
+|             | - The *tb* folder contains the sources of the driver's testbench.                                                                                                                                                                                                                        |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NiosCpu     | Contains the Quartus evaluation project source files . The *ip* subfolder contains the AD7176-2 Nios2 peripheral source code.                                                                                                                                                            |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the Nios2 SBT evaluation project.                                                                                                                                                                                                                           |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script files used for data acquisition                                                                                                                                                                                                                                      |
++-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`_
+
+
+AD7176-2 Evaluation Project Overview
+====================================
+
+The evaluation project contains all the source files needed to build a system that can be used to configure the AD7176-2 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the BeMicro board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the onchip RAM of the BeMicro board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+
+The following components are implemented in the FPGA design:
+
+============================= ========== ===
+Name                          Address    IRQ
+============================= ========== ===
+CPU                           0x00000800 -
+JTAG UART                     0x00000090 0
+uC-Probe UART                 0x000000A0 1
+EPCS FLASH CONTROLLER         0x00001800 2
+OnChip RAM                    0x00010000 -
+LED GPIO                      0x00000100 -
+GPIO                          0x00002080 -
+CTRL GPIO                     0x000020A0 -
+SYS ID                        0x00000040 -
+TIMER                         0x00000060 3
+AVALON MASTER                 -          -
+Main PLL                      0x00000080 -
+AD7176_2 0                    0x00000120 -
+**Table 1 System components**            
+============================= ========== ===
+
+The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the onchip RAM, a module which implements an Avalon master interface which is used to write data directly in the onchip RAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad7176-2_block_diagram.png
+   :alt: HDL driver block diagram
+   :align: center
+   :width: 400px
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_evaluation <https://wiki.analog.com/common_quick_evaluation>`_
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common_software_design <https://wiki.analog.com/common_software_design>`_
+
+
+Demonstration Project User Interface
+====================================
+
+After the FPGA is correctly programmed the data acquisition process can start by executing the data_capture.bat script. The data_capture.tcl file can be modified to acquire a variable number of channels.
+
+.. hint::
+
+   The configuration from data_capture.tcl is performed the first time the script is executed. If changes are performed after that, the system must be reinitialized by reprogramming the FPGA.
+
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cmd_interface.png
+   :alt: Demonstration Project Command Interface
+   :align: center
+   :width: 500px
+
+If the resulting csv file is opened with Microsoft Excel, the data will be displayed on a different number of columns, each column corresponding to a channel.
+
+**Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
+
+Troubleshooting
+===============
+
+
+.. note::
+
+   See `troubleshooting12 <https://wiki.analog.com/troubleshooting12>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom

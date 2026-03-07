@@ -1,0 +1,49 @@
+AD594x User Guide
+=================
+
+The AD594x is a high precision, low power analog front end (AFE) designed for applications requiring high precision, electrochemical-based measurement techniques, such as amperometric, voltametric, or impedance measurements. It is targeted at a number of industries including Healthcare, Industrial and Instrumentation. The AD594x evaluation eco-system is designed to be a versatile development and prototyping vehicle to help customers configure and use the AD594x in their target application.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad5940_wiki_collage.png
+   :align: right
+   :width: 500px
+
+-  :doc:`Introduction </wiki-migration/resources/eval/user-guides/eval-ad5940/introduction>`
+-  :doc:`Tools and Driver Details </wiki-migration/resources/eval/user-guides/eval-ad5940/tools>`
+
+   -  :doc:`SensorPal GUI Tool </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/sensorpal_setup_guide>`
+   -  :doc:`Using IAR Embedded Workbench </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/iar_setup_guide>`
+   -  :doc:`Using Keil IDE </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/keil_setup_guide>`
+   -  :doc:`How to Download AD594x Source Code </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/downloading_source_code>`
+   -  :doc:`How to Port AD594x Source Code to Another MCU </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/porting_source_code>`
+   -  `AD594x IDD Calculator <https://wiki.analog.com/ftp/ftp.analog.com/pub/microconverter/adxxxxv2.0/ad594x_idd_calculator.xlsm>`_
+   -  `Impedance Profiling 2wireIEC.xls <https://wiki.analog.com/ftp/ftp.analog.com/pub/microconverter/adxxxxv2.0/impedance_profiling_2wireiec.xls>`_
+
+-  :doc:`Hardware Details </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware>`
+
+   -  :doc:`ADICUP3029 Base Board </wiki-migration/resources/eval/user-guides/eval-adicup3029/hardware/adicup3029>`
+   -  :doc:`AD5940 Bio-Electric Board </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940bioz>`
+   -  :doc:`AD5940 Electrochemical Board </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5940elcz>`
+   -  :doc:`AD5941 Electrochemical Board </wiki-migration/resources/eval/user-guides/eval-ad5940/hardware/eval-ad5941elcz>`
+   -  :doc:`AD5941 Battery Impedance Measurement Board </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0510>`
+
+-  :doc:`AD594x Example Projects </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples>`
+
+   -  :doc:`Body Impedance Analysis Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_bia>`
+   -  :doc:`Electrodermal Activity Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_eda>`
+   -  :doc:`Electrocardiograph Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_ecg>`
+   -  :doc:`Amperometric Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_amperometric>`
+   -  :doc:`ChronoAmperometricExample </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_chronoamperometric>`
+   -  :doc:`Impedance Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_impedance>`
+   -  :doc:`Cyclic Voltammetry Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_ramp>`
+   -  :doc:`Square Wave Voltammetry Example </wiki-migration/resources/eval/user-guides/eval-ad5940/software_examples/ad5940_swv>`
+
+-  :doc:`AD594x Calibration Routines </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines>`
+
+   -  :doc:`Low Frequency Oscillator Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/lfosc_cal>`
+   -  :doc:`ADC PGA Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/adc_cal>`
+   -  :doc:`High Speed DAC Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/hsdac_cal>`
+   -  :doc:`High Speed TIA Gain Resistor Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/hstia_cal>`
+   -  :doc:`Low Power TIA Offset Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/lptia_offset_cal>`
+   -  :doc:`Low Power TIA Gain Resistor Calibration </wiki-migration/resources/eval/user-guides/eval-ad5940/calibration_routines/lptia_cal>`
+
+-  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/eval-ad5940/help_and_support>`

@@ -1,0 +1,340 @@
+.. warning:: Conversion failed for ``resources/eval/user-guides/circuits-from-the-lab/cn0428``
+
+   Reason: pandoc error: Error at "/tmp/tmp1xdyljaj.txt" (line 279, column 1):
+expecting inline
+not found
+| switchsensor <site> | Switch to sensor board at <site>. <site> = 1, 2, 3, 4; Channel number of the sensor board to swith to. |
+^
+
+.. code-block:: text
+
+   ====== EVAL-CN0428-EBZ Overview ======
+   
+   Many important liquid analyses like pH rely on electrochemistry, a branch of chemistry that characterizes the behavior of reduction-oxidation (redox) reactions by measuring the transfer
+   of electrons from one reactant to another. Electrochemical techniques can be used directly or indirectly to detect several important parameters that affect water quality, including chemical indicators, biological and bacteriological indicators and even some low level contaminants like heavy metals. Many of these indicative measurements are pertinent to determining important quality parameters of the tested analyte. 
+   
+   The [[ADI>CN0428]] circuit shown is a modular sensing platform that allows the user to design a flexible electrochemical water quality measurement solution. Its high level of integration enables an electrochemical measurement platform applicable to a variety of water quality probes including pH, oxidation reduction potential (ORP), and conductivity cells.
+   
+   The system allows up to four probes to be connected at one time for different water quality measurements.
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:cn0428_complete_setup.jpg?600 |}}
+   
+   ===== Boards Used =====
+   
+   Following are the three boards used for setting up the Water Quality Measurement System:
+    
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:cn0428_ebz.jpg |}}
+   \\ 
+   
+   //EVAL-CN0428-EBZ Water Sensor Board//
+   </WRAP>
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:shield_board.jpg |}}
+   \\ 
+   
+   //EVAL-M355-ARDZ-INT Arduino Shield Board//
+   </WRAP>
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:eval-adicup3029-angle.jpg |}}
+   \\ 
+   
+   //EVAL-ADICUP3029 Board//
+   </WRAP>
+   
+   
+   ===== Features =====
+   
+     * Capable of measuring pH, Conductivity, Temperature and ORP of a solution 
+     * The board can be configured for customized measurements such as Dissolved Oxygen (DO) measurement, Ion Concentration measurement, i.e., Ion Selective Electrode (ISE) measurement and many other water quality factors. 
+     * Up to 4 sensor boards can be connected for measurements simultaneously.
+     * Temperature can be measured on one or all sensor boards.
+   
+   
+   ===== Documents Needed =====
+   
+     * [[adi>media/en/technical-documentation/data-sheets/ADuCM355.pdf|ADuCM355 Data Sheet]]
+     * [[adi>cn0428|CN0428]] Circuit Note
+     * [[/resources/eval/user-guides/eval-adicup3029|EVAL–ADICUP3029 User Guide]]
+   
+   ===== Software Needed =====
+   
+     * Serial Terminal Software (PuTTY, TeraTerm or similar)
+     * IAR Embedded Workbench for ARM 8.32 or higher (Optional)
+   
+   ===== General Setup =====
+   
+   {{:resources:eval:user-guides:circuits-from-the-lab:cn0428:functional_block_diag2.jpg|}}
+   
+   ==== Equipment Required ====
+   
+     * **Hardware**
+     * [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 circuit board.]] 
+     * [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT Arduino-compatible platform.]]
+     * [[adi>cn0428|EVAL-CN0428-EBZ Water Quality Sensor Board loaded with firmware.]] (Up to 4)
+     * PC with a USB port and Windows® 7 (32-bit) or higher. 
+     * USB type A to USB micro cable.
+     * Test solutions.
+     * BNC connectorized probe. (Up to 4)
+     * (Optional) RCA connectorized temperature probe. (Up to 4)
+     * (Optional) Beaker.
+     * (Optional) Probe holder/stand.
+     * (Optional) Calibration buffers for probe calibration.
+   
+     * **Software**
+     * Serial terminal software. (PuTTY, Tera Term, or similar)
+     *  ADuCM302x_DFP.
+     *  CN0428 ADuCM355 Firmware.
+     *  ADICUP3029 Firmware.
+   
+   ==== Equipment Recommended ====
+    
+     The following analog-output 2-electrode probes are recommended: 
+   
+     * [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-ph-temperature-electrode/5920006|Cole-Parmer 100-series Replacement pH/Temperature Electrode]]
+     * [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-conductivity-temperature-probe-k-1/5920009|Cole-Parmer 100-series Replacement Conductivity/Temperature Probe, K=1]]
+     * [[https://sensorex.com/product/s550c-orp/|Sensorex S550C-ORP Heavy-Duty ORP Sensor]]
+   ==== Setup ====
+   
+   To set up the circuit for evaluation, consider the following steps: 
+   
+   1. Before plugging all boards together, user should ensure the switches are set correctly on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029]] board and [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] shield board as follows:
+   
+   a. Power switch S5 set to “Wall/USB” and switch S2 to “USB” on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029]] board.
+   
+   b. Switch S2 set to “I2C” on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] shield board.
+   
+   2. Before plugging the three boards together, mount the sensor board(s) and secure them with the included hardware as shown in the pictures. This mounting should include two bolts, two standoffs and two nuts for each of the [[adi>cn0428|EVAL-CN0428-EBZ]] board. Use of the hardware mount for the [[adi>cn0428|EVAL-CN0428-EBZ]] board is strongly recommended to ensure mechanical stability and to protect the Samtec connector on the bottom of the board.
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:img_0421.jpg |}}
+   \\ 
+   </WRAP>
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:img_0415.jpg |}}
+   \\ 
+   </WRAP>
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:img_0418.jpg |}}
+   \\
+   </WRAP>
+   
+   3. Mount up to four [[adi>cn0428|EVAL-CN0428-EBZ]] boards onto the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] shield board, using hardware as needed. Then plug the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] shield board into the[[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029]] board.
+   
+   4. Choose the desired measurement probe and connect it to the [[adi>cn0428|EVAL-CN0428-EBZ]] board.
+   
+   5. Ensure the switch setting on [[adi>cn0428|EVAL-CN0428-EBZ]] board is the correct configuration for desired measurement (refer to the Switch Configurations section). 
+   
+   6. Connect the USB which will supply power to all boards. 
+   
+   7. Set the serial terminal software to match the setting of the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board's]]  firmware and select the correct virtual COM port. Ensure baud rate is set to 115200 bps  (Refer to the Software Setup for Serial Terminal Software settings). 
+   
+   8. Once the serial terminal window comes up, type 'help' and hit enter. The software displays list of available commands for water quality measurements.
+   
+   <WRAP centeralign>
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:cn0428_complete_setup.jpg |}}
+   \\ 
+   
+   //Complete Board Setup//
+   </WRAP>
+   
+   
+   ===== Hardware Setup =====
+                 
+   ==== BNC Sensor Probe Connectors  ====
+   
+   The [[adi>cn0428|EVAL-CN0428-EBZ]] board has a 5-1634503-1 BNC connector by TE Connectivity LTD. It has a straight body style with vertical orientation. The impedance offered by this connector is 50 Ohms. The sensor probe (pH sensor, conductivity sensor, etc.) with a BNC connector needs to be plugged in and twisted clockwise to connect the senor with the board through this connector. The recommended BNC probes are:
+   
+   [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-ph-temperature-electrode/5920006|Cole Palmer pH Probe]]
+   
+   [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-conductivity-temperature-probe-k-1/5920009|Cole Palmer Conductivity Probe]]
+   
+   [[https://sensorex.com/product/s550c-orp/|Sensorex ORP Probe]]
+   ==== RCA Sensor Probe Connectors  ====
+   
+   The [[adi>cn0428|EVAL-CN0428-EBZ]] board also comes with a  RCJ-023 RCA connector by Switchcraft. Just like the BNC, it also has a vertical orientation. A wide variety of sensor probes come with a RCA jack to it along with the BNC connector. This jack plugs into the RCA connector to offer temperature measurement as well as help with temperature error compensation. 
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:rca.jpg? |}} 
+   
+   Some of the common sensors that come with RCA connector are:
+   
+   [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-ph-temperature-electrode/5920006|Cole Palmer pH Probe]]
+   
+   [[https://www.coleparmer.com/i/cole-parmer-100-series-replacement-conductivity-temperature-probe-k-1/5920009|Cole Palmer Conductivity Probe]]
+   
+   ==== Switch Configurations ====
+   
+   ** Switch Configuration for [[adi>cn0428|EVAL-CN0428-EBZ]] Water Quality Board **
+   
+   There are 2 switches present on the [[adi>cn0428|EVAL-CN0428-EBZ]] board, namely switches S1 and S2. S1 is CAS-220TA switch, while S2 is  CJS-1200TA switch, both by by Nidec Copal Electronics. 
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:355_board_switches.jpg |}}
+   
+   The accurate position of these switches lets us choose the appropriate measurement condition, such as pH, Conductivity, ORP, etc. The options available on S1 are 'pH' and 'Z', signifying voltage based measurements (for pH, ORP, etc.) and impedance based measurement (for conductivity, electrochemical impedance spectroscopy sweep, etc.) respectively. Switch S2 offers 2 options to choose between 'INT' and 'Hi-Z', allowing the user to choose between lower range impedance or higher range impedance. Also, while performing voltage based measurements, the position of switch S2 does not matter. Summarizing these switch configurations, we get the following table:
+   
+   ^ Desired Measurement ^ S1 Setting ^ S2 Setting ^
+   | pH, ORP, etc. | pH | n/a |
+   | Conductivity, Impedance, etc. with autoranging from 100 Ohms to 10 MOhms | Z | Int |
+   |Low Current Conductivity or Impedance greater than 200 KOhms | Z | HI-Z |
+   
+   ** Switch Configuration for [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355–ARDZ–INT]] Arduino Shield Board **
+   
+   There are two switches present on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] board, namely switches S1 and S2. S1 is  SS-44D04-G 4 switch, while S2 is JS202011CQN switch, both by C&%%K%%.
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:sheild_board_switch.jpg |}}
+   
+   Switch S2 has two options to choose from, namely the I2C and UART. It is recommended that this switch S2 remains in I2C mode as this will keep the board in a default communication mode with the FW that ships with the system. Switching to the UART mode enables a communication platform exclusively between the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL-M355-ARDZ-INT]] board and the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL–ADICUP3029]] board.  Switch S1 is a top slide switch and has 4 options, namely CH1, CH2, CH3 and CH4. It selects which channel is connected to the SWD programming port. It is also used to download the firmware onto the [[adi>cn0428| EVAL-CN0428-EBZ]] water quality board.  
+   
+   ** Switch Configurations for [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL–ADICUP3029]] Board **
+   
+   There are 2 switches present on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL–ADICUP3029]] board, namely switches S2 and S5. S2 is  JS203011CQN switch, while S5 is  JS202011CQN switch, both by C&%%K%%.
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:cup_switch.jpg |}}
+   
+   Switch S2 has 3 options, 'USB', 'Arduino' and 'WiFi'. S2 should be set to 'USB' mode to allow serial communication to the PC over USB. More details can be found in the [[resources/eval/user-guides/eval-adicup3029/hardware/adicup3029#uart_switch|UART Switch]] section of the ADICUP3029 hardware wiki page.
+   
+   Switch S5 has two options, 'Wall/USB' and 'Battery'. These options allows the user to choose between powering the board using USB (choosing Wall/USB on switch S5) or using 2 AAA Batteries (choosing Battery on switch S5). S5 is generally set to 'Wall/USB' and the USB is used for both power and serial communications to the PC. 
+   
+   ==== Header ====
+   
+   
+   Along with the switches, the [[adi>cn0428|EVAL-CN0428-EBZ]] has provision for a 2 - pin header. It is TSW-102-08-G-S by Samtec Inc, mounted vertically, with a pitch of 0.100" (2.54mm).
+   
+   Header P3 is available to measure the temperature inputs for cases when an RCA plug or RCA adapter are not available.  
+   
+   ==== Surface Mount Interface Connector ====
+   
+   The [[adi>cn0428|EVAL-CN0428-EBZ]] also comes with a 14 pin male, surface mount connector at the bottom of the board. It is TFM-107-02-L-D by Samtec Inc.
+   
+   This connector connects the [[adi>cn0428|EVAL-CN0428-EBZ]] to the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL–M355–ARDZ–INT]] Arduino shield interface board.
+   
+   ===== Software Setup =====
+   
+   ==== Programming the EVAL-ADICUP3029 Board ====
+   
+   Before setting up the Water Quality Measurement System, it is important to program the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board]]. The user should get the .hex firmware file prior to flashing it on the board. The .hex file can be found by clicking into the 'Release' folder in the ADuCM3029 GitHub project linked from the [[cn0428#software|Software]] section. It can be downloaded using the following procedure:
+     - From the "ADuCM3029_demo_cn0428_cn0429/Release" folder, **left click** on the '//ADuCM3029_demo_cn0428_cn0429.hex//' file. 
+     - Then find the button that says "Raw" at the top of the file contents. 
+     - **Right click** the "Raw" button and choose "Save Link As..." (or similar depending on browser).
+     - Save the file to the desired location on the pc.
+   
+   <note important>If you try to download the hex file from GitHub without using the "Raw" button, it downloads an html file which is not compatible with the hex format and will fail to program onto the EVAL-ADICUP3029 (even if it was saved with a .hex file extension).
+   
+   If you are not sure whether you downloaded the correct file or not, check if the downloaded file size matches the size of the .hex file shown to the left of the "Raw" button.
+   </note>
+   
+   Alternately, the entire archive including the .hex file and the CrossCore Project source code can be downloaded from git or as a zip file from the [[https://github.com/analogdevicesinc/EVAL-ADICUP3029|main EVAL-ADICUP3029 github repository folder]].
+   
+   Following are the steps then required to be completed to set up the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board]] for Water Quality Measurements:
+   
+   1. Plug the micro-USB from the PC into the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board]]. An orange LED should light on the EVAL ADICUP3029 board as shown below. 
+   
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:3029_plugged_in2.jpg |}}
+   
+   
+   2. Download the [[https://os.mbed.com/handbook/Windows-serial-configuration|mbed windows serial port driver]]. It should be an .exe file. Click on it after it downloads to run. 
+   
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:b1.jpg |}}
+   
+   
+   3. Once the pop-up appears, click on install.
+   
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:b.jpg |}}
+   
+   
+   4. The previous step was successful if there appears a DAPLINK device under 'This PC' in Windows File Explorer, as shown below.
+   
+   5. Copy and Paste or Drag and Drop the .hex file onto the DAPLINK device/folder. This downloads the firmware on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board]]. 
+   
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:d.jpg |}}
+   
+   
+   6. The DAPLINK device should disappear momentarily and then reappear.
+   
+   7. If the download fails, you will find a FAIL.TXT file on the DAPLINK device. 
+   
+   8. If the download is successful, the .hex file will disappear from the DAPLINK device and no FAIL.TXT file will be present.
+   
+   9. Perform a hard reset by unplugging the micro-USB cable from the PC and then reconnect it again. This completes the firmware installation for [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029 board]].
+   ==== Setting up the Serial Terminal Software to Communicate with the Boards ====
+   
+   The [[adi>cn0428|EVAL-CN0428-EBZ]] board comes with a pre-installed base code. The user needs to install a serial terminal software on their PC to communicate with the board. The recommended software is PuTTY which is easily available over the internet for free installation. Once PuTTY is installed, user needs to go to the Device Manager terminal through the Start option in Windows. The Device Manager terminal opens as follows:
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:1.jpg |}}
+   
+   The user should then plug in the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL–ADICUP3029]] board into the PC using the USB cable that goes into the USB port. As soon as the board is detected by the PC, the Device Manager displays the board and the port it is connected to.
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:2.jpg |}}
+   
+   The new options that appear in the Device Manager window, as shown in the picture above, shows that the PC has detected the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL–ADICUP3029]] board. User should note the port number of the USB Serial Device (COM4 as seen above). With a right click on the USB Serial Device (COM4), user can then access the properties of the board connected. Note the speed shown here is 115200.
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:putty11.jpg |}}
+   
+   Once these steps have been followed, user should now start the PuTTY application and enter certain values in the configuration window. The three important settings that needs to be defined in the configuration window are the Session settings, the Terminal settings and the Serial settings. In the Session window, the speed should be set at 115200 and the serial line is the port number taken from Device manager (COM4 in our case). 
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:putty22.jpg |}}
+   
+   The user should save these settings by a particular name (we call it Water_qual) and load them whenever needed. Other important configurations include the terminal settings and the connection serial settings. They should be set as follows before launching the Putty application:
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:5.jpg |}}
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:putty44.jpg |}}
+   
+   Once all the configurations have been defined, launch the PuTTY terminal by selecting the 'Open' option. After the PuTTY terminal launches, type 'help' and hit enter on your keyboard to see the different commands in the PuTTY terminal for various water quality measurements. The list of commands that appear in the PuTTY terminal are as follows:
+   
+   {{ :resources:eval:user-guides:circuits-from-the-lab:cn0428:new_commands.jpg |}}
+   
+   ^ Command ^ Description ^
+   | help | Displays all the available commands. | 
+   | sensortype <type> | Chooses the type of sensor that is connected. Default is pH sensor. But for measuring conductivity, user needs to type 'sensortype conductivity' to select the conductivity measurement after connecting the conductivity probe. Similarly 'sensortype ORP'for ORP measurement. And type 'sensortype ph' to return to pH mode measurements after connecting a pH probe. |
+   | measuretemp | Measures an prints current temperature value. | 
+   | measuresensor | Makes sensor measurement for configured sensor (pH, Conductivity, etc.)  |
+   | measureeis | Performs EIS sweep on sensor and estimates sensor health. |
+   | printhealth | Prints sensor health value from last EIS measurement. |
+   | printtemp | Prints the temperature of the last sensor measurement (it doesn't update any measurement before printing, but in turn prints the last measured temperature). |
+   | printconfig | Prints the configuration (sensortype, HiZmode, temperature enabled) |
+   | printserialnumber | Prints the unique ID present on the [[adi>cn0428|EVAL-CN0428-EBZ]] board. This can be used to store calibraions. |
+   | enabletemp <en> | Calibrates selected channel or all channels. <en> = 1 to enable and <en> = 0 to disbale. |
+   | enablehizmode <en> | This command either enables or disables the high impedance TIA. Switch S2 on [[adi>cn0428|EVAL-CN0428-EBZ]] board matches this setting. 'enablehizmode 1' = enable and 'enablehizmode <0>' = disable. |
+   |renamesensor <name> | Renames the selected channel or all channels. <name> = new name (less than 16 characters). | <note>reconfirm this</note>
+   | switchsensor <site> | Switch to sensor board at <site>. <site> = 1, 2, 3, 4; Channel number of the sensor board to swith to. |
+   ===== (Optional) Programming the CN0428 with Custom Firmware =====
+   
+   The [[adi>cn0428|EVAL-CN0428-EBZ]] board ships pre-programmed with the default CN0428 firmware. However if the user wishes to modify the firmware for custom measurements, they need to download and install IAR Embedded Workbench for ARM 8.32 or higher. Along with this the user also needs to download the ADuCM355 support package from the Source Code link in the [[cn0428#software|Software]] section.
+   
+   After installing the software package, there are two options how to program the [[adi>cn0428|EVAL-CN0428-EBZ]]:\\
+   a) Using a stand-alone debugger with a 9-pin Cortex-%%M%% adapter, \\
+   b) Using the on-board debugger on the [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html|EVAL-ADICUP3029]] and the 10-pin ribbon cable included with [[adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html|EVAL–M355–ARDZ–INT]].
+   
+   Please refer to [[resources:eval:user-guides:circuits-from-the-lab:cn0428-cn0429-programming-with-custom-firmware|Programming EVAL-CN0428-EBZ or EVAL-CN0429-EBZ with Custom Firmware]] for detailed instructions.
+   
+   ===== Schematic, PCB Layout, Bill of Materials =====
+   <WRAP round 80% download>
+   
+   [[adi>cn0428-designsupport|EVAL-CN0428-EBZ Design & Integration Files]] 
+   \\ 
+     * Schematics 
+     * PCB Layout 
+     * Bill of Materials 
+     * Allegro Project
+   </WRAP>
+   
+   ===== Software =====
+     * [[ftp://ftp.analog.com/pub/MicroConverter/ADuCM355/IAR8_32_AndLater/|EVAL-CN0428-EBZ board Source Code]]
+     * [[https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0428_cn0429|EVAL-ADICUP3029 Source Code for CN0428]]
+   
+   =====Registration===== 
+   <WRAP round tip 80% >
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware.  [[reg>EVAL-CN0428-EBZ?&v=RevC|Register]] to receive all these great benefits and more!
+   </WRAP>
+   
+   
+   // End of Document //

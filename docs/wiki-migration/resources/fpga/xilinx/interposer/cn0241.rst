@@ -1,0 +1,143 @@
+CN0241 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7920`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0241`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0241-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0241-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0241.jpg
+   :alt: cn0241.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0241A-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0241_sdp1z.jpg
+   :alt: cn0241_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The circuit from the **EVAL-CN0241-SDPZ** board is a classic high-side current sensing circuit topology with a single sense resistor. High-side current monitors are likely to encounter overvoltage conditions from transients or when the monitoring circuits are connected, disconnected, or powered down.
+
+The :adi:`AD7920` is a 12-bit, high speed, low power, successive-approximation ADC respectively. The part operates from a single 2.35 V to 5.25 V power supply and features throughput rates up to 250 kSPS. The part contains a low-noise, wide bandwidth track/hold amplifier, which can handle input frequencies in excess of 6 MHz.
+
+More information
+----------------
+
+-  :adi:`CN0241 Product Info <CN0241>` - pricing, samples, datasheet
+-  :adi:`AD7920 Product Info <AD7920>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0241-SDPZ evaluation board user guide <CN0241>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0241-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0241 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7920 Driver:** :git-no-OS:`device_drivers/AD7920`
+   
+   -  **CN0241 Commands:** :git-no-OS:`device_commands/CN0241`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0241 reference project for Xilinx KC705 FPGA board.
+
+============ ===================================
+Command      Description
+============ ===================================
+**help?**    Displays all available commands.
+**voltage?** Displays the input voltage in [mV].
+**adcCode?** Displays the output ADC code.
+============ ===================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

@@ -1,0 +1,266 @@
+ADF4360 - Microcontroller No-OS Driver
+======================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4360-0`
+-  :adi:`ADF4360-1`
+-  :adi:`ADF4360-2`
+-  :adi:`ADF4360-3`
+-  :adi:`ADF4360-4`
+-  :adi:`ADF4360-5`
+-  :adi:`ADF4360-6`
+-  :adi:`ADF4360-7`
+-  :adi:`ADF4360-8`
+-  :adi:`ADF4360-9`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF4360-0EBZ1 <EVAL-ADF4360-0>`
+-  :adi:`EVAL-ADF4360-1EBZ1 <EVAL-ADF4360-1>`
+-  :adi:`EVAL-ADF4360-2EBZ1 <EVAL-ADF4360-2>`
+-  :adi:`EVAL-ADF4360-3EBZ1 <EVAL-ADF4360-3>`
+-  :adi:`EVAL-ADF4360-4EBZ1 <EVAL-ADF4360-4>`
+-  :adi:`EVAL-ADF4360-5EBZ1 <EVAL-ADF4360-5>`
+-  :adi:`EVAL-ADF4360-6EBZ1 <EVAL-ADF4360-6>`
+-  :adi:`EVAL-ADF4360-7EBZ1 <EVAL-ADF4360-7>`
+-  :adi:`EVAL-ADF4360-8EBZ1 <EVAL-ADF4360-8>`
+-  :adi:`EVAL-ADF4360-9EBZ1 <EVAL-ADF4360-9>`
+
+Overview
+--------
+
+The :adi:`ADF4360-0`, :adi:`ADF4360-1`, :adi:`ADF4360-2`, :adi:`ADF4360-3`, :adi:`ADF4360-4`, :adi:`ADF4360-5`, :adi:`ADF4360-6`, :adi:`ADF4360-7`, :adi:`ADF4360-8` and :adi:`ADF4360-9` are fully integrated integer-N synthesizers and voltage controlled oscillators (VCOs). The :adi:`ADF4360-0`, :adi:`ADF4360-1`, :adi:`ADF4360-2`, :adi:`ADF4360-3`, :adi:`ADF4360-4`, :adi:`ADF4360-5`, :adi:`ADF4360-6`, :adi:`ADF4360-7`, :adi:`ADF4360-8` and :adi:`ADF4360-9` are designed for a center frequency of 2600 MHz (:adi:`ADF4360-0`), 2250 MHz (:adi:`ADF4360-1`), 2000 MHz(:adi:`ADF4360-2`), 1750 MHz(:adi:`ADF4360-3`), 1600 MHz(:adi:`ADF4360-4`), 1300 MHz(:adi:`ADF4360-5`), 1150 MHz (:adi:`ADF4360-6`) or a frequency which is set by external inductors between 350 MHz to 1800 MHz(:adi:`ADF4360-7`) or 65 MHz to 400 MHz (:adi:`ADF4360-8` and :adi:`ADF4360-9`) . In addition, a divide option is available. Control of all the on-chip registers is through a simple 3-wire interface. The devices operate with a power supply ranging from 3.0 V to 3.6 V and can be powered down when not in use.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_usb.jpg
+   :align: center
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_db9.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  :adi:`EVAL-ADF4360-0EBZ1 (ADI) <ADF4360-0>`
+-  :adi:`EVAL-ADF4360-1EBZ1 (ADI) <EVAL-ADF4360-1EBZ1>`
+-  :adi:`EVAL-ADF4360-2EBZ1 (ADI) <EVAL-ADF4360-2EBZ1>`
+-  :adi:`EVAL-ADF4360-3EBZ1 (ADI) <ADF4360-3>`
+-  :adi:`EVAL-ADF4360-4EBZ1 (ADI) <EVAL-ADF4360-4EBZ1>`
+-  :adi:`EVAL-ADF4360-5EBZ1 (ADI) <EVAL-ADF4360-5EBZ1>`
+-  :adi:`EVAL-ADF4360-6EBZ1 (ADI) <EVAL-ADF4360-6EBZ1>`
+-  :adi:`EVAL-ADF4360-7EBZ1 (ADI) <ADF4360-7>`
+-  :adi:`EVAL-ADF4360-8EBZ1 (ADI) <ADF4360-8>`
+-  :adi:`EVAL-ADF4360-9EBZ1 (ADI) <ADF4360-9>`
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the ADF4360-x part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADF4360-x driver can be used exactly as it is provided. There are three functions which are called by the ADF4360-x driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of ADF4360 driver:
+
++-----------------------------------------------------------------------+--------------------------------------+
+| Function                                                              | Description                          |
++=======================================================================+======================================+
+| unsigned char ADF4360_Init(unsigned char adf4360Version)              | Initialize the device.               |
++-----------------------------------------------------------------------+--------------------------------------+
+| void ADF4360_Write(unsigned long data)                                | Write data into a register.          |
++-----------------------------------------------------------------------+--------------------------------------+
+| void ADF4360_Power(unsigned char powerMode)                           | Powers down or powers up the device. |
++-----------------------------------------------------------------------+--------------------------------------+
+| unsigned long long ADF4360_SetFrequency(unsigned long long frequency) | Sets the ADF4360 frequency.          |
++-----------------------------------------------------------------------+--------------------------------------+
+
+Downloads
+---------
+
+-  `ADF4360 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4360_generic.zip>`_
+-  `ADF4360 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4360_rl78g13.zip>`_
+-  `ADF4360 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4360_rx62n.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADF4360 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-ADF4360-0EBZ1 (ADI) <ADF4360-0>`
+-  :adi:`EVAL-ADF4360-1EBZ1 (ADI) <EVAL-ADF4360-1EBZ1>`
+-  :adi:`EVAL-ADF4360-2EBZ1 (ADI) <EVAL-ADF4360-2EBZ1>`
+-  :adi:`EVAL-ADF4360-3EBZ1 (ADI) <ADF4360-3>`
+-  :adi:`EVAL-ADF4360-4EBZ1 (ADI) <EVAL-ADF4360-4EBZ1>`
+-  :adi:`EVAL-ADF4360-5EBZ1 (ADI) <EVAL-ADF4360-5EBZ1>`
+-  :adi:`EVAL-ADF4360-6EBZ1 (ADI) <EVAL-ADF4360-6EBZ1>`
+-  :adi:`EVAL-ADF4360-7EBZ1 (ADI) <ADF4360-7>`
+-  :adi:`EVAL-ADF4360-8EBZ1 (ADI) <ADF4360-8>`
+-  :adi:`EVAL-ADF4360-9EBZ1 (ADI) <ADF4360-9>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13.
+
+There are two types of boards: with USB connector or with DB9 connector.
+
+Eval board with USB connector:
+
+::
+
+     T4  (GND)  → RL78G13 J11 connector Pin 5
+     T13 (DATA) → RL78G13 J11 connector Pin 2
+     T14 (LE)   → RL78G13 J11 connector Pin 1
+     T15 (CLK)  → RL78G13 J11 connector Pin 4
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_usb_rl78g13.jpg
+   :align: center
+
+Eval board with DB9 connector:
+
+::
+
+     9 Way D-Type connector Pin 3 (CLK)  → RL78G13 J11 connector Pin 4
+     9 Way D-Type connector Pin 5 (DATA) → RL78G13 J11 connector Pin 2
+     9 Way D-Type connector Pin 6 (GND)  → RL78G13 J11 connector Pin 5
+     9 Way D-Type connector Pin 7 (LE)   → RL78G13 J11 connector Pin 1
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_db9_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+In this example the output frequency of the device is set to 900 MHz.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the ADF4360 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-ADF4360-0EBZ1 (ADI) <ADF4360-0>`
+-  :adi:`EVAL-ADF4360-1EBZ1 (ADI) <EVAL-ADF4360-1EBZ1>`
+-  :adi:`EVAL-ADF4360-2EBZ1 (ADI) <EVAL-ADF4360-2EBZ1>`
+-  :adi:`EVAL-ADF4360-3EBZ1 (ADI) <ADF4360-3>`
+-  :adi:`EVAL-ADF4360-4EBZ1 (ADI) <EVAL-ADF4360-4EBZ1>`
+-  :adi:`EVAL-ADF4360-5EBZ1 (ADI) <EVAL-ADF4360-5EBZ1>`
+-  :adi:`EVAL-ADF4360-6EBZ1 (ADI) <EVAL-ADF4360-6EBZ1>`
+-  :adi:`EVAL-ADF4360-7EBZ1 (ADI) <ADF4360-7>`
+-  :adi:`EVAL-ADF4360-8EBZ1 (ADI) <ADF4360-8>`
+-  :adi:`EVAL-ADF4360-9EBZ1 (ADI) <ADF4360-9>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An EVAL-ADF4360-xEBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N.
+
+There are two types of boards: with USB connector or with DB9 connector.
+
+Eval board with USB connector:
+
+::
+
+     T4 (GND)   → RDKRX62N J8 connector Pin 4
+     T13 (DATA) → RDKRX62N J8 connector Pin 19
+     T14 (LE)   → RDKRX62N J8 connector Pin 15
+     T15 (CLK)  → RDKRX62N J8 connector Pin 20
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_usb_rx62n.jpg
+   :align: center
+
+Eval board with DB9 connector:
+
+::
+
+     9 Way D-Type connector Pin 3 (CLK)  → RDKRX62N J8 connector Pin 20
+     9 Way D-Type connector Pin 5 (DATA) → RDKRX62N J8 connector Pin 19
+     9 Way D-Type connector Pin 6 (GND)  → RDKRX62N J8 connector Pin 4
+     9 Way D-Type connector Pin 7 (LE)   → RDKRX62N J8 connector Pin 15
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4360_x_db9_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+In this example, two values are loaded into R and N Counters and the MUXOUT is configured to be connected to the R Divider output.
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

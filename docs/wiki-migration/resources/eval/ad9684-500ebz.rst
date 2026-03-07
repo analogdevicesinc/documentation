@@ -1,0 +1,394 @@
+EVALUATING THE AD9684 ANALOG-TO-DIGITAL CONVERTER
+=================================================
+
+Preface
+-------
+
+| This user guide describes the :adi:`AD9684` evaluation board which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described.
+| The :adi:`AD9684` data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+
+AD9684 Evaluation Board
+-----------------------
+
+|image1|\
+
+.. container:: centeralign
+
+   *Figure 1.* :adi:`AD9684` *Evaluation Board*\
+
+
+Typical Measurement Setup
+-------------------------
+
+|image2|\
+
+.. container:: centeralign
+
+   *Figure 2. Evaluation Board Connection—*\ :adi:`AD9684-500EBZ <AD9684>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+
+
+Features
+--------
+
+-  Full featured evaluation board for the :adi:`AD9684`
+-  SPI interface for setup and control
+-  Wide band Balun driven input
+-  No external supply needed. Uses 12V-1A and 3.3V-3A supplies from FMC
+-  VisualAnalog® and SPI controller software interfaces
+
+Helpful Documents
+-----------------
+
+-  :adi:`AD9684` Data Sheet
+-  :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>`, *HSC-ADC-EVALEZ Evaluation Kit*
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interface to High-Speed ADCs via SPI*
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+
+Software Needed
+---------------
+
+-  :adi:`VisualAnalog <en/design-center/interactive-design-tools/visualanalog.html>`
+-  :adi:`SPIController <en/design-center/interactive-design-tools/spicontroller.html>`
+
+Design and Integration Files
+----------------------------
+
+-  Schematic: `AD9684 Rev A <https://wiki.analog.com/_media/resources/eval/ad9684_sch.pdf>`_
+-  Layout: `AD9684 Rev A <https://wiki.analog.com/_media/resources/eval/ad9684_lay.pdf>`_
+-  Bill of Materials: `AD9684 Rev A <https://wiki.analog.com/_media/resources/eval/ad9684_bom.xlsx>`_
+-  FPGA MCS file: `ad9684_evalez_05202014_0903am.zip <https://wiki.analog.com/_media/resources/eval/ad9684_evalez_05202014_0903am.zip>`_
+
+Equipment Needed
+----------------
+
+-  Analog signal source and antialiasing filter
+-  Encode clock source
+-  12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01 supplied with :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>`)
+-  PC running Windows®
+-  USB 2.0 port
+-  :adi:`AD9684-500EBZ <AD9684>` board
+-  :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` FPGA-based data capture kit
+
+Getting Started
+---------------
+
+| This section provides quick start procedures for using the evaluation board for AD9684.
+
+Configuring the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+Before using the software for testing, configure the evaluation board as follows:
+
+-  Connect the evaluation board to the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` data capture board, as shown in Figure 2.
+-  Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01 supplied) to P4 on the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` board. Connect the Standard-B USB port of the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` board to the PC with the supplied USB cable.
+-  Turn on the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>`.
+-  The :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` will appear in the Windows(R) Device Manager
+-  If the Device Manager does not show the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` listed as shown in Figure 2, unplug all USB devices from the PC, uninstall and re-install SPIController and VisualAnalog and restart the hardware setup from step 1.
+-  On the ADC evaluation board, provide a clean, low jitter 1GHz clock source to connector J201 and set the amplitude to 14dBm. This is the ADC Sample Clock.
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel A to J100. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel B to J102. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K & L band-pass filters.)
+
+Visual Analog Setup
+~~~~~~~~~~~~~~~~~~~
+
+-  Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` VisualAnalog :math:`right` VisualAnalog
+-  On the VisualAnalog “New Canvas” window, click **ADC** :math:`right` **Dual** :math:`right` **AD9684**
+-  Select a Dual ADC\ |image3|\
+
+.. container:: centeralign
+
+   //Figure 3. Selecting the :adi:`AD9684` canvas *
+
+
+\* Select the AD9684 \
+
+.. container:: centeralign
+
+   *\ Figure 4. Selecting the :adi:`AD9684` canvas *
+
+
+\* View the AD9684 canvas \
+
+.. container:: centeralign
+
+   *\ Figure 5. The\ :adi:`AD9684` canvas *
+
+
+\* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 6)\ \
+
+.. container:: centeralign
+
+   *\ Figure 6. Expanding Display in VA\ *
+
+
+\* Click the* **Settings** *button in the* **ADC Data Capture** *block to view the capture size as shown in Figure 7 \
+
+.. container:: centeralign
+
+   *\ Figure 7. Setting the capture length\ *
+
+
+\* On the* **General** *tab make sure the clock frequency is set to* **500MHz** *(or other clock frequency). The FFT capture length may be changed to 131072 (128k) per channel. The* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *FPGA software supports up to 256K FFT capture (128K per channel)\ \
+
+.. container:: centeralign
+
+   *\ Figure 8. Setting the clock frequency *
+
+
+\* Click on the* **Capture Board** *tab and browse to the* **ad9684_evalez_05202014_0903am.mcs** *file. Click the* **Program** *button. The* **FPGA_DONE** *LED should illuminate on the* :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>` *board indicating that the FPGA has been correctly programmed. The bin file is available at the* **Design and Integration Files** *section \* Click* **OK**\ *==== SPIController Setup ==== \* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController \* Select the appropriate configuration file when prompted. \* In the* **Global** *tab, under the* **Generic Read/Write** *section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. \
+
+.. container:: centeralign
+
+   *\ Figure 9. Sending a Soft Reset to the AD9684\ *
+
+
+\* Individual Channel control for* **ADC A** *and* **ADC B** *are done using the Device Index Register (0x008) in the Global tab.\ \
+
+.. container:: centeralign
+
+   *\ Figure 10. Device Index for ADC Channel A and Channel B//
+
+
+-  Under **ADC A** and **ADC B** tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:
+
+   -  Chip Configuration Register (2): This option allows the channel to be powered on
+   -  Buffer Current Setting (18): This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I\ :sub:`AVDD3` and Buffer Current Setting.
+   -  Analog Input Differential Termination (16): This sets the input termination. Recommended settings are 400, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced.
+   -  Input Full Scale Range (25): At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.
+
+Device Setup - Full Bandwidth Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The settings in the ADCBase0 tab must be changed to configure the AD9684. In this example, the AD9684 is set up to use **Full Bandwidth Mode** for 2 ADC channels. Set the Chip Application Mode in register 0x200 to **Full Bandwidth Mode**. Set the Chip Decimation Ratio in register 0x201 to **Full Sample Rate**. Since the chip is configured to Full Bandwidth mode, the DDC configuration is bypassed and the sampling frequency is decimated by 1. |image4|\
+
+.. container:: centeralign
+
+   \ *Figure 11. Set Application Mode to Full Bandwidth Mode*\
+
+
+Obtaining an FFT - Full Bandwidth Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency.
+-  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image5|\
+
+.. container:: centeralign
+
+   \ *Figure 12. AD9684-500 FFT at 170.3 MHz Input signal for Full Bandwidth Mode*\
+
+
+-  Adjust the amplitude of the input signal so that the fundamental is at the -1.0 dBFS level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.)
+-   To save the FFT plot do the following:
+
+   -  Click on the Float Form button in the FFT window |image6|\
+
+.. container:: centeralign
+
+   \ *Figure 13. Floating the FFT window*\
+
+
+-  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image7|\
+
+.. container:: centeralign
+
+   \ *Figure 14. Saving the FFT*\
+
+
+Device Setup - 2 ADCs, 2DDCs, Real Mode Decimate by 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The settings in the ADCBase0 tab must be changed to configure the AD9684 to use the DDCs. In this example the AD9684 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. |image8|\
+
+.. container:: centeralign
+
+   \ *Figure 15. Set Application Mode to 2 DDCs Real Mode Decimate by 2*\
+
+
+-  The DDC settings must be configured in ADCBase1, but first, the tuning step, translation frequency, and DDC Phase Increment must be calculated.
+
+   -  The tuning step is equal to the output sample rate divided by 4096.
+
+      -  tuning step = 500MSPS/4096 = 122070.3125
+
+   -  The translation frequency is equal to the output sample rate divided by 4*(decimation ratio).
+
+      -  translation frequency = 500MSPS/(4\*2) = 62500000
+
+   -  The DDC Phase Increment is equal to the translation frequency divided by the tuning step.
+
+      -  DDC Phase Increment = 62500000/122070.3125 = 512
+
+-  Under DDCO CTRL and DDC1 CTRL in the ADCBase1 tab configure the DDCs to select 6dB Gain, Decimate by 4 Filter Selection (when in real mode this actually sets the AD9684 to Decimate by 2), Real (I) Output Only, Both Input Sample Selections to Channel A for DDC0 and Channel B for DDC1, and the DDC Phase Increment to the calculated value of 512
+
+   -  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). |image9|\
+
+.. container:: centeralign
+
+   \ *Figure 16. Channel A and Channel B DDC Settings*\
+
+
+Obtaining an FFT - 2 ADCs, 2DDCs, Real Mode Decimate by 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD9684 so this must be selected under the ADC Data Capture Settings.
+-  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image10|\
+
+.. container:: centeralign
+
+   \ *Figure 17. AD9684-500 FFT with 2 DDCs in Real Mode with Dec2 Enabled*\
+
+
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the **Fund Power** reading in the left panel of the VisualAnalog FFT window.) Real DDC operation imposes ~0.7 dB loss on the input signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -1.7 dBFS in the FFT in Visual Analog.
+-  To save the FFT plot do the following:
+
+   -  Click on the Float Form button in the FFT window |image11|\
+
+.. container:: centeralign
+
+   \ *Figure 18. Floating the FFT window*\
+
+
+-  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image12|\
+
+.. container:: centeralign
+
+   \ *Figure 19. Saving the FFT*\
+
+
+Device Setup - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The settings in the ADCBase0 tab must be changed to configure the AD9684 to use the DDC. In this example the AD9684 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is **NOT** checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. |image13|\
+
+.. container:: centeralign
+
+   \ *Figure 20. Set Application Mode to 1 DDC Complex ZIF Mode Decimate by 2*\
+
+
+-  The DDC settings must be configured under DDC0 CTRL in the ADCBase1 tab configure the DDC to select Complex Mixer Selection, 0 Hz IF Mode, Decimate by 2 Filter Selection, Real (I) Input Sample Selection to Channel A for DDC0, and Complex (Q) Input Sample Selection to Channel B.
+-  After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). |image14|\
+
+.. container:: centeralign
+
+   \ *Figure 21. DDC Settings for Complex ZIF Mode*\
+
+
+Obtaining an FFT - 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 500MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD9684 so this must be selected under the ADC Data Capture Settings.\ |image15|\
+
+.. container:: centeralign
+
+   \ *Figure 22. AD9684-500 FFT Data Capture Settings*\
+
+
+-  In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations. This is done under the FFT Analysis settings. Under the User-Defined tab add a new row by clicking Add. Name it ‘Image’. Use a symbol such as the # and set the Freq to ‘-fund’. Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’. Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.\ |image16|\
+
+.. container:: centeralign
+
+   \ *Figure 23. AD9684-500 FFT with 2 DDCs in Real Mode with Dec2 Enabled*\
+
+
+-  Click the Run button in Visual Analog and you should see the capture data similar to the plot below. |image17|\
+
+.. container:: centeralign
+
+   \ *Figure 24. AD9684-500 FFT with 1 DDC in Complex ZIF Mode with Dec2 Enabled*\
+
+
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the “Fund Power” reading in the left panel of the VisualAnalog FFT window.) Complex DDC operation imposes ~1dB loss in the signal, but does not impact the dynamic range. A -1dBFS input signal will show as -2dBFS in Visual Analog.
+-   To save the FFT plot do the following
+
+   -  Click on the Float Form button in the FFT window\ |image18|\
+
+.. container:: centeralign
+
+   \ *Figure 25. Floating the FFT window*\
+
+
+-  Click on File :math:`right` Save Form As button and save it to a location of choice\ |image19|\
+
+.. container:: centeralign
+
+   \ *Figure 26. Saving the FFT*\
+
+
+Troubleshooting Tips
+--------------------
+
+\*\* FFT plot appears abnormal \*\*
+
+-  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce input level if necessary.
+-  In VisualAnalog, Click on the Settings button in the **Input Formatter** block. Check that **Number Format** is set to the correct encoding (twos compliment by default). Repeat for the other channel.
+-  Issue a **Data Path Soft Reset** through SPIController **Global** tab as shown in Figure 27\ |image20|\
+
+.. container:: centeralign
+
+   \ *Figure 27. Issuing a data path soft reset through SPIController*\
+
+
+\*\* The FFT plot appears normal, but performance is poor. \*\*
+
+-  Make sure you are using the appropriate band-pass filter on the analog input.
+-  Make sure the signal generators for the clock and the analog input are clean (low phase noise).
+-  If you are using non-coherent sampling, change the analog input frequency slightly, or use coherent frequencies.
+-  Make sure the SPI config file matches the product being evaluated.
+
+\*\* The FFT window remains blank after the Run button is clicked \*\*
+
+-  Make sure the evaluation board is securely connected to the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>`.
+-  Make sure the FPGA has been programmed by verifying that the **Config DONE** LED is illuminated on the :adi:`HSC-ADC-EVALEZ <eval-hsc-adc-evalez>`. If this LED is not illuminated reprogram the FPGA through VisualAnalog. If the LED still does not illuminate disconnect the USB and power cord for 15 seconds. Connect again and repeat the hsc-adc-evale setup process.
+-  Make sure the correct FPGA *bin* file was used to program the FPGA.
+-  Be sure that the correct sample rate is programmed. Click on the **Settings** button in the **ADC Data Capture** block in VisualAnalog, and verify that the **Clock Frequency** is properly set.
+-  Restart SPIController.
+
+\*\* VisualAnalog indicates that the “FIFO capture timed out” or "FIFO not ready for read back" \*\*
+
+-  Make sure all power and USB connections are secure.
+
+\*\* VisualAnalog displays a blank FFT when the RUN button is clicked \*\*
+
+-  Ensure that the clock to the ADC is supplied. Using SPIController **ADCBase0** tab the status of the clock can be read out. See figure 28.\ |image21|\
+
+.. container:: centeralign
+
+   \ *Figure 28. Clock Detection Status Register*\
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9684evb.jpg
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9684_evalez_setup.jpg
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/eval/va_ad9684_2.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9684_full_bw_mode.png
+   :width: 800px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9684_full_bw_mode_fft.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9684_fft_graph_saveformas.png
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcglobal.png
+   :width: 800px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2ddcrealdec2_adcbase1.png
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_2ddcrealdec2.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9684_fft_graph_saveformas.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcglobal.png
+   :width: 800px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/AD6674_spi_2adc1ddccomplexdec2_adcbase1.png
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/eval/AD9684_2ddcrealdec2_datacapturesettings.png
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/AD6674_2adc1ddccomplexdec2_fftanalysissettings.png
+   :width: 700px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_1ddccomplexdec2.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/fig13_floatform.png
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/AD9684_fft_graph_saveformas.png
+.. |image20| image:: https://wiki.analog.com/_media/eval/AD9684_datapathsoftreset.png
+.. |image21| image:: https://wiki.analog.com/_media/eval/AD9684_clockdetect.png
+   :width: 600px

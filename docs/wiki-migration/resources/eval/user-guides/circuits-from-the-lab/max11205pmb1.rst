@@ -1,0 +1,274 @@
+MAX11205PMB1 Ultra-Low Power, Delta-Sigma ADC PMOD User Guide
+=============================================================
+
+The :adi:`MAX11205PMB1` peripheral module provides the necessary hardware to interface the :adi:`MAX11205` 16-bit ADC to any system that utilizes PmodK-compatible expansion ports configurable for the GPIO interface. The IC is an ultra-low-power (< 300FA max active current), high-resolution, serial-output ADC.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205pmb1.jpg
+   :align: center
+   :width: 400px
+
+Hardware
+--------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The voltage reference for the IC is supplied by a :adi:`MAX6037` (2.5V) that is also on the module. The filtered power-supply voltage from the host can be optionally passed (jumper selectable) through a :adi:`MAX8510` ultra-low-noise LDO, allowing empirical evaluation of performance with different power sources. For complete PMOD power specifications, please click\ `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
+| ==== Serial-Digital Interface ==== The :adi:`MAX11205PMB1` peripheral module interfaces with a host using a 2-wire serial interface. When an ADC conversion is complete, the IC pulls the data line low. The host must then supply a clock signal to shift out the conversion data.
+
+| 
+| ==== Digital Interface (PMOD) ==== The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found `here <https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf>`_.
+
+The :adi:`MAX11205PMB1` peripheral module can plug directly into a Pmod-compatible port (configured for SPI) through connector J1. Connector J1 provides a connection of the module to the host. The pin functions and pin assignments adhere to the Pmod standard recommended by Digilent.
+
+============= =================== ========
+P1 Pin Number Pin Function        Mnemonic
+============= =================== ========
+Pin 1         N.C.                CS
+Pin 2         N.C.                MOSI
+Pin 3         Master In Slave Out MISO
+Pin 4         Serial Clock        SCLK
+Pin 5         Digital Ground      DGND
+Pin 6         Digital Power       VDD
+============= =================== ========
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/max11205pmb1/max11205pmb1-layout.png
+   :width: 300px
+
+| 
+
+Device Driver Support
+---------------------
+
+There are two device driver solutions that are provided for controlling the **MAX11205PMB1**:
+
+-  **MAX11205 no-OS Driver**
+
+   -  The MAX32655FTHR example application uses the :doc:`MAX11205 no-OS driver </wiki-migration/resources/tools-software/uc-drivers/max11205>` and emulates the Linux IIO framework through the `tinyiiod daemon library <https://github.com/analogdevicesinc/libtinyiiod>`_. This driver is used in bare-metal applications, typically running on low-power, embedded microcontrollers. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development.
+
+-  **MAX11205 Linux Driver**
+
+   -  The :doc:`MAX11205 Linux driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/max11205>` is used in applications running the Linux operating system, typically on larger processors and SoC devices.
+
+      -  The MAX11205 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.
+         ===== System Setup Using MAX32655FTHR =====
+
+The :adi:`MAX11205PMB1` can be used with the :adi:`MAX32655FTHR`.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+The following is the list of items needed in order to replicate this demo.
+
+-  \*\* Hardware \*\*
+
+   -  `MAX32655FTHR <https://www.maximintegrated.com/MAX32655FTHR>`_ or
+   -  :adi:`FTHR-PMD-INTZ`
+   -  :adi:`MAX11205PMB1`
+   -  Micro-USB to USB cable
+   -  PC or laptop with USB Port
+
+-  \*\* Software \*\*
+
+   -  For MAX32655FTHR,
+
+      -  Pre-built hex file "max11205_maxim_basic_example_max32655.hex" in :git-no-OS:`max11205_max32655.hex <releases/download/Latest/max11205pmb1.zip>`
+      -  PuTTY or other similar software
+
+MAX32655FTHR
+~~~~~~~~~~~~
+
+1. Connect **MAX32655FTHR** with the **FTHR-PMD-INTZ**. Note that MAXIM feather board should have stacking headers for feather board where the interposer board will be connected.
+
+2. Connect \*\* MAX11205PMB1 \*\* to the \*\* FTHR-PMD-INTZ \*\*.
+
+===================== ======================
+MAX11205PMB1 (P1)     FTHR-PMD-INTZ SPI (P6)
+===================== ======================
+Pin 1 (Not connected) NC
+Pin 2 (Not connected) NC
+Pin 3 (MISO)          MISO
+Pin 4 (SCK)           SCK
+Pin 5 (GND)           GND
+Pin 6 (VCC)           VCC
+===================== ======================
+
+3. Connect **MAX32655FTHR** pin P0_22 (MISO) to P1_6.\
+
+
+|MAX32655FTHR|
+
+The final setup should look similar as shown below. |image1| 4. Power up the **MAX32655FTHR** by connecting it to your laptop using a micro-USB cable.
+
+5. Open the file explorer. Drag-and-drop the pre-built hex file "**max11205pmb1_maxim_basic_example_max32655.hex**" to the DAPLINK. If the transfer was not completed, update the firmware for the DAPLINK. Follow the steps here: https://github.com/MaximIntegrated/max32625pico-firmware-images/
+
+6. Open PuTTY or other similar software. Check the Device Manager to set correct COM for the **MAX32655FTHR**. Set baud rate to **57600** when running max11205pmb1_maxim_basic_example_max32655.hex available in :git-no-OS:`max11205_max32655 <releases/download/Latest/max11205pmb1.zip>`.
+
+The expected output viewed in the PuTTY is shown below.
+
+
+|image2|
+
+| 
+| ===== Application Software (All Platforms) =====
+
+Hardware Connection
+~~~~~~~~~~~~~~~~~~~
+
+The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.
+
+.. admonition:: Download
+   :class: download
+
+   Download and install the latest :git-libiio:`Libiio package <releases>` on your machine.
+
+
+To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the MAX11205PMB1 is attached. One platform is currently supported for the MAX11205PMB1: the MAX32655FTHR running the no-OS MAX11205 demo project. The user needs to supply a **URI**, which will be used in the context creation.
+
+The :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` command is a part of the libIIO package that reports all IIO attributes.
+
+| Upon installation, simply enter the command on the terminal command line to access it.
+
+For Windows machine connected to MAX32655FTHR:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+   iio_info -u serial:<serial port>
+
+|image3| Examples:
+
+-  In a Windows machine, you can check the port of your MAX32655FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in **COM4**, you have to use *iio_info -u serial:COM4* as your URI.
+-  In a Unix-based machine, you will see it under the /dev/ directory in this format "ttyUSBn", where n is a number depending on how many serial USB devices attached. If you see that your device is **ttyUSB0**, you have to use serial:/dev/ttyUSB0 as your URI.
+
+IIO Commands
+~~~~~~~~~~~~
+
+There are different commands that can be used to manage and control the device being used. The :doc:`iio_attr </wiki-migration/resources/tools-software/linux-software/libiio/iio_attr>` command reads and writes IIO attributes.
+
+::
+
+   analog@analog:~$ iio_attr [OPTION]...
+
+Example:
+
+-  To look at the context attributes, enter this code on the terminal:
+
+::
+
+   analog@analog:~$ iio_attr -a -C
+
+| 
+| The :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the *-u* qualifier when you are not directly accessing the device via RPI or when you are using the MAX32655FTHR platform.
+
+::
+
+   analog@analog:~$ iio_reg -u <context> <device> <register> [<value>]
+
+| 
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+.. important::
+
+   Make sure to download/update to the latest version of IIO Oscilloscope found on this link\ :git-iio-oscilloscope:`releases\`
+
+
+-  Once done with the installation or an update of the latest IIO Oscilloscope, open the application.  The user needs to supply a URI, which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
+-  Press refresh to display available IIO Devices, once MAX11205PMB1 appeared, press connect.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_connect.png
+   :alt: MAX11205PMB1 Oscilloscope Configuration
+   :align: center
+   :width: 250px
+
+Debug Panel
+^^^^^^^^^^^
+
+Below is the Debug panel of MAX11205PMB1 wherein you can directly access the device attributes.
+
+
+|MAX11205PMB1 Debug Panel|
+
+DMM Panel
+^^^^^^^^^
+
+Access the DMM panel to see the instantaneous reading of the voltage.
+
+
+|MAX11205PMB1 DMM Panel|
+
+PyADI-IIO
+~~~~~~~~~
+
+| :doc:`PyADI-IIO </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+| Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this :doc:`link </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`.
+
+Running the example
+^^^^^^^^^^^^^^^^^^^
+
+After installing and configuring PYADI-IIO in your machine, you are now ready to run Python script examples. In our case, run the **max11205_example.py** found in the examples folder.
+
+<code> analog@analog:~$ python pyadi-iio/examples/max11205_example.py serial:<serial port>,57600</code>
+
+In a Windows machine, you can check the port of your MAX32655FTHR via Device Manager in the Ports (COM & LPT) section. If your device is in COM4, you have to use "python pyadi-iio/examples/max11205_example.py serial:COM4,57600".
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_iio_example.png
+   :align: center
+   :width: 600px
+
+.. admonition:: Download
+   :class: download
+
+   Github link for the Python sample script: :git-pyadi-iio:`MAX11205 Python Example <examples/max11205_example.py>`
+
+
+More information and Useful links
+---------------------------------
+
+-  :adi:`MAX11205 Product Page <MAX11205>`
+-  :adi:`MAX11205PMB1 Product Page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/max11205pmb1.html>`
+-  :git-no-OS:`MAX11205PMB1 No-OS Projects <projects/max11205pmb1>`
+
+Schematics, PCB Layout, Bill of Materials
+-----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :adi:`MAX11205PMB1 Datasheet <media/en/technical-documentation/data-sheets/MAX11205PMB1.pdf>`
+   -  :adi:`UG-5483: Analog Essentials Getting Started Guide for Zedboard <media/en/technical-documentation/user-guides/analog-essentials-getting-started-guide-for-zedboard.pdf>`
+   -  :adi:`UG-5466: Analog Essentials Getting Started Guide for LX9 and Nexys3 <media/en/technical-documentation/user-guides/analog-essentials-getting-started-guide-for-lx9-and-nexys3.pdf>`
+   
+
+
+Additional Information
+----------------------
+
+-  `pyADI-IIO <https://github.com/analogdevicesinc/pyadi-iio>`_
+-  :doc:`PyADI-IIO Installation Guide </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+-  :doc:`IIO Oscilloscope Installation Guide </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`Kuiper Linux </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/MAX11205PMB1?&v=Rev A>`_ to receive all these great benefits and more!
+
+
+.. |MAX32655FTHR| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max32655fthr.png
+   :width: 500px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_setup.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_basic.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_iio_info.png
+   :width: 600px
+.. |MAX11205PMB1 Debug Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_debug.png
+   :width: 400px
+.. |MAX11205PMB1 DMM Panel| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1/max11205_dmm.png
+   :width: 400px

@@ -1,0 +1,87 @@
+AD7293 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7293`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7293`
+
+Overview
+--------
+
+The :adi:`AD7293` is a PA drain current controller containing functionality for general-purpose monitoring and control of current, voltage, and temperature, integrated into a single chip solution with an SPI-compatible interface. The device features a 4-channel, 12-bit successive approximation register (SAR) ADC, eight 12-bit DACs (four bipolar and four unipolar with output ranges that can be configured to shut down under external pin control), a ±1.25°C accurate internal temperature sensor, and eight general-purpose input/output (GPIO) pins.
+
+The device also includes limit registers for alert functions and four high-side current sense amplifiers to measure current across external shunt resistors. These amplifiers can be optionally set to operate as part of four independent closed-loop drain current controllers.
+
+A high accuracy 2.5 V internal reference is provided to drive the DACs and the ADC. The 12-bit ADC monitors and digitizes the internal temperature sensor, and two inputs are included for the external diode temperature sensors.
+
+Note that throughout this data sheet, multifunction pins, such as GPIO4/ALERT1, are referred to either by the entire pin name or by a single function of the pin, for example, ALERT1, when only that function is relevant.
+
+Applications:
+
+-  GaN and GaAs power amplifier monitoring and controls
+-  Base station power amplifiers
+-  General-purpose system monitoring and controls
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`AD7293` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`AD7293` driver can be used exactly as it is provided.
+
+The Communication Drivers must include SPI transmission methods for :adi:`AD7293` and GPIO control methods for :adi:`AD7293`.
+
+For the SPI method, the :adi:`AD7293` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`AD7293` driver calls three functions:
+
+-  gpio_get() - initialize GPIO peripheral and allocate memory for one GPIO control.
+-  gpio_remove() - frees memory allocated by the GPIO control driver.
+-  gpio_direction_input() - set GPIO as input.
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `AD7293 Header file <http://analogdevicesinc.github.io/no-OS/ad7293_8h.html>`_
+-  `AD7293 Source file <http://analogdevicesinc.github.io/no-OS/ad7293_8c.html>`_
+
+Initialization example
+----------------------
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD7293 Driver.|
+
+   -
+
+   |Header file of AD7293 Driver.|
+
+.. |Implementation of AD7293 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad7293/ad7293`.c
+.. |Header file of AD7293 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad7293/ad7293`.h

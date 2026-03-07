@@ -1,0 +1,171 @@
+EVAL-CN0409-ARDZ Shield Overview
+================================
+
+| :adi:`CN0409` uses the ADPD105 photometric front end and a network of 860nm Infrared emitters and silicon PIN photodiodes to achieve a water turbidity measurement system. The system can measure low to high water turbidity levels ranging from 0 FTU to 1000 FTU (limited by available solution). The IR LED and photodiode network is arranged in such a way that it can support two of the most recognized turbidity measurement standards – ISO7027 (both ratio and non-ratio) and GLI Method. With three-point calibration, the typical accuracy that the system can achieve is ± 0.50 FTU or ±5% of the reading – whichever is greater. This accuracy combined with the 0.05 FTU noise level makes the measurements obtained using this system very reliable.
+| The ADPD105’s ambient light rejection feature makes this circuit ideal for applications where accurate, robust, and non-contact turbidity measurements are critical. Applications include chemical analysis and monitoring natural bodies of water, wastewater and drinking water.
+
+| 
+
+| 
+| |image1|
+
+Turbidity Measurement
+---------------------
+
+The International Organization for Standardization (ISO) developed a design standard known as ISO7027 Water Quality—Determination of Turbidity, which is best known for its requirement of a monochromatic light source. Most instruments that comply with this standard use an 860 nm LED light source and a primary detector at an angle of 90°. Additional detection angles are allowed, such as a detector at an angle of 180°, to increase the range of measurable turbidity levels.
+
+The CN0409 hardware allows for the measurement of both 90 degrees and 180 degrees scattering measurements.
+
+Nonratio Measurement Method (Low Turbidity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For turbidities between 0 FTU and 40 FTU, the 90° detector provides the most linear response to scattering. At low turbidity levels, the particles are much smaller than the wavelength of incident light; therefore, they exhibit a symmetrical scattering distribution. As the number and size of suspended solids increase within this range, the 90° detector receives a linearly proportional amount of scattered light. This method is also known as the nonratio ISO7027 because of the use of just one detector.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_iso7027_nonratio_config.png
+   :align: center
+   :width: 300px
+
+Ratio Measurement Method (Medium to High Turbidity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Higher turbidity levels in the range of 40 FTU to 4,000 FTU require an additional detector to obtain the same linear response as the nonratio method. Larger particles present in these types of solutions exhibit an asymmetrical light scattering distribution that results in a higher intensity forward scattered light. The ISO7027 ratio method of the CN-0409 uses the ratio of the 90° detector and the 180° detector to measure turbidity levels of theoretically up to 4,000 FTU. (Note: The CN0409 solution has only been validated up to 1000 FTU)
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_iso7027_ratio_config.png
+   :align: center
+   :width: 300px
+
+Vial Holder
+-----------
+
+The turbidity calibration and sample vials are held in a mechanical holder that is specifically milled for the LaMotte style test vial.
+
+The photodiodes(DS1 and DS2) and LEDs(D1 and D2) should be bend slightly backwards to allow placement of the vial holder. Once in place carefully bend the photodiodes and LEDs into the holes of vial holder, until they are snug and secure.\
+
+
+|image2|
+
+The test vial should be screwed into the EVAL-CN0409-ARDZ board, by lining up the holes in the vial holder with the holes in the board, using the screws provided.\
+
+
+|image3|
+
+.. admonition:: Download
+   :class: download
+
+   The mechanical outline and dimensions for the vial holder used with the EVAL-CN0409-ARDZ can be found here: `Vial Holder Measurements <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/fab._of_test_vial_holder-model.pdf>`_
+
+
+Test Vials
+----------
+
+The test vials are one of the biggest sources of measurement error within a turbidity system, and therefore one of the most important factors to consider in obtaining accurate turbidity measurements.
+
+.. note::
+
+   It is recommended to use `LaMotte Test Vial <https://www.coleparmer.com/i/lamotte-0290-6-turbidity-sample-test-tubes-vials-6-pk/0556366>`_ as the size fits into the CN0409 board vial holder
+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/test_vial_example.png
+   :align: center
+   :width: 300px
+
+The following items are critical to the success of proper turbidity vial preparation and measurement techniques:
+
+-  Cleaning Procedure
+-  Indexing the Vials
+-  Measurement Procedure
+
+Cleaning Procedure
+~~~~~~~~~~~~~~~~~~
+
+To obtain the most accurate results when taking measurements, process below should take into considerations:
+
+-  Test vials **MUST** be meticulously cleaned.
+
+   -  Washing the vials with soap and deionized water
+   -  Soaking the sample vial in Hydrochloric Acid solution
+   -  Rinsing with ultra-filtered deionized water
+   -  Polishing with silicone oil.
+
+Indexing Vials
+~~~~~~~~~~~~~~
+
+Test vials must also be indexed. After the cleaning process, the vial is used to measure a very low turbidity solution.
+
+-  Use a calibrated FTU solution to ensure that the index is properly assessed and assigned.
+
+The position with the lowest measured turbidity should be indexed and this position should be used for succeeding measurements.
+
+-  If possible, use a properly indexed test vial solution to ensure the system is working and calibrated properly.
+
+Measurement Procedure
+~~~~~~~~~~~~~~~~~~~~~
+
+-  Fill a clean test vial(see cleaning procedure above) up to 10mL of the solution under test.
+-  Allow sufficient time for bubbles to escape before placing the cap.
+
+   -  This can be done by letting the solution stand for several minutes to allow the bubbles to vacate.
+
+-  Wipe the test vial with a lint free cloth before inserting into the on board test vial holder to make sure it is free from fingerprints.
+
+   -  Make sure you are holding on the test vial cap when placing on the holder
+
+Calibration Solutions
+---------------------
+
+Calibration solutions are an important baseline to ensure that your measurement system is working approriately. It's needed in order to perform that calibration calculations and routines within the software, providing accurate turbidity measurements.
+
+.. note::
+
+   The turbidity calibration solutions used in the evaluation are the:
+
+   
+   -  `HI88703-11 <https://hannainst.com/turbidity-calibration-standards-for-hi88703-and-hi83414-hi88703-11.html>`_
+   -  `Oakton T100 <https://www.coleparmer.com/i/oakton-t100-replacement-turbidity-calibration-kit/3563552>`_
+   -  `Cole Parmer kit <https://www.johnmorrisgroup.com/AU/Product/48740/Cole-Parmer-Turbidity-Standards-Pack>`_
+   
+
+
+The calibration solution sets allowed us to do testing and characterization at many different data points and compare results against many different available products on the market. There are many different available calibration solutions values within these kits.
+
+-  0.10, 15.0, 100, 750, and 2000 NTU
+-  0.02, 20.0, 100 and 800 NTU.
+-  0.5, 10, and 40 NTU.
+
+Software
+--------
+
+-  :doc:`ADICUP360 + CN0409 Demo </wiki-migration/resources/eval/user-guides/eval-adicup360/reference_designs/demo_cn0409>`
+
+Schematic, PCB Layout, Bill of Materials
+========================================
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0409-ARDZ Design & Integration Files <cn0409-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0409-ARDZ?&v=RevD>`_ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/adicup360_cn0409_stacked.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_mounted_led_pd.jpg
+   :width: 300px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0409/cn0409_holder_screwed_in.jpg
+   :width: 300px

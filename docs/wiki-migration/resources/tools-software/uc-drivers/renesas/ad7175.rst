@@ -1,0 +1,134 @@
+AD7175 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7175-2`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7175-2SDZ`
+
+Overview
+--------
+
+The :adi:`AD7175-2` is a low noise, fast settling, multiplexed, 2/4 channel(full/pseudo-differential)sigma delta analog to digital converter(ADC) for DC inputs. It has a max channel scan rate of 50 kHz(20ups)for fully settled data. The output data rates range from 5Hz to 250Hz. The AD7175 integrates key analog and digital signal conditioning blocks to allow users configure an individual setup for each analog input channel in use. Each feature can be user selected on a per channel basis. Integrated fully rail to rail buffers on the analog inputs and external reference inputs provide easy to drive high impedance inputs.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7175_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7175 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7175 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7175 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7175 driver:
+
++------------------------------------------------------------+---------------------------------------------------+
+| Function                                                   | Description                                       |
++============================================================+===================================================+
+| int32_t AD7175_ReadRegister(st_reg\* pReg)                 | Reads the value of the specified register.        |
++------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7175_WriteRegister(st_reg reg)                   | Writes the value of the specified register.       |
++------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7175_WaitForReady(uint32_t timeout)              | Waits until a new conversion result is available. |
++------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7175_ReadData(int32_t\* pData)                   | Reads the conversion result from the device.      |
++------------------------------------------------------------+---------------------------------------------------+
+| uint8_t AD7175_ComputeCRC(uint8_t\* pBuf, uint8_t bufSize) | Computes the CRC for a data buffer.               |
++------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7175_Setup(void)                                 | Initializes the AD7175.                           |
++------------------------------------------------------------+---------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7175 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_generic.zip>`_
+-  `AD7175 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_rl78g13.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7175 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7175-2SDZ`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7175-2SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7175-2SDZ Pin T\CS   →  YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7175-2SDZ Pin DIN    →  YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7175-2SDZ Pin DOUT   →  YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7175-2SDZ Pin TSCLK  →  YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7175-2SDZ Pin GND1   →  YRDKRL78G13 J11 connector Pin 5
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project reads data from the AD7175 part and displays it on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7175_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

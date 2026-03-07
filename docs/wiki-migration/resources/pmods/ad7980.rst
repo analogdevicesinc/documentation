@@ -1,0 +1,19 @@
+The :adi:`AD7980` is a 16-bit, successive approximation, analog-to-digital converter (ADC) that operates from a single power supply, VDD. It contains a low power, high speed, 16-bit sampling ADC and a versatile serial interface port. On the CNV rising edge, it samples an analog input IN+ between 0 V to REF with respect to a ground sense IN−. The reference voltage, REF, is applied externally and can be set independent of the supply voltage, VDD. Its power scales linearly with throughput.
+
+The SPI-compatible serial interface also features the ability, using the SDI input, to daisy-chain several ADCs on a single, 3-wire bus and provides an optional busy indicator. It is compatible with 1.8 V, 2.5 V, 3 V, or 5 V logic, using the separate supply VIO.
+
+The :adi:`AD7980` is housed in a 10-lead MSOP or a 10-lead QFN (LFCSP) with operation specified from −40°C to +125°C.
+
+The AD7980-EP supports defense and aerospace applications (AQEC)
+
+Applications
+============
+
+-  Battery-powered equipment
+-  Communications
+-  ATE
+-  Data acquisitions
+-  Medical instruments
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7980_pmod_ad4.jpg
+   :align: center

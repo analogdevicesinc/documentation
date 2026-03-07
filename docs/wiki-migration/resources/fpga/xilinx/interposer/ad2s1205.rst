@@ -1,0 +1,144 @@
+AD2S1205 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+==============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD2S1205`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD2S1205`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD2S1205SDZ <AD2S1205>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD2S1205CBZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad2S1205.jpg
+   :alt: ad2S1205.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD2S1205SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad2s1205_sdp1z.jpg
+   :alt: ad2s1205_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-AD2S1205SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. It was designed to help customers evaluate performance or quickly prototype new **AD2S1205** circuits and reduce design time.
+
+The AD2S1205 is a complete 12-bit resolution tracking resolver-to-digital converter that contains an on-board programmable sinusoidal oscillator providing sine wave excitation for resolvers. The converter accepts 3.15 V p-p ± 27% input signals on the Sin and Cos inputs. A Type II tracking loop is employed to track the inputs and convert the input Sin and Cos information into a digital representation of the input angle and velocity. The maximum tracking rate is a function of the external clock frequency. The performance of the AD2S105 is specified across a frequency range of 8.192 MHz ± 25%, allowing a maximum tracking rate of 1250 rps.
+
+More information
+----------------
+
+-  :adi:`AD2S1205 Product Info <AD2S1205>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD2S1205SDZ evaluation board user guide </static/imported-files/user_guides/UG-365.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD2S1205SDZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD2S1205 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD2S1205 Driver:** :git-no-OS:`device_drivers/AD2S1205`
+   
+   -  **AD2S1205 Commands:** :git-no-OS:`device_commands/AD2S1205`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD2S1205 reference project for Xilinx KC705 FPGA board.
+
+============= ======================================
+Command       Description
+============= ======================================
+**help?**     Displays all available commands.
+**position?** Displays the current angular position.
+**velocity?** Displays the current angular velocity.
+============= ======================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD2S1205 IIO Resolver-to-Digital Converter Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-resolver/ad2s1200>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

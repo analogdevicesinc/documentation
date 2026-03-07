@@ -1,0 +1,129 @@
+AD7193 Customer Evaluation Board User Guide
+===========================================
+
+The EVAL-AD7193ASDZ evaluation kit features the :adi:`AD7193 <en/products/ad7193.html>`, is a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC.The internal clock option provides a compact solution for low BW requirements.
+
+The PC software fully configures the :adi:`AD7193 <en/products/ad7193.html>` device register functionality and provides AC time domain analysis in the form of waveform graphs, histograms, and associated noise analysis for ADC performance evaluation. The AC analysis is also provided by the software, examples of which are; an FFT displaying the first 5 harmonics SNR, SFDR S/N+D and THD.
+
+The AD719x Family
+-----------------
+
+The AD719x family of ADCs are an ultralow noise ADC that incorporates a ∑-∆ modulator, a buffer, PGA, and on-chip digital filtering intended for the measurement of wide dynamic range signals such as those in pressure transducers, weigh scales, and strain gauge applications.
+
+All devices in family offer excellent noise figures with very low offset and gain drift. The ultra low noise integrated PGA supports gains from X1 to X128, enabling an input span of +/- VREF/gain – See the PGA section for more details. All devices comes with an option to work in differential or pseudo differential mode. The devices have automatic channel sequencer, 4 GPOs and can work with a single power suppy. There is an on-chip 4.92MHz clock which can be used as clock source to the ADC. AD719x also includes a zero latency feature.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7193_blockdiagram.png
+   :align: center
+   :width: 400px
+
+Evaluation board Features
+-------------------------
+
+-  Full featured evaluation board for the AD7193
+-  PC control in conjunction with the system demonstration platform (EVAL-SDP-CB1Z/EVAL-SDP-CK1Z)
+-  PC software for control and data analysis (time and frequency domain)
+
+Related Documents
+-----------------
+
+-  :adi:`AD7193 Data Sheet <media/en/technical-documentation/data-sheets/ad7193.pdf>`
+
+Required Software
+-----------------
+
+-  :adi:`ACE Software <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7193asdz.html#eb-documentation>`
+   \* :adi:`AD7193 ACE Plugin <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7193asdz.html#eb-documentation>`
+
+Quick Start Guide
+=================
+
+The following steps highlight the process to begin using the evaluation board.
+
+Equipment Required
+------------------
+
+-  :adi:`EVAL-AD7193ASDZ evaluation board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7193.html>`
+-  PC running Windows with a USB2.0 port and software installed.
+-  Controller Board
+
+   -  Option A: :adi:`EVAL-SDP-CK1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-k1.html>` and a USB-C cable
+
+      -  Option B: :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/sdp-b.html>` and a Micro-USB cable
+
+Getting started
+---------------
+
+.. warning::
+
+   Ensure the SDP board is not connected to the USB port of the PC
+
+
+-  Install the :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>`
+-  :doc:`Ace Plugin Install guide available here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+-  If :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html?doc=EVAL-AD7383FMCZ-ug-1770.pdf>` is already installed, update the Plugins to download AD719x Plugin.
+
+-  Connect the EVAL-AD7193ASDZ to the controller board
+
+   -  **Option A:** Connect the EVAL-AD7193ASDZ to the EVAL-SDP-CK1Z
+
+      -  Using the 120 pin connector
+
+         -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
+         -  Using the Arduino Connectors
+
+         |image1|
+
+   -  **Option B:** Connect the EVAL-AD7193ASDZ to the EVAL-SDP-CB1Z
+
+      -  Using the 120 pin connector
+
+         -   Screw the two boards together using the plastic screw-washer set included in the evaluation board kit to ensure that the boards are connected firmly together.
+
+-  If using Windows® XP, it may be needed to search for the controller board drivers. Choose to automatically search for the drivers for the controller board if prompted by the operating system.
+-  Launch the ACE plugin from the **Analog Devices** subfolder in the **Programs** Menu.
+
+|image2|
+
+-  The :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>` is a useful demo mode of the Ace Plugin software to ensure that the Evaluation board is communicating correctly with the Ace Plugin software.
+
+Hardware Guide
+==============
+
+| :doc:`Visit the hardware guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+| **Contents of the Hardware guide:**
+
+-  :doc:`Set-up Procedures </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Block Diagram </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-   :doc:`Hardware Link Options </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`On Board Connections </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Power Supplies </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Serial Interface </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Reference Options </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`GPIOs </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Schematics </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+-  :doc:`Bill of Materials </wiki-migration/resources/eval/user-guides/ad7193/hardwareguide>`
+
+Software Guide
+==============
+
+| :doc:`Visit the software guide chapter here </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+| **Contents of the Hardware guide:**
+
+-  :doc:`Ace Plugin </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+
+   -  :doc:`Ace Plugin Install </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+
+      -  :doc:`Ace Plugin Operation </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+      -  :doc:`Ace Plugin Demo Modes </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+
+         -  :doc:`Low Noise Test Demo </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures/demo_modes>`
+
+            -  50Hz Quick Test
+
+-  :doc:`Virtual Eval Guide </wiki-migration/resources/eval/user-guides/ad7193/softwareprocedures>`
+-  :doc:`AD7193 Firmware </wiki-migration/resources/tools-software/product-support-software/ad719x_mbed_iio_application>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/sdp_connect.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ace_plugin_open.png
+   :width: 300px

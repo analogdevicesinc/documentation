@@ -1,0 +1,69 @@
+Supported Devices
+=================
+
+-  :adi:`ADF7023`
+
+Evaluation Boards
+=================
+
+-  PmodRF3
+
+Overview
+========
+
+.. include:: ../../pmods/adf7023.rst
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the ADF7023 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADF7023 driver can be used exactly as it is provided.
+
+There are three functions which are called by the ADF7023 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of ADF7023 driver:
+
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Function                                                                               | Description                                                      |
++========================================================================================+==================================================================+
+| char ADF7023_Init(void)                                                                | Initializes the ADF7023.                                         |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_GetStatus(unsigned char\* status)                                         | Reads the status word of the ADF7023.                            |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetCommand(unsigned char command)                                         | Initiates a command.                                             |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetFwState(unsigned char fwState)                                         | Sets a FW state and waits until the device enters in that state. |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_GetRAM(unsigned long address, unsigned long length, unsigned char\* data) | Reads data from the RAM.                                         |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetRAM(unsigned long address, unsigned long length, unsigned char\* data) | Writes data to RAM.                                              |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_ReceivePacket(unsigned char\* packet, unsigned char\* length)             | Receives one packet.                                             |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_TransmitPacket(unsigned char\* packet, unsigned char length)              | Transmits one packet.                                            |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetChannelFrequency(unsigned long chFreq)                                 | Sets the channel frequency.                                      |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetDataRate(unsigned long dataRate)                                       | Sets the data rate.                                              |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| void ADF7023_SetFrequencyDeviation(unsigned long freqDev)                              | Sets the frequency deviation.                                    |
++----------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png

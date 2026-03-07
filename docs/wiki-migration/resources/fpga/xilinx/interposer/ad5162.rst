@@ -1,0 +1,154 @@
+AD5162 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5162`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5162SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5162SDZ <AD5162>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5162SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad5162.jpg
+   :alt: ad5162.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5162SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5162_sdp1z.png
+   :alt: ad5162_sdp1z.png
+   :align: center
+   :width: 400px
+
+The EVAL-AD5162SDZ evaluation board is a member of a growing number of boards available for the SDP. Designed to help customers evaluate performance or quickly prototype new AD5162 circuits and reduce design time, the EVAL-AD5162SDZ evaluation board can operate in single-supply and incorporates an internal power supply powered from the USB.
+
+The AD5162 provides a compact 3 mm x 4.9 mm packaged solution for dual 256 position adjustment applications. This device performs the same electronic adjustment function as a 3-terminal mechanical potentiometer. Available in four different end-to-end resistance values (2.5 k, 10 k, 50 k, 100 k), this low temperature coefficient device is ideal for high accuracy and stability-variable resistance adjustments.The wiper settings are controllable through the SPI compatible digital interface. The resistance between the wiper and either end point of the fixed resistor varies linearly with respect to the digital code transferred into the RDAC latch. Operating from a 2.7 V to 5.5 V power supply and consuming less than 6 µA allows the AD5162 to be used in portable battery-operated applications.
+
+More information
+----------------
+
+-  :adi:`AD5162 Product Info <AD5162>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5162SDZ evaluation board user guide </static/imported-files/user_guides/UG-348.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD5162** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5162 Driver:** :git-no-OS:`device_drivers/AD5172`
+   
+   -  **AD5162 Commands:** :git-no-OS:`device_commands/AD5172`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5162 reference project for Xilinx KC705 FPGA board.
+
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| Command       | Description                                                                                                               |
++===============+===========================================================================================================================+
+| **help?**     | Displays all available commands.                                                                                          |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| **rdac=**     | Load the wiper register with a give value. Accepted values:                                                               |
+|               | channel:                                                                                                                  |
+|               | 0 - select RDAC 1 wiper register.                                                                                         |
+|               | 1 - select RDAC 2 wiper register.                                                                                         |
+|               | value:                                                                                                                    |
+|               | 0 .. 255 - value to be written in register.                                                                               |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| **rdac?**     | Read back the value of the wiper register. Accepted values:                                                               |
+|               | channel:                                                                                                                  |
+|               | 0 - select RDAC 1 wiper register.                                                                                         |
+|               | 1 - select RDAC 2 wiper register.                                                                                         |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| **wbuf1?**    | Read back the value of the Wiper Buffer in voltage. (VDD=3.2V)                                                            |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| **shutdown=** | Shutdown connects wiper to B terminal and open circuits the A terminal. **This command is not supported by this device.** |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+| **shutdown?** | Notify about the state of the selected RDAC. **This command is not supported by this device.**                            |
++---------------+---------------------------------------------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

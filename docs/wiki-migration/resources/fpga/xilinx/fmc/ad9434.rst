@@ -1,0 +1,227 @@
+AD9434 Native FMC Card
+======================
+
+Overview
+--------
+
+The :adi:`AD9434` is a 12-bit monolithic sampling analog-to-digital converter (ADC) optimized for high performance, low power, and ease of use. The part operates at up to a 500 MSPS conversion rate and is optimized for outstanding dynamic performance in wideband carrier and broadband systems. All necessary functions, including a sample-and-hold and voltage reference, are included on the chip to provide a complete signal conversion solution. This reference design includes a data capture interface and the external DDR-DRAM interface for sample storage. It allows programming the device and monitoring its internal status registers. The board also provides other options to drive the clock and analog inputs of the ADC.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9434-FMC-500EBZ <en/analog-to-digital-converters/ad-converters/ad9434/products/EVAL-AD9434/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `ZC706 <https://www.xilinx.com/ZC706>`_ LPC Slot
+-  `ZEDBOARD <https://digilent.com/reference/programmable-logic/zedboard/start>`_ LPC Slot
+
+Block Design
+------------
+
+Block diagram
+~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_fmc.svg
+   :alt: Block Diagram
+   :align: center
+
+Clock scheme
+~~~~~~~~~~~~
+
+An external clock source can be connected to J201, but this need to be done by configuring P100. See schematic for more info. See **Board files** section below.
+
+CPU/Memory interconnects
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The addresses are dependent on the architecture of the FPGA, having an offset added to the base address from HDL. Check-out the tables below:
+
+CPU:
+
+.. container:: round
+
+   
+   ============== ============
+   Instance       Zynq address
+   ============== ============
+   axi_ad9434     0x44A0_0000
+   axi_ad9434_dma 0x44A3_0000
+   ============== ============
+   
+
+
+SPI connections
+~~~~~~~~~~~~~~~
+
+.. container:: round
+
+   
+   ======== ==================== =============== ===
+   SPI Type SPI manager instance SPI subordinate CSB
+   ======== ==================== =============== ===
+   PS       SPI 0                AD9517          1
+   PS       SPI 0                AD9434BCPZ      0
+   ======== ==================== =============== ===
+   
+
+
+Interrupts
+~~~~~~~~~~
+
+Below are the Programmable Logic interrupts used in this project.
+
+.. container:: round
+
+   
+   ============== === ========== ===========
+   Instance name  HDL Linux Zynq Actual Zynq
+   ============== === ========== ===========
+   axi_ad9783_dma 13  57         89
+   ============== === ========== ===========
+   
+
+
+Building the HDL projects
+-------------------------
+
+The design is built upon ADI's generic HDL reference design framework. ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must clone the HDL repository, and then build the project as follows.
+
+On Linux:`here <Cygwin/WSL:
+
+::
+
+   user@analog:~$ cd hdl/projects/ad9434_fmc/zc706
+   user@analog:~/hdl/projects/ad9434_fmc/zc706$ make
+
+A more comprehensive build guide can be found in the `build_hdl <https://github.com/analogdevicesinc/hdl/blob/master/docs/user_guide/build_hdl.rst>` user guide.
+
+AD9434_FMC Board files
+----------------------
+
+Board Files:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `ad9434_fmc_schematic_wiki.pdf <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_fmc_schematic_wiki.pdf>`_
+   -  `ad9434_fmc_bom_WIKI.xlsx <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_fmc_bom_WIKI.xlsx>`_
+   -  `ad9434_fmc_gerbers_wiki.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_fmc_gerbers_wiki.zip>`_
+   
+
+
+Setup guide
+~~~~~~~~~~~
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ZC706/ZEDBOARD
+-  AD9434-FMC board (the default setup uses onboard clock)
+-  SD card (at least 16gb)
+-  Signal generator (for data)
+-  1x SMA cable to connect the signal generator to the ad9434_fmc
+-  1x Ethernet cable
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 115200.
+-  IIO Oscilloscope to capture data
+
+Hardware configuration
+~~~~~~~~~~~~~~~~~~~~~~
+
+For the ZC706 to boot from the SD card, the SW11 switch should be configured like this: **0110**, from left to right(see `ZC706 user guide <https://docs.xilinx.com/v/u/en-US/ug954-zc706-eval-board-xc7z045-ap-soc>`_, Device Configuration section). The VADJ required: 2.5V.
+
+For ZEDBOARD place the VADJ Jumper on 2.5V.
+
+The ad9434_fmc should be configured this way:
+
+This is and example of configuration for the AD9434-FMC-500EBZ board. In this configuration we don't need an external source of signal generator for the CLKIN port, because it will be configured to use the internal oscillator.
+
+-  Jumper P100: on pins 1 and 2 (this Jumper configures the source of clock; as it this now, it uses the internal signal generator)
+-  Jumper J300: on row pins 3 and 4, or PD and AGND(see jumper schematic next to it on the board)
+-  Jumper P400: on pins 5 and 6
+-  Jumper P300: no configuration
+
+First time running
+~~~~~~~~~~~~~~~~~~
+
+To begin, connect the AD9434-FMC board to the FMC-LPC connector of ZC706. Connect the power source for ZC706, the Ethernet cable and the USB cable for UART communication. Program the SD card with the latest image of Analog Devices Kuiper Linux. Then, from projects folder, copy the **BOOT.BIN** file and the **devicetree.dtb** file in the /root folder. Also, from the **zynq-common** folder copy the uImage file in the /root folder. Insert the SD card in the card slot of the ZC706 and start the FPGA. Using a program for UART communication, you will be able to see the FPGA booting up the Kuiper system. After the boot, you will be able to find the ip address and other files of the system. Below, is a photo of the setup.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_zc706_setup.png
+   :alt: Setup
+   :width: 500px
+
+After finding the IP address, open IIO Oscilloscope and choose manual connection. Write **ip:your_ip_address** and click on refresh or press enter. In the textboxes below should appear different information and you should see the name of the carrier and the name of the FMC. After connecting to the ZC706, you may proceed with the testing of the board. Click on **File->New plot** to get a new plot. As mentioned, you need a external signal generator. If you generate a signal with a 10MHz frequency and 100mVpp amplitude, you should get something like this:
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9434_zc706_10mhz_1000samples.png
+   :alt: IIO Oscilloscope capture
+   :width: 600px
+
+Functional Description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is built on a microblaze based system parameterized for Linux. It consists of three functional modules, a LVDS interface, a PN monitor and a DMA interface. The LVDS interface captures and buffers data from the ADC. The data is captured using ISERDES primitives and is captured 4 samples wide at 1/4th of the ADC clock (125MHz at 500MHz ADC clock). The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+
+Registers
+~~~~~~~~~
+
+Refer to the regmap.txt file inside the pcores directory or from :git-hdl:`here <docs/regmap>`.
+
+Clock Selection
+~~~~~~~~~~~~~~~
+
+The board provides different possible clock path for clocking the AD9434(some modification may be necessary).
+
+Resources
+---------
+
+Hardware related:
+
+.. container:: box
+
+   
+   -  :adi:`EVAL-AD9434`
+   -  :adi:`AD9434`
+   
+
+
+HDL related:
+
+:git-hdl:`AD9434_fmc HDL project <projects/ad9434_fmc>`
+
+.. container:: box
+
+   
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | IP name      | Source code link                                                                                                                  | Documentation link                                                            |
+   +==============+===================================================================================================================================+===============================================================================+
+   | axi_ad9434   | :git-hdl:`axi_ad9434 HDL <library/axi_ad9434>`                                                                                    | -                                                                             |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | axi_dmac     | :git-hdl:`axi_dmac HDL <library/axi_dmac>`                                                                                        | `axi_dmac doc <:doc:`/wiki-migration/resources/fpga/docs/axi_dmac`>`_         |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | axi_clkgen   | :git-hdl:`axi_clkgen HDL <library/axi_clkgen>`                                                                                    | `axi_clkgen doc <:doc:`/wiki-migration/resources/fpga/docs/axi_clkgen`>`_     |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | axi_hdmi_tx  | :git-hdl:`axi_hdmi_tx HDL <library/axi_hdmi_tx>`                                                                                  | `axi_hdmi_tx doc <:doc:`/wiki-migration/resources/fpga/docs/axi_hdmi_tx`>`_   |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | axi_spdif_tx | :git-hdl:`axi_spdif_tx HDL <library/axi_spdif_tx>`                                                                                | -                                                                             |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | axi_sysid    | :git-hdl:`axi_sysid HDL <library/axi_sysid>`                                                                                      | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | sysid_rom    | :git-hdl:`sysid_rom HDL <library/sysid_rom>`                                                                                      | `System ID doc <:doc:`/wiki-migration/resources/fpga/docs/axi_sysid`>`_       |
+   +--------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   
+
+
+Software related:
+
+.. container:: box
+
+   
+   -  :git-linux:`Linux device tree <arch/arm/boot/dts/zynq-zc706-adv7511-ad9434-fmc-500ebz.dts>`
+   -  :git-linux:`AD9434 driver <drivers/iio/adc/ad9467.c#L143>`
+   
+

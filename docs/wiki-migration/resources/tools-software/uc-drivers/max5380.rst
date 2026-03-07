@@ -1,0 +1,211 @@
+MAX5380 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`MAX5380`
+-  MAX5380L
+-  MAX5380M
+-  MAX5380N
+-  MAX5380K
+-  MAX5381L
+-  MAX5381M
+-  MAX5381N
+-  MAX5381K
+-  MAX5382L
+-  MAX5382M
+-  MAX5382N
+-  MAX5382K
+
+Evaluation Boards
+-----------------
+
+-  :adi:`MAX9611PMB1`
+
+| 
+| ===== Overview ===== The :adi:`MAX5380`/MAX5381/MAX5382 are low-cost, 8-bit digital-to-analog converters (DACs) in miniature 5-pin SOT23 packages, with a simple 2-wire serial interface that allows communication with multiple devices. The MAX5380 has an internal +2V reference and operates from a +2.7V to +3.6V supply. The MAX5381 has an internal +4V reference and operates from a +4.5V to +5.5V supply. The MAX5382 operates over the full +2.7V to +5.5V supply range and has an internal reference equal to 0.9 x VDD.
+
+The fast-mode I2C\*-compatible serial interface allows communication at data rates up to 400kbps, minimizing board space and reducing interconnect complexity in many applications. Each device is available with one of four factory-preset addresses. These DACs also include an output buffer, a low-power shutdown mode, and a power-on reset that ensures the DAC outputs are at zero when power is initially applied. In shutdown mode, supply current is reduced to less than 1µA and the output is pulled down to GND with a 10kΩ resistor.
+
+Applications
+------------
+
+-  Automatic Tuning (VCO)
+-  Power-Amplifier Bias Control
+-  Programmable Threshold Levels
+-  Automatic Gain Control
+-  Automatic Offset Adjustment
+
+|image1|
+
+.. container:: center
+
+   *<fc #000000>MAX9611PMB1 (with MAX5380 on-board chip) </fc>*
+
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== MAX5380 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for MAX5380 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX5380 Driver|
+
+   -
+
+   |Implementation of MAX5380 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the MAX5380 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the MAX5380 driver can be used exactly as it is provided.
+
+.. container:: center box
+
+   
+   ===================== ===========================================
+   **no_os_i2c_init()**  initializes the communication peripheral.
+   **no_os_i2c_write()** writes data to/from the device.
+   **no_os_i2c_remove**  deinitializes the communication peripheral.
+   ===================== ===========================================
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for I2C Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `MAX5380 Header file <http://analogdevicesinc.github.io/no-OS/max538x_8h.html>`_
+   -  `MAX5380 Source file <http://analogdevicesinc.github.io/no-OS/max538x_8c.html>`_
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+~~~~~~~~~~~~~~~~~~~~~
+
+| To use the device, you need to provide the support for the communication protocol (I2C) as mentioned above.
+| Make sure that **max538x_init** returns 0. This indicates a successful driver initialization.
+
+In **max538x_init** is also where the device type can be selected via the **active_device** property. This will set the reference **voltage factor**, which is used for checking the valid limit for voltage setting, and the **slave address** of the chosen device. Refer to the driver header file for the valid device identifiers for **active_device**.
+
+Set Voltage Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The DAC voltage output can be configured using **max538x_set_voutput** function. The function takes the device descriptor and the actual voltage value desired as input parameters. The function also checks if the voltage set by the user is valid (0 < = VDAC_OUT < = VREF).
+
+Driver Initialization Example
+-----------------------------
+
+Example Initialization Using Maxim SDK as Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+     #define MAX_DUT MAX5380M
+     
+     int ret;
+     
+     struct max_i2c_init_param max538x_extra = {
+           .vssel = MXC_GPIO_VSSEL_VDDIOH,
+       };
+
+     struct max538x_init_param max538x_ip = {
+                   .i2c_init.device_id = 0,
+           .i2c_init.max_speed_hz = 100000,
+           .i2c_init.extra = &max538X_extra,
+           .i2c_init.platform_ops = &max_i2c_ops,
+           .active_device = MAX_DUT,
+       };
+
+       /*
+     * For MAX5382 variants, add value of VDD since
+     * VREF is dependent on VDD of part.
+        */
+       if(MAX_DUT >= MAX5382L)
+           max538x_ip.max538x_vdd = 3.3;
+
+       struct max538x_dev *max538x_device;
+
+       ret = max538x_init(&max538x_device, max538x_ip);
+       if(ret)
+           return ret;
+
+       while (1) {
+           /* Alternately set the DAC output to 2V and 1.5V */
+           ret = max538x_set_voutput(max538x_device, 2);
+           if(ret)
+               return ret;
+
+           MXC_Delay(100000);
+           
+           ret = max538x_set_voutput(max538x_device, 1.5);
+           if(ret)
+               return ret;        
+       
+           MXC_Delay(100000);
+       }// end while
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/max9611pmb1.jpg
+   :width: 400px
+.. |Header file of MAX5380 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/max538x/max538x`.h
+.. |Implementation of MAX5380 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/max538x/max538x`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for I2C Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_i2c`.h

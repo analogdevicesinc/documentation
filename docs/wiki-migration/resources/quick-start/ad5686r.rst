@@ -1,0 +1,206 @@
+AD5686R/AD5685R/AD5684R Quick Start Guide
+=========================================
+
+\*\* Quad, 16-/14-/12-Bit, Voltage Output DACs with a 2 ppm/ºC Reference, SPI Interface \*\*
+
+| 
+| |image1|
+|
+
+.. container:: centeralign
+
+   \ *Figure 1. Functional Block Diagram*\
+
+
+Features
+--------
+
+-  High relative accuracy (INL): ±2 LSB maximum (16-bit :adi:`ad5686r`)
+-  Low drift 2.5 V on-chip reference: 2 ppm/°C typical temperature coefficient
+-  Tiny 3 mm × 3 mm 16-lead LFCSP or 16-lead TSSOP package
+-  Total unadjusted error (TUE): 0.1 % of FSR maximum
+-  Offset error: 1.5 mV maximum
+-  Gain error: 0.1% of FSR maximum
+-  High drive capability: 20 mA, 0.5 V from supply rails
+-  User selectable gain of 1 or 2 (GAIN pin)
+-  Reset to zero scale or midscale (RSTSEL pin)
+-  1.8 V logic compatibility
+-  50 MHz SPI interface
+-  2.7 V to 5.5 V power supply
+-  −40°C to +105°C temperature range
+
+Pin Configurations
+------------------
+
+| 
+|
+
+.. container:: column
+
+   \
+
+
+   |image2|
+
+.. container:: column
+
+   \
+
+
+   |image3|
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      \ *Figure 2. 16-Lead LFCSP*
+
+   
+
+
+.. container:: column
+
+   
+   .. container:: centeralign
+
+      \ *Figure 3. 16-Lead TSSOP*
+
+   
+
+
+
+| **Table 1. Function Descriptions for Quick Start**
+
++-----------------------+-------------------------------------------------------------------+
+| Mnemonic              | Description                                                       |
++=======================+===================================================================+
+| V\ :sub:`OUT`\ A      | Analog output voltage from DAC A.                                 |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`OUT`\ B      | Analog output voltage from DAC B.                                 |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`OUT`\ C      | Analog output voltage from DAC C.                                 |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`OUT`\ D      | Analog output voltage from DAC D.                                 |
++-----------------------+-------------------------------------------------------------------+
+| :math:`overlineSYNC`  | Connect to serial interface.                                      |
++-----------------------+-------------------------------------------------------------------+
+| SCLK                  | Connect to serial interface.                                      |
++-----------------------+-------------------------------------------------------------------+
+| SDIN                  | Connect to serial interface.                                      |
++-----------------------+-------------------------------------------------------------------+
+| SDO                   | No connect.                                                       |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`REF`         | No connect.                                                       |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`DD`          | Connect to 5 V supply. Decouple with 10 μF and 0.1 μF capacitors. |
++-----------------------+-------------------------------------------------------------------+
+| GND                   | Connect to ground.                                                |
++-----------------------+-------------------------------------------------------------------+
+| :math:`overlineLDAC`  | Tie low.                                                          |
++-----------------------+-------------------------------------------------------------------+
+| RSTSEL                | Tie to GND to power up to zero scale.                             |
++-----------------------+-------------------------------------------------------------------+
+| GAIN                  | Tie to GND. DAC outputs have a span from 0 V to V\ :sub:`REF`.    |
++-----------------------+-------------------------------------------------------------------+
+| :math:`overlineRESET` | Tie high.                                                         |
++-----------------------+-------------------------------------------------------------------+
+| V\ :sub:`LOGIC`       | Connect to serial interface supply voltage.                       |
++-----------------------+-------------------------------------------------------------------+
+
+| 
+| ===== Shift Register Contents ===== |image4|
+|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 4. Shift Register Contents* :adi:`(AD5686R <ad5686r>`\ *)*\
+
+
+**Table 2. Command Definitions**
+
+======= == == == =======================================================
+Command          
+======= == == == =======================================================
+C3      C2 C1 C0 Description
+0       0  0  0  No operation
+0       0  0  1  Write to Input Register n (Dependent on LDAC)
+0       0  1  0  Update DAC Register n with contents of Input Register n
+0       0  1  1  Write to and update DAC Channel n
+0       1  0  0  Power down/power up DAC
+0       1  0  1  Hardware :math:`overlineLDAC` mask register
+0       1  1  0  Software reset (power-on reset)
+0       1  1  1  Internal reference setup register
+1       0  0  0  Set up DCEN register (daisy-chain enable)
+1       0  0  1  Set up readback register (readback enable)
+1       0  1  0  Reserved
+…       …  …  …  Reserved
+1       1  1  1  Reserved
+======= == == == =======================================================
+
+Transfer Function
+-----------------
+
+::
+
+   $\displaystyle V_OUT = V_REF \times Gain delim[\frac{D}{2^N}{]}$ \\
+
+| where:
+| *D* is the decimal equivalent.
+| *N* is the number of bits.
+| ==== Simple Write: Example 1 ====
+
+.. tip::
+
+   To update Channel A, write the following over the serial interface: 0001 XXX1 1000000000000000 (four command bits, four address bits, 16 data bits for the :adi:`ad5686r`).
+
+   | This updates Channel A to midscale. GAIN = 1, V\ :sub:`OUT`\ A = 1.25 V.
+
+
+|image5|
+|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 5. Simple Write—Update Channel A)*\
+
+
+| ==== Simple Write: Example 2 ====
+
+.. tip::
+
+   To update Channel B, write the following over the serial interface: 0001 XX1X 1000000000000000.
+
+   | This updates Channel B to midscale. GAIN = 1, V\ :sub:`OUT`\ B = 1.25 V.
+
+
+|image6|
+|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 6. Simple Write—Update Channel B*\
+
+
+| ==== Simple Write: Example 3 ====
+
+.. tip::
+
+   To update both Channel A and Channel B, write the following over the serial interface: 0001 XX11 1111111111111111. This updates both channels to full scale. GAIN = 1, V\ :sub:`OUT`\ B = 2.5 V, V\ :sub:`OUT`\ A = 2.5 V.
+
+
+| |image7|
+|
+
+.. container:: CENTERALIGN
+
+   \ *Figure 7. Simple Write—Update Channel A and Channel B*\
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/ad5686r_block_diagram.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/16lfcsppinout.png
+.. |image3| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/16tssoppinout.png
+.. |image4| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/ad5686r_shift_register_contents.png
+.. |image5| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_1.png
+.. |image6| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_2.png
+.. |image7| image:: https://wiki.analog.com/_media/resources/tools-software/ad5686r/example_write_3.png

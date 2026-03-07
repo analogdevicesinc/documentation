@@ -1,0 +1,11 @@
+HMC981 Configuration Calculator
+===============================
+
+This calculator can be used to calculate all of the external component values that are required to configure current settings, voltage ranges and alarm levels for HMC981
+
+`HMC981 Configuration Calculator <https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc981.zip>`_
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/active-bias-controllers/hmc981_configuration_calculator.png
+   :width: 600px
+
+--------------
