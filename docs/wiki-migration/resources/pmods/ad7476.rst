@@ -1,0 +1,8 @@
+The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` are, respectively, 12-bit, 10-bit, and 8-bit, high speed, low power, successive approximation ADCs. The parts operate from a single 2.35 V to 5.25 V power supply and feature throughput rates up to 1 MSPS. Each part contains a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 6 MHz.
+
+The conversion process and data acquisition are controlled using CS the serial clock, allowing the devices to interface with microprocessors or DSPs. The input signal is sampled on the falling edge of CS and the conversion is initiated at this point. There are no pipeline delays associated with these parts.
+
+The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` use advanced design techniques to achieve very low power dissipation at high throughput rates. The reference for the parts is taken internally from VDD. This allows the widest dynamic input range to the ADC. Thus, the analog input range for the parts are 0 V to VDD. The conversion rate is determined by the SCLK.
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7476_pmod_ad1.jpg
+   :align: center

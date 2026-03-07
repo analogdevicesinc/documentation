@@ -1,0 +1,394 @@
+AD6673 Evaluation Board, ADC-FMC Interposer & Xilinx Reference Design
+=====================================================================
+
+Introduction
+------------
+
+The :adi:`AD6673` is an 11-bit, 250 MSPS, dual-channel intermediate frequency (IF) receiver specifically designed to support multi-antenna systems in telecommunication applications where high dynamic range performance, low power, and small size are desired. This reference design includes the device data capture via the JESD204B serial interface and the SPI interface. The samples are written to the external DDR-DRAM on the carrier. It allows programming the device and monitoring its internal registers via SPI.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD6673 Evaluation Board <EVAL-AD6673>`
+-  :adi:`ADC FMC Interposer Board <EVAL-ADC-FMC-INT>`
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673-ebz.jpg
+   :alt: AD6673
+
+Supported Carriers
+------------------
+
+-  `KC705 <https://www.xilinx.com/KC705>`_
+-  `VC707 <https://www.xilinx.com/VC707>`_
+-  `ZC706 <https://www.xilinx.com/ZC706>`_
+
+Quick Start Guide
+-----------------
+
+The reference design zip file contains a bit file and a SDK elf file for a quick demonstration of the programming and data capture. The reference design has been tested with KC705, VC707 and ZC706. The notes below refer to KC705, the procedure is same for the other boards. Please make sure you are using the correct reference design for the board(s) that you have.
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  KC705/VC707/ZC706 board
+-  AD6673-EBZ board & Power supply (AD6673-250EBZ, AD6673-170EBZ)
+-  ADC FMC interposer board (CVT-ADC-FMC-INTPZB)
+-  Signal/Clock generator (reference clock input, 250MHz)
+-  Signal generator (analog input, for data capture)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE Design Suite 14.4
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600(115200 for ZC706).
+
+Board Modifications
+~~~~~~~~~~~~~~~~~~~
+
+The reference design contains UCF files for the Rev. B board, CVT-ADC-FMC-INTPZB.
+
+-  NET rxdata_p[1] LOC = "B6";
+-  NET rxdata_n[1] LOC = "B5";
+-  NET rxdata_p[0] LOC = "D6";
+-  NET rxdata_n[0] LOC = "D5";
+-  NET rxsync_p LOC = "C29" \| IOSTANDARD = "LVDS_25";
+-  NET rxsync_n LOC = "B29" \| IOSTANDARD = "LVDS_25";
+-  NET rxsysref_p LOC = "D29" \| IOSTANDARD = "LVDS_25";
+-  NET rxsysref_n LOC = "C30" \| IOSTANDARD = "LVDS_25";
+
+-  NET spi_ctrl LOC = "K13" \| IOSTANDARD = "LVCMOS25";
+-  NET spi_csn[0] LOC = "B18" \| IOSTANDARD = "LVCMOS25";
+-  NET spi_csn[1] LOC = "A18" \| IOSTANDARD = "LVCMOS25";
+-  NET spi_clk LOC = "G17" \| IOSTANDARD = "LVCMOS25";
+-  NET spi_mosi LOC = "A17" \| IOSTANDARD = "LVCMOS25";
+-  NET spi_miso LOC = "A16" \| IOSTANDARD = "LVCMOS25";
+
+Please do the following modifications on the AD6673 evaluation board.
+
+-  Remove R609
+-  Remove R610
+-  Remove R604
+-  Remove R601
+-  **Remove R551**\ \*
+-  **Remove R552**\ \*
+-  **Populate R549**\ \*
+-  **Populate R550**\ \*
+
+\* The reference design uses REFCLK2 as the reference clock source. If the board defaults to REFCLK1, follow these instructions to switch to REFCLK2.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| To begin make the following connections (see image below):
+
+.. tip::
+
+   | For proper operation, it is important that the steps must be done in this exact order
+
+
+-  Connect the AD6673-EBZ board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-HPC** connector of KC705/(**FMC1-HPC** if VC707)/ZC706 board.
+-  Connect power to KC705/VC707/ZC706 and the AD6673-EBZ boards. Make sure both are turned on.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on KC705/VC707/ZC706. Do not run/load any software yet.
+-  Connect an external clock source 250MHz (5dBm) to AD6673-EBZ board's J505 SMA connector. Make sure this is active/on.
+-  Connect signal generators to the AIN-A and/or AIN-B, J301/J303 SMA connectors.
+-  Load the FPGA image/SDK with your favorite Xilinx Tool.
+
+The quick start bit file configures the AD6673 for all test modes and verifies the captured data accordingly. After the hardware setup, turn the power on to the KC705/VC707/ZC706 and the AD6673-EBZ boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Run the **download.bat** script located in the "*SDK/SDK_Workspace/bin*" folder provided within the HDL Reference Design. This script uses XMD to program the FPGA with the HDL Reference Design and download the Software Reference Design into the DDR.
+
+**Note:** The *download.bat* script assumes that the *Xilinx ISE Design Suite 14.4* is installed at this path: *C:/Xilinx/14.4*. If the installation path on your computer is different please modify the script accordingly.
+
+If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD6673, the program checks data capture on various test modes.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_test.jpg
+   :alt: Terminal
+   :width: 200px
+
+After the ADC test patterns are verified, if no errors are present, the reference design continuously reads data from the ADC. The ADC data can be viewed using the Chipscope project located in the "*Chipscope*" folder provided in the HDL Reference Design. These are the steps than need to be followed to view the ADC data in Chipscope:
+
+-  open Chipscope and press the **Open Cable/Search JTAG Chain** button (the leftmost button located under the File menu)
+-  open the *Chipscope/AD6673.cpj* project
+-  start the data capture
+
+This is how the output of the ADC looks like.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_chipscope.jpg
+   :alt: Chipscope Busplot
+   :width: 200px
+
+Using the HDL reference design
+------------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design is built on a microblaze based system parameterized for linux. A functional block diagram of the design is given below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_bd.jpg
+   :alt: block diagram
+   :width: 500px
+
+The reference design consists of two pcores. The JESD204B core consists of the GTX units and the Xilinx JESD204B IP core. The AD6673 core consists of three functional modules, the ADC interface, a PN9/PN23 monitor and a DMA interface.
+
+The ADC interface captures and buffers data from the JESD204B core. The DMA interface then transfers the samples to the external DDR-DRAM. The capture is initiated by the software. The status of capture (overflow, over the range) are reported back to the software.
+
+The JESD204B core and AD6673 core has an AXI lite interface that allows control and monitoring of the capture process.
+
+Registers
+~~~~~~~~~
+
+Please refer to the **regmap.txt** file in the pcores directory.
+
+Good To Know
+~~~~~~~~~~~~
+
+The PN9/PN23 sequences are not compatible with O.150. Please use the equations given in the reference design.
+
+Using the Software Reference Design
+-----------------------------------
+
+The Software Reference Design contains an example on how to:
+
+-  Initialize the AD6673 evaluation board
+-  Initialize the JESD204B HDL core
+-  Test the ADC communication using the test patterns generated by the AD6673
+-  Capture data from the AD6673 using DMA transfers
+
+The software project contains 2 components: the AD6673-EBZ reference design files and the AD6673 driver. All the components have to be downloaded from the links provided in the **Downloads** section.
+
+AD6673 Software Driver
+~~~~~~~~~~~~~~~~~~~~~~
+
+Below is presented a short description of all the functions provided in the driver.
+
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function                                                                                      | Description                                                                                                                                                                                                                                                                                                             |
++===============================================================================================+=========================================================================================================================================================================================================================================================================================================================+
+| int32_t **ad6673_setup**\ (int32_t spiBaseAddr, int32_t ssNo)                                 | Configures the device. Receives as parameters the SPI peripheral AXI base address and the slave select line on which the slave is connected. Returns negative error code or 0 in case of success.                                                                                                                       |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_read**\ (int32_t registerAddress)                                            | Reads data from a register. Receives as parameter the address of the register to be read and returns the read data or negative error code.                                                                                                                                                                              |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_write**\ (int32_t registerAddress, int32_t registerValue)                    | Writes data into a register. Receives as parameters the address of the register to be written and the value to be written into the register. Returns 0 in case of success or negative error code.                                                                                                                       |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_transfer**\ (void)                                                           | Initiates a transfer and waits for the operation to end. Returns the negative error code or 0 in case of success.                                                                                                                                                                                                       |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_soft_reset**\ (void)                                                         | Resets all registers to their default values. Returns negative error code or 0 in case of success.                                                                                                                                                                                                                      |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_chip_pwr_mode**\ (int32_t mode)                                              | Configures the power mode of the chip. Receives as parameter the power mode(0 - normal operation, 1 - power-down, 2 - standby). Negative error code or the set power mode.                                                                                                                                              |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_select_channel_for_config**\ (int32_t channel)                               | Selects a channel as the current channel for further configurations. Receives as parameter the channel index(1 - channel A, 2 - channel B, 3 - channel A and B). Returns negative error code or the selected channel.                                                                                                   |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_test_mode**\ (int32_t mode)                                                  | Sets the ADC's test mode. Receives as parameter the test mode{0, 1, 2, 3, 4, 5, 6, 7, 8, 15}. Returns the set test mode or negative error code.                                                                                                                                                                         |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_offset_adj**\ (int32_t adj)                                                  | Sets the offset adjustment. Receives as parameter the offset adjust value in LSBs from +31 to -32. Returns negative error code or the set offset adjustment.                                                                                                                                                            |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_output_disable**\ (int32_t en)                                               | Disables (1) or enables (0) the data output. Returns the negative error code or the output disable state.                                                                                                                                                                                                               |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_output_invert**\ (int32_t invert)                                            | Activates the inverted (1) or normal (0) output mode. Returns the negative error code or the set output mode.                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_output_format**\ (int32_t format)                                            | Specifies the output format. Receives as parameter the output format and returns the negative error code or the set output format.                                                                                                                                                                                      |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_reset_PN9**\ (int32_t rst)                                                   | Sets (1) or clears (0) the reset short PN sequence bit(PN9). Returns the negative error code or the set PN9 status.                                                                                                                                                                                                     |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_reset_PN23**\ (int32_t rst)                                                  | Sets (1) or clears (0) the reset long PN sequence bit(PN23). Returns the negative error code or the set PN23 status.                                                                                                                                                                                                    |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_set_user_pattern**\ (int32_t patternNo, int32_t user_pattern)                | Configures a User Test Pattern. Receives as parameters the patterns to be configured, range 1..4 and the user's pattern. Returns negative error code or the selected user pattern.                                                                                                                                      |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_bist_enable**\ (int32_t enable)                                              | Enables(1) or disables(0) the Build-In-Self-Test. Returns negative error code or the state of the enable bit.                                                                                                                                                                                                           |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_bist_reset**\ (int32_t reset)                                                | Resets the Build-In-Self-Test. Receives as parameters the reset option. Negative error code or the state of the reset bit.                                                                                                                                                                                              |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_jesd204b_setup**\ (void)                                                     | Configures the JESD204B interface. Returns negative error code or 0 in case of success.                                                                                                                                                                                                                                 |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_jesd204b_pwr_mode**\ (int32_t mode)                                          | Configures the power mode of the JESD204B data transmit block. Receives as parameter the power mode(0 - normal operation, 1 - power-down, 2 - standby) Returns negative error code or the set power mode.                                                                                                               |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_jesd204b_select_test_injection_point**\ (int32_t injPoint)                   | Selects the point in the processing path of a lane, where the test data will be inserted. Receives as parameter the point in the processing path(1 - 8B/10B Encoder output, 2 - scramble input). Returns negative error code or the status of the data injection point bit.                                             |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_jesd204b_test_mode**\ (int32_t testMode)                                     | Selects a JESD204B test mode. Receives as parameter the test mode{0, 1, 2, 3, 4, 5, 6, 8, 12, 13}. Returns the set test mode or negative error code.                                                                                                                                                                    |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_jesd204b_invert_logic**\ (int32_t invert)                                    | Inverts the logic of JESD204B bits. Receives as parameter the invert option(1 - invert, 0 - non-invert). Returns negative error code or the set mode.                                                                                                                                                                   |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_fast_detect_setup**\ (void)                                                  | Configures the Fast-Detect module. Returns negative error code or 0 in case of success.                                                                                                                                                                                                                                 |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_dcc_enable**\ (int32_t enable)                                               | Enables DC correction for use in the output data signal path. Receives as parameter the enable option (0 - correction off, 1 - correction on). Returns negative error code or the status of the enable bit.                                                                                                             |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_dcc_bandwidth**\ (int32_t bw)                                                | Selects the bandwidth value for the DC correction circuit. Receives as parameter the DC correction bandwidth, range 0..13. Returns negative error code or the state of the bandwidth bits.                                                                                                                              |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_dcc_freeze**\ (int32_t freeze)                                               | Freezes DC correction value. Receives as parameter the freeze option(0 or 1). Returns negative error code or the status of the freeze bit.                                                                                                                                                                              |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_nsr_enable**\ (int32_t enable)                                               | Enables the Noise shaped requantizer(NRS). Receives as parameter the enable option(0 or 1). Returns negative error code or the status of the enable bit.                                                                                                                                                                |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_nsr_bandwidth_mode**\ (int32_t mode)                                         | Selects the NSR Bandwidth mode. Receives as parameter the mode option(0 - 22%, 1 - 33%). Returns negative error code or the status of the mode bit.                                                                                                                                                                     |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| int32_t **ad6673_nsr_tuning_freq**\ (int64_t tuneFreq, int64_t fAdc, ad6673_typeBand \*pBand) | Sets the NSR frequency range. Receives as parameters the center frequency of noise transfer function(NTF), the ADC sample rate and a pointer to a ad6673_typeBand structure that acts as an output parameter by returning the values of the center frequency, f0 frequency and f1 frequency. Returns the set tune word. |
++-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Software Setup
+~~~~~~~~~~~~~~
+
+The **HDL Reference Design** for each supported Xilinx FPGA board contains a folder called **SDK_Workspace** which stores the Xilinx SDK project files needed to build the no-OS software and also the .bit files with the HDL design that must be programmed into the FPGA. These are the steps that need to be followed to recreate the software project:
+
+-  Copy the **SDK_Workspace** folder on your PC. Make sure that the path where it is stored does not contain any spaces.
+-  Copy the no-OS drivers source code to the **SDK_Workspace/sw/src** folder.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/src_files.png
+   :alt: no-OS driver Source Files
+   :width: 200px
+
+-  Open the Xilinx SDK. When the SDK starts it asks you to provide a folder where to store the workspace. Any folder can be provided.
+-  In the SDK select the **File->Import** menu option to import the software projects into the workspace.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/file_import.png
+   :alt: Import Projects
+   :width: 200px
+
+-  In the *Import* window select the **General->Existing Projects into Workspace** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/existing_project_import.png
+   :alt: Existing Projects Import
+   :width: 200px
+
+-  In the *Import Projects* window select the **SDK_Workspace** folder as root directory. After the root directory is chosen the projects that reside in that directory will appear in the *Projects* list. Press *Finish* to finalize the import process.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/projects_import.png
+   :alt: Projects Import
+   :width: 200px
+
+-  The *Project Explorer* window now shows the projects that exist in the workspace and the files for each project. The SDK should automatically build the projects and the *Console* window will display the result of the build. If the build is not done automatically select the **Project->Build Automatically** menu option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/project_explorer.png
+   :alt: Project Explorer
+   :width: 200px
+
+-  At this point the software project setup is complete, the FPGA can be programmed and the software can be downloaded into the system.
+
+The example code is located in the ”\ *main.c*\ ” file and the implementations of the test routines can be found in the "*cf_ad6673.c*" file.
+
+Downloads
+---------
+
+| The HDL Reference Designs and the no-OS Software can be downloaded from the Analog Devices github.
+|
+
+.. important::
+
+   Only Xilinx coregen xco files are provided with the HDL Reference Design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+   | The software project contains 2 components: the AD6673-EBZ reference design files and the AD6673 driver. All the components have to be downloaded from the links below.
+
+
+**HDL Reference Designs:**
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**KC705 HDL Reference Design: \*\* `cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_edk_14_4_2013_02_04.tar.gz>`_
+   -  \**VC707 HDL Reference Design: \*\* `cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_vc707_edk_14_4_2013_02_04.tar.gz>`_
+   -  \**ZC706 HDL Reference Design: \*\* `cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/cf_ad6673_ebz_zc706_edk_14_4_2013_02_04.tar.gz>`_
+   
+
+
+| **no-OS Software:**
+
+.. admonition:: Download
+   :class: download
+
+   | \* \**AD6673 Driver: \*\* :git-no-OS:`drivers/adc/ad6673`
+   
+   -  \**AD6673-EBZ Reference Design: \*\* :git-no-OS:`AD6673-EBZ`
+   
+   |
+
+   |
+
+
+| **Board Files:**
+
+.. admonition:: Download
+   :class: download
+
+   | \* `Rev C Schematics for the card <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_schematic_02_12008.pdf>`_
+   
+   -  `AD6673-250EBZ Gerber/Layout Fabrication Files <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad6673_ebz/ad6673_gerber_20_012008b.zip>`_
+   
+   |
+
+   |
+
+
+|
+
+.. hint::
+
+
+   ..
+
+| \* Questions? :ez:`Ask Help & Support <fpga>`.
+   |
+
+Reference Design Contents
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------+------------------------------------------------------------------------------------------------------+
+| HDL Reference Design      |                                                                                                      |
++===========================+======================================================================================================+
+| license.txt               | ADI license & copyright information.                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs                | MHS file.                                                                                            |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp                | XMP file (use this file to build the reference design).                                              |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| data/                     | UCF file and/or DDR MIG project files.                                                               |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| docs/                     | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| sw/                       | Software (Xilinx SDK) & bit file(s).                                                                 |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_lib/edk/pcores/        | Reference design core file(s) (Xilinx EDK).                                                          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| Software Reference Design |                                                                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_ad6673.h               | Header file containing the registers definitions for the AD6673 HDL core.                            |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| cf_ad6673.c               | Implementation of the AD6673 HDL core access functions and ADC test and capture functions.           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| spi.h                     | Header file for the Xilinx AXI SPI driver.                                                           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| spi.c                     | Implementation file for the Xilinx AXI SPI driver.                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| main.c                    | Implementation of the program's main function.                                                       |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD6673 Software Driver    |                                                                                                      |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD6673.h                  | AD6673 software driver header file.                                                                  |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD6673_cfg.h              | AD6673 software driver configuration file.                                                           |
++---------------------------+------------------------------------------------------------------------------------------------------+
+| AD6673.c                  | AD6673 software driver implementation file.                                                          |
++---------------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+|
+
+.. hint::
+
+
+   ..
+
+| \* `VITA's FMC info <http://www.vita.com/fmc>`_
+   
+   -  :ez:`Ask questions about the FPGA reference design <community/fpga>`
+   
+   |
+
+   |
+

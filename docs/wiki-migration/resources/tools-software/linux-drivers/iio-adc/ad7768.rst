@@ -1,0 +1,191 @@
+AD7768 IIO Precision ADC Linux Driver
+=====================================
+
+Supported Devices
+-----------------
+
+This driver supports the
+
+-  :adi:`AD7768`
+-  :adi:`AD7768-4`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7768`
+-  :adi:`EVAL-AD7768-4`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting single channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Source Code
+===========
+
+Status
+------
+
++------------------------------------------------------------------------------------------+------------------+
+| Source                                                                                   | Mainlined?       |
++==========================================================================================+==================+
+| :git-linux:`git <drivers/iio/adc/ad7768.c>`                                              | [In progress...] |
++------------------------------------------------------------------------------------------+------------------+
+
+Files
+-----
+
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function            | File                                                                                                                                                                            |
++=====================+=================================================================================================================================================================================+
+| driver              | :git-linux:`drivers/iio/adc/ad7768.c`                                                                                                                                           |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| devicetree bindings | :git-linux:`Documentation/devicetree/bindings/iio/adc/adi,ad7768.yaml`                                                                                                          |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hdl project         | :git-hdl:`hdl <projects/ad7768evb>`                                                                                                                                             |
++---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Example Linux Device-Tree Initialization
+========================================
+
+Required properties:
+
+-  compatible: Must be one of "adi,ad7768", "adi,ad7768-4".
+-  reg: SPI chip select number for the device.
+-  clocks: phandle to master clock of the device.
+-  clock-names: Must be "mclk".
+-  spi-max-frequency: See Documentation/devicetree/bindings/spi/spi-bus.txt.
+-  dmas: DMA specifier, consisting of a phandle to DMA controller node.
+-  dma-names: Must be "rx".
+-  vref-supply: phandle to the regulator for ADC reference voltage.
+
+Optional properties:
+
+-  reset-gpios: Reset GPIO.
+-  adi,data-lines: Number of DOUTx pins channels data is output on. Default value: 1.
+
+**NOTE:** The *adi,data-lines* value is determined by the configuration of the AD7768/AD7768-4 chip's FORMATx pins. These pins are read on power-up and dictate the number of data lines (DOUTx) on which the ADC conversions are output.
+
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Function           | File                                                                                                                                  |
++====================+=======================================================================================================================================+
+| AD7768 Device Tree | :git-linux:`arch/arm/boot/dts/zynq-zed-adv7511-ad7768.dts`                                                                            |
++--------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. tip::
+
+   \ **TIP:** An example program which uses the interface can be found here:
+
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+
+
+   
+   |
+
+
+|
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/> **cd /sys/bus/iio/devices/**
+      root:/sys/bus/iio/devices> ls
+      iio:device0
+   
+      root:/sys/bus/iio/devices> **cd iio\:device0**
+   
+      root:/sys/bus/iio/devices/iio:device0> **ls -l**
+      total 0
+      drwxr-xr-x 2 root root    0 Apr  2 21:43 buffer
+      drwxr-xr-x 2 root root    0 Apr  2 21:43 buffer0
+      -r--r--r-- 1 root root 4096 Apr  2 21:43 dev
+      -rw-r--r-- 1 root root 4096 Apr  2 21:43 filter_type
+      -r--r--r-- 1 root root 4096 Apr  2 21:43 filter_type_available
+      -rw-r--r-- 1 root root 4096 Apr  2 21:43 in_voltage_scale
+      -r--r--r-- 1 root root 4096 Apr  2 21:43 name
+      lrwxrwxrwx 1 root root    0 Apr  2 21:43 of_node -> ../../../../../../../../firmware/devicetree/base/axi/spi@e0006000/adc@0
+      drwxr-xr-x 2 root root    0 Apr  2 21:43 power
+      -rw-r--r-- 1 root root 4096 Apr  2 21:43 power_mode
+      -r--r--r-- 1 root root 4096 Apr  2 21:43 power_mode_available
+      -rw-r--r-- 1 root root 4096 Apr  2 21:43 sampling_frequency
+      -r--r--r-- 1 root root 4096 Apr  2 21:43 sampling_frequency_available
+      drwxr-xr-x 2 root root    0 Apr  2 21:42 scan_elements
+      lrwxrwxrwx 1 root root    0 Apr  2 21:42 subsystem -> ../../../../../../../../bus/iio
+      -rw-r--r-- 1 root root 4096 Apr  2 21:42 uevent
+   
+
+
+Show device name
+----------------
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cat name**
+      ad7768
+   
+
+
+Show scale
+----------
+
+| **Description:**
+| scale to be applied to in_voltage0_raw in order to obtain the measured voltage in millivolts.
+
+.. container:: box bggreen
+
+   
+   .. note::
+
+      This specifies any shell prompt running on the target
+
+   
+   ::
+   
+      root:/sys/bus/iio/devices/iio:device0> **cat in_voltage_scale **
+      0.000488281
+   
+
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

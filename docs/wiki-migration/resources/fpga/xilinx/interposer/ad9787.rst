@@ -1,0 +1,172 @@
+AD9788/7/5-DPG2 FMC Interposer & Evaluation Board / Xilinx ML-605 Reference Design
+==================================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9785`
+-  :adi:`AD9787`
+-  :adi:`AD9788`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`AD9785-DPG2-EBZ`
+-  :adi:`AD9787-DPG2-EBZ`
+-  :adi:`AD9788-DPG2-EBZ`
+
+Introduction
+------------
+
+The :adi:`AD9785`/:adi:`AD9787`/:adi:`AD9788` are 12-bit, 14-bit, and 16-bit, high dynamic range TxDAC® devices, respectively, that provide a sample rate of 800 MSPS, permitting multicarrier generation up to the Nyquist frequency. Features are included for optimizing direct conversion transmit applications, including complex digital modulation, as well as gain, phase, and offset compensation.
+
+| **HW Platform(s):** `Virtex-6 ML605 (Xilinx) <https://www.xilinx.com/products/boards-and-kits/EK-V6-ML605-G.htm>`_, :adi:`AD9785 Evaluation Board (ADI) <EVAL-AD9785>` / :adi:`AD9787 Evaluation Board (ADI) <EVAL-AD9787>` / :adi:`AD9788 Evaluation Board (ADI) <EVAL-AD9788>`, :adi:`DAC FMC Interposer Board (ADI) <AD-DAC-FMC>`
+| **System:** Microblaze, AXI, UART
+
+Quick Start Guide
+-----------------
+
+The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal, ADI DAC software and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  ML605 board
+-  AD9785/7/8-DPG2-EBZ board
+-  DAC FMC interposer board
+-  Any PIC ICSP Programmer (e.g. PICkit 2 or PICkit 3 from Microchip)
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE 13.2 (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  MPLAB IDE (in order to program the PIC on the AD9785/7/8-DPG2-EBZ Board)
+
+Bit file
+~~~~~~~~
+
+-  Download the zip file and extract the **AD978x_SPI_Adapter.hex** and **AD978x.bit** files in the project \*.zip archive, located in the “sw” folder (../ad978x/sw/AD978x.bit). (where x is 5,7 or 8)
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
+.. tip::
+
+   If you are not familiar with ML605 and/or Xilix tools, please visit
+
+   | `reference_designs.htm <https://www.xilinx.com/products/boards/ml605/reference_designs.htm>`_ for details.
+
+
+Extract the project from the archive file (AD978x.zip) to the location you desire.
+
+To begin make the following connections (see image below):
+
+Programming the PIC
+^^^^^^^^^^^^^^^^^^^
+
+-  Connect the USB cable from the PC to the AD978x-DPG2-EBZ board.
+-  Connect the programming cables from the PIC ICSP to the programming pins on connector XP1 as follows:
+
+   -  **PGD 1**
+
+      -  **PGC 3**
+
+         -  **MCLR 5**
+
+            -  **VDD 2**
+            -  **GND 6**
+
+-  Program the PIC using the AD978x_SPI_Adapter.hex file found in the project \*.zip archive.
+-  Disconnect the programming cables and the USB Cable from the AD978x-DPG2-EBZ board.
+
+Connections
+^^^^^^^^^^^
+
+-  Connect the AD978x-DPG2-EBZ board to the FMC Interposer board.
+-  Connect the FMC Interposer board to the FMC-LPC connector of ML605 board.
+-  Connect power cable to ML605.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on ML605.
+-  Turn on the ML605 Board
+-  Connect a USB cable to the AD978x-DPG2-EBZ board.
+
+|ML605 and AD9787 connected on LPC port| |SPI Wiring on ML605| |SPI Wiring on AD9787|
+
+Programming the FPGA
+^^^^^^^^^^^^^^^^^^^^
+
+Start IMPACT, and double click "Boundary Scan". Right click and select Initialize Chain. The program should recognize the Spartan 6 device (see screenshot below). Start a UART terminal (set to 115200 baud rate) and then program the device using the bit file provided in the project \*.zip archive, located in the "sw" folder (../ad978x/sw/AD978x.bit).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787impact.jpg
+   :alt: Programming ML605 in iMPACT
+   :width: 200px
+
+Setting up uC/Probe
+^^^^^^^^^^^^^^^^^^^
+
+Launch Micrium uC/Probe and load the interface located in the project folder (../ad978x/sw/AD978x_Interface.wsp). In options, select RS-232 and set Baud Rate to 115200.
+
+|ucProbe RS-232 Settings| |uCProbe RS-232 Settings|
+
+uC/Probe Interface
+^^^^^^^^^^^^^^^^^^
+
+Click Play, and afterwards click on the ON/OFF Button. The Green LED on the button should light up. Set the options you desire by clicking on the red buttons and moving the sliders. After you are finished setting up the device, press "SEND AD978x SETTINGS" button. Now the device is programmed, and you should see the results on the S4 and S6 connectors on the AD978x Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787_interface.png
+   :alt: uCProbe Interface
+   :width: 600px
+
+The User Interface is divided in 11 sections, described below:
+
+-  **Section 1** Communication with the board is activated / deactivated by toggling the ON/OFF Switch
+-  **Section 2** The user can modify the Power Down Settings by toggling the corresponding switches ON or OFF, or perform a Software Reset.
+-  **Section 3** Provides control over the Interpolation Rate, zero stuff feature and Inverse Sync. The Interpolation Rate is set by using the slider (0 = 1x, 1 = 2x, 2 = 4x, 3 = 8x) simultaneous input and output on DLCKIO)
+-  **Section 4** selects the way data is received
+
+   -  Data Format: ON = Unsigned binary, OFF = Twos Complement
+
+      -  QFirst: Which DAC receives data first from the interleaved bus ON = Q, OFF = I
+      -  Double/Interleaved: ON = Interleaved Data Format, OFF = Single Port Mode
+      -  TxEnable: Allows the inversion of the Tx Enable signal
+
+-  **Section 5** Includes control for Data Clock Delay if needed for adjusting the timing on the interface. User can set values for Data Clock Delay and Data Window Error Detect by using the sliders provided.
+
+   -  Data Clock Delay Enable: When ON, the data port input synchronization function is active and controlled by the data delay mode bits. The data output clock is routed through the delay cell
+
+      -  Data Clock Polarity: When OFF, input data sampling edge is aligned with the falling edge of DCI. When ON, input data sampling edge is aligned with the rising edge of DCI (Use ONLY in Slave Mode!)
+      -  LVDS Data Clock Enable: When OFF, the SYNC_O+ and SYNC_O− LVDS pad cells are driven by the multichip synchronization logic. When ON, the SYNC_O+ and SYNC_O− LVDS pad cells are driven by the signal that drives the CMOS DATACLK output pad.
+      -  Data Delay IRQ Enable: Enables/Disables Data Delay Interrupt
+      -  Data Clock Output: When ON, the output data clock pin is configured as an output
+
+-  **Section 6** By using the sliders and switches provided, the user can modify values in the Multi Chip Sync Register (MSCR, address 0x03, pg. 28 in datasheet).
+-  **Section 7** The AD9787 has an on-chip PLL. When PLL Enable is ON the chip will automatically select the appropiate band using the Freq Div and Loop Div values. The VCO Frequency must be between 1 and 2 GHz for proper operation. The auto-band select can be bypassed by enabling PLL MANUAL and entering a band in PLL Band Select.
+-  **Section 8** Controls the two main DACs in the AD9787. The Full-Scale Current of each DAC can be set using the appropiate GAIN sliders. The default value, 512, is for an output current of 20mA. The I DAC Sleep and Q DAC Sleep put their respective DAC into a low power sleep state. The I DAC PwrDn and Q DAC PwrDn shuts off the DACs and the signal processing circuit also.
+-  **Section 9** User can set the corresponding DDS increment value using the sliders provided.
+-  **Section 10** Provides control options for the Auxiliary DACs. User can set the DACs Gain using the sliders provided. The DACs Sign can be set by toggling the switches. The DACs can be powered down using the PwrDn switches.
+-  **Section 11** See datasheet pg. 32, Table 21, 22 and 23.
+
+.. important::
+
+   
+   -  If you drag a slider and it doesn't change the value in the numeric indicator next to it, please press Stop and then Play again. At the bottom of the screen, the bytes/sec should be increasing with 200 per second. If they increase only with 50 per second, please press Stop and Play again.
+   -  If you receive (Pc Port Open) at the bottom of the screen, please press Stop, close your COM port, reprogram the FPGA, launch the software and try again.
+   
+
+
+Downloads
+---------
+
+`Reference design source code <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787.zip>`_
+
+.. |ML605 and AD9787 connected on LPC port| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ml605_ad9787.jpg
+   :width: 200px
+.. |SPI Wiring on ML605| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787spi.jpg
+   :width: 200px
+.. |SPI Wiring on AD9787| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9787spi2.jpg
+   :width: 200px
+.. |ucProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings1.jpg
+   :width: 200px
+.. |uCProbe RS-232 Settings| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad9116ucprobesettings2.jpg
+   :width: 200px

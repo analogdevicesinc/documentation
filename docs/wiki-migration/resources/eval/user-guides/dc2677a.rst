@@ -1,0 +1,237 @@
+DC2677A HDL Reference Design
+============================
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at [https://analogdevicesinc.github.io/hdl/projects/dc2677a/index.html]
+
+
+Overview
+--------
+
+Demonstration circuit 2677A (DC2677A) is a reference design for robust industrial data acquisition applications for the LTC®2358-18. The LTC2358-18 is capable of high voltage measurements with a large input common range; however, the DC2677A implements input protection that allows up to 400V of continuous input protection. Combined with gas discharge tubes, which provide protection from surges, the DC2677A is capable of surviving extreme abuse.
+
+This reference design includes the LTC2358-18 SAR ADC, ADA4522-2 dual zero-drift operational amplifier, and an LT6658 dual-output, high current reference for sensor excitation.
+
+The digital interface is an HSMC (high-speed mezzanine connector), which is compatible with Altera Cyclone V SoCkit and other Altera FPGA evaluation boards that support 3.3V CMOS I/O.
+
+Supported devices
+-----------------
+
+-  :adi:`DC2677A`
+-  :adi:`LTC2358-18`
+
+Supported carriers
+------------------
+
+-  `Cyclone V SoC Development Kit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`_
+
+Hardware requirements
+---------------------
+
+-  :adi:`DC2677A`
+-  `Cyclone V SoC Development Kit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`_
+-  Power supply of +16V/+18V and -16V/-18V for the DC2677A
+-  Power supply of 12V for the carrier
+-  SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  USB cable with Male Mini B port for Cyclone V Soc Development Kit and Male A port for PC
+
+Block design
+------------
+
+Block diagram
+~~~~~~~~~~~~~
+
+The data path and clock domains are depicted on the below diagram:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc2677a_block_diagram.svg
+   :align: center
+   :width: 600px
+
+IP list
+~~~~~~~
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :git-hdl:`AXI_LTC235X <library/axi_ltc235x>`
+   -  :git-hdl:`AXI_PWM_GEN <library/axi_pwm_gen>`
+   -  :git-hdl:`UTIL_CPACK2 <library/util_pack/util_cpack2>`
+   -  :git-hdl:`AXI_DMAC <library/axi_dmac>`
+   
+
+
+CPU/Memory interconnects addresses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=========== ==========
+Instance    Address
+=========== ==========
+axi_ltc235x 0xff320000
+adc_pwm_gen 0xff340000
+axi_adc_dma 0xff300000
+=========== ==========
+
+Interrupts
+~~~~~~~~~~
+
+Below are the Programmable Logic interrupts used in this project.
+
+++++ Click here to see the interrupts table \|
+
+============= === =============== ================
+Instance name HDL Linux Cyclone V Actual Cyclone V
+============= === =============== ================
+---           15  55              87
+---           14  54              86
+---           13  53              85
+---           12  52              84
+---           11  51              83
+---           10  50              82
+---           9   49              81
+---           8   48              80
+---           7   47              79
+---           6   46              78
+---           5   45              77
+video_dmac    4   44              76
+---           3   43              75
+axi_adc_dma   2   42              74
+sys_spi       1   41              73
+sys_gpio_bd   0   40              72
+============= === =============== ================
+
+++++
+
+Building the HDL project
+------------------------
+
+| The design is built upon ADI's generic HDL reference design framework.
+| ADI does not distribute the bit/elf files of these projects so they must be built from the sources available :git-hdl>`__. To get the source you must `clone <https::`here </git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository>` the HDL repository.
+
+In order to build the HDL design the user has to confirm that they have the right tools (see :doc:`build </wiki-migration/resources/fpga/docs/build>`). Then go to the projects/dc2677a/c5soc location and run the make command by typing in your command prompt:
+
+**Linux/Cygwin**
+
+::
+
+   user@analog:~$ cd hdl/projects/dc2677a/c5soc
+   user@analog:~/hdl/projects/dc2677a/c5soc$ make
+
+Running ``make`` with no parameters will build the project using the default project parameters (CMOS Mode for LTC2358-18). The project parameters are listed below. ``LVDS_CMOS_N`` pertains to which digital interface mode will be used. ``LTC235X_FAMILY`` pertains to which LTC235x family member the HDL will cater to.
+
+== ============== ====================
+\  LVDS_CMOS_N    LTC235X_FAMILY
+0  CMOS (default) LTC2358-18 (default)
+1  LVDS           LTC2358-16
+2  N/A            LTC2357-18
+3  :::            LTC2357-16
+4  :::            LTC2353-18
+5  :::            LTC2353-16
+== ============== ====================
+
+E.g., to build the project for LVDS mode, run the make command by typing in your command prompt:
+
+::
+
+   user@analog:~/hdl/projects/dc2677a/c5soc$ make LVDS_CMOS_N=1
+
+It will create a folder called ``LVDSCMOSN1`` that contains the built project files.
+
+E.g., to build the project for LTC2358-16, run the make command by typing in your command prompt:
+
+::
+
+   user@analog:~/hdl/projects/dc2677a/c5soc$ make LTC235X_FAMILY=1
+
+It will create a folder called ``LTC235XFAMILY1`` that contains the built project files.
+
+E.g., to build the project for LVDS mode and LTC2358-16, run the make command by typing in your command prompt:
+
+::
+
+   user@analog:~/hdl/projects/dc2677a/c5soc$ make LVDS_CMOS_N=1 LTC235X_FAMILY=1
+
+It will create a folder called ``LVDSCMOSN1_LTC235XFAMILY1`` that contains the built project files.
+
+| Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files.
+| A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+
+System setup
+------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/dc2677a_c5soc_setup.png
+   :width: 800px
+
+Connections
+~~~~~~~~~~~
+
+Cyclone V SocKit Jumper Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|image1| |image2|
+
+======= ========= ========= ======== ======== ========
+\       J15       J16       J17      J19      J18
+======= ========= ========= ======== ======== ========
+\       CLOCKSEL0 CLOCKSEL1 BOOTSEL0 BOOTSEL1 BOOTSEL2
+**POS** 2-3       2-3       1-2      2-3      1-2
+======= ========= ========= ======== ======== ========
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/c5sockit_jp2.png
+   :width: 400px
+
++------+
+
+
+| JP2  |
+
++======+
+
+| 3.3V |
+
++------+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/c5sockit_sw6.png
+   :width: 400px
+
+======= ====== ====== ====== ====== ======
+\       SW 6.1 SW 6.2 SW 6.3 SW 6.4 SW 6.5
+======= ====== ====== ====== ====== ======
+\       MSEL0  MSEL1  MSEL2  MSEL3  MSEL4
+**POS** 0      1      x      0      0
+======= ====== ====== ====== ====== ======
+
+Resources
+---------
+
+-  :git-hdl:`Project Source Code <projects/dc2677a>`
+-  :doc:`AXI_LTC235x IP Core </wiki-migration/resources/fpga/docs/axi_ltc235x>` Wiki Page
+-  :doc:`AXI_PWM_GEN IP </wiki-migration/resources/fpga/docs/axi_pwm_gen>` Wiki Page
+-  :doc:`Channel CPACK Utility Core </wiki-migration/resources/fpga/docs/util_cpack>` Wiki Page
+-  :doc:`High-Speed DMA Controller Peripheral </wiki-migration/resources/fpga/docs/axi_dmac>` Wiki Page
+-  :git-linux:`Linux ADC Driver source codes <drivers/iio/adc>`
+-  :git-linux:`Devicetree source codes <arch/arm/boot/dts>`
+-  :doc:`Linux Drivers </wiki-migration/resources/tools-software/linux-drivers-all>` Wiki Page
+-  :adi:`DEMO MANUAL DC2677A <media/en/technical-documentation/user-guides/DC2677A_UG-1387.pdf>`
+-  `Cyclone V SoCKit User Manual <https://static6.arrow.com/aropdfconversion/5c33d9eb515437106f70057c3ec33dc26bc35205/sockit_user_manual.pdf>`_
+
+More information
+----------------
+
+-  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
+-  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` Wiki Page
+-  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+-  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
+
+Support
+-------
+
+Analog Devices will provide **limited** online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone FPGA reference designs <community/fpga>` forum.
+
+It should be noted, that the older the tools' versions and release branches are, the lower the chances to receive support from ADI engineers.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/c5sockit_clocksel.png
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/c5sockit_bootsel.png
+   :width: 400px

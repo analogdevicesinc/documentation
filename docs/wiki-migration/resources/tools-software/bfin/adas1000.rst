@@ -1,0 +1,116 @@
+ADAS1000 - Blackfin Framework
+=============================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADAS1000`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADAS1000SDZ <ADAS1000>`
+
+Overview
+--------
+
+The EVAL-ADAS1000SDZ is a fully featured evaluation kit for the ADAS1000. The evaluation kit consists of an evaluation board kitted with 2 ADAS1000 devices capable of demonstrating ECG capture up to 12 leads. This evaluation board is provided for silicon evaluation purposes and is not designed to be connected directly to animal or human.
+
+This board can be operated in conjunction with the System Development Platform (SDP) or alternatively may be interfaced to directly via a dedicated serial interface connector (J4).
+
+The SDP controller board connects to the PC via USB 2.0. The evaluation board connects to the SDP-B controller board. The :adi:`ADAS1000` evaluation board cannot be connected directly to the PC. The evaluation software running on the PC will communicate with the evaluation board through the SDP-B Controller board. The SDP Controller board is a separate list item in the ordering guide below (EVAL-SDP-CB1Z). If you have not previously purchased an SDP-B Controller board, please do so to ensure a full evaluation setup.
+
+Framework Functional Description
+--------------------------------
+
+This project demonstrates a framework developed for Visual DSP :adi:`Visual DSP <vdsp-bf-sh-ts>` to interface the :adi:`ADAS1000` to the :adi:`adsp-bf527` on the SDP-B controller board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/bfin/eval-adas1000sdz.jpg
+   :alt: eval-adas1000sdz.jpg
+   :align: center
+   :width: 600px
+
+The software has been developed to
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Configure various registers of :adi:`ADAS1000` through SPORT1 of :adi:`adsp-bf527`
+-  Read ECG or Test tone data from :adi:`ADAS1000` to memory of :adi:`adsp-bf527` (external SDRAM)
+-  Process the data acquired from :adi:`ADAS1000`
+-  Display/Plot the processed data
+
+Requirements:
+^^^^^^^^^^^^^
+
+-  VisualDSP++ 5.0 Update 10
+-  :adi:`ADAS1000` Eval Board setup, EVAL-ADAS1000SDZ
+-  SDP-B Rev 1.3 (with Emulator to connect to VisualDSP++),
+-  Breakout board for SDP-B (If Hardware DRDY is used)
+-  ECG cables and simulator (if required)
+
+Framework Files
+---------------
+
+The attached zip file contains the relevant files for this project
+
+Zip File Contents & description:
+
+-  ADAS1000_SDP_v1.c Main function which can be used to develop the application
+-  ADAS1K_Functions.c All the functions related to ADAS1000, which can be used by the application to read/write ADAS1000 registers,and to read data frame from ADAS1000
+-  ADAS1K_DataProcess.c Functions to process the data read from ADAS1000
+-  ADAS1K_DataDisplay.c Functions used to initialize the display unit and used to display/plot processed data from ADAS1000
+-  SPORT_Functions.c PLL configuration and all the SPORT1 functions used for Serial Interface with ADAS1000
+-  ADAS1000_SDP_v1.ldf Linker Description file, defining all the memory sections used by the processor
+-  ADAS1K_Functions.h Declaration of all functions related to ADAS1000, and Hardware DRDY pin definitions
+-  ADAS1K_RegValue.h Definitions of values for ADAS1000 registers which can be directly used during ADAS1000 register configuration. The values is calculated according to definitions in User_Config.h
+-  cdefADAS1K.h - Definitions of registers of ADAS1000, BIT Map, BIT Value and BIT Position definitions of all the fields of registers of ADAS1000 and other constant definitions and variable typdefs related to ADAS1000
+-  cdefBF527_new.h - System MMR register addresses for PORT registers of BF527 Blackfin on SDP)
+-  SPORT_Functions.h - Declaration of all the SPORT1 functions used for Serial Interface with ADAS1000
+-  User_Config.h - All the user definable parameters for various functionalities of (ADAS1000 + SDP) system
+-  LA.vps - VDSP++ plot for LA data
+-  LL.vps - VDSP++ plot for LL data
+-  RA.vps - VDSP++ plot for RA data
+-  V1.vps - VDSP++ plot for V1 data
+-  V2.vps - VDSP++ plot for V2 data
+
+Implementation Description:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  'Reg_Config_Table' is an array which is updated with required ADAS1000 register configuration
+-  'ADAS1000_Open' will initialize ADSP-BF527
+-  Software reset of ADAS1000
+-  Use 'Reg_Config_Table' and initialize the registers of ADAS1000
+-  Read back the register values from ADAS1000 and confirm the values are correctly configured
+-  Initialize the data buffers (Input and processed data)
+-  In an infinite loop
+
+   -  Capture data frames from ADAS1000
+   -  Process the captured frames
+   -  Display the processed data
+
+Procedure:
+~~~~~~~~~~
+
+Hardware Setup
+~~~~~~~~~~~~~~
+
+::
+
+     *     Connect J4 of SDP-B Rev 1.3 to J2 of ADAS1000 Eval board
+     *     Connect the ECG probe to J1 of ADAS1000 Eval board
+     *     Connect the Emulator to JTAG pins (J3) of SDP-B
+     *     If Hardware DRDY is used, Connect Probing Card of SDP-B to J2 conector of SDP-B. Connect 'DRDY' pin of ADAS1000 (J4-11) to PH8 pin of ADSP-BF527 coming on Probing Card of SDP-B (J2.85)
+   *     Open the project (ADAS1000_SDP_v1.dpj) in Visual DSP++ 5.0 Update 10
+   *     Modify UserConfig.h file for required operation
+   *     Create and Connect to BF527 Emulator Session in Visual DSP++
+   *     Build the project
+   *     Run the code. BF527 configures ADAS1000 and data is received continuously from it.
+   *     Plot the data
+     *       Menu > View > Debug Windows > Plot > Restore
+     *       Browse and open LA.vps and other plot files (.vps files)
+     *       Right click on the plot > Configure > Modify 'Count' for number of samples
+     *       Halt the code, to see the latest 'Count' number of samples plotted
+
+Zip file
+--------
+
+`adas1000_sdp_v1.zip <https://wiki.analog.com/_media/resources/tools-software/bfin/adas1000_sdp_v1.zip>`_

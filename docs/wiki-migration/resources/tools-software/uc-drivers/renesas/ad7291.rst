@@ -1,0 +1,246 @@
+AD7291 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7291`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7291SDZ`
+
+Overview
+--------
+
+The :adi:`AD7291` is a 12-bit, low power, 8-channel, successive approximation analog-to-digital converter (ADC) with an internal temperature sensor.
+
+The part operates from a single 3.3 V power supply and features an I2C-compatible interface. The part contains a 9-channel multiplexer and a track-and-hold amplifier than can handle frequencies up to 30 MHz. The device has an on-chip 2.5 V reference that can be disabled to allow the use of an external reference.
+
+The :adi:`AD7291` provides a 2-wire serial interface compatible with I2C interfaces. The I2C interface supports standard and fast I2C interface modes. The :adi:`AD7291` normally remains in a partial power-down state while not converting and powers up for conversions. The conversion process can be controlled by a command mode where conversions occur across I2C write operations or an autocycle mode selected through software control.
+
+The :adi:`AD7291` includes a high accuracy band gap temperature sensor, which is monitored and digitized by the 12-bit ADC to give a resolution of 0.25°C.
+
+The :adi:`AD7291` offers a programmable sequencer, which enables the selection of a preprogrammable sequence of channels for conversion.
+
+On-chip limit registers can be programmed with high and low limits for the conversion results; an out-of-range indicator output (ALERT) becomes active when the programmed high or low limits are violated by the conversion result. This output can be used as an interrupt.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7291_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7291 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7291 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7291 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD7291 driver:
+
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| Function                                                                                                               | Description                                                            |
++========================================================================================================================+========================================================================+
+| unsigned char AD7291_Init(void)                                                                                        | Initializes the I2C communication peripheral and configures AD7291.    |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void AD7291_SetRegisterValue(unsigned char registerAddress, unsigned short registerValue)                              | Writes data into a register.                                           |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void AD7291_GetRegisterValue(unsigned char registerAddress, unsigned short\* registerValue, unsigned char readsNumber) | Performs a number of reads from a register.                            |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| float AD7291_GetDegreesTemp(void)                                                                                      | Reads the temperature data and converts the result in degrees Celsius. |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| void AD7291_GetVoltageConversionResults(unsigned short\* data)                                                         | Reads the voltage conversion results for the enabled channels.         |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7291 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_generic.zip>`_
+   -  `AD7291 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rl78g13.zip>`_
+   -  `AD7291 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rx62n.zip>`_
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7291 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7291SDZ(ADI) <AD7291>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7291SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7291SDZ test point T_SCLK         → YRDKRL78G13 J9 connector Pin 1
+     EVAL-AD7291SDZ test point TDOUT          → YRDKRL78G13 J9 connector Pin 3
+     EVAL-AD7291SDZ J16 connector Pin DGND    → YRDKRL78G13 J11 connector Pin 5
+     EVAL-AD7291SDZ J16 connector Pin VDRIVE  → YRDKRL78G13 J11 connector Pin 6
+     EVAL-AD7291SDZ J15 connector Pin AGND    → YRDKRL78G13 J11 connector Pin 5
+     EVAL-AD7291SDZ J15 connector Pin EXT_VCC → YRDKRL78G13 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rl78g13.jpg
+   :align: center
+
+Software Setup
+--------------
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the ST7579 LCD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+~~~~~~~~~~~~~~
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+--------------------------
+
+The reference project initializes the I2C communication peripheral and configures AD7291 to perform readings from analog inputs CH1 and CH7. The temperature is also read and displayed on the screen in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7291 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-AD7291SDZ(ADI) <AD7291>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An EVAL-AD7291SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD7291SDZ test point T_SCLK (SCL)   → YRDKRX62N J2  connector Pin 1
+     EVAL-AD7291SDZ test point TDOUT (SDA)    → YRDKRX62N J2  connector Pin 3
+     EVAL-AD7291SDZ J16 connector Pin DGND    → YRDKRX62N J8  connector Pin 4
+     EVAL-AD7291SDZ J15 connector Pin AGND    → YRDKRX62N J8  connector Pin 4
+     EVAL-AD7291SDZ J16 connector Pin VDRIVE  → YRDKRX62N J8  connector Pin 3
+     EVAL-AD7291SDZ J15 connector Pin EXT_VCC → YRDKRX62N J8  connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project initializes the I2C communication peripheral and configures AD7291 to perform readings from analog inputs CH1 and CH7. The temperature is also read and displayed on the screen in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7291_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png

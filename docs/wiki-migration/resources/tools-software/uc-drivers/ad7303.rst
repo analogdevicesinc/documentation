@@ -1,0 +1,51 @@
+Supported Devices
+=================
+
+-  :adi:`AD7303`
+
+Evaluation Boards
+=================
+
+-  `PmodDA1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1>`_
+
+Overview
+========
+
+.. include:: ../../pmods/ad7303.rst
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+Driver Description
+==================
+
+The driver contains two parts:
+
+-  The driver for the AD7303 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7303 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7303 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7303 driver:
+
++--------------------------------------------------------------------+-----------------------------------------------+
+| Function                                                           | Description                                   |
++====================================================================+===============================================+
+| char AD7303_Init(void)                                             | Initializes the SPI communication peripheral. |
++--------------------------------------------------------------------+-----------------------------------------------+
+| void AD7303_Write(unsigned char controlReg, unsigned char dataReg) | Sends data to AD7303.                         |
++--------------------------------------------------------------------+-----------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png

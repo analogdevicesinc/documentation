@@ -1,0 +1,25 @@
+Education Conference Materials and Flyers (Save a Tree!)
+========================================================
+
+| Thank you for stopping by our booth! Below are a few links for the modules, labs, and devices we showed:
+| |image1|
+| |image2|
+| |image3|
+| |image4|
+| |image5|
+
+.. |image1| image:: https://wiki.analog.com/_media/university/events/ecedha2023/rf_agile_thumbnail.png
+   :width: 400px
+   :target: https://wiki.analog.com/_media/university/events/ecedha2023/rf-agile-sdr.pdf
+.. |image2| image:: https://wiki.analog.com/_media/university/events/ecedha2023/active_learning_thumbnail.png
+   :width: 400px
+   :target: https://wiki.analog.com/_media/university/events/ecedha2023/active-learning-program-for-students.pdf
+.. |image3| image:: https://wiki.analog.com/_media/university/events/ecedha2023/m2k_thumbnail.png
+   :width: 400px
+   :target: https://wiki.analog.com/_media/university/events/ecedha2023/adalm2000-active-learning-module.pdf
+.. |image4| image:: https://wiki.analog.com/_media/university/events/ecedha2023/rapid_proto_thumbnail.png
+   :width: 400px
+   :target: https://wiki.analog.com/_media/university/events/ecedha2023/solutions-for-rapid-prototyping.pdf
+.. |image5| image:: https://wiki.analog.com/_media/university/events/ecedha2023/Pluto_thumbnail.png
+   :width: 400px
+   :target: https://wiki.analog.com/_media/university/events/ecedha2023/ADALM-PLUTO-Product-Highlight.pdf

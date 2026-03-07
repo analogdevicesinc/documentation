@@ -1,0 +1,214 @@
+AD9834 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9834`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD9834SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD9834SDZ <AD9834>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD9834SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad9834.jpg
+   :alt: img_ad9834.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD9834SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad9834_sdp1z.png
+   :alt: ad9834_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD9834` is a 75 MHz, low power DDS device capable of producing high performance sine and triangular outputs. It also has an on-board comparator that allows a square wave to be produced for clock generation. Consuming only 20 mW of power at 3 V makes the AD9834 an ideal candidate for power-sensitive applications.
+
+The **EVAL-AD9834SDZ** evaluation board is designed to help customers quickly prototype new AD9834 circuits and reduce design time. A high performance, on-board 75 MHz trimmed general oscillator is available to use as the master clock for the AD9834 system. Various links and SMB connectors are also available on the EVAL-AD9834SDZ board to maximize the usability.
+
+More information
+----------------
+
+-  :adi:`AD9834 Product Info <AD9834>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD9834SDZ evaluation board user guide </static/imported-files/user_guides/UG-266.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD9834** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD9834 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD9834 Driver:** :git-no-OS:`device_drivers/AD9833`
+   
+   -  **AD9834 Commands:** :git-no-OS:`device_commands/AD9833`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD9834 reference project for Xilinx KC705 FPGA board.
+
++-------------------+---------------------------------------------------------------------------+
+| Command           | Description                                                               |
++===================+===========================================================================+
+| **help?**         | Displays all available commands.                                          |
++-------------------+---------------------------------------------------------------------------+
+| **output=**       | Selects the type of output. Accepted values:                              |
+|                   | 0 - Sinusoid.(default)                                                    |
+|                   | 1 - Triangle.                                                             |
++-------------------+---------------------------------------------------------------------------+
+| **output?**       | Displays the type of output.                                              |
++-------------------+---------------------------------------------------------------------------+
+| **loadFreqReg=**  | Loads a frequency value in one selected register. Accepted values:        |
+|                   | Register number:                                                          |
+|                   | 0 - Frequency Register 0.                                                 |
+|                   | 1 - Frequency Register 1.                                                 |
+|                   | Value:                                                                    |
+|                   | 0 .. 37 500 000 - the frequency value in Hz.                              |
++-------------------+---------------------------------------------------------------------------+
+| **freqRegVal?**   | Displays the value from one selected frequency register. Accepted values: |
+|                   | Register number:                                                          |
+|                   | 0 - Frequency Register 0.                                                 |
+|                   | 1 - Frequency Register 1.                                                 |
++-------------------+---------------------------------------------------------------------------+
+| **loadPhaseReg=** | Loads a phase value in one selected register. Accepted values:            |
+|                   | Register number:                                                          |
+|                   | 0 - Phase Register 0.                                                     |
+|                   | 1 - Phase Register 1.                                                     |
+|                   | Value:                                                                    |
+|                   | 0 .. 2PI - the phase value in radians.                                    |
++-------------------+---------------------------------------------------------------------------+
+| **phaseRegVal?**  | Displays the value from one selected phase register. Accepted values:     |
+|                   | Register number:                                                          |
+|                   | 0 - Phase Register 0.                                                     |
+|                   | 1 - Phase Register 1.                                                     |
++-------------------+---------------------------------------------------------------------------+
+| **freqRegNo=**    | Select the frequency register to be used. Accepted values:                |
+|                   | Register number:                                                          |
+|                   | 0 - Frequency Register 0.                                                 |
+|                   | 1 - Frequency Register 1.                                                 |
++-------------------+---------------------------------------------------------------------------+
+| **freqRegNo?**    | Displays the selected frequency register.                                 |
++-------------------+---------------------------------------------------------------------------+
+| **phaseRegNo=**   | Select the phase register to be used. Accepted values:                    |
+|                   | Register number:                                                          |
+|                   | 0 - Phase Register 0.                                                     |
+|                   | 1 - Phase Register 1.                                                     |
++-------------------+---------------------------------------------------------------------------+
+| **phaseRegNo?**   | Displays the selected phase register.                                     |
++-------------------+---------------------------------------------------------------------------+
+| **sleepMode=**    | Select one sleep mode. Accepted values:                                   |
+|                   | Sleep mode:                                                               |
+|                   | Soft method:                                                              |
+|                   | 0 - No power-down.(default)                                               |
+|                   | 1 - DAC powered down.                                                     |
+|                   | 2 - Internal clock disabled.                                              |
+|                   | 3 - DAC powered down and Internal clock disabled.                         |
+|                   | Hard method:                                                              |
+|                   | 0 - No power-down.(default)                                               |
+|                   | 1 - DAC powered down.                                                     |
++-------------------+---------------------------------------------------------------------------+
+| **sleepMode?**    | Displays the selected sleep mode.                                         |
++-------------------+---------------------------------------------------------------------------+
+| **program=**      | Sets the programming method. Accepted values:                             |
+|                   | Method:                                                                   |
+|                   | 0 - Soft programming method.(default)                                     |
+|                   | 1 - Hard programming method.                                              |
++-------------------+---------------------------------------------------------------------------+
+| **program?**      | Displays the programming method.                                          |
++-------------------+---------------------------------------------------------------------------+
+| **logicOut=**     | Sets the logic output type. Accepted values:                              |
+|                   | Logic output type:                                                        |
+|                   | 0 - High impedance.(default)                                              |
+|                   | 1 - DAC data MSB/2.                                                       |
+|                   | 2 - DAC data MSB.                                                         |
+|                   | 3 - Comparator.                                                           |
++-------------------+---------------------------------------------------------------------------+
+| **logicOut?**     | Displays the logic output type.                                           |
++-------------------+---------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD9834 IIO Direct Digital Synthesis Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/ad9834>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

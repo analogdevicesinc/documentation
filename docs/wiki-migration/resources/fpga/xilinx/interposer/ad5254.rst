@@ -1,0 +1,204 @@
+AD5254 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5254`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5254SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5254SDZ <AD5254>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5254SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad5254.jpg
+   :alt: ad5254.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5254SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5254_sdp1z.png
+   :alt: ad5254_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5254` is quad-channel, I2C, nonvolatile memory, digitally controlled potentiometer with 256 positions. This device performs the same electronic adjustment functions as mechanical potentiometers, trimmers, and variable resistors. The part’s versatile programmability allows multiple modes of operation, including read/write access in the RDAC and EEMEM registers, increment/decrement of resistance, resistance changes in ±6 dB scales, wiper setting readback, and extra EEMEM for storing user-defined information, such as memory data for other components, look-up table, or system identification information.
+
+The **EVAL-AD5254SDZ** evaluation board is designed to help customers quickly prototype new AD5254 circuits and reduce design time. The EVAL-AD5254SDZ incorporates several test circuits to evaluate the AD5254 performance.
+
+More information
+----------------
+
+-  :adi:`AD5254 Product Info <AD5254>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5254SDZ evaluation board user guide </static/imported-files/user_guides/UG-094.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD5254** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5254 Driver:** :git-no-OS:`drivers/potentiometer/ad525x`
+   
+   -  **AD5254 Commands:** :git-no-OS:`device_commands/AD525x`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5254 reference project for Xilinx KC705 FPGA board.
+
++-------------------+-------------------------------------------------------------------------------+
+| Command           | Description                                                                   |
++===================+===============================================================================+
+| **help?**         | Displays all available commands.                                              |
++-------------------+-------------------------------------------------------------------------------+
+| **rdac=**         | Load the wiper register with a give value. Accepted values:                   |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
+|                   | value:                                                                        |
+|                   | 0 .. 255 - value to be written in register.                                   |
++-------------------+-------------------------------------------------------------------------------+
+| **rdac?**         | Read back the value of the wiper register. Accepted values:                   |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **reset!**        | Reset all wiper register to its stored values                                 |
++-------------------+-------------------------------------------------------------------------------+
+| **restore=**      | Restore the specified wiper register setting form the memory. Accepted value: |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **save=**         | Save the given wiper register settings to the memory. Accepted value:         |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **writemem=**     | Write to one of the user memory address. Accepted value:                      |
+|                   | address: a value between 0x2 and 0xE.                                         |
+|                   | data: a value between 0 and 255.                                              |
++-------------------+-------------------------------------------------------------------------------+
+| **readmem=**      | Read data from the EEMEM memory. Accepted value:                              |
+|                   | address: a value between 0x2 and 0xE.                                         |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacdb=**    | Decrement a given wiper register by 6dB. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacdball!** | Decrement all wiper register by 6dB.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdac=**      | Decrement a given wiper register by one. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacall!**   | Decrement all wiper register by one.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacdb=**    | Increment a given wiper register by 6dB. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacdball!** | Increment all wiper register by 6dB.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdac=**      | Increment a given wiper register by one. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 .. 3 - 0 corresponding with RDAC1 and 3 corresponding with RDAC4            |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacall!**   | Increment all wiper register by one.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **setwp=**        | Set the state of the Write Protect (WP) pin. Accepted value:                  |
+|                   | desired state:                                                                |
+|                   | 0 - inactive                                                                  |
+|                   | 1 - active                                                                    |
++-------------------+-------------------------------------------------------------------------------+
+| **getwp?**        | Return the current value of the Write Protect (WP) pin                        |
++-------------------+-------------------------------------------------------------------------------+
+| **sethwreset=**   | Set the state of the Hardware Override Preset (PR) pin. Accepted value:       |
+|                   | 0 - inactive                                                                  |
+|                   | 1 - active                                                                    |
++-------------------+-------------------------------------------------------------------------------+
+| **gethwreset?**   | Return the current value of the Hardware Override Preset (PR) pin             |
++-------------------+-------------------------------------------------------------------------------+
+| **tolerance=**    | Read one of the Tolerance register. Accepted value:                           |
+|                   | 0x0 .. 0x7 - virtual address of the tolerance register                        |
++-------------------+-------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5254 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

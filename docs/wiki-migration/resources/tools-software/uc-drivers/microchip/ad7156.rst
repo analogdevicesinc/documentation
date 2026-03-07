@@ -1,0 +1,278 @@
+AD7156 - No-OS Driver for Microchip Microcontroller Platforms
+=============================================================
+
+.. include:: ../ad7156.rst
+
+**HW Platform(s):**
+
+-  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7156 DSPIC33 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7156_dspic33.zip>`_
+   -  \**AD7156 Driver: \*\* :git-no-OS:`drivers/cdc/ad7156`
+   -  \**PmodCDC1 Demo for PIC32MX320F128H: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/PmodCDC1`
+   -  \**PIC32MX320F128H Common Drivers: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/Common`
+   
+
+
+Digilent Cerebot MX3cK Quick Start Guide
+========================================
+
+This section contains a description of the steps required to run the AD7156 demonstration project on a Digilent Cerebot MX3cK platform.
+
+Required Hardware
+-----------------
+
+-  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  `PmodCDC1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-CDC1>`_
+
+Required Software
+-----------------
+
+-  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
+-  `MPLAB XC32 compiler <http://www.microchip.com/mplabxc>`_
+-  The AD7156 demonstration project for PIC32MX320F128H.
+
+.. note::
+
+   The AD7156 demonstration project for PIC32MX320F128H consists of three parts: the **AD7156 Driver**, the **PmodCDC1 Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+Hardware Setup
+--------------
+
+A PmodCDC1 has to be connected to the J2 connector of Cerebot MX3cK development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_cdc1_pic32.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of AD7156 reference project for Cerebot MX3cK board.
+
++----------------+-------------------------------------------------------------------------+
+| Command        | Description                                                             |
++================+=========================================================================+
+| help?          | Displays all available commands.                                        |
++----------------+-------------------------------------------------------------------------+
+| channelRange?  | Displays the set range for the selected channel. Accepted values:       |
+|                | 1 - Displays the channel 1's range.                                     |
+|                | 2 - Displays the channel 2's range.                                     |
++----------------+-------------------------------------------------------------------------+
+| channelRange=  | Selects the range of the selected channel. Accepted values:             |
+|                | channel:                                                                |
+|                | 1 - Select channel 1.                                                   |
+|                | 2 - Select channel 2.                                                   |
+|                | range:                                                                  |
+|                | 0 - 0..2pF.                                                             |
+|                | 1 - 0..0.5pF                                                            |
+|                | 2 - 0..1pF                                                              |
+|                | 3 - 0..4pF.                                                             |
++----------------+-------------------------------------------------------------------------+
+| powerMode?     | Displays the current power mode.                                        |
++----------------+-------------------------------------------------------------------------+
+| powerMode=     | Selects the power mode of the device. Accepted values:                  |
+|                | 0 - Idle.                                                               |
+|                | 1 - Continuous conversions.                                             |
+|                | 2 - Single conversion.                                                  |
+|                | 3 - Power-down.                                                         |
++----------------+-------------------------------------------------------------------------+
+| channelEnable= | Enables or disabled conversions on selected channel. Accepted values:   |
+|                | channel:                                                                |
+|                | 1 - Select channel 1.                                                   |
+|                | 2 - Select channel 2.                                                   |
+|                | enable:                                                                 |
+|                | 0 - Disable conversions on selected channel.                            |
+|                | 1 - Enable conversions on selected channel.                             |
++----------------+-------------------------------------------------------------------------+
+| samples?       | Reads 50 samples form the enabled channels and displays the data in pF. |
++----------------+-------------------------------------------------------------------------+
+| buttons?       | Checks if any of the two buttons are pressed or released.               |
++----------------+-------------------------------------------------------------------------+
+| reset!         | Resets the device.                                                      |
++----------------+-------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+
+The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
+
+
+|image1|
+
+Software Project Setup
+----------------------
+
+This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Run the **MPLAB X** integrated development environment.
+-  Choose to create a new project.
+-  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
+   :align: center
+
+-  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
+   :align: center
+
+-  In the **Select Tool** window select the desired hardware tool and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
+   :align: center
+
+-  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
+   :align: center
+
+-  In the **Select Project Name and Folder** window choose a name and a location for the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
+   :align: center
+
+-  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
+   :align: center
+
+-  The project is ready to be built and downloaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
+   :align: center
+
+
+Digilent Cerebot MC7 Quick Start Guide
+======================================
+
+This section contains a description of the steps required to run the AD7156 demonstration project on a Digilent Cerebot MC7 platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
+-  PmodCDC1
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
+-  `MPLAB XC16 compiler <http://www.microchip.com/mplabxc>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+A PmodCDC1 can be connected to the J6 connector of Cerebot MC7 development board for I2C operation,
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_cdc1_pic32.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+Following commands were implemented in this version of AD7156 reference project for Cerebot MC7 board.
+
++-----------+-------------------------------------------------------------------------+
+| Command   | Description                                                             |
++===========+=========================================================================+
+| help?     | Displays all available commands.                                        |
++-----------+-------------------------------------------------------------------------+
+| range=    | Selects the range of the channels. Accepted values: 0-3.                |
++-----------+-------------------------------------------------------------------------+
+| power=    | Selects the power mode of the device. Accepted values: 0 - 3.           |
++-----------+-------------------------------------------------------------------------+
+| channel1= | Enables or disabled conversions on channel 1. Accepted values 0-1.      |
++-----------+-------------------------------------------------------------------------+
+| channel2= | Enables or disabled conversions on channel 2. Accepted values 0-1.      |
++-----------+-------------------------------------------------------------------------+
+| samples?  | Reads 50 samples form the enabled channels and displays the data as pF. |
++-----------+-------------------------------------------------------------------------+
+| buttons?  | Checks if any of the two buttons are pressed or released.               |
++-----------+-------------------------------------------------------------------------+
+| reset=    | Resets the device. Accepted value: 1.                                   |
++-----------+-------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+
+The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
+
+
+|image2|
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Run the **MPLAB X** integrated development environment.
+-  Choose to create a new project.
+-  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
+   :align: center
+
+-  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
+   :align: center
+
+-  In the **Select Tool** window select the desired hardware tool and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
+   :align: center
+
+-  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
+   :align: center
+
+-  In the **Select Project Name and Folder** window choose a name and a location for the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
+   :align: center
+
+-  After the project is created, the source files have to be copied in the project folder and included in the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
+   :align: center
+
+-  The project is ready to be built and downloaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
+   :align: center
+
+
+More information
+================
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

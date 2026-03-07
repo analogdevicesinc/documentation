@@ -1,0 +1,187 @@
+ADF4118 - Microcontroller No-OS Driver
+======================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4118`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EV-ADF411XSD1Z <EVAL-ADF4118>`
+
+Overview
+--------
+
+The :adi:`ADF4118` is a frequency synthesizer which can be used to implement local oscillators in the up-conversion and down-conversion sections of wireless receivers and transmitters. It consists of a low-noise digital PFD (Phase Frequency Detector), a precision charge pump, a programmable reference divider, programmable A and B counters and a dual-modulus prescaler (P/P+1). The A (5-bit) and B (13-bit) counters, in conjunction with the dual modulus prescaler (P/P+1), implement an N divider (N= BP+A). In addition, the 14-bit reference counter (R Counter), allows selectable REFIN frequencies at the PFD input. A complete PLL (Phase-Locked Loop) can be implemented if the synthesizer is used with an external loop filter and VCO (Voltage Controlled Oscillator).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4118ebz1.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  :adi:`EVAL-ADF4118EBZ1`
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the ADF4118 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADF4118 driver can be used exactly as it is provided. There are three functions which are called by the ADF4118 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The driver for ADF4118 contains functions for initializing the device and for writing data into each register.
+
+The following functions are implemented in this version of ADF4118 driver:
+
++-----------------------------------------------------------------------+--------------------------------------+
+| Function                                                              | Description                          |
++=======================================================================+======================================+
+| unsigned char ADF4118_Init(void)                                      | Initializes the device.              |
++-----------------------------------------------------------------------+--------------------------------------+
+| void ADF4118_Write(unsigned long data)                                | Writes data into a register.         |
++-----------------------------------------------------------------------+--------------------------------------+
+| void ADF4118_Power(unsigned char powerMode)                           | Powers down or powers up the device. |
++-----------------------------------------------------------------------+--------------------------------------+
+| unsigned long long ADF4118_SetFrequency(unsigned long long frequency) | Sets the ADF4118 frequency.          |
++-----------------------------------------------------------------------+--------------------------------------+
+
+Downloads
+---------
+
+-  `ADF4118 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4118_generic.zip>`_
+-  `ADF4118 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4118_rx62n.zip>`_
+-  `ADF4118 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adf4118_rl78g13.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADF4118 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-ADF4118EBZ1 (ADI) <EVAL-ADF4118EBZ1>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-ADF4118EBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     9 Way D-Type connector Pin 3 (CLK)  → YRDKRL78G13 J11 connector Pin 4
+     9 Way D-Type connector Pin 5 (DATA) → YRDKRL78G13 J11 connector Pin 2
+     9 Way D-Type connector Pin 7 (LE)   → YRDKRL78G13 J11 connector Pin 1
+     9 Way D-Type connector Pin 8 (GND)  → YRDKRL78G13 J11 connector Pin 5
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4118ebz1_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+In this example the output frequency of the device is set to 1950 MHz.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4118_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the ADF4118 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-ADF4118EBZ1 (ADI) <EVAL-ADF4118EBZ1>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An EVAL-ADF4118EBZ1 board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     9 Way D-Type connector Pin 3 (CLK) → RDKRX62N J8 connector Pin 20
+     9 Way D-Type connector Pin 5 (DATA) → RDKRX62N J8 connector Pin 19
+     9 Way D-Type connector Pin 7 (LE) → RDKRX62N J8 connector Pin 26
+     9 Way D-Type connector Pin 8 (GND) → RDKRX62N J8 connector Pin 2
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_adf4118ebz1_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+In this example, two values are loaded into R and N Counters and the MUXOUT is configured to be connected to the R Divider output.
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

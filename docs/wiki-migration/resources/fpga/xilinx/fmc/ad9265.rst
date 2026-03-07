@@ -1,0 +1,61 @@
+AD9265 Native FMC Card Reference Design
+=======================================
+
+|
+
+.. warning::
+
+   \ **NOTE:**
+
+   | Support for the AD9265-fmc is discontinued starting with 2022_R2 Kuiper Linux release and it will not be supported in future releases. Last release in which pre-build files can be found is 2021_r2. Check this :doc:`link </wiki-migration/resources/tools-software/linux-software/adi-kuiper_images/release_notes>` for all Kuiper releases.
+
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/hdl/projects/ad9265_fmc/index.html\
+
+
+Introduction
+------------
+
+The :adi:`AD9265` is a 16-bit, 125MSPS analog-to-digital converter (ADC) featuring a wide bandwidth differential sample-and-hold analog input amplifier supporting a variety of user-selectable input ranges. This reference design includes a data capture interface and the external DDR-DRAM interface for sample storage. It allows programming the device and monitoring it's internal status registers. The board also provides other options to drive the clock and analog inputs of the ADC.
+
+Supported Devices
+-----------------
+
+-  AD9265-FMC
+
+Supported Carriers
+------------------
+
+-  `ZC706 <https://www.xilinx.com/ZC706>`_ LPC Slot
+
+Clock Selection
+~~~~~~~~~~~~~~~
+
+The board provides three (some modification maybe necessary) possible clock path for clocking the AD9265.
+
+-  External passive clock (default).
+-  Optional active clock path using the AD9517.
+-  Optional oscillator.
+
+Please make sure you have removed or inserted the corresponding components on the board to select the desired clock path.
+
+Downloads
+---------
+
+Board Files:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `ad9265_fmc_schematic_02_a03421b.pdf <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9265_fmc_schematic_02_a03421b.pdf>`_
+   -  `ad9265_fmc_bom_02_a03421b.xls <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9265_fmc_bom_02_a03421b.xls>`_
+   -  `ad9265_fmc_gerber_20_a03421b_fab.zip <https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad9265_fmc_gerber_20_a03421b_fab.zip>`_
+   
+
+
+.. include:: ../../docs/hdl/downloads_insert.rst
+
+.. include:: ../../docs/hdl/downloads_insert.rst

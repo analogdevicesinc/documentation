@@ -1,0 +1,50 @@
+HTG-910: Xilinx Virtex UltraScale+ Low-Profile PCI Express Development Platform
+===============================================================================
+
+====== ==================================
+Type   |image1| FPGA Development Board
+====== ==================================
+Status <fc #00ff00>✔</fc> Fully Validated
+====== ==================================
+
+|image2| The HTG-910 is low profile network card that provides access to eight lanes of PCI Express. It is populated with the Xilinx Zynq Virtex Ultrascale VU5P, VU9P, VU13P or Ultrascale VU190 FPGA. Analog Devices power solution on this platform is fully validated to meet the requirements of Xilinx Zynq Virtex Ultrascale FPGAs to ensure a robust power delivery solution.
+
+DC/DC μModule regulators are used on the HTG-910 to power Xilinx FPGA and/or SoC rails as well as other system rails. These regulators are highly integrated solutions with built in controller, power FETs, inductors, and capacitors that simplify layout and provide robust power delivery performance.
+
+We provide supporting documentation including power schematics, layout, LTpowerPlanner and applicable LTpowerPlay configuration files to enable you to validate the power solution for your application seamlessly.
+
+Power Tree
+----------
+
+.. image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/htg-910-power-tree-picture.png
+   :width: 300px
+
+Support Files
+-------------
+
+`LTpowerCAD <https://wiki.analog.com/_media/playground/playground/fpga_power_designs/htg-910-powerplanner-file.zip>`_
+
+LTpowerPlay
+
+ADI Parts Used
+--------------
+
++--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Rail/Function                        | Part Number                                                   | Description                                                                   |
++======================================+===============================================================+===============================================================================+
+| 0.85V: FPGA Core                     | :adi:`LTM4650 <en/products/ltm4650.html>`                     | Dual 25A or Single 50A DC/DC μModule Regulator                                |
++--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| 3.3V: FPGA IO, Memory, PORTs         | :adi:`LTM4643 <en/products/ltm4643.html>`                     | Ultrathin Quad μModule Regulator with Configurable 3A Output Array            |
++--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| 0.85V: VCC_BRAM, VCCINT_IO           | :adi:`LTM4644 <en/products/ltm4644.html>`                     | Quad DC/DC μmodule (Power Module) Regulator with Configurable 4A Output Array |
+| 0.9V: GTYR_AVCC, GTYL_AVCC           |                                                               |                                                                               |
+| 1.2V: GTYR_AVTT, GTYL_AVTT, DDR4 VTT |                                                               |                                                                               |
+| 1.8V: VCCAUX                         |                                                               |                                                                               |
++--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Clock for μModule Regulators         | :adi:`LTC6902 <en/products/ltc6902.html>`                     | Multiphase Oscillator with Spread Spectrum Frequency Modulation               |
++--------------------------------------+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. |image1| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/board.png
+   :width: 32px
+.. |image2| image:: https://wiki.analog.com/_media/playground/playground/fpga_power_designs/htg910.png
+   :width: 200px

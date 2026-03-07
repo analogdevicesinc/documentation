@@ -1,0 +1,218 @@
+CN0241 -- High-Side Current Sensing with Input Overvoltage Protection (DEPRECATED)
+==================================================================================
+
+.. important::
+
+   This particular reference design has been **RETIRED** or **DEPRECATED**, which means it is no longer supported. This page is here for historical/reference purposes only.
+
+
+Overview
+--------
+
+High-side current monitors are likely to encounter overvoltage conditions from transients or when the monitoring circuits are connected, disconnected, or powered down. This circuit uses the overvoltage protected :adi:`ADA4096-2` op amp connected as a difference amplifier to monitor the high-side current. The :adi:`ADA4096-2` has input overvoltage protection, without phase reversal or latch-up, for voltages of 32V higher than and lower than the supply rails.
+
+The circuit is powered by the :adi:`ADP3336` adjustable low dropout 500 mA linear regulator, which can also be used to supply power to other parts of the system, if desired. Its input voltage can range from 5.2V to 12V when set for a 5V output. To save power, the current sensing circuit can be powered down by removing power to the :adi:`ADP3336`; however, the power source, such as a solar panel, can still operate.
+
+This applies voltage to the inputs of the unpowered ADA4096-2; however, no latch-up or damage occurs for input voltages up to 32V. If slower throughput rates are required, the :adi:`AD7920` can also be powered down between samples. The :adi:`AD7920` draws a maximum of 5 μW when powered down and 15 mW when powered up. The :adi:`ADA4096-2` requires only 120 μA under operational conditions. When operating at 5V, this is only 0.6 mW. The :adi:`ADP3336` draws only 1 μA in the shutdown mode.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-hw-1024.jpg
+   :align: center
+   :width: 600px
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0241-SDPZ Evaluation Board <CN0241>`
+-  :adi:`EVAL-SDP-CB1Z Controller Board (SDP-B Board) <EVAL-SDP-CB1Z>`
+-  `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_
+-  DC power supply capable of driving 6 V/1 A
+-  DC power supply capable of driving 5 V/2.5 A
+-  2 Ω/12 W load resistor
+-  *minimum* PC requirement:
+
+   -  Windows XP up to Windows 7 OS
+   -  with USB interface
+
+General Setup
+-------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-hw-1024_l.jpg
+   :align: center
+   :width: 700px
+
+-  Connect :adi:`EVAL-CN0241-SDPZ <CN0241>` **(CN0241 Board)** to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-PIN Connector **(SDP CONN)**.
+-  Connect a 6V power supply to the **+6V** and **GND** pins on the board. If available, a 6 V wall wart can be connected to the barrel connector, **J5**, in place of the 6V power supply.
+-  Connect the 5V/2.5 A dc supply to +VIN and GND on **J1**. Also connect the 2 Ω/12 W load resistor to LOAD and GND on **J1**.
+-  **J2** is for SPI breakout.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/CN0241-06-1024_setup.png
+   :align: center
+   :width: 550px
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Download and extract the file `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ and open **setup.exe**
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0241 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0241/2.0.7/cn0241%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0241\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image1|
+
+-  Click **Next** and accept license agreement.
+
+|image2|
+
+-  Click **Next** to view the installation review page
+
+|image3|
+
+-  Click **Next** to start the installation
+
+|image4|
+
+-  Upon completion of the installation of the **CN0241 Evaluation Software**, the installer for the ADI SDP Drivers will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image5|
+
+   \* Click **Next** to set the installation location for the **SDP Drivers**
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image6|
+
+-  Click **Next** to install the **SDP Drivers**. When prompted by Windows Security, just press **Install**
+
+|image7|
+
+   \* Click **Finish** to complete the installation
+
+   |image8|
+
+Running the System
+------------------
+
+-  Apply power to the 6V supply (or wall wart) connected to the :adi:`CN0241 Evaluation Board <CN0241>`.
+-  Connect USB cable from PC to the USB miniconnector on the SDP-B board.
+-  Launch **CN0241 Evaluation Software** from the default installation location.
+-  Click **“Connect”** to start communication between SDP-B and :adi:`CN0241 Evaluation Board <CN0241>`
+-  Upon successful connection, select SDP connector A
+-  Set the desired number of samples.
+-  Turn the 5 V/2.5 A dc supply on when data is ready to be acquired.
+-  Adjust the voltage output accordingly to output the amount of current needed to be measured
+-  Click **“Sample Data”** to start acquisition of data.
+
+Using the Evaluation Software
+-----------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-main.JPG
+   :align: center
+   :width: 700px
+
+-  **Connect** Button - Starts the connection between the :adi:`CN0241 Evaluation Board <CN0241>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Disconnect** Button - Ends the connection between the :adi:`CN0241 Evaluation Board <CN0241>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Select SDP connector** - Selects which 120-pin connection of the SDP-B Board to use.
+-  **Sample Size** - Sets the number of samples.
+-  **Sample Data** Button - Starts the acquisition of measurement data.
+-  **Save Data** Button - Saves the acquired measurement data.
+-  **Sample Data** Tab
+
+|image9|
+
+   -  Shows the acquired measurement data in terms of ADC codes with respect to the samples.
+
+      -  By right-clicking within the area, more functions can be viewed. Graph palette can be hidden by deselecting it and also other items can be added such as plot legend, scale legend, etc.
+
+-  **Histogram** Tab
+
+
+|image10|
+
+   -  Shows the acquired measurement data in terms of Number of counts with respect to the ADC codes
+
+      -  The same as the previous tab, by right-clicking within the area, more functions can be viewed. Other items can be added such as plot legend, scale legend, etc.
+
+-  **Configure** Tab
+
+
+|image11|
+
+   -  **AD7920 Mode** - Can choose between two modes:
+
+      -  **Power Down Between Conversions**
+
+         -  **Normal Operation**
+
+      -  **Read Firmware** - Reads the firmware of CN0241 Evaluation Board
+      -  **Flash LED** - Flashes the LED on the SDP controller board
+
+-  **Quit** Button
+
+   -  Closes the evaluation software.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0241-SDPZ Design & Integration Files <CN0241-DesignSupport>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0241-SDPZ?&v=Rev A>`_ to receive all these great benefits and more!
+
+
+// End of document //
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-2.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-3.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-4.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-5.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-6.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-7.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-8.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-SD.JPG
+   :width: 400px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-H.JPG
+   :width: 400px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0241/cn0241-C.JPG
+   :width: 400px

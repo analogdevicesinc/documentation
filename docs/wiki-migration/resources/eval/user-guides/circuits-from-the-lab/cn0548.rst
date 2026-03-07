@@ -1,0 +1,310 @@
+EVAL-CN0548-ARDZ Shield Overview
+================================
+
+| 
+| Testing and evaluating power systems in industrial and communications settings often requires multiple voltage and current measurements. Individual supplies may be referenced to different grounds, have either positive or negative polarity, or may be galvanically isolated with respect to other power domains. Such scenarios necessitate either individual floating multimeters, or multichannel meters with per-channel isolation, which are physically cumbersome and expensive.
+| |image1|
+| The EVAL-CN0548-ARDZ is a complete, isolated current and voltage measurement system for industrial, telecommunications, instrumentation, and automated test equipment (ATE) applications. The system is galvanically isolated from the host controller and will tolerate up to +/-250V between the host computer and measurement system grounds. When paired with the ADICUP3029 and open-source firmware example, application software can easily communicate with the CN0548 over the industry-standard Industrial Input/Output (IIO) libiio library, which includes bindings for C, C#, MATLAB, Python, and LabVIEW.
+
+Features
+--------
+
+-  Absolute maximum input rating of 80V, 14A
+-  Configurable voltage and current setting
+-  16-bit ADC resolution with adjustable output data rate
+-  Serial peripheral interface (SPI) digital output
+-  Galvanic isolation from host controller
+-  3.3V and 5V compatible
+-  Arduino form factor
+-  Chip Select (CS) remappable (can be stacked with other shields)
+
+| 
+| ==== Simplified Block Diagram ====
+| |CN0548 Block Diagram|
+
+Onboard Configuration
+=====================
+
+| |image2|
+| ==== Configuring the Input Voltage Polarity and Current Direction ==== Before using the CN0548, the user must know the expected inputs and configure the board accordingly. The polarity as well as the direction of the inputs is an important aspect that should be noted by the user. Below is a table showing the maximum input rating depending on the configuration.
+
+============== ================= =================
+**Mode**       **Minimum Input** **Maximum Input**
+Unipolar       0V                80V
+Bipolar        -40V              40V
+Unidirectional 0A                14A
+Bidirectional  -10A              10A
+============== ================= =================
+
+| 
+| Jumper connections P12 and P13 configure the input current setting while jumpers P7 and P14 configure the input voltage setting. For a unipolar and unidirectional setting, the jumpers should be shorted to the GND pin. On the other hand, it should be connected to the 2.048V pin for a bipolar and bidirectional setting,.
+| |image3|
+
+| 
+| ==== Configuring the Absolute Input Voltage Range ==== The CN0548 is equipped with a precision wide voltage range gain selectable attenuating difference amplifier allowing it to have an adjustable input voltage range feature. The onboard jumpers P1, P3, P10, P8, P9, P11 should be configured accordingly to the desired maximum voltage range for a finer voltage resolution.
+| |image4|
+| Shown here is guide on how to configure the gain jumpers. Using this guide, it can be inferred that the above sample jumper configuration corresponds to a maximum input voltage range of 16V.
+| |image5|
+| ^ **Max Range** ^ **P1** ^ **P3** ^ **P10** ^ **P8** ^ **P9** ^ **P11** ^
+
+=== ==== ==== ==== ==== ==== ====
+80V Open Vin- Vin+ Open Vin+ Vin-
+40V Vin+ Open Open Vin- Open Open
+27V Vin- Open Vin+ Vin+ Open Vin-
+20V Open Vin+ Open Open Vin- Open
+16V Open Open Vin+ Open Open Vin-
+=== ==== ==== ==== ==== ==== ====
+
+| 
+| ==== Chip Select ==== As mentioned in the Features section earlier, the CN0548 has a remappable Chip Select feature allowing the board to be stacked with other shields. By default, jumper P15 is shunted but this can be modified accordingly depending on the shields stacked and the user's application.
+| |image6|
+
+Demo Requirements
+=================
+
+A sample code for the board is already provided. The following is the list of items needed in order to run the given script.
+
+Hardware:
+
+-  EVAL-CN0548-ARDZ
+-  EVAL-ADICUP3029
+-  Micro USB to USB cable
+-  PC or Laptop with a USB port
+
+Software:
+
+-  Pre-built HEX file
+-  Python 3.7 or later versions
+
+   -  No Python installed? `Click here to install <https://www.python.org/downloads/>`_
+   -  Some recommended IDEs:
+
+      -  `Visual Studio Code <https://code.visualstudio.com/>`_
+
+         -  `Anaconda <https://anaconda.org/anaconda/python>`_
+         -  `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_
+
+-  Script for data logging and plotting - CN0548_simple_plot.py
+
+| 
+| ==== Setting up the Hardware ====
+
+-  Attach the **EVAL-CN0548-ARDZ** shield to the **EVAL-ADICUP3029** .
+-  Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and connect it to a computer.
+
+| 
+| ==== Flashing the Firmware/Program ==== The easiest way to get started with the CN0548 board is by using the pre-built hex file for the EVAL-ADICUP3029. Follow the steps provided:
+
+-  Make sure that the on-board switches of the EVAL-ADICUP3029 are configured as shown on the table below:
+
+
+|image7|
+
+-  Connect the ADICUP3029 to the PC host via micro-USB cable.
+-  From the PC, open *My Computer* and look for the DAPLINK drive, if you see this then the drivers are complete and correct.
+
+|image8|
+
+-  Download the .hex file from the provided link below. Make sure to use the hex file corresponding to the input mode you configured. Simply drag and drop the .hex file to the DAPLINK drive in order to upload the program to the ADICUP3029. The DS2 (red) LED will blink rapidly. It will stop blinking and will stay ON once the uploading is done.
+-  Disconnect then reconnect the EVAL-ADICUP3029 to the host computer.
+
+| 
+| For advanced applications, you may opt to build, compile, and debug the given project by installing the CrossCore Embedded Studio (CCES) environment. This method will allow you to explore the board capabilities in detail as well as have a customized project to fit your needs.
+
+| 
+| The software for the **ADICUP3029_CN0548** demo can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   Prebuilt CN0548 Hex File
+   
+   -  :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0548_demo_unipolar.hex`
+   -  :git-EVAL-ADICUP3029:`releases/download/Latest/ADuCM3029_demo_cn0548_demo_bipolar.hex`
+   
+   Complete CN0548 Source Files
+   
+   -  :git-EVAL-ADICUP3029:`CN0548 CCES Project <projects/ADuCM3029_demo_cn0548>`
+   
+
+
+Using CrossCore Embedded Studio
+-------------------------------
+
+-  Open CrossCore Embedded Studio and import the project into your workspace as detailed in :doc:`cces_user_guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>`. This allows you to edit the software to fit your requirements.
+
+.. important::
+
+   If this is your first time using CrossCore Embedded Studio, check the :doc:`user guide </wiki-migration/resources/eval/user-guides/eval-adicup3029/tools/cces_user_guide>` to get you started
+
+
+-  Once ready, you can opt to generate your own .hex file and use the first method to program the EVAL-ADICUP3029 or you can use a debug session by following the quickstart guide.
+
+Code Snippet from the CCES Project
+----------------------------------
+
+| In case you want to generate your own hex file to be used, there are two attributes from the AD7798/AD7799 family that you should note --- the polarity and the gain.
+| |CCES code snippet|
+| It is important to set the polarity of the ADC according to your configuration and application. When the polarity is set to unipolar, effectively restricting the user to follow the polarity of the terminals, the maximum bit resolution of the ADC is used in its conversion compared as to when the polarity is set to bipolar where the bit resolution is equal to (n-1) bits where n is the maximum bit resolution of the ADC.
+| The other important attribute is the gain. The gain attribute corresponds to the internal gain of the ADC. A user can apply an internal gain to the ADC allowing the differential ADC input to be amplified. This feature can come in handy when dealing with small signals but the user must take precaution as applying an internal gain effectively decreases the input rating of the board. It is highly recommended to read and consult the datasheet of the ADC before creating a customized hex file.
+
+--------------
+
+PyADI-IIO
+---------
+
+PyADI-IIO is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.
+
+|
+
+.. tip::
+
+   Not yet familiar with PyADI-IIO? :doc:`Click here to get started </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
+
+
+Running the Example
+-------------------
+
+| The sample code provided already comes with a number of useful features for the convenience of the user. Upon startup, it will provide a simple graphic aid in order to help the user configure the board jumpers for the user's desired specification. Aside from displaying the numerical readings of the board, the sample code already has built-in data logging and real-time plot features. It also has a memory feature that allows the user to reuse the configuration of the previous session and immediately start sensing data.
+
+Starting a new session
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  Download the given python script below and note where the file is located, you may opt to relocate the file to a different folder or directory. Using a terminal, navigate to the location of the file and run the script. <code> python CN0548_simple_plot.py </code>
+
+.. admonition:: Download
+   :class: download
+
+   Python script:
+
+   :git-pyadi-iio:`CN0548_simple_plot.py <examples/cn0548>`\
+
+
+-  Upon running the script, some general reminders regarding the board usage will be displayed. Make sure to read these reminders before proceeding. Press the *Enter* key to proceed.
+
+
+
+|image9|
+
+   \* As mentioned earlier, the board has a memory feature that allows the user to quickly configure the sample code using the configuration from the last session. The user can decide whether to reuse the previous setting or set up a new configuration. The next items will discuss the program flow given that no session record file is found i.e. first run of the sample code.
+
+   |image10|
+
+   \* The user will be asked to specify the expected voltage and current inputs i.e. whether unipolar or bipolar for the voltage and unidirectional or bidirectional for the current. In a separate window, a jumper map will be created corresponding to the voltage and current setting specified by the user.
+
+   |image11|
+
+   You may close the jumper window upon configuring the board jumpers.
+   \* After the board jumper configuration guide, the program will now begin its software configuration related queries. The table below shows the aspects that the user must configure.
+
+   |image12|
+
+   \* Lastly, the sample code will ask the user for the port where the ADICUP3029 is connected. If the port is found, the sample code is now ready to parse readings from the board. Press *Enter* key to start board operation.
+
+   |image13|
+
+   Regardless of whether the plot window is enabled or not, the board readings will be continuously displayed in the terminal.
+
+   |image14|
+
+   In the next two figures, the CN0548 was used to monitor the performance of a 5V regulator. The first figure shows a plot in tracking mode where all data points are displayed. The second figure on the other hand is in non-tracking mode where the last 50 samples are being displayed.
+   **Tracking Mode:**
+
+   |image15|
+
+   **Non-tracking Mode:**
+
+   |image16|
+
+   Tracking mode allows the user to observe the overall characteristic of the signal being measured. However, it should be noted that the plot will continue to compress as more data points are added. Non-tracking mode on the other hand allows a more refined view as it only shows the most recent measurements as desired by the user.
+
+.. note::
+
+   
+   Do note that the plot windows are created using the matplotlib package of python. Hence, you have the option to save a copy of the displayed waveform at any point in time. This comes in handy when an unexpected noteworthy event happens and the data logging feature was not enabled.
+
+
+Data Logging
+~~~~~~~~~~~~
+
+| The data logging feature allows the user to log all measurements into a csv file. If enabled, the csv file will be created in the same folder where the sample code is located and will follow the naming scheme *CN0548\_[timestamp]*. Data is automatically written upon parsing. Hence, even if the program is prematurely terminated, all parsed data are recorded. |image17|
+
+Memory Feature
+~~~~~~~~~~~~~~
+
+| |image18|\ The memory feature of the board allows the user to quickly configure the sample code using the setup from the previous session in order to begin sensing data immediately. This is done by saving all user input and creating a *session_record* text file in the same directory where the sample code is located. |image19| Note that the contents of the session record file is not encrypted and is easily understandable. Each line begins with a number which corresponds to a certain setting. For instance, 1 corresponds to the Unipolar-Unidirectional mode and 2 will correspond to the Bipolar-Bidirectional mode. Hence, if the user just wants to reconfigure a minor aspect of the setup (use tracking mode instead non-tracking, adjust the sampling rate, enable or disable data logging, etc.), the user can quickly reconfigure the sample code by editing the *session_record* file. The program is able to detect whether the set of specifications in the session record is valid or not. If the configuration set by the user is not valid, the program will still proceed as usual and will assume no session record file was detected.
+| |image20|
+| ==== Video Guides ====
+| === Unboxing === Soon.
+| === Running the Sample Script === Soon.
+| ------------
+
+Schematic, Layout, Bill of Materials
+====================================
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`CN0548 Design & Integration Files <cn0548-DesignSupport>`
+   
+   -  Schematic
+   -  Bill of Materials
+   -  Gerber Files
+   -  Allegro Project
+   
+
+
+Registration
+============
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0548-ARDZ?&v=Rev B>`_ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cn0548_high_resolution_photo_3d_view.jpg
+   :width: 650px
+.. |CN0548 Block Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/block_diagram.png
+   :width: 800px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cn0548_high_resolution_photo.jpg
+   :width: 800px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/mode_jumper.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/gain_jumper.png
+   :width: 700px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/gain_config.png
+   :width: 400px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/chip_select.png
+   :width: 550px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/adicup3029_settings.jpg
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/daplink_in_mycomputer.jpg
+   :width: 400px
+.. |CCES code snippet| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/cces.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/reminder.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/new_overview.png
+   :width: 600px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/sample_configuration.png
+   :width: 800px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/table_config.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/software_config.png
+   :width: 600px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/readings.png
+   :width: 600px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/tracking.png
+   :width: 600px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/non-tracking_a.png
+   :width: 600px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/csv_file.png
+   :width: 400px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/old_overview.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/session_record.png
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0548/session_record_detected.png
+   :width: 600px

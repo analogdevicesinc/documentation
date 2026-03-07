@@ -1,0 +1,47 @@
+AD7689 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7689`
+-  :adi:`AD7682`
+-  :adi:`AD7949`
+-  :adi:`AD7699`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7689`
+-  :adi:`EVAL-AD7682`
+-  :adi:`EVAL-AD7949`
+-  :adi:`EVAL-AD7699`
+
+Overview
+--------
+
+The :adi:`AD7682`/:adi:`AD7689` are 4-channel/8-channel, 16-bit, charge redistribution successive approximation register (SAR) analog-to-digital converters (ADCs) that operate from a single power supply, VDD.
+
+The :adi:`AD7682`/:adi:`AD7689` contain all components for use in a multichannel, low power data acquisition system, including a true 16-bit SAR ADC with no missing codes; a 4-channel (:adi:`AD7682`) or 8-channel (:adi:`AD7689`) low crosstalk multiplexer that is useful for configuring the inputs as single-ended (with or without ground sense), differential, or bipolar; an internal low drift reference (selectable 2.5 V or 4.096 V) and buffer; a temperature sensor; a selectable one-pole filter; and a sequencer that is useful when channels are continuously scanned in order.
+
+The :adi:`AD7682`/:adi:`AD7689` use a simple serial port interface (SPI) for writing to the configuration register and receiving conversion results. The SPI interface uses a separate supply, VIO, which is set to the host logic level. Power dissipation scales with throughput.
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD7689 Driver.|
+
+   -
+
+   |Header file of AD7689 Driver.|
+
+.. |Implementation of AD7689 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7689/ad7689`.c
+.. |Header file of AD7689 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad7689/ad7689`.h

@@ -1,0 +1,8 @@
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
+
+ADAU1452
+========
+
+| 
+| The ADAU1452/ADAU1451/ADAU1450 are automotive qualified audio processors that far exceed the digital signal processing capabilities of earlier SigmaDSP® devices.
+| More details - :adi:`ADAU1452 <en/products/adau1452.html>`

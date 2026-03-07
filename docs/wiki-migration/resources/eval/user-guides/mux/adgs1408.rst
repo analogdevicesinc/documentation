@@ -1,0 +1,140 @@
+ADGS1408/ADGS1409 - No-OS Driver
+================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADGS1408`
+-  :adi:`ADGS1409`
+-  :adi:`ADGS1208`
+-  :adi:`ADGS1209`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADGS1408SDZ`
+-  :adi:`EVAL-ADGS1409SDZ`
+-  :adi:`EVAL-ADGS1208SDZ`
+-  :adi:`EVAL-ADGS1209SDZ`
+
+Overview
+--------
+
+The :adi:`ADGS1408`/:adi:`ADGS1409` contains an 8:1/dual 4:1 Multiplexers respectively. The SPI interface has robust error detection features such as cyclic redundancy check (CRC) error detection, invalid read/write address detection, and SCLK count error detection.
+
+It is possible to daisy-chain multiple :adi:`ADGS1408`/:adi:`ADGS1409` devices together. Daisy-chain mode enables the configuration of multiple devices with a minimal amount of digital lines. The :adi:`ADGS1408`/:adi:`ADGS1409` can also operate in burst mode to decrease the time between SPI commands.
+
+Each switch conducts equally well in both directions when on, and each switch has an input signal range that extends to the supplies.
+
+Product highlights
+------------------
+
+-  SPI interface removes the need for parallel conversion, logic traces and reduces GPIO channel count.
+-  Daisy-chain mode removes additional logic traces when multiple devices are used.
+-  CRC error detection, invalid read/write address detection, and SCLK count error detection ensures a robust digital interface.
+-  CRC and Error detection capabilities allows for the use of the ADGS1408/ADGS1409 in safety critical systems.
+-  Minimum distortion.
+
+No-OS Driver Description
+------------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Function                                                                                                        | Description                                         |
++=================================================================================================================+=====================================================+
+| ``uint8_t adgs1408_compute_crc8(uint8_t *data, uint8_t data_size)``                                             | Compute CRC8 checksum.                              |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_spi_reg_read(struct adgs1408_dev *dev, uint8_t reg_addr, uint8_t *reg_data)``                | SPI register read from device.                      |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_spi_reg_write(struct adgs1408_dev *dev, uint8_t reg_addr, uint8_t reg_data)``                | SPI register write to device.                       |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_spi_reg_write_mask(struct adgs1408_dev *dev, uint8_t reg_addr, uint8_t mask, uint8_t data)`` | SPI internal register write to device using a mask. |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_do_soft_reset(struct adgs1408_dev *dev)``                                                    | Do a software reset.                                |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_clear_err_flags(struct adgs1408_dev *dev)``                                                  | Clear the Error Flags Register.                     |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_enter_daisy_chain(struct adgs1408_dev *dev)``                                                | Enter Daisy-Chain Mode.                             |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_send_daisy_chain_cmds(struct adgs1408_dev *dev, uint8_t *cmds, uint8_t cmds_size)``          | Send Daisy-Chain commands.                          |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_enter_round_robin(struct adgs1408_dev *dev)``                                                | Enter Round Robin Mode.                             |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_configure_round_robin(struct adgs1408_dev *dev, uint8_t cnv_polarity)``                      | Configure Round Robin Mode.                         |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_exit_round_robin(struct adgs1408_dev *dev)``                                                 | Exit Round Robin Mode.                              |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_init(struct adgs1408_dev **device, struct adgs1408_init_param init_param)``                  | Initialize the device.                              |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t adgs1408_remove(struct adgs1408_dev *dev)``                                                           | Free the resources allocated by adgs1408_init().    |
++-----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------+
+
+
+| ``enum adgs1408_type {                              |
+
+|     ID_ADGS1408,                                    |
+|     ID_ADGS1409,                                    |
+| };                                                  |
+|                                                     |
+| enum adgs1408_state {                               |
+|     ADGS1408_ENABLE,                                |
+|     ADGS1408_DISABLE,                               |
+| };                                                  |
+|                                                     |
+| struct adgs1408_rrobin_config {                     |
+|     bool rrobin_sw1;                                |
+|     bool rrobin_sw2;                                |
+|     bool rrobin_sw3;                                |
+|     bool rrobin_sw4;                                |
+|     bool rrobin_sw5;                                |
+|     bool rrobin_sw6;                                |
+|     bool rrobin_sw7;                                |
+|     bool rrobin_sw8;                                |
+| };                                                  |
+|                                                     |
+| struct adgs1408_dev {                               |
+|     /* SPI */                                       |
+|     spi_desc    *spi_desc;                          |
+|     /* Device Settings */                           |
+|     enum adgs1408_state crc_en;                     |
+|     enum adgs1408_state burst_mode_en;              |
+|     enum adgs1408_state daisy_chain_en;             |
+|     enum adgs1408_state round_robin_en;             |
+|     struct adgs1408_rrobin_config rrobin_sw_config; |
+|     enum adgs1408_type act_device;                  |
+| };                                                  |
+|                                                     |
+| struct adgs1408_init_param {                        |
+|     /* SPI */                                       |
+|     spi_init_param  spi_init;                       |
+|     /* Device Settings */                           |
+|     enum adgs1408_state crc_en;                     |
+|     enum adgs1408_state burst_mode_en;              |
+|     enum adgs1408_state daisy_chain_en;             |
+|     enum adgs1408_state round_robin_en;             |
+|     struct adgs1408_rrobin_config rrobin_sw_config; |
+|     enum adgs1408_type act_device;                  |
+| };``                                                |
++-----------------------------------------------------+
+
+No-OS Downloads
+---------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |adgs1408 source and header files|
+
+.. |adgs1408 source and header files| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/mux/adgs1408`

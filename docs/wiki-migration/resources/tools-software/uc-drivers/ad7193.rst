@@ -1,0 +1,294 @@
+Supported devices
+=================
+
+-  :adi:`AD7190`
+-  :adi:`AD7192`
+-  :adi:`AD7193`
+-  :adi:`AD7194`
+-  :adi:`AD7195`
+
+Evaluation Boards
+=================
+
+-  :adi:`EVAL-AD7190`
+-  :adi:`EVAL-AD7192`
+-  :adi:`EVAL-AD7193`
+-  :adi:`EVAL-AD7194`
+-  :adi:`EVAL-AD7195`
+
+Overview
+========
+
+The AD719X family is composed of a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (Σ-Δ) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC.
+
+The on-chip channel sequencer allows several channels to be enabled simultaneously, and the AD719X sequentially converts on each enabled channel, simplifying communication with the part. The on-chip 4.92 MHz clock can be used as the clock source to the ADC or, alternatively, an external clock or crystal can be used. The output data rate from the part can be varied from 4.7 Hz to 4.8 kHz.
+
+The device has a very flexible digital filter, including a fast settling option. Variables such as output data rate and settling time are dependent on the option selected. The AD7193 also includes a zero latency option.
+
+:adi:`AD7190` operates with 5 V analog power supply and a digital power supply from 2.7 V to 5.25 V. It consumes a current of 6 mA. It is housed in a 24-lead TSSOP package.
+
+:adi:`AD7192` operates with a power supply from 3 V to 5.25 V. It consumes a current of 4.35 mA. It is housed in a 24-lead TSSOP package.
+
+:adi:`AD7193` operates with a power supply from 3 V to 5.25 V. It consumes a current of 4.65 mA, and it is available in a 28-lead TSSOP package and a 32-lead LFCSP package.
+
+:adi:`AD7194` operates with a power supply from 3 V to 5.25 V. It consumes a current of 4.65 mA, and it is housed in a 32-lead LFCSP package.
+
+:adi:`AD7195` operates with a 5 V analog power supply and a digital power supply from 2.7 V to 5.25 V. It consumes a current of 6 mA. It is housed in a 32-lead LFCSP package.
+
+Applications
+------------
+
+-  Weigh scales
+-  Strain gage transducers
+-  Pressure measurement
+-  Pressure measurement
+-  Temperature measurement
+-  Chromatography
+-  PLC/DCS analog input modules
+-  Data acquisition
+-  Medical and scientific instrumentation
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7192-fbl.png
+   :align: center
+   :width: 400px
+
+ADI No-OS
+=========
+
+The goal of ADI Microcontroller No-OS is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers** which can be used as a base for any microcontroller platform and also **example projects** which are using these drivers on various microcontroller platforms.
+
+For more information about ADI No-OS and supported microcontroller platforms see: :doc:`no-OS </wiki-migration/resources/no-os>`
+
+Driver Description
+==================
+
+The source code for AD719X driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of AD719X Driver|
+
+   -
+
+   |Implementation of AD719X Driver|
+
+The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+The driver contains three parts:
+
+-  The driver for the AD719X part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+-  The GPIO Driver, where the specific GPIO functions for the desired type of processor have to be implemented. This driver lets the device know when the conversions are ready, hiding the actual details of the GPIO ADI driver.
+
+The Communication and GPIO drivers have a standard interface, so the AD719X driver can be used exactly as it is provided.
+
+For SPI Communication there are three functions which are called by the AD719X driver:
+
+-  no_os_spi_init() – Initializes the communication peripheral.
+-  no_os_spi_write_and_read() - Reads and writes data from/to device.
+-  no_os_spi_remove() - Removes SPI device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+For GPIO control there are seven functions which are called by the AD719X driver:
+
+-  no_os_gpio_get() – Initializes GPIO peripheral.
+-  no_os_gpio_get_optional() - Initializes optional GPIO peripheral.
+-  no_os_gpio_direction_input() - Sets GPIO as input.
+-  no_os_gpio_direction_output - Sets GPIO as output
+-  no_os_gpio_get_value - Gets value of GPIO.
+-  no_os_gpio_set_value - Sets value of GPIO.
+-  no_os_gpio_remove - Removes GPIO peripheral.
+
+For SPI and GPIO usage there are four data types that have to be defined:
+
+-  no_os_spi_desc - structure holding the SPI descriptor
+-  no_os_spi_init_param - structure holding the parameters for SPI initialization
+-  no_os_gpio_desc - structure holding the GPIO descriptor
+-  no_os_gpio_init_param - structure holding the parameters for GPIO initialization
+
+AD719X Driver Code Documentation
+--------------------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+
+-  `AD719X Header file <http://analogdevicesinc.github.io/no-OS/ad719x_8h.html>`_
+-  `AD719X Source file <http://analogdevicesinc.github.io/no-OS/ad719x_8c.html>`_
+
+AD719X Device Configuration
+---------------------------
+
+Driver Initialization
+---------------------
+
+In order to be able to use the device, you will have to provide the initial parameters for the communication protocol as for the device - spi initial parameters, gpio MISO initial parameters, gpio SYNC initial parameters, polarity, gain, operating mode, data rate code, clock source, input mode, buffer option, bpdsw mode and chip id. The first API to be called is **ad719x_init**. Make sure that it returns 0, which means that the device was initialized correctly. **ad719x_init** also performs a soft reset, by calling **ad719x_reset**, in order to put the device in a known state.
+
+Range Configuration
+-------------------
+
+By calling **ad719x_range_setup**, driver sets polarity and gain of the device. Accepted values for gain:
+
+-  AD719X_ADC_GAIN_1
+-  AD719X_ADC_GAIN_8
+-  AD719X_ADC_GAIN_16
+-  AD719X_ADC_GAIN_32
+-  AD719X_ADC_GAIN_64
+-  AD719X_ADC_GAIN_128
+
+Filter Output Data Rate Configuration
+-------------------------------------
+
+By calling **ad719x_output_rate_select**, driver sets the filter output data rate. Accepted values are between 1 and 1023. The output data rate can be programmed from 4.7 Hz to 4800 Hz.
+
+Buffer Configuration
+--------------------
+
+By calling **ad719x_buffer_select**, driver sets the inputs as buffered or unbuffered.
+
+Clock Configuration
+-------------------
+
+By calling **ad719x_clock_select**, driver sets the clock source for the ADC. Accepted values:
+
+-  AD719X_EXT_CRYSTAL_MCLK1_MCLK2 - External crystal. The external crystal is connected from MCLK1 to MCLK2.
+-  AD719X_EXT_CRYSTAL_MCLK2 - External Clock applied to MCLK2.
+-  AD719X_INT_CLK_4_92_MHZ_TRIST - Internal 4.92 MHz clock. Pin MCLK2 is tristated.
+-  AD719X_INT_CLK_4_92_MHZ - Internal 4.92 MHz clock. The internal clock is available on MCLK2.
+
+Bridge Switch Configuration
+---------------------------
+
+By calling **ad719x_set_bridge_switch**, driver opens or closes the bridge power-down switch of the ADC.
+
+Operating Mode Configuration
+----------------------------
+
+By calling **ad719x_set_operating_mode**, driver sets ADC to the desired operation mode.
+
+**All the above configurations are done by ad719x_init, so no further configuration is needed.**
+
+Channel Calibration
+-------------------
+
+Channel calibration can be done calling **ad719x_calibrate** and providing desired channel and calibration type.
+
+AD719X Device Measurements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Operation Mode Setting
+----------------------
+
+After the specific configuration was performed as mentioned above, you can set the device in the desired measurement mode, using **ad719x_set_operating_mode** API. The available operation modes are:
+
+-  AD719X_MODE_CONT - Continuous Conversion Mode
+-  AD719X_MODE_SINGLE - Single Conversion Mode
+-  AD719X_MODE_IDLE - Idle Mode
+-  AD719X_MODE_PWRDN - Power-Down Mode
+-  AD719X_MODE_CAL_INT_ZERO - Internal Zero-Scale Calibration
+-  AD719X_MODE_CAL_INT_FULL - Internal Full-Scale Calibration
+-  AD719X_MODE_CAL_SYS_ZERO - System Zero-Scale Calibration
+-  AD719X_MODE_CAL_SYS_FULL - System Full-Scale Calibration
+
+Temperature Data
+----------------
+
+Temperature can be read using device's internal sensor. **ad719x_temperature_read** API will read and convert raw value into Celsius degrees.
+
+Single Conversion Data
+----------------------
+
+By using **ad719x_single_conversion** API, a single read of the enabled channels will occur.
+
+Continuous Conversion Data
+--------------------------
+
+By using **ad719x_continuous_read_avg** API, the device will read the specified number of samples and will store their average value.
+
+**For Single Conversion and Continuous Conversion Data, user can use ad719x_convert_to_volts API to transform raw value into Volts.**
+
+AD719X Driver Initialization Example on Xilinx Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   struct xil_spi_init_param spi_extra = {
+       .type = SPI_PS,
+       .flags = 0U
+   };
+   struct spi_init_param spi_ip = {
+       .device_id = SPI_DEVICE_ID,
+       .max_speed_hz = 1000,
+       .mode = SPI_MODE_3,
+       .chip_select = 0U,
+       .bit_order = SPI_BIT_ORDER_MSB_FIRST,
+       .platform_ops = &xil_spi_ops,
+       .extra = &spi_extra
+   };
+
+   const struct xil_gpio_init_param gpio_extra = {
+       .type = GPIO_PS,
+       .device_id = GPIO_DEVICE_ID
+   };
+   const struct gpio_init_param miso_ip = {
+       .number = RDY_PIN,
+       .platform_ops = &xil_gpio_ops,
+       .extra = &gpio_extra
+   };
+   const struct gpio_init_param sync_ip = {
+       .number = SYNC_PIN,
+       .platform_ops = &xil_gpio_ops,
+       .extra = &gpio_extra
+   };
+
+   /* Device AD719X instance. */
+   struct ad719x_dev *dev;
+   struct ad719x_init_param ad7190_dev_ip = {
+       .spi_init = &spi_ip,
+       .gpio_miso = &miso_ip,
+       .sync_pin = NULL,
+       .current_polarity = 1,
+       .current_gain = AD719X_ADC_GAIN_64,
+       .operating_mode = AD719X_MODE_SINGLE,
+       .data_rate_code = 480U,
+       .clock_source = AD719X_INT_CLK_4_92_MHZ,
+       .input_mode = 0,
+       .buffer = 0,
+       .bpdsw_mode = 0,
+       .chip_id = AD7190
+   };
+
+   ret = ad719x_init(&dev, ad7190_dev_ip);
+   if(ret)
+       return FAILURE;
+
+.. |Header file of AD719X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad719x/ad719x`.h
+.. |Implementation of AD719X Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/adc/ad719x/ad719x`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/no_os_spi_architecture.png
+   :width: 500px

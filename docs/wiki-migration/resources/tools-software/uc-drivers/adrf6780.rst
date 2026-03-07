@@ -1,0 +1,72 @@
+ADRF6780 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADRF6780`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADRF6780`
+
+Overview
+--------
+
+The :adi:`ADRF6780` is a silicon germanium (SiGe) design, wideband, microwave upconverter optimized for point to point microwave radio designs operating in the 5.9 GHz to 23.6 GHz frequency range. The upconverter offers two modes of frequency translation. The device is capable of direct conversion to radio frequency (RF) from baseband I/Q input signals, as well as single sideband (SSB) upconversion from a real intermediate frequency (IF) input carrier frequency. The baseband inputs are high impedance and are generally terminated off chip with 100 Ω differential back terminations. The baseband I/Q input path can be disabled and a modulated real IF signal anywhere from 0.8 GHz to 3.5 GHz can fed into the IF input path and upconverted to 5.9 GHz to 23.6 GHz while suppressing the unwanted sideband by typically better than 25 dBc. The serial port interface (SPI) allows tweaking of the quadrature phase adjustment to allow optimum sideband suppression. In addition, the SPI interface allows powering down the output power detector to reduce power consumption when power monitoring is not necessary. The :adi:`ADRF6780` upconverter comes in a compact, thermally enhanced, 5 mm × 5 mm LFCSP package. The :adi:`ADRF6780` operates over the −40°C to +85°C temperature range.
+
+Applications:
+
+-  Point to point microwave radios
+-  Radar, electronic warfare systems
+-  Instrumentation, automatic test equipment (ATE)
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADRF6780` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADRF6780` driver can be used exactly as it is provided.
+
+The Communication Drivers must include the SPI transmission methods.
+
+For the SPI method, the :adi:`ADRF6780` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADRF6780 Header file <http://analogdevicesinc.github.io/no-OS/adrf6780_8h.html>`_
+-  `ADRF6780 Source file <http://analogdevicesinc.github.io/no-OS/adrf6780_8c.html>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADRF6780 Driver.|
+
+   -
+
+   |Header file of ADRF6780 Driver.|
+
+.. |Implementation of ADRF6780 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adrf6780/adrf6780`.c
+.. |Header file of ADRF6780 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adrf6780/adrf6780`.h

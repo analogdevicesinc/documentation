@@ -1,0 +1,340 @@
+AD74xx - No-OS Driver for Microchip Microcontroller Platforms
+=============================================================
+
+.. include:: ../ad7476.rst
+
+**HW Platform(s):**
+
+-  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7476 DSPIC33 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7476_dspic33.zip>`_
+   -  `AD7476 chipKIT Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/ad7476_arduino.zip>`_
+   -  \**AD74xx Driver: \*\* :git-no-OS:`drivers/adc/ad74xx`
+   -  \**PmodAD1 Demo for PIC32MX320F128H: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/PmodAD1`
+   -  \**PIC32MX320F128H Common Drivers: \*\* :git-no-OS:`Microchip/PIC32MX320F128H/Common`
+   
+
+
+Digilent Cerebot MX3cK Quick Start Guide
+========================================
+
+This section contains a description of the steps required to run the AD7476 demonstration project on a Digilent Cerebot MX3cK platform.
+
+Required Hardware
+-----------------
+
+-  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  `PmodAD1 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
+
+Required Software
+-----------------
+
+-  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
+-  `MPLAB XC32 compiler <http://www.microchip.com/mplabxc>`_
+-  The AD7476 demonstration project for PIC32MX320F128H.
+
+.. note::
+
+   The AD7476 demonstration project for PIC32MX320F128H consists of three parts: the **AD74xx Driver**, the **PmodAD1 Demo for PIC32MX320F128H** and the **PIC32MX320F128H Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+Hardware Setup
+--------------
+
+A PmodAD1 has to be connected to the JE connector of Cerebot MX3cK development board in this particulary way:
+
+::
+
+   PmodAD1 J1 connector Pin CS  → Cerebot MX3cK JE connector Pin 1
+   PmodAD1 J1 connector Pin D0  → Cerebot MX3cK JE connector Pin 3
+   PmodAD1 J1 connector Pin CLK → Cerebot MX3cK JE connector Pin 4
+   PmodAD1 J1 connector Pin GND → Cerebot MX3cK JE connector Pin 5
+   PmodAD1 J1 connector Pin VCC → Cerebot MX3cK JE connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad1_pic32.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+   ..
+
+| \* The reference voltage for the AD7476 is 3.3V.
+   |
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of AD7476 reference project for Cerebot MX3cK board.
+
++-----------+-------------------------------------------------------------------------+
+| Command   | Description                                                             |
++===========+=========================================================================+
+| help?     | Displays all available commands.                                        |
++-----------+-------------------------------------------------------------------------+
+| voltage?  | Initiates a conversion and displays the voltage captured on A0 channel. |
++-----------+-------------------------------------------------------------------------+
+| register? | Initiates a conversion and displays the value from the register.        |
++-----------+-------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART1 peripheral of PIC32MX320F128H.
+
+The following image shows a generic list of commands in a serial terminal connected to processor’s UART peripheral.
+
+
+|image1|
+
+Software Project Setup
+----------------------
+
+This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Run the **MPLAB X** integrated development environment.
+-  Choose to create a new project.
+-  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
+   :align: center
+
+-  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
+   :align: center
+
+-  In the **Select Tool** window select the desired hardware tool and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
+   :align: center
+
+-  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
+   :align: center
+
+-  In the **Select Project Name and Folder** window choose a name and a location for the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
+   :align: center
+
+-  After the project is created, all the downloaded source files have to be copied in the project folder and included in the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
+   :align: center
+
+-  The project is ready to be built and downloaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
+   :align: center
+
+
+Digilent Cerebot MC7 Quick Start Guide
+======================================
+
+This section contains a description of the steps required to run the AD7476 demonstration project on a Digilent Cerebot MC7 platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Cerebot MC7 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MC7>`_
+-  `PmodAD1 (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `MPLAB X Integrated Development Environment <http://www.microchip.com/mplabx>`_
+-  `MPLAB XC16 compiler <http://www.microchip.com/mplabxc>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+A PmodAD1 has to be connected to the JB connector of Cerebot MC7 development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad1_dspic33.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+Following commands were implemented in this version of AD7476 reference project for Cerebot MC7 board.
+
++-----------+---------------------------------------------------------------------+
+| Command   | Description                                                         |
++===========+=====================================================================+
+| help?     | Displays all available commands.                                    |
++-----------+---------------------------------------------------------------------+
+| voltage?  | Initiates a conversion and displays the captured voltage.           |
++-----------+---------------------------------------------------------------------+
+| register? | Initiates a conversion and displays the raw data in decimal format. |
++-----------+---------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART1 peripheral of dsPIC33FJ128MC706A.
+
+The following image shows a list of commands in a serial terminal connected to processor’s UART peripheral.
+
+
+|image2|
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Run the **MPLAB X** integrated development environment.
+-  Choose to create a new project.
+-  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
+   :align: center
+
+-  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
+   :align: center
+
+-  In the **Select Tool** window select the desired hardware tool and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
+   :align: center
+
+-  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
+   :align: center
+
+-  In the **Select Project Name and Folder** window choose a name and a location for the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
+   :align: center
+
+-  After the project is created, the source files have to be copied in the project folder and included in the project.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
+   :align: center
+
+-  The project is ready to be built and downloaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
+   :align: center
+
+
+Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
+==========================================================
+
+This section contains a description of the steps required to run the AD7476 chipKIT demonstration project on a Digilent Cerebot MX3cK platform.
+
+.. _required-hardware-2:
+
+Required Hardware
+-----------------
+
+-  `Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+-  PmodAD1
+
+.. _required-software-2:
+
+Required Software
+-----------------
+
+-  `MPIDE <https://github.com/chipKIT32/chipKIT32-MAX/downloads>`_
+
+.. _hardware-setup-2:
+
+Hardware Setup
+--------------
+
+A PmodAD1 has to be connected to the JE connector of Cerebot MX3cK development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad1_pic32_arduino.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+--------------------------
+
+Following commands were implemented in this version of AD7476 chipKIT reference project for Cerebot MX3cK board.
+
++-----------+---------------------------------------------------------------------+
+| Command   | Description                                                         |
++===========+=====================================================================+
+| help?     | Displays all available commands.                                    |
++-----------+---------------------------------------------------------------------+
+| voltage?  | Initiates a conversion and displays the captured voltage.           |
++-----------+---------------------------------------------------------------------+
+| register? | Initiates a conversion and displays the raw data in decimal format. |
++-----------+---------------------------------------------------------------------+
+
+Commands can be executed using the serial monitor.
+
+**Carriage return** has to be selected as a line ending character. The required baud rate is **9600 baud**.
+
+The following image shows a list of commands in the serial monitor.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_arduino.png
+   :align: center
+
+.. _software-project-setup-2:
+
+Software Project Setup
+----------------------
+
+This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
+
+-  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
+-  Unzip the downloaded file in the libraries folder.
+-  Run the **MPIDE** environment.
+-  You should see the new library under **Sketch->Import Library**, under **Contributed**.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_1.png
+   :align: center
+
+-  Also you should see under **File->Examples** the demo project for the ADI library.
+-  Select the ADIDriver example.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_2.png
+   :align: center
+
+-  Select the **Cerebot MX3cK** board from **Tools->Board**.
+-  Select the corresponding Serial Communication Port from **Tools->Serial Port**
+-  The project is ready to be uploaded on the development board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
+   :align: center
+
+
+More information
+================
+
+-  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
+.. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

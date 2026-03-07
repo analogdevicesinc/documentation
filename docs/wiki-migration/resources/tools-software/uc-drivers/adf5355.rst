@@ -1,0 +1,79 @@
+ADF5355 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF5355`
+-  :adi:`ADF5356`
+-  :adi:`ADF4355`
+-  :adi:`ADF4355-2`
+-  :adi:`ADF4355-3`
+
+Overview
+--------
+
+The :adi:`ADF5355` is a Microwave Wideband Synthesizer with Integrated VCO that allows implementation of fractional-N or integer-N phase-locked loop (PLL) frequency synthesizers when used with an external loop filter and an external reference frequency. The wideband microwave VCO design permits frequency operation from 6.8 GHz to 13.6 GHz at one radio frequency (RF) output. A series of frequency dividers at another frequency output permits operation from 54 MHz to 6800 MHz.
+
+The :adi:`ADF5355` has an integrated VCO with a fundamental output frequency ranging from 3400 MHz to 6800 MHz. In addition, the VCO frequency is connected to divide by 1, 2, 4, 8, 16, 32, or 64 circuits that allow the user to generate RF output frequencies as low as 54 MHz. For applications that require isolation, the RF output stage can be muted. The mute function is both pin and software controllable.
+
+Control of all on-chip registers is through a simple 3-wire interface.The :adi:`ADF5355` operates with analog and digital power supplies ranging from 3.15 V to 3.45 V, with charge pump and VCO supplies from 4.75 V to 5.25 V. The ADF5355 also contains hardware and software power-down modes.
+
+Applications:
+
+-  Wireless infrastructure (W-CDMA, TD-SCDMA, WiMAX, GSM, PCS, DCS, DECT)
+-  Point to point/point to multipoint microwave linksSatellites/ VS ATs
+-  Test equipment/instrumentation
+-  Clock generation
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`ADF5355` part, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`ADF5355` driver can be used exactly as it is provided.
+
+The Communication Drivers must include the SPI transmission methods.
+
+For the SPI method, the :adi:`ADF5355` driver calls three functions:
+
+-  spi_init() - initializes the SPI communication peripheral.
+-  spi_remove() – frees memory allocated by the SPI communication driver.
+-  spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available at:
+
+-  `ADF5355 Header file <http://analogdevicesinc.github.io/no-OS/adf5355_8h.html>`_
+-  `ADF5355 Source file <http://analogdevicesinc.github.io/no-OS/adf5355_8c.html>`_
+
+Initialization example
+----------------------
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of ADF5355 Driver.|
+
+   -
+
+   |Header file of ADF5355 Driver.|
+
+.. |Implementation of ADF5355 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5355/adf5355`.c
+.. |Header file of ADF5355 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/adf5355/adf5355`.h

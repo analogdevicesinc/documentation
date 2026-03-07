@@ -1,0 +1,131 @@
+EVAL-CN0509-EBZ Overview
+========================
+
+:adi:`CN0509` is a wide input range (5V to 100V) USB charger capable of providing up to 2A at 5V from a wide range of DC sources including solar panels, fully charged or half-discharged car batteries, -48V telecom backup supplies, random stacks of alkaline cells, treadmill motors hacked to run as generators, wind turbines, etc. using the combination of wide input :adi:`LTC7103` buck converter and an isolated flyback converter :adi:`LT8302`. The circuit accepts DC voltage from 5V to 100V and produce an isolated 5V supply via a standard USB connector. The outer case of many cell phones and other portable electronics are often electrically connected to USB ground. As such, isolation is necessary in situations in which the power source’s relationship to Earth ground is unknown.
+
+The circuit will survive up to 100V reverse connection to a power source with a green LED indicating correct input polarity and red led otherwise.
+
+| |image1|
+| ----
+
+Features
+--------
+
+-  Allows wide input range of 5V to 100V
+-  Provides isolated and regulated 5V output
+-  Provides up to 2A output current
+-  Two USB output ports for convenience
+
+Documents Needed
+----------------
+
+-  :adi:`CN0509` Circuit Note
+
+Equipment Required
+------------------
+
+-  EVAL-CN0509-EBZ Circuit Evaluation Board
+-  DC power supply (any voltage, 5 V to 100 V)
+
+   -  Solar panels, fully charged or half-discharged car batteries, -48V telecom backup supplies, random stacks of alkaline cells, treadmill motors hacked to run as generators, wind turbines
+
+-  USB multimeter tester (or equivalent)
+-  USB Type A to Micro-USB/Type C/Lightning cable
+-  A device with USB charging capability (cell phone, tablet, or portable power pack) and a USB charging cable for the device
+
+| 
+| ----
+
+Block Assignments
+-----------------
+
+| |image2|
+| \* Connector **P1** is the screw terminal block for input supply
+
+-  Connector **P2** is the USB output connectors for the load
+-  Test point **TP1** is the LTC7103 output voltage programming pin VPRG2. This pin is left floating to program the chip to have 12 V fixed output voltage.
+-  Test point **PGOOD** is the LTC7103 Open-Drain Power Good Output pin
+-  Test point **CLKOUT** is the LTC7103 Output clock signal pin
+-  Test point **IMON** is the LTC7103 Average Output Current Monitor pin. This pin generates a voltage between 0.4V and 1.3V that corresponds to an average output current between 0A and 2.5A.
+-  Test point **ICTRL** is the LTC7103 ICTRL pin that programs the average output current in constant current mode. This is left floating to set the average output current to 2.5A and the peak current limit to 3.7A
+-  Test point **TP6** is the voltage input to the LTC7103
+-  Test point **12V** is the 12V output voltage of the LTC7103
+-  Test point **GND1** is the ground relative to input supply
+-  Test point **VBUS** is the USB VBUS voltage which typically carries 5V
+-  Test point **D-** is the USB data+ signal
+-  Test point **D+** is the USB data- signal
+-  Test point **GND** is the isolated ground relative to output
+
+| 
+| ==== USB Output Connectors ==== |image3|
+
+-  Bottom receptacle (1) includes a USB Dedicated Charging Port (DCP) controller that enables up to 2A charging on devices from various manufacturers
+-  Top receptacle (2) is for general-purpose charging rated up to 500mA
+
+| 
+| ----
+
+Test setup
+~~~~~~~~~~
+
+| |image4|
+| \* Connect the input DC supply to P1 on :adi:`EVAL-CN0509-EBZ <CN0509>`. Ensure safe connection because it may deal with input voltages up to 100 V.
+
+| 
+| ==== Running the System ====
+
+-  Turn on DC supply.
+-  The circuit will determine if input connection is in correct polarity through lighting DS1 or DS2.
+
+   -   If DS1 (green LED) turns on, this means correct polarity on the input and circuit delivers up to 10W on P2 USB output ports.
+
+      -  If DS2 (red LED) illuminates, turn off the input supply, disconnect the power inputs, swap the power leads, and reconnect the supply outputs to P1.
+
+-  Connect the USB multimeter tester to the lower USB port on the EVAL-CN0509-EBZ.
+-  Connect a fast charge capable device to the USB multimeter tester using the charging cable of the device.
+-  You can check the USB multimeter tester and see if the device is pulling more than 500 mA but less than 2 A.
+-  Connect the USB multimeter tester to the upper USB port on the EVAL-CN0509-EBZ.
+-  You can check the USB multimeter tester and see if the device is pulling approximately 500 mA.
+-  Take note that each device has its own "charge controller circuitry" that might limit the charging current if the voltage on the load goes below a certain level. Shown below is the maximum charging current on P2 lower port that CN0509 can provide given that the output voltage to the load is greater than 5V.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/max_curr.png
+   :align: center
+   :width: 200px
+
+| 
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0509 Circuit Note Page <CN0509>`
+-  :adi:`LTC7103 Product Page <LTC7103>`
+-  :adi:`LT8302 Product Page <LT8302>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0509-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0509-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro project
+   -  LTSpice Simulations
+   
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/picture1.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/block_dia.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/usb_stack.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0509/setup_2.png
+   :width: 850px

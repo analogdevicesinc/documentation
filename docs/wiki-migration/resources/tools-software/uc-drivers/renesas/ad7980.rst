@@ -1,0 +1,225 @@
+AD7980 - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7980.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7980 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7980_generic.zip>`_
+   -  `AD7980 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7980_rl78g13.zip>`_
+   -  `AD7980 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7980_rx62n.zip>`_
+   -  \**AD7980 Driver: \*\* :git-no-OS:`drivers/adc/ad7980`
+   -  \*\*\ :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>` Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD4`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7980 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+A :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>` has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad4_rl78g13.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+   ..
+
+| \* If you want to use AVDD > DVDD (= 3.3V) then JP3 on PmodAD4 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.5V.
+   |
+
+Reference Project Overview
+--------------------------
+
+The reference project:
+
+-  samples the input voltage;
+-  displays the value on the LCD (in hexa, decimal and volts).
+
+.. important::
+
+   
+   -  The reference voltage for the AD7980 is 2.5V.
+   -  If you want to use another reference voltage, you will need to modify the vRef parameter in ‘AD7980_ConvertToVolts()’ function from ‘PmodAD4.c’. The range for VREF is 2.4V ≤ VREF ≤ 5.1V.
+   
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad4_rl78g13_screen.jpg
+   :align: center
+   :width: 200px
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7980 demonstration project on a Renesas RL78G14 platform using the :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>`.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
+-  :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  The AD7980 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The AD7980 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD7980 Driver**, the :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>` **Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+A :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>` has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad4_rl78g14.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+   ..
+
+| \* If you want to use AVDD > DVDD (= 3.3V) then JP3 on PmodAD4 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.5V.
+   |
+
+The reference project:
+
+-  samples the input voltage;
+-  displays the value on the LCD (in hexa, decimal and volts).
+
+.. important::
+
+   
+   -  The reference voltage for the AD7980 is 2.5V.
+   -  If you want to use another reference voltage, you will need to modify the vRef parameter in ‘AD7980_ConvertToVolts()’ function from ‘PmodAD4.c’. The range for VREF is 2.4V ≤ VREF ≤ 5.1V.
+   
+
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad4_rl78g14_screen.jpg
+   :align: center
+
+.. _software-project-tutorial-1:
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7980 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-2:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>`
+
+.. _required-software-2:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-2:
+
+Hardware Setup
+--------------
+
+A :adi:`EVAL-AD7980-PMDZ <PulsarPMODs>` has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     PmodAD4 Pin 1 (CS)   → YRDKRX62N J8 connector Pin 15
+     PmodAD4 Pin 2 (MOSI) → YRDKRX62N J8 connector Pin 19
+     PmodAD4 Pin 3 (MISO) → YRDKRX62N J8 connector Pin 22
+     PmodAD4 Pin 4 (CLK)  → YRDKRX62N J8 connector Pin 20
+     PmodAD4 Pin 5 (GND)  → YRDKRX62N J8 connector Pin 4
+     PmodAD4 Pin 6 (VCC)  → YRDKRX62N J8 connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad4_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project initiates conversions and reads the captured data from the AD7980.
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+.. include:: ../more-information.rst

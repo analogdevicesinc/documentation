@@ -1,0 +1,186 @@
+AD7134 No-OS Software
+=====================
+
+Introduction
+------------
+
+This document describes the **No-OS** software used to control the :adi:`AD7134` and :adi:`AD4134` parts and includes an example of how to initialize a :adi:`AD7134` part.
+
+Overview
+--------
+
+The :adi:`AD7134`/:adi:`AD4134` 24-bit, 4-channel simultaneous sampling 1.5MSPS, precision, alias free ADC. It contains a continuous time Σ-Δ modulation technology that does not use sample-and-hold circuitry to alleviate the side effects introduced by it, like charge kickback and signal aliasing. This inherent alias rejection is up to 100dB.
+
+The device has an asynchronous sample rate converter used to synchronize two or more devices using only a signal line. To do this one of the devices will generate the synchronization signal while the others will receive it. This also allows for freely programmable data rates from 10SPS up to 1.496MSPS.
+
+It has excellent AC and DC performance with 107dB dynamic for the FIR filter at 374kSPS and 138dB dynamic range for the sinc3 filter at 10SPS. The offset drift is 1.5uV/°C, gain drift of 2ppm/°C and INL of ±2.5ppm.
+
+It can be powered from a 4.5V to 5.5V power supply and a 1.65V to 1.95V digital power supply for 1.8V I/O level. It can have external voltage reference of 2.5V, 4.096V and 5V and a crystal or CMOS external clock of 48MHz. The device can be configured and controlled by GPIOs or SPI. It has temperature operating range between 0°C and 85°C.
+
+Applications:
+
+-  Electrical test and measurement;
+-  Audio test;
+-  3-phase power quality analysis;
+-  Control and hardware in loop verification;
+-  Sonar;
+-  Condition and monitoring for predictive maintenance;
+-  Acoustic and material science research and development.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7134`
+-  :adi:`AD4134`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7134FMCZ`
+
+Driver Description
+------------------
+
+The driver itself is generic and can be used with any controller, but the controller must implement the serial communication and the GPIO control. These platform drivers are the connection between the driver and the hardware and hide the actual details of the communication protocol from the ADI driver. The platform drivers functions called by the AD7134 driver are:
+
+-  spi_init() - initialize the controller's SPI peripheral.
+-  spi_remove() - free the memory allocated by spi_init().
+-  spi_write_and_read() - do a SPI transmission.
+-  gpio_get_optional() - initialize a GPIO if it's ID is provided.
+-  gpio_remove() - free memory allocated by gpio_get_optional().
+-  gpio_direction_output() - set GPIO as digital output and set the output level.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI platform driver architecture
+
+
+The AD7134 driver contains the following:
+
+-  AD714.h - Header file of the driver. Contains the driver function declarations, custom data types to be used by the driver and driver specific constants.
+-  AD7134.c - Implementation file of the driver. Contains the implementations of the driver functions.
+
+The following functions are implemented as API in this version of AD7134 driver:
+
++-----------------------------------------------------------------+-----------------------------------------------------+
+| Function                                                        | Description                                         |
++=================================================================+=====================================================+
+| ``int32_t ad713x_spi_reg_read(struct ad713x_dev *dev,           | Read from device.                                   |
+|        uint8_t reg_addr,                                        |                                                     |
+|        uint8_t *reg_data)``                                     |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_spi_reg_write(struct ad713x_dev *dev,          | Write to device.                                    |
+|         uint8_t reg_addr,                                       |                                                     |
+|         uint8_t reg_data)``                                     |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_spi_write_mask(struct ad713x_dev *dev,         | SPI write to device using a mask.                   |
+|         uint8_t reg_addr,                                       |                                                     |
+|         uint32_t mask,                                          |                                                     |
+|         uint8_t data)``                                         |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_set_power_mode(struct ad713x_dev *dev,         | Device power mode control.                          |
+|         enum ad713x_power_mode mode)``                          |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_set_out_data_frame(struct ad713x_dev *dev,     | ADC conversion data output frame control.           |
+|         enum ad713x_adc_data_len adc_data_len,                  |                                                     |
+|         enum ad713x_crc_header crc_header)``                    |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_dout_format_config(struct ad713x_dev *dev,     | DOUTx output format configuration.                  |
+|         enum ad713x_doutx_format format)``                      |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_mag_phase_clk_delay(struct ad713x_dev *dev,    | Magnitude and phase at 2 clock delay.               |
+|         bool clk_delay_en)``                                    |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_dig_filter_sel_ch(struct ad713x_dev *dev,      | Digital filter type selection for each channel.     |
+|         enum ad713x_dig_filter_sel filter,                      |                                                     |
+|         enum ad713x_channels ch)``                              |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_clkout_output_en(struct ad713x_dev *dev,       | Enable/Disable CLKOUT output.                       |
+|         bool enable)``                                          |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_ref_gain_correction_en(struct ad713x_dev *dev, | Enable/Disable reference gain correction.           |
+|         bool enable)``                                          |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_wideband_bw_sel(struct ad713x_dev *dev,        | Select the wideband filter bandwidth for a channel. |
+|         enum ad713x_channels ch,                                |                                                     |
+|         uint8_t wb_opt)``                                       |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_init(struct ad713x_dev **device,               | Initialize the device.                              |
+|         struct ad713x_init_param *init_param)``                 |                                                     |
++-----------------------------------------------------------------+-----------------------------------------------------+
+| ``int32_t ad713x_remove(struct ad713x_dev *dev)``               | Free the resources allocated by ad713x_init().      |
++-----------------------------------------------------------------+-----------------------------------------------------+
+
+The driver has to be instantiated by using an initialization structure with the following composition:
+
+.. code:: c
+
+   /**
+     * @struct ad713x_init_param
+     * @brief AD713x driver initialization structure
+    */
+   struct ad713x_init_param {
+       /** SPI layer initialization structure. */
+       struct spi_init_param spi_init_prm;
+       /** MODE GPIO initialization structure. */
+       struct gpio_init_param *gpio_mode;
+       /** DCLKMODE GPIO initialization structure. */
+       struct gpio_init_param *gpio_dclkmode;
+       /** DCLKIO GPIO initialization structure. */
+       struct gpio_init_param *gpio_dclkio;
+       /** RESET GPIO initialization structure. */
+       struct gpio_init_param *gpio_resetn;
+       /** PDN GPIO initialization structure. */
+       struct gpio_init_param *gpio_pnd;
+       /** MODE GPIO starting value */
+       bool mode_master_nslave;
+       /** DCLKMODE GPIO starting value */
+       bool dclkmode_free_ngated;
+       /** DCLKIO GPIO starting value */
+       bool dclkio_out_nin;
+       /** PDN GPIO starting value */
+       bool pnd;
+       /** ID of supported device. */
+       enum ad713x_supported_dev_ids dev_id;
+       /** Length of data in bits. */
+       enum ad713x_adc_data_len    adc_data_len;
+       /** CRC option. */
+       enum ad713x_crc_header  crc_header;
+       enum ad713x_doutx_format    format;
+       /** Clock delay state. */
+       bool            clk_delay_en;
+       /** SPI layer handler if the SPI bus is shared with another device. In this
+        *  case the SPI should not be initialized again. */
+       struct spi_desc *spi_common_dev;
+   };
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  :git-no-OS:`AD7134/AD4134 driver <drivers/adc/ad713x>`
+   -  :git-no-OS:`Supported platform drivers <drivers/platform>`
+   -  :git-no-OS:`Platform includes <include>`
+   
+
+
+Using the API
+-------------
+
+The following link shows an example of using the driver with two devices working in tandem with a Xilinx platform: :git-no-OS:`projects/ad713x_fmcz/src/ad713x_fmc`.c
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7134_platform_drv.png

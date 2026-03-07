@@ -1,0 +1,292 @@
+CN-0393 Evaluation Board and Software User Guide
+================================================
+
+Overview
+--------
+
+:adi:`CN0393` is a two-channel bank-isolated data acquisition (DAQ) system, with a multi-ADC simultaneous sampling architecture. The system achieves high channel density and isolation between the bank and the digital backplane while maintaining exceptional performance. The design also makes efficient use of isolation channels by configuring the analog-to-digital converters (:adi:`ADAQ7988`) in daisy-chain mode and utilizing an isolator product with trimmed delay clock feature(:adi:`ADuM3150`). Power generation is also simplified using an isolator with an integrated PWM controller and transformer driver to perform dc-to-dc conversion across the isolation barrier (:adi:`ADuM3470`). Each DAQ channel features programmable gain instrumentation amplifiers (:adi:`AD8251`) for channel-independent gain setting and high-input impedance for easy interfacing with a variety of sensors and input sources.
+
+The multi-ADC simultaneous sampling architecture achieves many channels without sample rate limitations inherent in multiplexed DAQ signal chains. The analog front-end (AFE) design is also simpler than the multiplexed option, because the system’s dynamic requirements are less strict. Each channel’s corresponding samples also occur at the same time, while sequential sampling systems do not. Digital bank-isolated DAQ designs provide protection for digital backend circuitry and reduce ground loop and common mode interference between banks. They feature multiple DAQ signal chains per ground plane, and can be implemented with fewer digital isolation devices than channel-to-channel isolated systems.
+
+This user guide will discuss how to operate the :adi:`EVAL-CN0393-FMCZ <CN0393>` (CN-0393 Evaluation Hardware), the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` (SDP-H1) and the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. A complete design support package for the CN-0393 evaluation material containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0393-DesignSupport`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_figure_1.png
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0393-FMCZ <CN0393>` circuit evaluation board
+-  :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` SDP-H1 controller board
+-  `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_
+-  +12 V dc switched mode power supply
+-  PC with a USB port and Windows® XP, Windows Vista® (32-bit), or Windows 7, 8 or 10 (32-bit) with .NET 4.0 framework installed (included in installation of SDP Drivers)
+-  USB type A to USB type mini-B cable
+-  Low distortion, low noise signal source(s)
+
+Getting Started
+---------------
+
+The :adi:`EVAL-CN0393-FMCZ <CN0393>` has a 160-pin FMC connector to interface with a digital host. The SDP-H1 board (:adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>`) can be used with the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ to interface with the :adi:`CN0393` hardware (gather conversion results, control gain settings, etc.). It is recommended to install the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ before connecting/setting up the hardware. See **Installing the CN-0393 Evaluation Software** for instructions for installing the evaluation software and required drivers for the SDP-H1.
+
+The :adi:`CN0393` evaluation hardware features an isolation trench that separates two ground planes. When using the hardware (connecting signal generators, scope probes, etc.) be careful that the correct grounds are used and are not connected together. The :adi:`CN-0393 Circuit Note <media/en/reference-design-documentation/reference-designs/CN0345.pdf>` contains detailed information about the hardware.
+
+See **Hardware Setup** for instructions for connecting the :adi:`EVAL-CN0393-FMCZ <CN0393>` and :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` boards together and to the PC.
+
+Installing the CN-0393 Evaluation Software
+------------------------------------------
+
+-  Download the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_, unzip the **CN0393 Evaluation Software.zip** folder and run **setup.exe**. The installation wizard will open.
+-  The destination directory window will open, with a default installation destination for the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. If a different destination is desired, it can be selected here. When the destination directory is selected, press **Next**. // |image1| //
+-  The installation review window will appear. Press **Next** to begin installing the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_. (The installation progress window will then appear.) // |image2| //
+
+|image3|
+
+-  Upon completion of the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ installation, a notification window will appear. Click **Next** to initiate the installation of the **ADI SDP Drivers** (version 2.2.118.111). // |image4| //
+-  The **ADI SDP Drivers** installation wizard will appear. Press **Next** and then **Install** to begin the installation. (An installation progress window will then appear.) // |image5| //
+
+|image6|
+
+-  When the **ADI SDP Drivers** installation is complete, press **Close** to close the installation wizard. The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ is now installed.
+
+Hardware Setup
+--------------
+
+-  Before connecting the hardware, install the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ (see **Installing the CN-0393 Evaluation Software**).
+-  Connect P1 on the :adi:`EVAL-CN0393-FMCZ <CN0393>` board to J4 on the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` (SDP-H1) board (the 160-pin FMC connector) before applying power.
+-  After connecting the :adi:`EVAL-CN0393-FMCZ <CN0393>` and :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` boards, connect the +12 V switched mode power supply to the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` board (via the +12V_VIN jack). Power is supplied to the :adi:`EVAL-CN0393-FMCZ <CN0393>` hardware via the FMC connector, but is not activated until the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ runs and configures the hardware.
+-  Connect the hardware to the PC via the USB cable. If the **ADI SDP Drivers** are already installed, the connection to the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` (SDP-H1) board can be verified by checking Device Manager (appears under ADI Development Tools).
+
+Using the Evaluation Software
+-----------------------------
+
+The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ interfaces with the :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` and :adi:`EVAL-CN0393-FMCZ <CN0393>` hardware. It can be used to connect to the hardware, configure the channel gains and execute conversions to evaluate the CN-0393 reference design. The front panel and various tab controls provide access to key system parameters and controls for collecting, processing, and viewing results. Waveform, histogram, and FFT plots are included for quick time- and frequency-domain analysis.
+
+The software also allows for standalone operation without the hardware connected. In this mode, the software can load previously saved results for analysis and viewing.
+
+Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ GUI includes various controls and indicators, as well as tabs that organize the configuration parameters and different analysis windows. The following is a description of these items, organized by tab location.
+
+Front Panel and Configure Tab
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393configuretab.png
+   :align: center
+   :width: 800px
+
+-  **Single Capture**: Performs a single set of conversions with the CN-0393 hardware. A set contains the number of samples indicated by **Num Samples** for each channel.
+-  **Continuous Capture**: Performs reported sets of conversions with the CN-0393 hardware. Each set contains the number of samples indicated by **Num Samples** for each channel.
+-  **Num Samples**: Sets the number of conversions that will be performed for each channel on the CN-0393 hardware when **Single Capture** or **Continuous Capture** is pressed.
+-  **Status**: Displays status information of the software, i.e. which operation is being performed, version information, etc.
+-  **Busy Indicator**: Displays a busy signal if the software is currently performing operations.
+-  **Configure Tab**: Shows CN-0393 configuration settings and simplified block diagram.
+-  **Waveform Tab**: Shows time-domain results from the CN-0393 hardware.
+-  **Histogram Tab**: Shows histogram results from the CN-0393 hardware.
+-  **FFT Tab**: Shows frequency-domain results from the CN-0393 hardware.
+-  **Summary Tab**: Shows summary of results from the CN-0393 hardware.
+-  **Reference Voltage (V)**: Set to the reference voltage being used on the hardware. This value is used to calculate the various analysis items in the **Waveform**, **Histogram**, **FFT**, and **Summary** tabs. When this value is changed, it will update the analysis items and input range indicators for each channel; however, it does **not** change the reference being used on the board. As such, users should take care to make sure this control matches the actual reference voltage used on-board. The CN-0393 hardware is set to 5 V by default (using the :adi:`ADR4550`.
+-  **Sampling Rate (kSPS)**: Set to the desired sample rate to be used on the CN-0393 hardware, in kSPS. The maximum sample rate is 500 kSPS.
+-  **SCK Freq (MHz)**: Set to the desired SCK frequency to be used on the CN-0393 hardware, in MHz. The maximum SCK frequency is 40 MHz.
+-  **CA Gain**: Sets the gain of Channel A on the CN-0393 hardware.
+-  **CB Gain**: Sets the gain of Channel B on the CN-0393 hardware.
+-  **CA Input Range**: Displays the current input range of Channel A on the CN-0393 hardware. This value is determined by the Channel A gain setting (**CA Gain**) and **Reference Voltage (V)**.
+-  **CB Input Range**: Displays the current input range of Channel B on the CN-0393 hardware. This value is determined by the Channel B gain setting (**CB Gain**) and **Reference Voltage (V)**.
+-  **Flash LED**: Flashes the STATUS LED on the SDP-H1 board.
+
+Waveform Tab
+^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_waveformtab.png
+   :align: center
+   :width: 800px
+
+-  **Waveform**: Displays time-domain results from the CN-0393 hardware. The axes units can be changed with the axes setting selectors on the right side of the **Waveform Tab**.
+-  **Codes Selector**: Sets the **Waveform** plot’s y-axis units to codes. The **Waveform** plot displays the output codes of the two channels’ ADAQ7988’s when this box is selected.
+-  **Volts Selector**: Sets the **Waveform** plot’s y-axis units to volts. The software calculates the voltage at the input two the two channels based on the value of the **Reference Voltage (V)** control and channel gain settings (**CA Gain** and **CB Gain**) in the **Configure Tab**. The **Waveform** plot displays the input voltage of the two channels when this box is selected.
+-  **Samples Selector**: Sets the **Waveform** plot’s x-axis units to samples. The **Waveform** plot displays the sample number when this box is selected. Sample 0 corresponds to the first sample taken in the set of samples.
+-  **Time Selector**: Sets the **Waveform** plot’s x-axis units to time (in μs). The software calculates the time value of each sample based on the sample rate. Time 0 corresponds to the first sample taken in the set of samples.
+-  **Waveform Analysis Tab**: Displays waveform analysis items for both channels.
+-  **Pk-pk Amplitude (V and LSB)**: Displays the peak-to-peak amplitude of the input waveform.
+-  **Max Amplitude (V and LSB)**: Displays the maximum voltage of the waveform, and its corresponding output code.
+-  **Min Amplitude (V and LSB)**: Displays the minimum voltage of the waveform, and its corresponding output code.
+-  **Mean (V and LSB)**: Displays the mean voltage of the waveform, and its corresponding output code.
+-  **Standard Deviation (V and LSB)**: Displays the standard deviation of the waveform.
+-  **Frequency**: Displays the fundamental frequency of the waveform.
+
+Histogram Tab
+^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393histogramtab.png
+   :align: center
+   :width: 800px
+
+-  **Histogram**: Displays histogram results from the CN-0393 hardware. The y-axis represents the number of occurrences of the output codes on the x-axis in the captured set of samples.
+-  **Histogram Analysis**: Displays histogram analysis items for both channels.
+-  **Max Code (V and LSB)**: Displays the maximum output code of the results, and its corresponding calculated input voltage.
+-  **Min Code (V and LSB)**: Displays the minimum output code of the results, and its corresponding calculated input voltage.
+-  **Mean Code (V and LSB)**: Displays the mean code of the results, and its corresponding input voltage.
+-  **Transition Noise (V and LSB)**: Displays the transition noise of the results.
+-  **Pk-pk Amplitude (V and LSB)**: Displays the peak-to-peak amplitude of the results.
+-  **RMS**: Displays the root-mean-square voltage of the results.
+-  **LSB**: Displays the equivalent voltage change at the channel’s input that should result in a code change of 1 bit. This is a function of the **Reference Voltage (V)** in use as well as the channel’s gain settings (**CA Gain** and **CB Gain**).
+-  **Histogram Width**: Displays the width of the histogram.
+
+FFT Tab
+^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393ffttab.png
+   :align: center
+   :width: 800px
+
+-  **FFT**: Displays frequency-domain results from the CN-0393 hardware.
+-  **FFT Analysis**: Displays frequency-domain analysis items for both channels.
+-  **Max Amplitude (V and LSB)**: Displays the maximum voltage of the waveform, and its corresponding output code.
+-  **Min Amplitude (V and LSB)**: Displays the minimum voltage of the waveform, and its corresponding output code.
+-  **Pk-pk Amplitude (V and LSB)**: Displays the peak-to-peak amplitude of the input waveform.
+-  **Mean (V and LSB)**: Displays the mean voltage of the waveform, and its corresponding output code.
+-  **Fund. Frequency**: Displays the fundamental frequency of the waveform.
+-  **Fund. Amplitude**: Displays the amplitude of the fundamental frequency of the waveform, in dB relative to a full-scale input.
+-  **Dynamic Range**: Displays the dynamic range.
+-  **RMS**: Displays the root-mean-squared voltage of the waveform.
+-  **SNR**: Displays the signal-to-noise ratio (SNR).
+-  **THD**: Displays the total harmonic distortion (THD).
+-  **SINAD**: Displays the signal-to-noise-and-distortion ratio (SINAD).
+-  **Noise Floor**: Displays the noise floor level in dB relative to a full-scale input.
+-  **Bin Width**: Displays the width of frequencies represented by each bin (x-axis value) in the FFT.
+-  **SFDR**: Displays the spurious-free dynamic range (SFDR).
+-  **Harmonic Content Selector**: Toggles the Harmonic Content view.
+-  **Frequency**: Lists the fundamental and harmonic frequencies of the input waveform.
+-  **Amplitude**: Lists the amplitudes for the fundamental and harmonic frequencies.
+
+Summary Tab
+^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_summarytab.png
+   :align: center
+   :width: 800px
+
+-  **Waveform**: Displays time-domain results from the CN-0393 hardware. The axes units can be changed with the Axes Setting selectors on the right side of the **Waveform Tab**.
+-  **Histogram**: Displays histogram results from the CN-0393 hardware. The y-axis represents the number of occurrences of the output codes on the x-axis in the captured set of samples.
+-  **FFT**: Displays frequency-domain results from the CN-0393 hardware.
+-  **Analysis Summary**: Displays analysis items for the CN-0393 hardware for the two channels.
+-  **Pk-pk Amp (V and LSB)**: Displays the peak-to-peak amplitude of the input waveform.
+-  **Mean (V and LSB)**: Displays the mean voltage of the waveform, and its corresponding output code.
+-  **Transition Noise (V and LSB)**: Displays the transition noise of the results.
+-  **Fund Freq.**: Displays the fundamental frequency of the waveform in kHz.
+-  **Fund Amplitude**: Displays the amplitude of the fundamental frequency of the waveform, in dB relative to a full-scale input.
+-  **RMS**: Displays the root-mean-squared voltage of the waveform.
+-  **Dynamic Range**: Displays the dynamic range.
+-  **SNR**: Displays the signal-to-noise ratio (SNR).
+-  **THD**: Displays the total harmonic distortion (THD).
+-  **SINAD**: Displays the signal-to-noise-and-distortion ratio (SINAD).
+-  **LSB**: Displays the equivalent voltage change at the channel’s input that should result in a code change of 1 bit. This is a function of the Reference Voltage in use as well as the channel’s gain settings.
+-  **SFDR**: Displays the spurious-free dynamic range (SFDR).
+
+Run-Time Menu Options
+^^^^^^^^^^^^^^^^^^^^^
+
+File
+""""
+
+-  **Reconnect to SDP**: Attempts to reestablish the USB connection link between the software and the hardware.
+-  **Load Data (Ctrl + L)**: Loads previously saved CN-0393 result files (.tsv). When selected, a file open dialog box will appear to allow for file selection. Loading a CN-0393 result file loads the saved set of conversion results as well as the state of the various controls.
+-  **Save Data (Ctrl + S)**: Saves the current state of the CN-0393 software. When selected, a save dialog box will appear for naming the file. This saves the set of raw conversion results and the state of the various controls. The file is saved in .tsv format.
+-  **Save Image (Ctrl + I)**: Saves the current view of the CN-0393 software as an image file (JPEG). When selected, a save dialog box will appear for naming the file. This saves the currently visible window of the software as a JPEG file.
+-  **Exit (Ctrl + Q)**: Closes the software.
+
+Edit
+""""
+
+-  **Reinitialize Default Values**: Reinitializes the software to its start-up state.
+
+Help
+""""
+
+-  **Analog Devices Website (Ctrl + W)**: Opens the :adi:`Analog Devices website <en/index.html>` in the default browser.
+-  **CN-0393 Product Page**: Opens the :adi:`CN0393` product page in the default browser.
+-  **User Guide (Ctrl + D)**: Opens the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ wiki-based :doc:`User Guide </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0393>` in the default browser.
+-  **Context Help (Ctrl + H)**: Opens the context help box. This box displays descriptions of the objects in the software as the mouse hovers over them.
+-  **About**: Displays version information about the software.
+
+Establishing Hardware USB Connection Link
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the :adi:`EVAL-CN0393-FMCZ <CN0393>` and :adi:`EVAL-SDP-CH1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html>` evaluation boards are connected to the PC and powered up, the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ can be run and establish a USB connection to the hardware. See **Hardware Setup** for instructions on setting up the hardware.
+
+To establish a USB connection link between the software and hardware:
+
+-  Verify that the most recent SDP drivers are properly installed (see **Installing the CN-0393 Evaluation Software**).
+-  Ensure that the CN-0393 and SDP-H1 hardware are properly connected (see **Hardware Setup**).
+-  Run the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_.
+-  If the hardware is properly connected to the PC, the evaluation software will automatically establish a connection with the SDP-H1 controller board. A window with a progress bar will appear to indicate that the connection is being established. Another progress bar will appear to indicate that the SDP-H1 is being configured for the CN-0393 hardware. When the connection and configuration is complete, the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ Status bar will indicate “Hardware Connection and Initialization Complete.”
+-  If the software does not detect the hardware, a pop-up will appear with options to reattempt the connection or to run the software in stand-alone mode (see **Standalone Mode**). This can happen if the SDP-H1 board was recently connected and is not finished booting. Selecting **Rescan** will attempt to establish the USB connection again. Selecting **Cancel** will instruct the software to run in stand-alone mode.
+
+|image7|
+
+-  If the USB connection to the hardware is lost at any point during operation, a pop-up will appear to indicate this. Selecting **Rescan** will attempt to reestablish the USB connection. Selecting **Cancel** will instruct the software to run in standalone mode (see **Standalone Mode**).
+
+Configuring Channel Gains
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The :adi:`CN0393` hardware allows for software-controlled channel gain setting for the two data acquisition channels (channels A and B). It does this by setting the gain address pins on each channel’s :adi:`AD8251`\ s. These gains are configured via the **CA Gain** and **CB Gain** controls in the **Configuration Tab**. **CA Gain** and **CB Gain** set the gains for channels A and B, respectively. When a new gain is selected for either control, the hardware updates the respective channel’s :adi:`AD8251` gain setting. When the update is complete, the **Status** bar will display the current gain settings and input ranges for both channels. The **CA Input Range** and **CB Input Range** indicators also show the corresponding input ranges for the current channel gain settings.
+
+Capturing Samples
+^^^^^^^^^^^^^^^^^
+
+Capturing results/samples can be performed by pressing either the **Single Capture** or **Continuous Capture** controls on the software’s front panel. The **Single Capture** button performs a single set of conversions, and **Continuous Capture** performs repeated sets of conversions. The number of samples in the set of conversions in determined by the **Num Samples** control. For example, if **Num Samples** is set to 8192, then 8192 conversions will be performed, resulting in 8192 results for each channel. Results can be viewed on the **Waveform**, **Histogram**, **FFT**, and **Summary** tabs after the conversions are executed (see **Viewing Results**).
+
+The sample rate and SCK rate can be set using the **Sampling Rate (kSPS)** and **SCK Freq (MHz)** controls.
+
+Viewing Results
+^^^^^^^^^^^^^^^
+
+After conversions are performed, the results are captured and analyzed, and then presented on a waveform, histogram and FFT. The **Waveform Tab** shows the time-domain representation of the data. The **Histogram Tab** shows a histogram plot of the data. The **FFT Tab** shows the frequency-domain analysis of the data. The **Summary Tab** displays all three of these in a single window. All plots display the results for both channel A and B.
+
+The **Waveform Plot** axis units can be set with the **Codes**, **Volts**, **Samples** and **Time** checkboxes to the right of the plot. The x-axis can be set to display samples or equivalent time (in μs). The time units are calculated based on the sample rate that was used. The y-axis can be set to display raw codes or volts (referred to the input of the channel). The voltage units are calculated based on the value in **Reference Voltage (V)** and the channel’s gain setting. There is also a **Waveform Analysis** tab displaying relevant time-domain analysis items.
+
+The **Histogram Plot** shows the number of occurrences of each code result. It is useful for looking at the noise over a dc input signal. There is also a **Histogram Analysis** tab displaying relevant histogram analysis items.
+
+The **FFT Plot** shows a Fast Fourier Transform of the results for both channels. It is useful for analyzing the frequency-domain characteristics of the input and signal chain. There is also an **FFT Analysis** tab displaying relevant frequency-domain analysis items.
+
+In addition to plotting the most recent sets of conversions, the software also has a loading feature that allows it to plot previously saved results. This mode can be accessed in and out of standalone mode. See **Loading and Saving Results** for more information.
+
+Loading and Saving Results
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After capturing conversion results, the `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ can save those results in a .tsv file for later access. Save files store current conversion results for both channels (as raw codes) and the state of the various controls and indicators in the software. These results can be imported to other data analysis tools. When files are loaded, the state of the software is set to match the saved state, and the data in the save file is imported, analyzed, and plotted in the **Waveform**, **Histogram**, and **FFT** plots.
+
+Load functionality also works in standalone mode, allowing for viewing of previous results without connecting the CN-0393 and SDP-H1 hardware. See **Standalone Mode** for more information.
+
+Files can be saved by selecting **File>Save Data** or using the **Ctrl + S** shortcut. A save file dialog box will appear, allowing for file naming and destination selection.
+
+Previously saved files can be saved by selecting **File>Load Data** or using the **Ctrl + L** shortcut. A load file dialog box will appear, allowing for file selection. It is not recommended to attempt loading files other than previously saved CN-0393 software files.
+
+Standalone Mode
+^^^^^^^^^^^^^^^
+
+The `CN-0393 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0393>`_ can operate in “standalone” mode when the evaluation hardware is not connected. In this mode, the software cannot initiate new conversions, but it can load previous sets of conversion results (see **Loading and Saving Results**).
+
+Standalone mode is initiated when the evaluation software does not establish a connection with the evaluation hardware, and the user selects **Cancel** in the pop-up that appears. This can occur at start-up or if the software loses an established connection with the hardware. A pop-up will appear to indicate when software enters standalone mode.
+
+
+|image8|
+
+The software will exit standalone mode if it can establish or reestablish a connection to the hardware (see **Establishing Hardware USB Connection Link**).
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install1.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install2.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install3.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install4.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install5.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393install6.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_no_hardware_detected.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0393_standalone_notification.png
+   :width: 800px

@@ -1,0 +1,139 @@
+AD7091R-2/AD7091R-4/AD7091R-8 - No-OS Driver
+============================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7091R-2`
+-  :adi:`AD7091R-4`
+-  :adi:`AD7091R-8`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7091R-2 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7091r-2.html>`
+
+Overview
+--------
+
+The :adi:`ad7091r-2`, :adi:`ad7091r-4`, and :adi:`AD7091r-8` are 2-/4-/8-channel, ultra lowpower power dissipation, 1 MSPS successive approximation register (SAR) analog-to-digital converter (ADC). The AD7091R-2/-4/-8 ADCs are multichannel versions of :adi:`AD7091r`. The AD7091R-2/AD7091R-4/AD7091R-8 operates from a single 2.7 V to 5.25 V power supply and is capable of achieving a sampling rate of 1 MSPS.
+
+The :adi:`AD7091R-2/AD7091R-4/AD7091R-8 <media/en/technical-documentation/data-sheets/AD7091R-2_7091R-4_7091R-8.pdf>` family offers up to eight single-ended analog input channels with a channel sequencer that allows a preprogrammed selection of channels to be converted sequentially. Program the channel sequencer by writing to the channel register (address 0x01) through direct register access. AD7091R-2/-4/-8 devices can be fully configured by writing to the desired device registers through direct register access.
+
+The conversion process and data acquisition are controlled using the CONVST pin, which is pulsed on every read to the conversion result register. Writing and reading to registers other than the conversion result register will not trigger a pulse on the CONVST line.
+
+The :adi:`AD7091R-2/AD7091R-4/AD7091R-8 <media/en/technical-documentation/data-sheets/AD7091R-2_7091R-4_7091R-8.pdf>` use advanced design techniques to achieve ultralow power dissipation at high throughput rates. They also feature flexible power management options. An on-chip configuration register allows the user to set up different operating conditions. These include power management, alert functionality, busy indication, channel sequencing, and general-purpose output pins.
+
+Applications:
+
+-  Battery-powered systems
+-  Personal digital assistants
+-  Medical instruments
+-  Mobile communications
+-  Instrumentation and control systems
+-  Data acquisition systems
+-  Optical sensors
+-  Diagnostic/monitoring functions
+
+Hardware configuration
+======================
+
+Use the test points for interfacing the EVAL-AD7091R-xSDZ with the microcontroller.
+
+The instructions below describe how to set up :adi:`EVAL-AD7091R-xSDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7091r-2.html>` with :adi:`MAX78000FTHR <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/max78000fthr.html>`.
+
+The evaluation board default configuration is intended to work with :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` so it must be adapted to connect to a different platform.
+
+For the jumper links, use the following configuration:
+
+==== =============
+Link Link Position
+==== =============
+LK1  B
+LK2  B
+LK3  B
+LK8  A
+LK9  B
+LK11 A
+==== =============
+
+Use a soldering iron to change a few soldering links.
+
+-  Unsolder R126 (enable drive CS through CS test point)
+-  Unsolder R127 (enable drive SDI through SDI test point)
+-  Unsolder R128 (enable drive CONVST through CONVST test point)
+-  Unsolder SL19 (enable drive SCLK through SCLK test point)
+-  Unsolder SL20 (enable drive SDO through SDO test point)
+-  Power VDD and Vdrive supplied with :adi:`MAX78000FTHR <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/max78000fthr.html>` 3.3V pins.
+-  Solder R68 points together (enable drive the RESET pin through RESET test point)
+-  Unsolder LK13 and LK14 from position A and solder them in position C (tie MUX_OUT with ADC_IN).
+-  Unsolder SL09 and SL10 from position A and solder each of them to position B to allow the VIN7 signal to bypass the input buffer.
+
+After the changes in the link positions and soldering links, the EVAL-AD7091R-xSDZ evaluation board should look like the following.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad7091r8/eval-ad7091r-8-links.jpg
+   :align: center
+   :width: 600px
+
+There are a number of connections to make between the ADC evaluation board and the microcontroller.
+
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| EVAL-AD7091R-xSDZ test point | Pin Function                  | :adi:`MAX78000FTHR <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/max78000fthr.html>` Pin function (Pin number)                     |
++==============================+===============================+================================================================================================================================================================+
+| CS                           | Chip Select                   | SS0 (P0_11)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| SCLK                         | Serial Clock                  | SCLK (P0_7)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| SDO                          | Serial Data Out               | MISO (P0_6)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| SDI                          | Serial Data In                | MOSI (P0_5)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET                        | ADC Reset                     | GPIO (P0_19)                                                                                                                                                   |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CONVST                       | Conversion Start Signal       | GPIO (P1_6)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| VDRIVE (J4)                  | Digital Supply Voltage Input  | 3.3V (pin 2)                                                                                                                                                   |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GND (J4)                     | Digital Supply Voltage Ground | GND (pin 4)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| VDD (J9)                     | Power Supply Input            | 3.3V (pin 2)                                                                                                                                                   |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GND (J9)                     | Power Supply Ground           | GND (pin 4)                                                                                                                                                    |
++------------------------------+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Where J4 is the external VDRIVE and GND power connector and J9 is the external VDD and GND power connector.
+
+Here is how it looks like after everything is connected.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/eval_ad7091r-xsdz_max78000fthr.jpg
+   :align: center
+   :width: 500px
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the :adi:`AD7091r-2`, :adi:`AD7091r-4` and :adi:`AD7091r-8` parts, which may be used, without modifications, with any microcontroller.
+-  The Communication Drivers, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the :adi:`AD7091r-8` driver can be used exactly as it is provided.
+
+The Communication Driver must include SPI transmission methods and GPIO control methods.
+
+The :adi:`AD7091r-2`/:adi:`AD7091r-4`/:adi:`AD7091r-8` driver calls three functions:
+
+-  no_os_spi_init() - initializes the SPI communication peripheral.
+-  no_os_spi_remove() – frees memory allocated by the SPI communication driver.
+-  no_os_spi_write_and_read() – conduct information transfer with the device.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_driver_architecture.png
+   :align: center
+
+For the GPIO control methods, the :adi:`AD7091r-2`/:adi:`AD7091r-4`/:adi:`AD7091r-8` driver calls five functions:
+
+-  no_os_gpio_get() - initialize GPIO peripheral and allocate memory for controlling the CONVST GPIO (required for device communication).
+-  no_os_gpio_get_optional() - initialize GPIO peripheral and allocate memory for controlling ALERT and RESET pins.
+-  no_os_gpio_remove() - frees memory allocated by the GPIO control driver.
+-  no_os_gpio_direction_output() - set GPIO as output.
+-  no_os_gpio_set_value() - set GPIO to high/low state.

@@ -1,0 +1,132 @@
+AD7988-1 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+==============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7988-1`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7988-5SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7988-5SDZ <AD7988-1>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD7988-5SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7980.jpg
+   :alt: EVAL-AD7988-5SDZ and Xilinx KC705 board
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD7988-5SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7980_sdp.jpg
+   :alt: SDP-B Controller Board and EVAL-AD7988-5SDZ
+   :align: center
+   :width: 400px
+
+The :adi:`AD7988-1`/:adi:`AD7988-5` are 16-bit, successive approximation, analog-to-digital converters (ADC) that operate from a single power supply, VDD. The AD7988-1 offers a 100 kSPS throughput, and the AD7988-5 offers a 500 kSPS throughput. They are low power, 16-bit sampling ADCs with a versatile serial interface port. On the CNV rising edge, they sample an analog input, IN+, between 0 V to VREF with respect to a ground sense, IN−. The reference voltage, REF, is applied externally and can be set independent of the supply voltage, VDD. The SPI-compatible serial interface also features the ability to daisy-chain several ADCs on a single 3-wire bus using the SDI input. It is compatible with 1.8 V, 2.5 V, 3 V, or 5 V logic using the separate supply, VIO. The AD7988-1/AD7988-5 generics are housed in a 10-lead MSOP or a 10-lead LFCSP (QFN) with operation specified from −40°C to +125°C.
+
+The EVAL-AD7988-5SDZ evaluation board is a member of a growing number of boards available for the SDP. It was designed to help customers evaluate performance or quickly prototype new AD7988-1 circuits and reduce design time. When using this evaluation board with the SDP board or Xilinx KC705 board, apply +7.5V as +Vs, a voltage between -2V and -5V as -Vs and +2.5V as VDD.
+
+More information
+----------------
+
+-  :adi:`AD7988-1 Product Info <AD7988-1>` - pricing, samples, datasheet
+-  `EVAL-AD7988-5SDZ evaluation board user guide <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/user_guide_eval_10lead_pulsar.pdf>`_
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD7988-5SDZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 13.2
+-  A UART terminal (ex. TeraTerm / Hyperterminal).
+
+Downloads
+---------
+
+-  `Reference Design Files <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/ad7988_1_evalboard.zip>`_
+
+The following table presents a short description the reference design archive contents.
+
++-------------+-------------------------------------------------------------------------------------------------------+
+| **Folder**  | **Description**                                                                                       |
++=============+=======================================================================================================+
+| Bit         | Contains the KC705 configuration file that can be used to program the system for quick evaluation.    |
++-------------+-------------------------------------------------------------------------------------------------------+
+| DataCapture | Contains the script used to read data from the ADC and save it into a file on the PC.                 |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Hdl         | Contains the HDL driver for the AD7988-1 ADC.                                                         |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Microblaze  | Contains the EDK 13.2 project for the Microblaze softcore that will be implemented in the KC705 FPGA. |
++-------------+-------------------------------------------------------------------------------------------------------+
+| Software    | Contains the source files of the software project that will be run by the Microblaze processor.       |
++-------------+-------------------------------------------------------------------------------------------------------+
+
+Run the Demonstration Project
+=============================
+
+Hardware Setup
+--------------
+
+.. important::
+
+   Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+-  Start IMPACT, and double click “\ *Boundary Scan*\ ”. Right click and select *Initialize Chain*. The program should recognize the Kintex 7 device (see screenshot below).
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/impact_config.png
+   :alt: impact_config.png
+   :align: center
+   :width: 300px
+
+-  Program the KC705 FPGA using the "*Bit/download.bit*" file provided in the reference design archive.
+-  Power the ADI evaluation board.
+-  Start a UART terminal and set the baud rate to 115200 bps.
+
+At this point everything is set up and it is possible to start the evaluation of the ADI hardware. To capture data from the ADC run the *data_capture.bat* script located in the *DataCapture* folder from the reference design .zip file. Every time the script is run a new batch of 8192 samples are read from the ADC at the ADC's maximum sampling rate and saved into the *Acquisition.csv* file located in the same folder as the data capture script. On the UART terminal messages will be displayed to show the status of the program running on the FPGA as shown in the picture below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/teraterm_adc.png
+   :alt: teraterm_adc.png
+   :align: center
+   :width: 400px
+
+.. tip::
+
+   The first time the data capture script is run it is possible that an error will occur while the script is trying to connect to the system. Just run the script again and the error shouldn't appear anymore.
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+

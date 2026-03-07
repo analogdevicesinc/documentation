@@ -1,0 +1,22 @@
+The :adi:`AD5933` is a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC). The frequency generator allows an external complex impedance to be excited with a known frequency. The response signal from the impedance is sampled by the on-board ADC and a discrete Fourier transform (DFT) is processed by an on-board DSP engine. The DFT algorithm returns a real (R) and imaginary (I) data-word at each output frequency.
+
+Once calibrated, the magnitude of the impedance and relative phase of the impedance at each frequency point along the sweep is easily calculated. This is done off chip using the real and imaginary register contents, which can be read from the serial I2C interface.
+
+A similar device, also available from Analog Devices, Inc., is the :adi:`AD5934`, a 2.7 V to 5.5 V, 250 kSPS, 12-bit impedance converter, with an internal temperature sensor and is packaged in a 16-lead SSOP.
+
+Applications
+============
+
+-  Electrochemical analysis
+-  Bioelectrical impedance analysis
+-  Impedance spectroscopy
+-  Complex impedance measurement
+-  Corrosion monitoring and protection equipment
+-  Biomedical and automotive sensors
+-  Proximity sensing
+-  Nondestructive testing
+-  Material property analysis
+-  Fuel/battery cell condition monitoring
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5933_pmod_ia.jpg
+   :align: center

@@ -1,0 +1,130 @@
+EVAL-CN0506-FMCZ Hardware User Guide
+====================================
+
+The :adi:`CN0506` shown in Figure 1 is a dual channel, low latency, low power Ethernet Phy card supporting speeds of 10/100/1000 Mbps for Industrial Ethernet applications.
+
+The circuit consists of two indivudual, independent 10/100/1000Mb PHYs, each with an energy efficient Ethernet (EEE) physical layer device (PHY) core with all associated common analog circuitry, input and output clock buffering, management interface, subsystem registers, MAC interface and control logic.
+
+Unboxing Video
+--------------
+
+.. image:: https://wiki.analog.com/_media/youtube>OL8T3RPe_Yk
+   :alt: youtube>OL8T3RPe_Yk
+
+Connectors and Jumper Configurations
+------------------------------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0506/image_1.png
+
+FMC Connector
+~~~~~~~~~~~~~
+
+The FMC connector connects to the LPC connector of the carrier board.
+
+RJ45 Connectors
+~~~~~~~~~~~~~~~
+
+The RJ45 connectors M1 for Channel A and M2 for Channel B has built in magnetics that help reduce the size of the the board. Each are dedicated to a phy interface ADIN1300 allowing each channel to be independent.
+
+Configuration Resistors
+-----------------------
+
+Mac Interface
+~~~~~~~~~~~~~
+
+The pins for the selecting the MAC interface is shared with the RX_CTL/RX_DV/ CRS_DV pin and RXC/RX_CLK pin which has weak internal pull-down resistors and is configure to RGMII mode with 2ns delay. The ADIN1300 has The MAC interface selection be done via software but can be hardware configured upon the power up of the device using the table below.
+
++-----------------------------+-----------------------------+-----------------------------+
+| **MAC Interface Selection** | **MACIF_SEL1(Phy A/Phy B)** | **MACIF_SEL0(Phy A/Phy B)** |
++-----------------------------+-----------------------------+-----------------------------+
+| RGMII RXC/TXC 2ns delay     | R12/R78                     | R9/R75                      |
++-----------------------------+-----------------------------+-----------------------------+
+| RGMII RXC/TXC 2ns delay     | R11/R77                     | R9/R75                      |
++-----------------------------+-----------------------------+-----------------------------+
+| MII                         | R17/R78                     | R8/R74                      |
++-----------------------------+-----------------------------+-----------------------------+
+| RMII                        | R11/R77                     | R8/R74                      |
++-----------------------------+-----------------------------+-----------------------------+
+
+Configuration Modes
+~~~~~~~~~~~~~~~~~~~
+
+These configuration modes are used to set the configurations for Auto MDIX and Phy Speed Configurations for both Phy channels A and B
+
+======== ======== ========
+**Mode** **R_LO** **R_HI**
+MODE_1   10k      Open
+Mode_2   10k      56k
+Mode_3   56k      10k
+Mode_4   Open     10k
+======== ======== ========
+
+Phy Interface
+~~~~~~~~~~~~~
+
+The board has both of the channels configured for 10 Half Duplex/Full Duplex, 100 Half Duplex/Full Duplex and 1000 Full Duplex slave mode upon power up.
+
+Auto MDIX
+~~~~~~~~~
+
+======================= =============
+**Configuration**       **MDIX_MODE**
+Manual MDI              MODE_1
+Manual MDIX             MODE_2
+Auto MDIX - Prefer MDIX MODE_3
+Auto MDIX - Prefer MDI  MODE_4
+======================= =============
+
+LED Indicators
+^^^^^^^^^^^^^^
+
+These LED's indicate when a link is established and is blinking when there is activity. LED on Phy channel A is labelled DS4 and the LED on Phy channel B is labelled DS2.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0506/cn0506-silkscreen.jpg
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0506-FMCZ Design & Integration Files <cn0506-designsupport>`
+   
+   -  Schematics
+   -  Gerber Files
+   -  Bill of Materials
+   -  Allegro Layout Files
+   -  Assembly Files
+   
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  :adi:`ADIN1300 Product Page <ADIN1300>`
+
+Quick Start Guides
+------------------
+
+-  :doc:`Quickstart: Setup your CN0506 in ZC706 </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506/quickstart/zc706>`
+
+HDL Reference Design
+--------------------
+
+-  :doc:`HDL Reference Designs </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0506/hdl>`
+
+Linux
+-----
+
+-  :doc:`Linux driver </wiki-migration/resources/tools-software/linux-drivers/net-phy/adin>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0506-FMCZ?&v=RevB>`_ to receive all these great benefits and more!
+
+
+// End of Document //

@@ -1,0 +1,278 @@
+CN0150 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0150` is a circuit that measures RF power at any frequency from 1 MHz to 8 GHz over a range of approximately 60 dB. The measurement result is provided as a digital code at the output of a 12-bit ADC with serial interface and integrated reference. The output of the RF detector has a glueless interface to the ADC and uses most of the ADC’s input range without further adjustment. A simple two-point system calibration is performed in the digital domain.
+
+The :adi:`AD8318` is a demodulating logarithmic amplifier, capable of accurately converting an RF input signal to a corresponding decibel-scaled output voltage. It employs the progressive compression technique over a cascaded amplifier chain, each stage of which is equipped with a detector cell. It maintains accurate log conformance for signals of 1 MHz to 6 GHz and provides useful operation to 8 GHz. The input range is typically 60 dB (re: 50 Ω) with error less than ±1 dB and provides a typical output voltage temperature stability of ±0.5 dB.
+
+The :adi:`AD7887` is a high speed, low power, 12-bit analog-to-digital converter (ADC) that operates from a single 2.7 V to 5.25 V power supply. It is capable of 125 kSPS throughput rate. The output coding for the AD7887 is straight binary, and the part is capable of converting full power signals of up to 2.5 MHz. The ADC can be configured for either dual or single channel operation via the on-chip control register. There is a default single-channel mode that allows the AD7887 to be operated as a read-only ADC, thereby simplifying the control logic.
+
+| The EVAL-CN0150-SDPZ board connects to ADI’s System Demonstration Platform (SDP) and is powered by a +6 V supply or +6 V “wall wart”. |image1|
+| ----
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0150A-SDPZ Evaluation Board <EVAL-CN0150A-SDPZ>`
+-  :adi:`EVAL-SDP-CB1Z` Controller Board (**SDP-B Board**)
+-  `CN0150A Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0150>`_
+-  Power Supply
+
+   -  6 V or 6 V Wall wart
+
+-  PC with the following *Minimum Requirements*
+
+   -  Windows 7 (32-bit), Windows Vista (32-bit) or Windows XP
+
+      -  USB interface
+
+-  RF signal source
+-  Coaxial RF cable with SMA connectors
+
+--------------
+
+General Setup
+-------------
+
+Block assignments
+~~~~~~~~~~~~~~~~~
+
+| |image2|
+| \* The :adi:`EVAL-CN0150-SDPZ` **(CN-0150 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector
+
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  Terminal block **J1** is the +6 V power supply
+-  Terminal block **J2** is the +6 V barrel connector for wall wart supply input
+-  Terminal block **J3** is the SMA connector for RF input
+
+| 
+| ==== Test setup ==== |image3|
+| \* Connect the 120-pin connector on the :adi:`EVAL-CN0150A-SDPZ Evaluation Board <EVAL-CN0150A-SDPZ>` to the connector marked “CON A” on the :adi:`EVAL-SDP-CB1Z` evaluation (SDP) board
+
+-  Connect the RF signal source to the :adi:`EVAL-CN0150A-SDPZ Evaluation Board <EVAL-CN0150A-SDPZ>` via the SMA RF input connector
+-  With power to the supply off, connect a +6 V power supply to the pins marked “+6V” and “GND” on the board
+
+::
+
+       *//If available, a +6 V "wall wart" can be connected to the barrel connector on the board and used in place of the +6 V power supply//
+   * Connect the USB cable supplied with the SDP board to the USB port on the PC
+   * Apply power to the +6 V supply (or “wall wart”) connected to [[:adi:`EVAL-CN0150A-SDPZ|EVAL-CN0150A-SDPZ` Evaluation Board]]
+   * Launch the evaluation software
+   * Connect the USB cable from the PC to the USB mini connector on the SDP board
+
+   | 
+|
+
+.. important::
+
+   Do **not** connect the USB cable to the Mini-USB connector on the SDP board before turning on the dc power supply for the **EVAL-CN0150-SDPZ**.
+
+
+| 
+| ==== Calibration ==== Because the slope and intercept of the system vary from device to device, a system level calibration is **required**.
+
+-  Apply two known signal levels PIN_1 and PIN_2 close to the endpoints of the AD8318 linear input range. Note that it should be well within the linear operating range of the device (**-50 dBm to -10 dBm for this device**)\
+
+
+|image4|
+
+   \* Measure the corresponding output codes CODE_1 and CODE_2 from the ADC
+-  Calculate SLOPE_ADC and INTERCEPT using the following equations:
+
+   -  **SLOPE_ADC** = (CODE_2 - CODE_1)/(PIN_2 - PIN1)
+
+      -  **INTERCEPT** = PIN_2 - (CODE_2/SLOPE_ADC)
+
+-  These will be used to calculate the unknown input power level, PIN, when operation in the field using the equation
+
+   -  **PIN** = (CODE_OUT/SLOPE_ADC) + INTERCEPT
+
+| 
+| ----
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file **CN0150_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0150 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0150>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\CN0150\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image5|
+
+-  **Accept** the license agreement to proceed to the installation review page
+   |image6|}
+   \* Click **Next** to view the installation review page
+
+   |image7|
+
+   \* Click **Next** to start the installation
+
+   |image8|
+
+   \* Upon completion of the installation of the **CN-0150 Evaluation Software**, the installer for the **ADI SDP Drivers** will execute.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+   |image9|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image10|
+
+   \* Press **“Install”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image11|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/11.png
+   :align: center
+   :width: 700px
+
+-  **Connect** Button - Starts the connection between the :adi:`CN0150 Evaluation Board <CN0150>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`.
+-  **Reset and Disconnect** Button - Resets and ends the connection between the :adi:`CN0150 Evaluation Board <CN0150>` and :adi:`SDP-B Controller Board <EVAL-SDP-CB1Z>`
+-  **Sample Data Graph** Tab - Shows the XY plot of ADC code and output error (%) versus input signal power. Also contains the plot options where you can edit plot display and options like interpolation and color of output waveform
+-  **Test Setup** Tab
+
+|image12|
+
+   -  **Data Acquisition**
+
+      -  **Input Power** - Indicate input signal power level
+
+         -  **Frequency** - Indicate input signal frequency
+
+            -  **Temperature** - Temperature test level condition of the input signal
+            -  **Acquire Data** - Start acquisition of measurement data
+            -  **Clear Data** - Clear the current measurement data
+            -  **Save Data to File** - Save measurement data to file
+            -  **Increment Amount** - Increment value of input power level
+            -  **Average Value** - Read only. ADC conversion value
+            -  **Sample size** - Edit value to desired sampling size for ADC
+            -  **Remove Last** - Remove last reading from the graph
+            -  **Auto-increment** - Enable auto increment of input power level
+
+      -  **Calibration** - insert calibration instructions here
+
+         -  **PIN_1** - First known input power level close to endpoints of AD8318 linear input range
+
+            -  **PIN_2** - Second known input power level close to endpoints of AD8318 linear input range
+            -  **Slope (ADC Code/ dBm)** - Slope of the transfer curve of AD8318 (-24 mV/dB nominal)
+            -  **Intercept (ADC Code)** - X-axis intercept with a unit of dBm
+
+-  **Configure** Tab
+
+
+|image13|
+
+   -  **SDP Connector** - Selects which 120-pin connection of the SDP-B Board to use
+
+      -  **SCLK Frequency** - Sets the SPI clock frequency for the data transfers used by the evaluation board
+      -  **AD7887 Voltage Reference** - Select between internal or external 2.5 volts voltage reference
+      -  **SPI Byte to Write** - Buffer of unsigned 16-bit elements for SPI write transfer
+      -  **Flash LED** - Flashes the LED on the SDP controller board
+      -  **Read Firmware** - Reads the firmware of CN0150 Evaluation Board
+
+      | 
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Open the CN0150.exe application from the default installation location
+   -Set the correct connector and click the Connect Button
+   -Upon successful connection, calibrate the device in the Test Setup tab
+   -After proper calibration, set the correct input parameters
+   -Start acquisition of measurement data through Acquire Data button
+   -To manipulate the data, other measurement data control buttons are available such as Clear Data and Save Data to file 
+   -Click Reset and Disconnect if finished
+
+|
+
+| ----
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0150 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0150>`_
+-  :adi:`CN0150 Circuit Note Page <CN0150>`
+-  :adi:`CN0150 Design Support Package <cn0150>`
+-  :adi:`AD8318 Product Page <AD8318>`
+-  :adi:`ADR421 Product Page <ADR421>`
+-  :adi:`AD7887 Product Page <AD7887>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0150-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0150-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0150A-SDPZ?&v=Rev E>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/cn0150-hw-1024.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/10.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/10-30-2017_2-47-07_pm.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/14.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/1.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/2.png
+   :width: 500px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/3.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/4.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/5.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/6.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/8.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/12.png
+   :width: 600px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0150/15.png
+   :width: 600px

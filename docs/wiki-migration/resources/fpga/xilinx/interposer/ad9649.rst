@@ -1,0 +1,134 @@
+AD9649 Evaluation Board, FMC Interposer & Xilinx KC705 Reference Design
+=======================================================================
+
+Introduction
+------------
+
+The :adi:`AD9649` is a 14-bit, monolithic, single channel analog-to-digital converter (ADC) with a conversion rate of up to 80MSPS. This reference design includes the device data capture and SPI interface. The samples are written to the external DDR-DRAM on KC705. It allows programming the device and monitoring it's internal registers via SPI. The board also provides other options to drive the clock to the ADC.
+
+Supported Devices
+-----------------
+
+-  :adi:`AD9649-Evaluation Board <en/evaluation/eval-ad9649/eb.html>`
+-  :adi:`High Speed ADC FMC Interposer <en/evaluation/eval-adc-fmc-int/eb.html>`
+
+Supported Carriers
+------------------
+
+-  `KC705 <https://www.xilinx.com/KC705>`_
+
+Quick Start Guide
+-----------------
+
+The bit file provided combines the FPGA bit file and the SDK elf files. It may be used for a quick check on the system. All you need is the hardware and a PC running a UART terminal and the programmer (IMPACT).
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-  KC705 board
+-  AD9649 evaluation board & Power supply
+-  ADC FMC interposer board
+-  Signal/Clock generator
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  Xilinx ISE (Programmer (IMPACT) is sufficient for the demo and is available on Webpack).
+-  A UART terminal (Tera Term/Hyperterminal), Baud rate 57600.
+
+Bit file
+~~~~~~~~
+
+-  Download the gzip file and extract the **sw/cf_ad9649_ebz.bit** file.
+
+Running Demo (SDK) Program
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To begin make the following connections (see image below):
+
+-  Connect the AD9649 evaluation board to the FMC Interposer board.
+-  Connect the interposer board to the **FMC-LPC** connector of KC705 board.
+-  Connect power to KC705 and the AD9649 evaluation boards.
+-  Connect two USB cables from the PC to the *JTAG* and *UART* USB connectors on KC705.
+-  Follow the :doc:`AD9649 evaluation board setup </wiki-migration/resources/eval/ad9266-80ebz_ad9649-80ebz_ad9629-80ebz_ad9609-80ebz>` instructions.
+
+After the hardware setup, turn the power on to the KC705 and the AD9649 evaluation boards.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_setup.jpg
+   :alt: Hardware setup
+   :width: 200px
+
+Start IMPACT, and initialze the JTAG chain. The program should recognize the Kintex 7 device. Start a UART terminal (set to 57600 baud rate) and then program the device. If programming was successful, you should be seeing messages appear on the terminal as shown in figure below. After programming the AD9649, the program checks data capture on various test modes.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_uart.jpg
+   :alt: Terminal
+   :width: 200px
+
+A chipscope bus plot of the captured input is shown below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_chipscope.jpg
+   :alt: Terminal
+   :width: 200px
+
+Using the reference design
+--------------------------
+
+Functional description
+~~~~~~~~~~~~~~~~~~~~~~
+
+The reference design consists of two functional modules, a capture interface and a DMA interface. The capture interface provides the physical interface to the ADC. It is then transferred to the DMA module. The DMA module interfaces to the Xilinx AXI-DMA engine and stores a programmable number of samples on the external DDR-DRAM on KC705.
+
+Registers
+~~~~~~~~~
+
+See the regmap.txt file inside the pcores.
+
+Downloads
+---------
+
+FPGA Referece Designs:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**KC705 (Source files): \*\* `cf_ad9649_ebz_edk_14_4_2013_03_19.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_edk_14_4_2013_03_19.tar.gz>`_
+   -  \**KC705 (Bit files): \*\* `cf_ad9649_ebz_sw_14_4_2013_03_19.tar.gz <https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cf_ad9649_ebz_sw_14_4_2013_03_19.tar.gz>`_
+   
+
+
+Only Xilinx coregen xco files are provided with the reference design. You must regenerate the IP core files using this file. See :doc:`generating Xilinx netlist/verilog files from xco files </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/reference_hdl>` for details.
+
+.. hint::
+
+   
+   -  Questions? :ez:`Ask Help & Support <fpga>`.
+   
+
+
+Tar file contents
+-----------------
+
+The tar file contains, in most cases, the following files and/or directories. To rebuild the reference design simply double click the XMP file and run the tool. To build SDK, select a workspace and use the C file to build the elf file. Please refer to `Xilinx EDK documentation <https://www.xilinx.com/support/documentation/dt_edk_edk13-2.htm>`_ for details.
+
++-----------------------+------------------------------------------------------------------------------------------------------+
+| license.txt           | ADI license & copyright information.                                                                 |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| system.mhs            | MHS file.                                                                                            |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| system.xmp            | XMP file (use this file to build the reference design).                                              |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| data/                 | UCF file and/or DDR MIG project files.                                                               |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| docs/                 | Documentation files (Please note that this wiki page is the documentation for the reference design). |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| sw/                   | Software (Xilinx SDK) & bit file(s).                                                                 |
++-----------------------+------------------------------------------------------------------------------------------------------+
+| ../cf_lib/edk/pcores/ | Pcore repository.                                                                                    |
++-----------------------+------------------------------------------------------------------------------------------------------+
+
+More information
+----------------
+
+-  `VITA's FMC info <http://www.vita.com/fmc>`_
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`

@@ -1,0 +1,7 @@
+MAX14906 Instrument - Scopy SWIOT1L plugin
+==========================================
+
+.. note::
+
+   This MAX14906 Instrument guide page for the Scopy AD-SWIOT1L-SL plugin has been migrated to the `Scopy documentation <https://analogdevicesinc.github.io/scopy/plugins/swiot1l/max14906.html>`_ page.
+

@@ -1,0 +1,9 @@
+ADV8005 wiki pages
+==================
+
+Application notes
+=================
+
+:doc:`Picture in Picture overlay on up to 4k30 </wiki-migration/products/audio-video/analoghdmidvi-interfaces/adv8005/app-notes/picture-in-picture-on-4k30>`
+
+:doc:`Applications combining multiple ADV8005 devices </wiki-migration/products/audio-video/analoghdmidvi-interfaces/adv8005/app-notes/combining-multiple-adv8005>`
